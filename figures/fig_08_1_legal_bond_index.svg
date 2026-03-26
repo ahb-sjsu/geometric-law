@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 420" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif">
+  <defs>
+    <style>
+      .title { font-size: 14px; font-weight: 600; fill: #333; }
+      .subtitle { font-size: 10px; fill: #666; }
+      .label { font-size: 11px; fill: #444; font-weight: 500; }
+      .small { font-size: 9px; fill: #555; }
+      .violation { font-size: 10px; font-weight: 600; fill: #c62828; }
+      .invariant { font-size: 10px; font-weight: 600; fill: #2e7d32; }
+      .transform-name { font-size: 12px; font-weight: 700; }
+    </style>
+  </defs>
+
+  <text x="350" y="24" text-anchor="middle" class="title">Figure 8.1 — The Legal Bond Index: Measuring Gauge Violation in Law</text>
+  <text x="350" y="40" text-anchor="middle" class="subtitle">The LBI applies gauge transformations to a case and measures how much the outcome changes. A fair system yields LBI = 0.</text>
+
+  <!-- Three gauge transformations -->
+  <!-- Race swap -->
+  <g transform="translate(20, 60)">
+    <rect x="0" y="0" width="210" height="310" fill="#e8eaf6" stroke="#7986cb" stroke-width="1.5" rx="8"/>
+    <text x="105" y="22" text-anchor="middle" class="transform-name" fill="#283593">Race Swap</text>
+    <text x="105" y="38" text-anchor="middle" class="small" fill="#5c6bc0">Gauge group: permutation of race labels</text>
+
+    <!-- Same case -->
+    <rect x="15" y="50" width="180" height="40" fill="#c5cae9" rx="4"/>
+    <text x="105" y="66" text-anchor="middle" class="small" font-weight="600">Drug possession, 1st offense</text>
+    <text x="105" y="80" text-anchor="middle" class="small">Same facts, same priors, same jurisdiction</text>
+
+    <!-- Two outcomes -->
+    <rect x="15" y="100" width="85" height="50" fill="#fff" stroke="#7986cb" stroke-width="1" rx="4"/>
+    <text x="57" y="116" text-anchor="middle" class="small" font-weight="600" fill="#283593">Defendant A</text>
+    <text x="57" y="130" text-anchor="middle" class="small">White</text>
+    <text x="57" y="143" text-anchor="middle" class="small" fill="#2e7d32">Probation</text>
+
+    <rect x="110" y="100" width="85" height="50" fill="#fff" stroke="#7986cb" stroke-width="1" rx="4"/>
+    <text x="152" y="116" text-anchor="middle" class="small" font-weight="600" fill="#283593">Defendant B</text>
+    <text x="152" y="130" text-anchor="middle" class="small">Black</text>
+    <text x="152" y="143" text-anchor="middle" class="small" fill="#c62828">18 months</text>
+
+    <text x="105" y="170" text-anchor="middle" class="invariant">Should be invariant</text>
+    <text x="105" y="185" text-anchor="middle" class="small">Race is not a legally relevant factor.</text>
+
+    <rect x="15" y="195" width="180" height="50" fill="#ffebee" stroke="#ef9a9a" stroke-width="0.5" rx="4"/>
+    <text x="105" y="212" text-anchor="middle" class="violation">Violation: 18 months</text>
+    <text x="105" y="227" text-anchor="middle" class="small" fill="#c62828">LBI_race = ||outcome(A) - outcome(B)||</text>
+    <text x="105" y="239" text-anchor="middle" class="small" fill="#c62828">= large gauge violation</text>
+
+    <rect x="15" y="255" width="180" height="45" fill="#e8eaf6" rx="3"/>
+    <text x="105" y="272" text-anchor="middle" class="small" fill="#283593" font-weight="600">Empirical evidence:</text>
+    <text x="105" y="286" text-anchor="middle" class="small" fill="#283593">USSC data shows 19.1% longer</text>
+    <text x="105" y="299" text-anchor="middle" class="small" fill="#283593">sentences for Black defendants</text>
+  </g>
+
+  <!-- Gender swap -->
+  <g transform="translate(245, 60)">
+    <rect x="0" y="0" width="210" height="310" fill="#fce4ec" stroke="#f48fb1" stroke-width="1.5" rx="8"/>
+    <text x="105" y="22" text-anchor="middle" class="transform-name" fill="#880e4f">Gender Swap</text>
+    <text x="105" y="38" text-anchor="middle" class="small" fill="#c2185b">Gauge group: permutation of gender labels</text>
+
+    <rect x="15" y="50" width="180" height="40" fill="#f8bbd0" rx="4"/>
+    <text x="105" y="66" text-anchor="middle" class="small" font-weight="600">Assault, comparable severity</text>
+    <text x="105" y="80" text-anchor="middle" class="small">Same facts, same priors, same jurisdiction</text>
+
+    <rect x="15" y="100" width="85" height="50" fill="#fff" stroke="#f48fb1" stroke-width="1" rx="4"/>
+    <text x="57" y="116" text-anchor="middle" class="small" font-weight="600" fill="#880e4f">Defendant C</text>
+    <text x="57" y="130" text-anchor="middle" class="small">Male</text>
+    <text x="57" y="143" text-anchor="middle" class="small" fill="#c62828">36 months</text>
+
+    <rect x="110" y="100" width="85" height="50" fill="#fff" stroke="#f48fb1" stroke-width="1" rx="4"/>
+    <text x="152" y="116" text-anchor="middle" class="small" font-weight="600" fill="#880e4f">Defendant D</text>
+    <text x="152" y="130" text-anchor="middle" class="small">Female</text>
+    <text x="152" y="143" text-anchor="middle" class="small" fill="#2e7d32">12 months</text>
+
+    <text x="105" y="170" text-anchor="middle" class="invariant">Should be invariant</text>
+    <text x="105" y="185" text-anchor="middle" class="small">Gender is not a legally relevant factor.</text>
+
+    <rect x="15" y="195" width="180" height="50" fill="#ffebee" stroke="#ef9a9a" stroke-width="0.5" rx="4"/>
+    <text x="105" y="212" text-anchor="middle" class="violation">Violation: 24 months</text>
+    <text x="105" y="227" text-anchor="middle" class="small" fill="#c62828">LBI_gender = ||outcome(C) - outcome(D)||</text>
+    <text x="105" y="239" text-anchor="middle" class="small" fill="#c62828">= large gauge violation</text>
+
+    <rect x="15" y="255" width="180" height="45" fill="#fce4ec" rx="3"/>
+    <text x="105" y="272" text-anchor="middle" class="small" fill="#880e4f" font-weight="600">Empirical evidence:</text>
+    <text x="105" y="286" text-anchor="middle" class="small" fill="#880e4f">Starr (2015): men receive 63%</text>
+    <text x="105" y="299" text-anchor="middle" class="small" fill="#880e4f">longer sentences than women</text>
+  </g>
+
+  <!-- SES swap -->
+  <g transform="translate(470, 60)">
+    <rect x="0" y="0" width="210" height="310" fill="#fff3e0" stroke="#ffb74d" stroke-width="1.5" rx="8"/>
+    <text x="105" y="22" text-anchor="middle" class="transform-name" fill="#e65100">SES Swap</text>
+    <text x="105" y="38" text-anchor="middle" class="small" fill="#f57f17">Gauge group: SES relabeling</text>
+
+    <rect x="15" y="50" width="180" height="40" fill="#ffe0b2" rx="4"/>
+    <text x="105" y="66" text-anchor="middle" class="small" font-weight="600">Identical white-collar fraud</text>
+    <text x="105" y="80" text-anchor="middle" class="small">Same facts, same statute, same loss</text>
+
+    <rect x="15" y="100" width="85" height="50" fill="#fff" stroke="#ffb74d" stroke-width="1" rx="4"/>
+    <text x="57" y="116" text-anchor="middle" class="small" font-weight="600" fill="#e65100">Defendant E</text>
+    <text x="57" y="130" text-anchor="middle" class="small">Wealthy</text>
+    <text x="57" y="143" text-anchor="middle" class="small" fill="#2e7d32">Fine + probation</text>
+
+    <rect x="110" y="100" width="85" height="50" fill="#fff" stroke="#ffb74d" stroke-width="1" rx="4"/>
+    <text x="152" y="116" text-anchor="middle" class="small" font-weight="600" fill="#e65100">Defendant F</text>
+    <text x="152" y="130" text-anchor="middle" class="small">Low-income</text>
+    <text x="152" y="143" text-anchor="middle" class="small" fill="#c62828">24 months</text>
+
+    <text x="105" y="170" text-anchor="middle" class="invariant">Should be invariant</text>
+    <text x="105" y="185" text-anchor="middle" class="small">Wealth is not a legally relevant factor.</text>
+
+    <rect x="15" y="195" width="180" height="50" fill="#ffebee" stroke="#ef9a9a" stroke-width="0.5" rx="4"/>
+    <text x="105" y="212" text-anchor="middle" class="violation">Violation: incarceration vs. fine</text>
+    <text x="105" y="227" text-anchor="middle" class="small" fill="#c62828">LBI_SES = ||outcome(E) - outcome(F)||</text>
+    <text x="105" y="239" text-anchor="middle" class="small" fill="#c62828">= categorical gauge violation</text>
+
+    <rect x="15" y="255" width="180" height="45" fill="#fff3e0" rx="3"/>
+    <text x="105" y="272" text-anchor="middle" class="small" fill="#e65100" font-weight="600">Empirical evidence:</text>
+    <text x="105" y="286" text-anchor="middle" class="small" fill="#e65100">Bail-ability highly correlated</text>
+    <text x="105" y="299" text-anchor="middle" class="small" fill="#e65100">with income, not flight risk</text>
+  </g>
+
+  <!-- Bottom -->
+  <rect x="60" y="382" width="580" height="32" fill="#f5f5f5" stroke="#e0e0e0" stroke-width="1" rx="5"/>
+  <text x="350" y="396" text-anchor="middle" class="small" font-weight="600">LBI = Σ_g ||f(case) - f(g · case)|| / |G| — the average outcome shift under legally irrelevant gauge transformations.</text>
+  <text x="350" y="409" text-anchor="middle" class="small">A fair legal system has LBI = 0 for all protected attributes. Any nonzero LBI is a measurable violation of equal protection.</text>
+</svg>

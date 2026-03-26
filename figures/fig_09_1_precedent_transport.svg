@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 460" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif">
+  <defs>
+    <style>
+      .title { font-size: 14px; font-weight: 600; fill: #333; }
+      .subtitle { font-size: 10px; fill: #666; }
+      .label { font-size: 11px; fill: #444; font-weight: 500; }
+      .small { font-size: 9px; fill: #555; }
+      .case-label { font-size: 10px; font-weight: 600; }
+      .year { font-size: 8px; fill: #888; }
+      .math { font-size: 10px; fill: #333; font-style: italic; }
+    </style>
+    <marker id="cite-arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#2171b5"/>
+    </marker>
+    <marker id="rule-arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#e65100"/>
+    </marker>
+    <marker id="drift-arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#c62828"/>
+    </marker>
+  </defs>
+
+  <text x="350" y="24" text-anchor="middle" class="title">Figure 9.1 — Stare Decisis as Parallel Transport</text>
+  <text x="350" y="40" text-anchor="middle" class="subtitle">A legal rule is "carried" along citation paths through the judicial complex. Holonomy measures how much it rotates — doctrinal drift over time.</text>
+
+  <!-- Main diagram area -->
+  <rect x="30" y="55" width="640" height="330" fill="#f7fbff" stroke="#c6dbef" stroke-width="1" rx="8"/>
+
+  <!-- Citation path (curved, left to right) -->
+  <!-- Case nodes along the path -->
+
+  <!-- Case 1: Origin -->
+  <g transform="translate(70, 100)">
+    <circle cx="0" cy="0" r="20" fill="#2171b5"/>
+    <text x="0" y="4" text-anchor="middle" class="case-label" fill="#fff">Brown</text>
+    <text x="0" y="28" text-anchor="middle" class="year">1954</text>
+    <!-- Original rule vector (pointing up) -->
+    <line x1="0" y1="-20" x2="0" y2="-50" stroke="#e65100" stroke-width="2.5" marker-end="url(#rule-arrow)"/>
+    <text x="15" y="-40" class="small" fill="#e65100" font-weight="600">rule R</text>
+  </g>
+
+  <!-- Case 2 -->
+  <g transform="translate(190, 140)">
+    <circle cx="0" cy="0" r="18" fill="#4292c6"/>
+    <text x="0" y="4" text-anchor="middle" class="case-label" fill="#fff">Green</text>
+    <text x="0" y="26" text-anchor="middle" class="year">1968</text>
+    <!-- Rule vector slightly rotated -->
+    <line x1="0" y1="-18" x2="8" y2="-46" stroke="#e65100" stroke-width="2.5" marker-end="url(#rule-arrow)"/>
+  </g>
+
+  <!-- Case 3 -->
+  <g transform="translate(310, 170)">
+    <circle cx="0" cy="0" r="18" fill="#6baed6"/>
+    <text x="0" y="4" text-anchor="middle" class="case-label" fill="#fff">Swann</text>
+    <text x="0" y="26" text-anchor="middle" class="year">1971</text>
+    <!-- Rule vector more rotated -->
+    <line x1="0" y1="-18" x2="16" y2="-42" stroke="#e65100" stroke-width="2.5" marker-end="url(#rule-arrow)"/>
+  </g>
+
+  <!-- Case 4 -->
+  <g transform="translate(430, 190)">
+    <circle cx="0" cy="0" r="18" fill="#9ecae1"/>
+    <text x="0" y="4" text-anchor="middle" class="case-label" fill="#fff">Milliken</text>
+    <text x="0" y="26" text-anchor="middle" class="year">1974</text>
+    <!-- Rule vector further rotated -->
+    <line x1="0" y1="-18" x2="24" y2="-36" stroke="#e65100" stroke-width="2.5" marker-end="url(#rule-arrow)"/>
+  </g>
+
+  <!-- Case 5: Destination -->
+  <g transform="translate(560, 220)">
+    <circle cx="0" cy="0" r="20" fill="#c6dbef" stroke="#2171b5" stroke-width="2"/>
+    <text x="0" y="4" text-anchor="middle" class="case-label" fill="#2171b5">Parents</text>
+    <text x="0" y="28" text-anchor="middle" class="year">2007</text>
+    <!-- Rule vector significantly rotated (nearly horizontal) -->
+    <line x1="0" y1="-20" x2="35" y2="-28" stroke="#e65100" stroke-width="2.5" marker-end="url(#rule-arrow)"/>
+    <text x="45" y="-22" class="small" fill="#e65100" font-weight="600">rule R'</text>
+  </g>
+
+  <!-- Citation path edges -->
+  <path d="M 90,100 C 130,115 155,130 172,140" fill="none" stroke="#2171b5" stroke-width="2" marker-end="url(#cite-arrow)"/>
+  <path d="M 208,145 C 240,155 275,162 292,170" fill="none" stroke="#2171b5" stroke-width="2" marker-end="url(#cite-arrow)"/>
+  <path d="M 328,175 C 360,182 395,188 412,192" fill="none" stroke="#2171b5" stroke-width="2" marker-end="url(#cite-arrow)"/>
+  <path d="M 448,198 C 480,206 520,215 540,220" fill="none" stroke="#2171b5" stroke-width="2" marker-end="url(#cite-arrow)"/>
+
+  <!-- Labels on path -->
+  <text x="140" y="108" class="small" fill="#2171b5">cites</text>
+  <text x="255" y="155" class="small" fill="#2171b5">cites</text>
+  <text x="375" y="180" class="small" fill="#2171b5">cites</text>
+  <text x="495" y="206" class="small" fill="#2171b5">cites</text>
+
+  <!-- Holonomy annotation -->
+  <g transform="translate(400, 90)">
+    <rect x="0" y="0" width="250" height="70" fill="#fff3e0" stroke="#ffb74d" stroke-width="1" rx="5"/>
+    <text x="125" y="18" text-anchor="middle" class="label" fill="#e65100">Holonomy (Doctrinal Drift)</text>
+    <text x="125" y="35" text-anchor="middle" class="math">R' = Hol(γ) · R</text>
+    <text x="125" y="50" text-anchor="middle" class="small">The rule arrives at Parents Involved</text>
+    <text x="125" y="62" text-anchor="middle" class="small">"rotated" — same words, different meaning</text>
+  </g>
+
+  <!-- Angle annotation -->
+  <g transform="translate(70, 260)">
+    <rect x="0" y="0" width="280" height="105" fill="#e8f5e9" stroke="#81c784" stroke-width="1" rx="5"/>
+    <text x="140" y="18" text-anchor="middle" class="label" fill="#2e7d32">What Parallel Transport Reveals</text>
+    <text x="15" y="36" class="small" fill="#2e7d32">1. Brown (1954): segregation violates equal protection</text>
+    <text x="15" y="50" class="small" fill="#2e7d32">2. Green (1968): affirmative duty to desegregate</text>
+    <text x="15" y="64" class="small" fill="#2e7d32">3. Swann (1971): busing as remedy is constitutional</text>
+    <text x="15" y="78" class="small" fill="#2e7d32">4. Milliken (1974): no inter-district remedy required</text>
+    <text x="15" y="92" class="small" fill="#c62828" font-weight="600">5. Parents (2007): race-conscious assignment violates EP</text>
+  </g>
+
+  <!-- Curvature note -->
+  <g transform="translate(380, 280)">
+    <rect x="0" y="0" width="270" height="85" fill="#ffebee" stroke="#ef9a9a" stroke-width="1" rx="5"/>
+    <text x="135" y="18" text-anchor="middle" class="label" fill="#c62828">The Connection Has Curvature</text>
+    <text x="135" y="36" text-anchor="middle" class="small" fill="#c62828">The same "equal protection" principle, parallel-</text>
+    <text x="135" y="50" text-anchor="middle" class="small" fill="#c62828">transported along the citation path, arrives at</text>
+    <text x="135" y="64" text-anchor="middle" class="small" fill="#c62828">the opposite conclusion. This is not error — it is</text>
+    <text x="135" y="78" text-anchor="middle" class="small" fill="#c62828" font-weight="600">curvature in the judicial complex.</text>
+  </g>
+
+  <!-- Bottom caption -->
+  <rect x="60" y="398" width="580" height="48" fill="#f5f5f5" stroke="#e0e0e0" stroke-width="1" rx="5"/>
+  <text x="350" y="414" text-anchor="middle" class="small" font-weight="600">Stare decisis = parallel transport. Circuit splits = curvature. Overruling = connection change.</text>
+  <text x="350" y="428" text-anchor="middle" class="small">The holonomy group Hol(K) classifies all possible doctrinal drifts. Non-trivial holonomy means the legal system is not flat.</text>
+  <text x="350" y="442" text-anchor="middle" class="small">This is the precise geometric content of "the law evolves."</text>
+</svg>
