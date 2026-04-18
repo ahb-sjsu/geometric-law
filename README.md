@@ -16,7 +16,7 @@ It inherits the heuristic field formalism, geodesic deviation measure, failure t
 
 ## Status
 
-Outline stage. See `OUTLINE.md` for the chapter plan.
+Outline stage. See `BOOK_PLAN.md` for the chapter plan.
 
 ## The Geometric Series
 
@@ -26,7 +26,6 @@ Outline stage. See `OUTLINE.md` for the chapter plan.
 | [Geometric Reasoning](https://github.com/ahb-sjsu/geometric-reasoning) | Draft complete |
 | [Geometric Ethics](https://github.com/ahb-sjsu/geometric-ethics) | Published (v1.23) |
 | **Geometric Law: Symmetry, Invariance, and the Structure of Legal Reasoning** | **Outline** |
-| [Geometric Law](https://github.com/ahb-sjsu/geometric-law) | Outline |
 | [Geometric Cognition](https://github.com/ahb-sjsu/geometric-cognition) | Outline |
 | [Geometric Communication](https://github.com/ahb-sjsu/geometric-communication) | Outline |
 | [Geometric Medicine](https://github.com/ahb-sjsu/geometric-medicine) | Outline |
