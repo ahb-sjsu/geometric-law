@@ -122,7 +122,7 @@
 
 ## Differential Geometry and Topology
 
-- do Carmo, M. P. (1992). *Riemannian Geometry.* Birkhauser.
+- do Carmo, M. P. (1992). *Riemannian Geometry.* Birkhäuser.
 - Grigor'yan, A., Lin, Y., Muranov, Y., and Yau, S.-T. (2014). "Homologies of Path Complexes and Digraphs." *arXiv:1207.2834v4.*
 - Kobayashi, S. and Nomizu, K. (1963). *Foundations of Differential Geometry.* Vol. I. Wiley.
 - Lee, J. M. (2018). *Introduction to Riemannian Manifolds.* 2nd ed. Springer.
@@ -143,8 +143,8 @@
 ## Gauge Theory and Symmetry
 
 - Brading, K. and Castellani, E. (eds.) (2003). *Symmetries in Physics: Philosophical Reflections.* Cambridge University Press.
-- Noether, E. (1918). "Invariante Variationsprobleme." *Nachrichten von der Gesellschaft der Wissenschaften zu Gottingen, Mathematisch-Physikalische Klasse,* 235--257. Translated by Tavel, M. A. (1971) in *Transport Theory and Statistical Physics* 1(3): 183--207.
-- Weyl, H. (1929). "Elektron und Gravitation." *Zeitschrift fur Physik* 56(5--6): 330--352.
+- Noether, E. (1918). "Invariante Variationsprobleme." *Nachrichten von der Gesellschaft der Wissenschaften zu Göttingen, Mathematisch-Physikalische Klasse,* 235--257. Translated by Tavel, M. A. (1971) in *Transport Theory and Statistical Physics* 1(3): 183--207.
+- Weyl, H. (1929). "Elektron und Gravitation." *Zeitschrift für Physik* 56(5--6): 330--352.
 - Weyl, H. (1952). *Symmetry.* Princeton University Press.
 
 ---

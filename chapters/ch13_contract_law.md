@@ -177,7 +177,7 @@ For Rivera's case: Meridian reassigned Chandrasekaran's responsibilities at time
 >
 > *At $t = 19$ months, Chandrasekaran joins NovaTech. She crosses the non-compete boundary on $d_1$. But because Meridian's material breach at $t = 18$ months excused her further performance, this crossing is not a breach — it is movement through a boundary that no longer exists, because the contract that created it was already materially breached.*
 >
-> *Rivera's geometric analysis: $t_M^* = 18 < t_C^* = 19 = t_C^*$. Meridian breached first, and the breach was material. Chandrasekaran's non-compete obligation was extinguished at $t = 18$ months.*
+> *Rivera's geometric analysis: $t_M^* = 18 < t_C^* = 19$. Meridian breached first, and the breach was material. Chandrasekaran's non-compete obligation was extinguished at $t = 18$ months.*
 
 ---
 

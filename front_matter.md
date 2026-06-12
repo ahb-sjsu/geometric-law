@@ -65,7 +65,7 @@ For **citizens and policymakers** who believe that "equal justice under law" sho
 
 ### A Note on Scope
 
-This book does not claim that law is "merely" geometry. Human judgment, institutional context, political power, historical contingency --- these shape the law in ways that no mathematical framework fully captures. The claim is narrower and more precise: legal reasoning has geometric structure that its output format destroys, and making that structure visible would improve the audibility, consistency, and fairness of legal decisions.
+This book does not claim that law is "merely" geometry. Human judgment, institutional context, political power, historical contingency --- these shape the law in ways that no mathematical framework fully captures. The claim is narrower and more precise: legal reasoning has geometric structure that its output format destroys, and making that structure visible would improve the auditability, consistency, and fairness of legal decisions.
 
 Chapter 16 is honest about what the framework cannot yet explain. The eight dimensions are a modeling choice whose adequacy has not been fully validated across all legal domains. The legal metric has not been calibrated from large-scale case data. The conservation laws are conditional on assumptions that may not hold universally. The AI implementation described in Chapter 15 is a research programme, not a deployed system. These limitations are not hedges. They are the frontier.
 
