@@ -3,6 +3,12 @@
 **Andrew H. Bond**
 Senior Member, IEEE | San Jose State University
 
+> **Epistemic status (2026-07-14): posited framework with one instrumented corner.**
+> Admission-filter status ([xbse](https://github.com/ahb-sjsu/xbse)): **LeBSE is validated**
+> (US case law; labels from the CourtListener citation graph, a source independent of the
+> embedding). That validation covers structure-preservation in legal text embeddings — not the
+> book's broader jurisprudential claims, which remain *posited* theory at licensed strength.
+
 ---
 
 ## Part of the Geometric Series
