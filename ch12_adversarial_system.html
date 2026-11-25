@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Chapter 12: The Adversarial System as Manifold Exploration &mdash; Geometric Law</title>
   <meta name="description" content="Chapter 12: The Adversarial System as Manifold Exploration from Geometric Law: Symmetry, Invariance, and the Structure of Legal Reasoning, by Andrew H. Bond.">
+  <meta name="generator" content="geometric-series build kit">
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="stylesheet" href="../book/book.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,7 +14,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
 </head>
 
-<body data-book-slug="geometric-law">
+<body data-book-slug="geometric-law" data-chapter-id="ch12_adversarial_system">
   <nav id="main-nav">
     <div class="nav-inner">
       <a href="../index.html" class="nav-brand">
@@ -36,6 +37,11 @@
         <span class="breadcrumb-sep">&rsaquo;</span>
         <span class="breadcrumb-current">Chapter 12: The Adversarial System as Manifold Exploration</span>
       </nav>
+      <div class="chapter-nav-top">
+        <a href="ch11_sentencing_disparities.html" class="nav-prev">&larr; Chapter 11: Sentencing Disparities as Gauge Violation Tensors</a>
+        <a href="index.html" class="nav-toc">Contents</a>
+        <a href="ch13_contract_law.html" class="nav-next">Chapter 13: Contract Law as Boundary Construction &rarr;</a>
+      </div>
 
       <div class="chapter-content">
 <h1 id="chapter-12-the-adversarial-system-as-manifold-exploration">Chapter 12: The Adversarial System as Manifold Exploration</h1>
@@ -68,7 +74,7 @@
 <p>$$V(c_0) = \min_{\gamma_\delta} \max_{\gamma_\pi} \left[ \text{BF}_{\text{law}}(\gamma_\delta) - \text{BF}_{\text{law}}(\gamma_\pi) \right]$$</p>
 <p>where $\gamma_\pi$ is the plaintiff&rsquo;s path and $\gamma_\delta$ is the defendant&rsquo;s path.</p>
 <ul>
-<li>If $V(c_0) > 0$: the plaintiff prevails — the plaintiff&rsquo;s optimal path is shorter (less costly) than the defendant&rsquo;s optimal blocking strategy.</li>
+<li>If $V(c_0) &gt; 0$: the plaintiff prevails — the plaintiff&rsquo;s optimal path is shorter (less costly) than the defendant&rsquo;s optimal blocking strategy.</li>
 <li>If $V(c_0) \leq 0$: the defendant prevails — the defendant can block, lengthen, or redirect every path the plaintiff might take.</li>
 <li>If $V(c_0) \approx 0$: the case is close — the outcome depends on execution, evidence quality, and the judge&rsquo;s or jury&rsquo;s assessment.</li>
 </ul>
@@ -127,13 +133,13 @@
 <p>$$\text{Burden}(c_0, G) = \min_\gamma \text{BF}_{\text{law}}(\gamma) \quad \text{s.t. } \gamma \text{ starts at } c_0, \; \gamma \text{ ends in } G$$</p>
 <p>Different standards of proof correspond to different thresholds on the relative distance:</p>
 <p><strong>Preponderance of the evidence</strong> (civil cases): The plaintiff&rsquo;s optimal path must be shorter than the defendant&rsquo;s optimal path. The plaintiff wins if:</p>
-<p>$$\text{BF}_{\text{law}}(\gamma^*_\pi) < \text{BF}_{\text{law}}(\gamma^*_\delta)$$</p>
+<p>$$\text{BF}_{\text{law}}(\gamma^*_\pi) &lt; \text{BF}_{\text{law}}(\gamma^*_\delta)$$</p>
 <p>This is the &ldquo;more likely than not&rdquo; standard: the plaintiff&rsquo;s story (path) is more plausible (shorter) than the defendant&rsquo;s.</p>
 <p><strong>Clear and convincing evidence</strong> (civil cases with heightened stakes): The plaintiff&rsquo;s optimal path must be substantially shorter than the defendant&rsquo;s:</p>
-<p>$$\text{BF}_{\text{law}}(\gamma^*_\pi) < \alpha \cdot \text{BF}_{\text{law}}(\gamma^*_\delta)$$</p>
-<p>for some $\alpha < 1$ (e.g., $\alpha = 0.7$). The plaintiff must not merely prevail on the balance — she must prevail by a margin.</p>
+<p>$$\text{BF}_{\text{law}}(\gamma^*_\pi) &lt; \alpha \cdot \text{BF}_{\text{law}}(\gamma^*_\delta)$$</p>
+<p>for some $\alpha &lt; 1$ (e.g., $\alpha = 0.7$). The plaintiff must not merely prevail on the balance — she must prevail by a margin.</p>
 <p><strong>Beyond a reasonable doubt</strong> (criminal cases): The prosecution&rsquo;s path must be so short — the evidence so strong — that no reasonable alternative path exists:</p>
-<p>$$\text{BF}_{\text{law}}(\gamma^*_\pi) < \epsilon$$</p>
+<p>$$\text{BF}_{\text{law}}(\gamma^*_\pi) &lt; \epsilon$$</p>
 <p>for small $\epsilon$. The path to guilt must be so direct and well-supported that all alternative paths (paths to innocence) have costs that exceed any reasonable threshold.</p>
 <h3 id="burden-shifting-as-weight-re-assignment">Burden-Shifting as Weight Re-Assignment</h3>
 <p>Burden-shifting frameworks — like the McDonnell Douglas framework from Chapter 6 — correspond to <em>weight re-assignments</em> during the search. When the burden shifts from plaintiff to defendant, the edge weights change: dimensions that the plaintiff previously had to traverse are now the defendant&rsquo;s responsibility.</p>
@@ -144,11 +150,11 @@
 <h3 id="the-geometry-of-settlement">The Geometry of Settlement</h3>
 <p>Settlement is a vertex in $\mathcal{K}$ (or a new point interpolated between vertices) that both parties prefer to the expected outcome of continued litigation.</p>
 <p><strong>Definition (Settlement Region).</strong> A <em>settlement</em> is a vertex $c_s \in \mathcal{K}$ that both parties prefer to the expected outcome of continued litigation:</p>
-<p>$$c_s \in \{ c \in \mathcal{K} \mid U_\pi(c) > \mathbb{E}[U_\pi(\gamma^*_\pi)] \text{ and } U_\delta(c) > \mathbb{E}[U_\delta(\gamma^*_\delta)] \}$$</p>
+<p>$$c_s \in \{ c \in \mathcal{K} \mid U_\pi(c) &gt; \mathbb{E}[U_\pi(\gamma^*_\pi)] \text{ and } U_\delta(c) &gt; \mathbb{E}[U_\delta(\gamma^*_\delta)] \}$$</p>
 <p>where $U_\pi, U_\delta$ are the utility functions of plaintiff and defendant, and $\gamma^*_\pi, \gamma^*_\delta$ are their respective optimal litigation paths.</p>
 <p>Settlement occurs when the graph distance from the current vertex to a mutually acceptable vertex is shorter than either party&rsquo;s litigation path. In geometric terms, settlement is a <em>shortcut</em> — a path through the complex that avoids the costly adversarial search and arrives at a mutually acceptable outcome directly.</p>
 <p><strong>Proposition (Settlement Existence).</strong> A non-empty settlement region exists whenever the sum of both parties&rsquo; expected litigation costs exceeds the graph distance between their goal regions:</p>
-<p>$$\mathbb{E}[\text{BF}_{\text{law}}(\gamma^*_\pi)] + \mathbb{E}[\text{BF}_{\text{law}}(\gamma^*_\delta)] > d_{\mathcal{K}}(G_\pi, G_\delta)$$</p>
+<p>$$\mathbb{E}[\text{BF}_{\text{law}}(\gamma^*_\pi)] + \mathbb{E}[\text{BF}_{\text{law}}(\gamma^*_\delta)] &gt; d_{\mathcal{K}}(G_\pi, G_\delta)$$</p>
 <p>This proposition explains the fundamental empirical observation of civil litigation: the vast majority of cases settle. Settlement exists whenever litigation is expensive relative to the distance between the parties&rsquo; positions — which is almost always.</p>
 <h3 id="when-settlement-fails">When Settlement Fails</h3>
 <p>Settlement fails when the settlement region is empty — when no vertex exists that both parties prefer to litigation. This occurs in two geometric configurations:</p>
@@ -158,10 +164,10 @@
 <h3 id="the-economics-of-settlement">The Economics of Settlement</h3>
 <p>The geometric framework provides a clean derivation of the classic result from law and economics: cases settle when the sum of litigation costs exceeds the parties&rsquo; disagreement about the likely outcome.</p>
 <p>Let $p_\pi$ be the plaintiff&rsquo;s estimate of winning at trial, $p_\delta$ be the defendant&rsquo;s estimate, $D$ be the damages at stake, $C_\pi$ be the plaintiff&rsquo;s litigation cost, and $C_\delta$ be the defendant&rsquo;s litigation cost. The settlement region is non-empty when:</p>
-<p>$$p_\pi \cdot D - C_\pi < \text{settlement amount} < (1 - p_\delta) \cdot D + C_\delta$$</p>
+<p>$$p_\pi \cdot D - C_\pi &lt; \text{settlement amount} &lt; (1 - p_\delta) \cdot D + C_\delta$$</p>
 <p>This is equivalent to:</p>
-<p>$$C_\pi + C_\delta > (p_\pi - (1 - p_\delta)) \cdot D = (p_\pi + p_\delta - 1) \cdot D$$</p>
-<p>Settlement fails only when the parties&rsquo; combined optimism ($p_\pi + p_\delta - 1 > 0$, meaning both believe they are likely to win) exceeds the combined litigation costs. Since litigation costs are usually substantial, settlement is usually possible.</p>
+<p>$$C_\pi + C_\delta &gt; (p_\pi - (1 - p_\delta)) \cdot D = (p_\pi + p_\delta - 1) \cdot D$$</p>
+<p>Settlement fails only when the parties&rsquo; combined optimism ($p_\pi + p_\delta - 1 &gt; 0$, meaning both believe they are likely to win) exceeds the combined litigation costs. Since litigation costs are usually substantial, settlement is usually possible.</p>
 <hr />
 <blockquote>
 <p><strong>RUNNING EXAMPLE — SETTLEMENT NEGOTIATIONS IN EJAC v. CITY</strong></p>
@@ -178,7 +184,7 @@
 <h3 id="the-three-standards-of-appellate-review">The Three Standards of Appellate Review</h3>
 <p>An appeal is not a new search — it is a <em>re-evaluation</em> of the trial court&rsquo;s path under modified conditions. The standard of review determines what kind of re-evaluation the appellate court performs.</p>
 <p><strong>De novo review.</strong> The appellate court re-runs the search from scratch with the same start and goal but potentially different heuristics (different legal interpretations). De novo review applies to questions of law — the appellate court owes no deference to the trial court&rsquo;s legal conclusions. In geometric terms: the appellate court uses the same judicial complex but may apply a different connection (different precedential weights) to reach a different optimal path.</p>
-<p><strong>Abuse of discretion.</strong> The appellate court checks only whether the trial court&rsquo;s path is <em>within a neighborhood</em> of the optimal path — whether the chosen path&rsquo;s cost is within a tolerance $\epsilon$ of the shortest path. Abuse-of-discretion review applies to evidentiary rulings, case management decisions, and other matters within the trial court&rsquo;s discretion. In geometric terms: the appellate court verifies that $\text{BF}_{\text{law}}(\gamma_{\text{trial}}) < \text{BF}_{\text{law}}(\gamma^*) + \epsilon$, where $\gamma_{\text{trial}}$ is the trial court&rsquo;s path and $\gamma^*$ is the optimal path.</p>
+<p><strong>Abuse of discretion.</strong> The appellate court checks only whether the trial court&rsquo;s path is <em>within a neighborhood</em> of the optimal path — whether the chosen path&rsquo;s cost is within a tolerance $\epsilon$ of the shortest path. Abuse-of-discretion review applies to evidentiary rulings, case management decisions, and other matters within the trial court&rsquo;s discretion. In geometric terms: the appellate court verifies that $\text{BF}_{\text{law}}(\gamma_{\text{trial}}) &lt; \text{BF}_{\text{law}}(\gamma^*) + \epsilon$, where $\gamma_{\text{trial}}$ is the trial court&rsquo;s path and $\gamma^*$ is the optimal path.</p>
 <p><strong>Clearly erroneous.</strong> The appellate court checks whether the trial court&rsquo;s path crosses a boundary it should not have crossed — a factual error that places the path in the wrong region of the complex. Clearly-erroneous review applies to findings of fact. In geometric terms: the appellate court verifies that $\gamma_{\text{trial}}$ does not cross any regime boundaries that the evidence does not support.</p>
 <h3 id="appeals-as-error-correction">Appeals as Error Correction</h3>
 <p>The appellate system functions as an <em>error-correction mechanism</em> for the adversarial search. The trial-level search may produce a suboptimal path due to:</p>
@@ -286,7 +292,7 @@
 <p><strong>Definition (Minimax Value — Full).</strong> The minimax value with imperfect information:</p>
 <p>$$V(c_0) = \max_{\gamma_\pi \in \Gamma_\pi} \min_{\gamma_\delta \in \Gamma_\delta} \left[ U_\pi(c_0, \gamma_\pi, \gamma_\delta) \right]$$</p>
 <p>where $U_\pi$ is the plaintiff&rsquo;s utility function, defined as:</p>
-<p>$$U_\pi(c_0, \gamma_\pi, \gamma_\delta) = \begin{cases} +D & \text{if } \text{BF}_{\text{law}}(\gamma_\pi) < \text{BF}_{\text{law}}(\gamma_\delta) \text{ (plaintiff prevails)} \\ -C_\pi & \text{if } \text{BF}_{\text{law}}(\gamma_\pi) \geq \text{BF}_{\text{law}}(\gamma_\delta) \text{ (defendant prevails)} \end{cases}$$</p>
+<p>$$U_\pi(c_0, \gamma_\pi, \gamma_\delta) = \begin{cases} +D &amp; \text{if } \text{BF}_{\text{law}}(\gamma_\pi) &lt; \text{BF}_{\text{law}}(\gamma_\delta) \text{ (plaintiff prevails)} \\ -C_\pi &amp; \text{if } \text{BF}_{\text{law}}(\gamma_\pi) \geq \text{BF}_{\text{law}}(\gamma_\delta) \text{ (defendant prevails)} \end{cases}$$</p>
 <p>where $D$ is the damages and $C_\pi$ is the plaintiff&rsquo;s litigation cost.</p>
 <p><strong>Proposition (Pruning Correctness).</strong> A motion to dismiss is correctly granted iff $G_\pi$ is unreachable from $c_0$ in $\mathcal{K}$ under the legal constraints $\Phi$:</p>
 <p>$$\nexists \; \gamma : \gamma(0) = c_0, \; \gamma(\text{end}) \in G_\pi, \; \Phi(\gamma) = \text{true}$$</p>
@@ -294,8 +300,8 @@
 <p>$$|\{\gamma^* : \gamma^* = \arg\min \text{BF}_{\text{law}}(\gamma), \; \Phi(\gamma) = \text{true}\}| = 1$$</p>
 <p>and no disputed fact affects any edge in $\gamma^*$.</p>
 <p><strong>Proposition (Settlement Existence — Full).</strong> Let $p_\pi, p_\delta$ be the parties&rsquo; estimated probabilities of plaintiff success, $D$ be damages, $C_\pi, C_\delta$ be litigation costs. A settlement region $\mathcal{S}$ exists iff:</p>
-<p>$$p_\pi \cdot D - C_\pi < (1 - p_\delta) \cdot D + C_\delta$$</p>
-<p>i.e., $C_\pi + C_\delta > (p_\pi + p_\delta - 1) \cdot D$.</p>
+<p>$$p_\pi \cdot D - C_\pi &lt; (1 - p_\delta) \cdot D + C_\delta$$</p>
+<p>i.e., $C_\pi + C_\delta &gt; (p_\pi + p_\delta - 1) \cdot D$.</p>
 <p>The settlement region is $\mathcal{S} = [p_\pi \cdot D - C_\pi, \; (1 - p_\delta) \cdot D + C_\delta]$.</p>
 <p><strong>Definition (Appellate Path Re-Evaluation).</strong> For a trial court path $\gamma_{\text{trial}}$ and an appellate re-evaluation function $R$:</p>
 <ul>
@@ -304,7 +310,7 @@
 <li><strong>Clearly erroneous:</strong> $R(\gamma_{\text{trial}}) = \gamma_{\text{trial}}$ iff $\gamma_{\text{trial}}$ does not cross any unsupported regime boundaries; else $R(\gamma_{\text{trial}}) = \gamma'$ where $\gamma'$ is the corrected path.</li>
 </ul>
 <p><strong>Proposition (Adversarial Completeness).</strong> Let $\Gamma_\pi$ be the set of paths explored by the plaintiff and $\Gamma_\delta$ the set explored by the defendant. Under the assumption that each party explores all paths favorable to their position:</p>
-<p>$$\Gamma_\pi \cup \Gamma_\delta \supseteq \{\gamma : \text{BF}_{\text{law}}(\gamma) < T\}$$</p>
+<p>$$\Gamma_\pi \cup \Gamma_\delta \supseteq \{\gamma : \text{BF}_{\text{law}}(\gamma) &lt; T\}$$</p>
 <p>for some threshold $T$ determined by the litigation budget. That is, the union of the two search trees covers all low-cost paths in the complex.</p>
 <hr />
 <h2 id="notes-on-sources">Notes on Sources</h2>
@@ -312,7 +318,9 @@
       </div>
 
       <div class="chapter-nav-bottom">
-        <a href="index.html" class="nav-toc">&larr; Contents</a>
+        <a href="ch11_sentencing_disparities.html" class="nav-prev">&larr; Chapter 11: Sentencing Disparities as Gauge Violation Tensors</a>
+        <a href="index.html" class="nav-toc">Contents</a>
+        <a href="ch13_contract_law.html" class="nav-next">Chapter 13: Contract Law as Boundary Construction &rarr;</a>
       </div>
     </div>
   </article>
@@ -340,6 +348,7 @@
         {left: '\\\\(', right: '\\\\)', display: false},
         {left: '\\\\[', right: '\\\\]', display: true}
       ],
+      ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
       throwOnError: false
     });"></script>
 </body>

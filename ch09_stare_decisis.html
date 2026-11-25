@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Chapter 9: Stare Decisis as Parallel Transport &mdash; Geometric Law</title>
   <meta name="description" content="Chapter 9: Stare Decisis as Parallel Transport from Geometric Law: Symmetry, Invariance, and the Structure of Legal Reasoning, by Andrew H. Bond.">
+  <meta name="generator" content="geometric-series build kit">
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="stylesheet" href="../book/book.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,7 +14,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
 </head>
 
-<body data-book-slug="geometric-law">
+<body data-book-slug="geometric-law" data-chapter-id="ch09_stare_decisis">
   <nav id="main-nav">
     <div class="nav-inner">
       <a href="../index.html" class="nav-brand">
@@ -36,6 +37,11 @@
         <span class="breadcrumb-sep">&rsaquo;</span>
         <span class="breadcrumb-current">Chapter 9: Stare Decisis as Parallel Transport</span>
       </nav>
+      <div class="chapter-nav-top">
+        <a href="ch08_equal_protection.html" class="nav-prev">&larr; Chapter 8: Equal Protection as Gauge Invariance</a>
+        <a href="index.html" class="nav-toc">Contents</a>
+        <a href="ch10_legal_failures.html" class="nav-next">Chapter 10: Legal Failures as Geometric Pathologies &rarr;</a>
+      </div>
 
       <div class="chapter-content">
 <h1 id="chapter-9-stare-decisis-as-parallel-transport">Chapter 9: Stare Decisis as Parallel Transport</h1>
@@ -181,7 +187,7 @@
 <h3 id="the-critical-point">The Critical Point</h3>
 <p>Every phase transition has a <em>critical point</em> — the moment when the system shifts from one state to another. In the legal system, the critical point is the case that triggers the overruling. What determines when the critical point is reached?</p>
 <p>The geometric framework provides a criterion: the critical point is reached when the <em>holonomy around the doctrinal loop exceeds a threshold</em>.</p>
-<p>$$\|W(\gamma) - I\| > \theta_{\text{critical}}$$</p>
+<p>$$\|W(\gamma) - I\| &gt; \theta_{\text{critical}}$$</p>
 <p>where $W(\gamma)$ is the Wilson loop holonomy around the doctrinal loop, $I$ is the identity matrix, and $\theta_{\text{critical}}$ is the system&rsquo;s tolerance for inconsistency.</p>
 <p>When the holonomy is small — the transported rule is close to the original — the system tolerates the inconsistency. Stare decisis holds. When the holonomy grows — the transported rule diverges further from the original — the tension increases. At the critical point, the holonomy exceeds the system&rsquo;s tolerance, and a phase transition occurs: the precedent is overruled.</p>
 <p>This explains several empirical observations about overruling:</p>
@@ -202,7 +208,7 @@
 <p>Distinguishing is not the same as overruling. Overruling removes the precedent&rsquo;s weight deformation from the complex entirely. Distinguishing leaves the deformation in place but routes around it — the judge finds a path through the complex that does not pass through the neighborhood where the precedent&rsquo;s deformation is concentrated.</p>
 <p><strong>Definition (Distinguishing).</strong> <em>Distinguishing</em> a precedent $P$ at vertex $c_P$ means constructing a path $\gamma$ from the current case $c$ to the goal region $G$ that avoids the neighborhood $N_\epsilon(c_P)$ of the precedent:</p>
 <p>$$\gamma \cap N_\epsilon(c_P) = \emptyset$$</p>
-<p>where $N_\epsilon(c_P) = \{c_i \in \mathcal{K} : d_{\mathcal{K}}(c_i, c_P) < \epsilon\}$ is the $\epsilon$-neighborhood of the precedent vertex.</p>
+<p>where $N_\epsilon(c_P) = \{c_i \in \mathcal{K} : d_{\mathcal{K}}(c_i, c_P) &lt; \epsilon\}$ is the $\epsilon$-neighborhood of the precedent vertex.</p>
 <p>The cost of distinguishing is the <em>excess path length</em>: the difference between the shortest path through $N_\epsilon(c_P)$ (following the precedent) and the shortest path avoiding $N_\epsilon(c_P)$ (distinguishing). If the excess is small — if there is a nearly-as-short path that avoids the precedent — distinguishing is easy. If the excess is large — if the precedent is unavoidable — distinguishing is difficult or impossible, and the judge must either follow or overrule.</p>
 <h3 id="when-distinguishing-fails">When Distinguishing Fails</h3>
 <p>Distinguishing fails when the precedent&rsquo;s weight deformation covers the entire relevant region of the complex. If every path from the current case to the goal passes through the precedent&rsquo;s neighborhood, there is no route around it. The judge must either follow the precedent (accepting its weight deformation) or overrule it (performing graph surgery).</p>
@@ -242,7 +248,7 @@
 <p>Formally, the Court seeks the minimum-cost perturbation $\Delta w'$ such that:</p>
 <p>$$\|W(\gamma)\| \text{ is reduced below } \theta_{\text{critical}}$$</p>
 <p>subject to:</p>
-<p>$$\text{Cost}(\Delta w') = \sum_{i} w_{P_i} \cdot |\Delta w'(c_i, \cdot)| < \text{Benefit}(\Delta w')$$</p>
+<p>$$\text{Cost}(\Delta w') = \sum_{i} w_{P_i} \cdot |\Delta w'(c_i, \cdot)| &lt; \text{Benefit}(\Delta w')$$</p>
 <p>where the benefit is measured by the reduction in holonomy and the restoration of gauge invariance.</p>
 <p><strong>Step 5: Stare decisis as inertia.</strong> The doctrine of stare decisis corresponds to a <em>cost barrier</em> around established precedents — the legal system&rsquo;s inertia against weight changes. The height of the barrier is the accumulated reliance interest. The Court overrules only when the &ldquo;energy&rdquo; of the inconsistency exceeds the barrier height.</p>
 <h2 id="chapter-summary">Chapter Summary</h2>
@@ -295,7 +301,9 @@
       </div>
 
       <div class="chapter-nav-bottom">
-        <a href="index.html" class="nav-toc">&larr; Contents</a>
+        <a href="ch08_equal_protection.html" class="nav-prev">&larr; Chapter 8: Equal Protection as Gauge Invariance</a>
+        <a href="index.html" class="nav-toc">Contents</a>
+        <a href="ch10_legal_failures.html" class="nav-next">Chapter 10: Legal Failures as Geometric Pathologies &rarr;</a>
       </div>
     </div>
   </article>
@@ -323,6 +331,7 @@
         {left: '\\\\(', right: '\\\\)', display: false},
         {left: '\\\\[', right: '\\\\]', display: true}
       ],
+      ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
       throwOnError: false
     });"></script>
 </body>

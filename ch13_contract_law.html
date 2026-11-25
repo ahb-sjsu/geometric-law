@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Chapter 13: Contract Law as Boundary Construction &mdash; Geometric Law</title>
   <meta name="description" content="Chapter 13: Contract Law as Boundary Construction from Geometric Law: Symmetry, Invariance, and the Structure of Legal Reasoning, by Andrew H. Bond.">
+  <meta name="generator" content="geometric-series build kit">
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="stylesheet" href="../book/book.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,7 +14,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
 </head>
 
-<body data-book-slug="geometric-law">
+<body data-book-slug="geometric-law" data-chapter-id="ch13_contract_law">
   <nav id="main-nav">
     <div class="nav-inner">
       <a href="../index.html" class="nav-brand">
@@ -36,6 +37,11 @@
         <span class="breadcrumb-sep">&rsaquo;</span>
         <span class="breadcrumb-current">Chapter 13: Contract Law as Boundary Construction</span>
       </nav>
+      <div class="chapter-nav-top">
+        <a href="ch12_adversarial_system.html" class="nav-prev">&larr; Chapter 12: The Adversarial System as Manifold Exploration</a>
+        <a href="index.html" class="nav-toc">Contents</a>
+        <a href="ch14_international_law.html" class="nav-next">Chapter 14: International Law as Multi-Manifold Diplomacy &rarr;</a>
+      </div>
 
       <div class="chapter-content">
 <h1 id="chapter-13-contract-law-as-boundary-construction">Chapter 13: Contract Law as Boundary Construction</h1>
@@ -112,7 +118,7 @@
 <p>In the geometric framework, the distinction corresponds to the <em>depth</em> and <em>dimensionality</em> of the boundary crossing:</p>
 <p><strong>Definition (Breach Magnitude).</strong> The <em>magnitude</em> of a breach is the Mahalanobis distance from the breaching party&rsquo;s post-breach position to the boundary:</p>
 <p>$$\beta = d_M(\mathbf{v}_{\text{post-breach}}, \partial \mathcal{M}_\kappa)$$</p>
-<p>A material breach is a crossing where $\beta$ exceeds a threshold $\beta^*$ — the party has moved so far outside the contractual boundary that the contract&rsquo;s essential purpose has been defeated. A minor breach is a crossing where $\beta < \beta^*$ — the party has strayed beyond the boundary, but not so far that the contract is fundamentally compromised.</p>
+<p>A material breach is a crossing where $\beta$ exceeds a threshold $\beta^*$ — the party has moved so far outside the contractual boundary that the contract&rsquo;s essential purpose has been defeated. A minor breach is a crossing where $\beta &lt; \beta^*$ — the party has strayed beyond the boundary, but not so far that the contract is fundamentally compromised.</p>
 <p>The threshold $\beta^*$ is not fixed — it depends on the contract&rsquo;s structure. For a contract whose essential purpose is concentrated on a single dimension (e.g., a simple sale of goods, where the essential purpose is delivery of the goods), even a small crossing on that dimension is material. For a contract with obligations spread across multiple dimensions (e.g., a complex employment agreement), a crossing on a peripheral dimension may be minor even if the breach magnitude is non-trivial.</p>
 <p><strong>Proposition (Materiality as Dimensional Centrality).</strong> A breach on dimension $d_k$ is material if and only if $d_k$ is <em>central</em> to the contractual submanifold — that is, if removal of the $\Psi_j$ predicates involving $d_k$ would substantially change the topology of $\mathcal{M}_\kappa$:</p>
 <p>$$\text{Material breach on } d_k \iff \widetilde{H}_n(\mathcal{M}_\kappa) \ncong \widetilde{H}_n(\mathcal{M}_\kappa \setminus \Psi_k)$$</p>
@@ -123,8 +129,8 @@
 <p>In geometric terms, this is a question about the <em>temporal ordering of boundary crossings</em>. On the legal manifold, the parties&rsquo; positions evolve over time. The question is: which party&rsquo;s trajectory first crossed the contractual boundary?</p>
 <p><strong>Definition (Temporal Breach Ordering).</strong> Let $\mathbf{v}_A(t)$ and $\mathbf{v}_B(t)$ be the time-parameterized trajectories of parties $A$ and $B$ on the legal manifold. The <em>first breach time</em> for party $X$ is:</p>
 <p>$$t_X^* = \inf \{ t : \mathbf{v}_X(t) \notin \mathcal{M}_\kappa \}$$</p>
-<p>Party $X$ breached first if $t_X^* < t_Y^*$. The doctrine of prior material breach holds that if $X$ committed a material breach at time $t_X^*$, then $Y$&rsquo;s obligations under the contract are excused for $t > t_X^*$ — $Y$ cannot breach a contract that $X$ has already materially breached.</p>
-<p>For Rivera&rsquo;s case: Meridian reassigned Chandrasekaran&rsquo;s responsibilities at time $t_M^*$ (when the restructuring occurred). Chandrasekaran joined NovaTech at time $t_C^*$ (after she refused the transition role). If $t_M^* < t_C^*$ and Meridian&rsquo;s restructuring constituted a material breach (crossing the boundary on the entitlement dimension, $d_1$, far enough to defeat the contract&rsquo;s essential purpose of providing a CTO role), then Chandrasekaran&rsquo;s subsequent &ldquo;breach&rdquo; of the non-compete clause was excused — she was no longer bound by a contract that Meridian had already materially breached.</p>
+<p>Party $X$ breached first if $t_X^* &lt; t_Y^*$. The doctrine of prior material breach holds that if $X$ committed a material breach at time $t_X^*$, then $Y$&rsquo;s obligations under the contract are excused for $t &gt; t_X^*$ — $Y$ cannot breach a contract that $X$ has already materially breached.</p>
+<p>For Rivera&rsquo;s case: Meridian reassigned Chandrasekaran&rsquo;s responsibilities at time $t_M^*$ (when the restructuring occurred). Chandrasekaran joined NovaTech at time $t_C^*$ (after she refused the transition role). If $t_M^* &lt; t_C^*$ and Meridian&rsquo;s restructuring constituted a material breach (crossing the boundary on the entitlement dimension, $d_1$, far enough to defeat the contract&rsquo;s essential purpose of providing a CTO role), then Chandrasekaran&rsquo;s subsequent &ldquo;breach&rdquo; of the non-compete clause was excused — she was no longer bound by a contract that Meridian had already materially breached.</p>
 <hr />
 <blockquote>
 <p><strong>RUNNING EXAMPLE — WHO CROSSED THE BOUNDARY FIRST?</strong></p>
@@ -135,7 +141,7 @@
 <p><em>$d_7$ (Remedial scope): The transition role comes with reduced compensation. This is a crossing on $d_7$. Magnitude: $\beta_7 = 0.6$.</em></p>
 <p><em>Is the breach material? The CTO role was the contract&rsquo;s essential purpose for Chandrasekaran — it was the consideration she demanded in exchange for the non-compete restriction and her departure from her previous employer. Removing the CTO role changes the topology of the contractual submanifold: without the CTO obligation, the contract reduces to a bare non-compete with reduced compensation — a fundamentally different agreement. The breach is material.</em></p>
 <p><em>At $t = 19$ months, Chandrasekaran joins NovaTech. She crosses the non-compete boundary on $d_1$. But because Meridian&rsquo;s material breach at $t = 18$ months excused her further performance, this crossing is not a breach — it is movement through a boundary that no longer exists, because the contract that created it was already materially breached.</em></p>
-<p><em>Rivera&rsquo;s geometric analysis: $t_M^* = 18 < t_C^* = 19$. Meridian breached first, and the breach was material. Chandrasekaran&rsquo;s non-compete obligation was extinguished at $t = 18$ months.</em></p>
+<p><em>Rivera&rsquo;s geometric analysis: $t_M^* = 18 &lt; t_C^* = 19$. Meridian breached first, and the breach was material. Chandrasekaran&rsquo;s non-compete obligation was extinguished at $t = 18$ months.</em></p>
 </blockquote>
 <hr />
 <h2 id="constructive-termination-as-geometric-deformation">Constructive Termination as Geometric Deformation</h2>
@@ -184,7 +190,7 @@
 <p>For Chandrasekaran, the pre-contract position was: employed at her previous company, no non-compete restriction, no Meridian stock options. The reliance interest compensates her for the costs of changing positions — the opportunities she gave up by joining Meridian, the moving costs, the career disruption.</p>
 <p>Reliance damages are typically smaller than expectation damages because they do not include the benefit of the bargain — only the cost of entering into it. In geometric terms, $d_M(\mathbf{v}_{\text{pre-contract}}, \mathbf{v}_{\text{actual}}) \leq d_M(\mathbf{v}_{\text{expected}}, \mathbf{v}_{\text{actual}})$ whenever the contract would have been beneficial to the non-breaching party, which it usually is (otherwise the party would not have entered the contract).</p>
 <p><strong>Specific performance: forced path completion.</strong> Specific performance compels the breaching party to complete the contractual path — to return to the contractual interior and perform as promised. In geometric terms, specific performance forces the breaching party&rsquo;s trajectory back inside the contractual submanifold:</p>
-<p>$$\mathbf{v}_{\text{breacher}}(t) \in \mathcal{M}_\kappa \quad \text{for all } t > t_{\text{order}}$$</p>
+<p>$$\mathbf{v}_{\text{breacher}}(t) \in \mathcal{M}_\kappa \quad \text{for all } t &gt; t_{\text{order}}$$</p>
 <p>Specific performance is the most direct remedy — it restores the contractual path rather than substituting monetary compensation. But it is available only when damages are inadequate (the contractual path cannot be replicated by money) and enforcement is feasible (the court can monitor compliance). In Chandrasekaran&rsquo;s case, specific performance — ordering Meridian to reinstate her as CTO — may be impractical: the relationship has deteriorated, the company has restructured, and forcing a hostile reinstatement is unlikely to produce genuine performance.</p>
 <h3 id="the-mitigation-doctrine-as-geodesic-efficiency">The Mitigation Doctrine as Geodesic Efficiency</h3>
 <p>The duty to mitigate damages has a natural geometric interpretation. The non-breaching party must take reasonable steps to minimize the distance between their actual position and their expected position — they must seek the nearest achievable position on the manifold that approximates their contractual expectation.</p>
@@ -231,7 +237,7 @@
 <h3 id="the-theory">The Theory</h3>
 <p>The economic theory of efficient breach holds that a party should breach a contract whenever the gains from breach exceed the expectation damages. In geometric terms: if a path <em>outside</em> the contractual submanifold reaches a better position (higher social surplus) than the contracted path, and the breaching party compensates the non-breaching party for the expectation loss, the breach is efficient.</p>
 <p><strong>Definition (Efficient Breach).</strong> A breach is <em>efficient</em> if the breaching party&rsquo;s gain exceeds the non-breaching party&rsquo;s loss, measured as Mahalanobis distances:</p>
-<p>$$d_M(\mathbf{v}_{\text{breach}}, \mathbf{v}_{\text{perform}})_{\text{breacher}} > d_M(\mathbf{v}_{\text{expected}}, \mathbf{v}_{\text{mitigated}})_{\text{non-breacher}}$$</p>
+<p>$$d_M(\mathbf{v}_{\text{breach}}, \mathbf{v}_{\text{perform}})_{\text{breacher}} &gt; d_M(\mathbf{v}_{\text{expected}}, \mathbf{v}_{\text{mitigated}})_{\text{non-breacher}}$$</p>
 <p>where the left side is the breacher&rsquo;s gain from breaching (the distance from the performance position to the more favorable breach position) and the right side is the non-breacher&rsquo;s expectation loss after mitigation.</p>
 <h3 id="the-geometric-critique">The Geometric Critique</h3>
 <p>The geometric framework raises a subtlety about efficient breach. The Mahalanobis distance captures <em>proximity</em> in eight-dimensional legal space, but it does not capture <em>Hohfeldian transformation</em>. When Meridian breaches the contract with Chandrasekaran, the breach does not merely move the parties to different positions on the manifold — it <em>transforms the Hohfeldian structure</em>. Chandrasekaran loses a right; Meridian sheds a duty. The transformation has gauge-theoretic consequences that a scalar distance measure does not capture.</p>
@@ -282,7 +288,7 @@
 <p>At $t = 18$ months: Meridian restructures. $\Psi_1$ is violated — the CTO role as contracted no longer exists. Meridian&rsquo;s position moves to $\mathbf{v}_M(18) \notin \mathcal{M}_\kappa$.</p>
 <p>At $t = 19$ months: Chandrasekaran joins NovaTech. $\Psi_4$ would be violated if the contract were still in effect.</p>
 <p><strong>Step 3: Determine first breach.</strong></p>
-<p>$t_M^* = 18 < t_C^* = 19$. Meridian breached first.</p>
+<p>$t_M^* = 18 &lt; t_C^* = 19$. Meridian breached first.</p>
 <p><strong>Step 4: Assess materiality.</strong></p>
 <p>The CTO role ($\Psi_1$) is central to the contractual submanifold. Removing $\Psi_1$ changes the topology of $\mathcal{M}_\kappa$ — without the CTO role, the contract reduces to a bare non-compete, which is not the bargain Chandrasekaran made. The breach is material.</p>
 <p>The breach magnitude on $d_1$: $\beta_1 = d_M(\mathbf{v}_C^{\text{contracted CTO}}, \mathbf{v}_C^{\text{transition role}}) = 0.85$ (the transition role is almost entirely outside the contracted CTO region).</p>
@@ -348,11 +354,11 @@
 <p>$$\mathcal{M}_\kappa = \{ \sigma \in \mathcal{K} \mid \Psi_j(\sigma) = \text{true}, \; j = 1, \ldots, J \}$$</p>
 <p>with boundary $\partial \mathcal{M}_\kappa = \overline{\mathcal{M}_\kappa} \setminus \text{int}(\mathcal{M}_\kappa)$, where the closure and interior are defined with respect to the Mahalanobis metric on $\mathcal{K}$.</p>
 <p><strong>Definition (Breach Magnitude).</strong> The breach magnitude for party $X$ at time $t$ is:</p>
-<p>$$\beta_X(t) = \begin{cases} 0 & \text{if } \mathbf{v}_X(t) \in \mathcal{M}_\kappa \\ d_M(\mathbf{v}_X(t), \partial \mathcal{M}_\kappa) & \text{if } \mathbf{v}_X(t) \notin \mathcal{M}_\kappa \end{cases}$$</p>
-<p><strong>Proposition (Prior Material Breach).</strong> Let $t_A^*$ and $t_B^*$ be the first breach times for parties $A$ and $B$. If $t_A^* < t_B^*$ and $\beta_A(t_A^*) > \beta^*$ (material breach), then $B$&rsquo;s obligations are excused for $t > t_A^*$, and $\beta_B(t) = 0$ for $t > t_A^*$ by definition (no breach where no obligation exists).</p>
+<p>$$\beta_X(t) = \begin{cases} 0 &amp; \text{if } \mathbf{v}_X(t) \in \mathcal{M}_\kappa \\ d_M(\mathbf{v}_X(t), \partial \mathcal{M}_\kappa) &amp; \text{if } \mathbf{v}_X(t) \notin \mathcal{M}_\kappa \end{cases}$$</p>
+<p><strong>Proposition (Prior Material Breach).</strong> Let $t_A^*$ and $t_B^*$ be the first breach times for parties $A$ and $B$. If $t_A^* &lt; t_B^*$ and $\beta_A(t_A^*) &gt; \beta^*$ (material breach), then $B$&rsquo;s obligations are excused for $t &gt; t_A^*$, and $\beta_B(t) = 0$ for $t &gt; t_A^*$ by definition (no breach where no obligation exists).</p>
 <p><strong>Definition (Constructive Breach).</strong> Party $A$ commits a constructive breach at time $t$ if:</p>
 <p>$$\mathbf{v}_B \in \text{int}(\mathcal{M}_\kappa(t - \epsilon)) \quad \text{and} \quad \mathbf{v}_B \notin \mathcal{M}_\kappa(t)$$</p>
-<p>for all sufficiently small $\epsilon > 0$, where $\mathcal{M}_\kappa(t)$ is the submanifold as modified by $A$&rsquo;s actions. The breach is constructive because $B$ has not moved; $A$ has changed the boundary.</p>
+<p>for all sufficiently small $\epsilon &gt; 0$, where $\mathcal{M}_\kappa(t)$ is the submanifold as modified by $A$&rsquo;s actions. The breach is constructive because $B$ has not moved; $A$ has changed the boundary.</p>
 <p><strong>Theorem (Expectation Damages as Geodesic Distance).</strong> The expectation damages equal the Mahalanobis distance from the mitigated position to the expected position, converted to monetary units via the remedial-dimension calibration:</p>
 <p>$$D_{\text{expect}} = \lambda_7 \cdot d_M(\mathbf{v}_{\text{expected}}, \mathbf{v}_{\text{mitigated}})$$</p>
 <p>where $\lambda_7$ is the monetary scale factor on the remedial dimension $d_7$.</p>
@@ -360,7 +366,7 @@
 <p>$$\min_{\mathbf{v} \in \mathcal{A}} d_M(\mathbf{v}_{\text{expected}}, \mathbf{v})$$</p>
 <p>where $\mathcal{A} \subset \mathcal{K}$ is the achievable set (positions reachable by reasonable effort). This is a geodesic projection problem on the legal manifold, solvable by standard convex optimization when $\mathcal{A}$ is convex in the Mahalanobis metric.</p>
 <p><strong>Definition (Contract Network Stability).</strong> A contract network $\mathcal{G} = (P, E)$ is <em>stable</em> if no single breach can propagate to cause a cascade of boundary violations:</p>
-<p>$$\forall (i, j) \in E: \quad \beta_{ij} > \beta^* \implies \sum_{(k, l) \neq (i,j)} \mathbb{1}[\beta_{kl}(t + \Delta t) > \beta^*] = 0$$</p>
+<p>$$\forall (i, j) \in E: \quad \beta_{ij} &gt; \beta^* \implies \sum_{(k, l) \neq (i,j)} \mathbb{1}[\beta_{kl}(t + \Delta t) &gt; \beta^*] = 0$$</p>
 <p>A network is <em>fragile</em> if a single material breach propagates to at least one other contract, and <em>systemically fragile</em> if a single breach can cascade to a positive fraction of the network.</p>
 <hr />
 <h2 id="notes-on-sources">Notes on Sources</h2>
@@ -368,7 +374,9 @@
       </div>
 
       <div class="chapter-nav-bottom">
-        <a href="index.html" class="nav-toc">&larr; Contents</a>
+        <a href="ch12_adversarial_system.html" class="nav-prev">&larr; Chapter 12: The Adversarial System as Manifold Exploration</a>
+        <a href="index.html" class="nav-toc">Contents</a>
+        <a href="ch14_international_law.html" class="nav-next">Chapter 14: International Law as Multi-Manifold Diplomacy &rarr;</a>
       </div>
     </div>
   </article>
@@ -396,6 +404,7 @@
         {left: '\\\\(', right: '\\\\)', display: false},
         {left: '\\\\[', right: '\\\\]', display: true}
       ],
+      ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
       throwOnError: false
     });"></script>
 </body>

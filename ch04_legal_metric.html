@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Chapter 4: The Legal Metric &mdash; Geometric Law</title>
   <meta name="description" content="Chapter 4: The Legal Metric from Geometric Law: Symmetry, Invariance, and the Structure of Legal Reasoning, by Andrew H. Bond.">
+  <meta name="generator" content="geometric-series build kit">
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="stylesheet" href="../book/book.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,7 +14,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
 </head>
 
-<body data-book-slug="geometric-law">
+<body data-book-slug="geometric-law" data-chapter-id="ch04_legal_metric">
   <nav id="main-nav">
     <div class="nav-inner">
       <a href="../index.html" class="nav-brand">
@@ -36,6 +37,11 @@
         <span class="breadcrumb-sep">&rsaquo;</span>
         <span class="breadcrumb-current">Chapter 4: The Legal Metric</span>
       </nav>
+      <div class="chapter-nav-top">
+        <a href="ch03_judicial_complex.html" class="nav-prev">&larr; Chapter 3: The Judicial Reasoning Space</a>
+        <a href="index.html" class="nav-toc">Contents</a>
+        <a href="ch05_hohfeldian_group.html" class="nav-next">Chapter 5: The $D_4$ Hohfeldian Group &rarr;</a>
+      </div>
 
       <div class="chapter-content">
 <h1 id="chapter-4-the-legal-metric">Chapter 4: The Legal Metric</h1>
@@ -132,11 +138,11 @@
 <h3 id="component-3-hierarchical-cost">Component 3: Hierarchical Cost</h3>
 <p>The hierarchical cost function $h(\ell(c_i), \ell(c_j))$ encodes the asymmetry of legal authority:</p>
 <p>$$h(\ell_i, \ell_j) = \begin{cases}
-0 & \text{if } \ell_i > \ell_j \text{ (binding: higher court to lower)} \\
-\eta & \text{if } \ell_i = \ell_j \text{ (persuasive: same level)} \\
-\infty & \text{if } \ell_i < \ell_j \text{ (reverse direction: lower to higher)}
+0 &amp; \text{if } \ell_i &gt; \ell_j \text{ (binding: higher court to lower)} \\
+\eta &amp; \text{if } \ell_i = \ell_j \text{ (persuasive: same level)} \\
+\infty &amp; \text{if } \ell_i &lt; \ell_j \text{ (reverse direction: lower to higher)}
 \end{cases}$$</p>
-<p>where $\eta > 0$ is a persuasive-authority penalty.</p>
+<p>where $\eta &gt; 0$ is a persuasive-authority penalty.</p>
 <p>This makes the edge weight <em>asymmetric</em>: $w(c_i \to c_j) \neq w(c_j \to c_i)$ in general. A Supreme Court precedent binds a district court at zero cost (the district court must follow it). A district court opinion is merely persuasive to a circuit court at cost $\eta$ (the circuit court may consider it but is not bound). And a district court opinion has no binding authority at the Supreme Court level — the reverse edge has infinite cost.</p>
 <p>The asymmetry is not a modeling choice. It is a structural feature of the legal system, encoded in the Constitution (Article III) and in the doctrine of stare decisis.</p>
 <h2 id="legal-friction">Legal Friction</h2>
@@ -193,9 +199,9 @@
 <p>This is the shortest-path distance from $c_0$ to $G$ in the weighted directed graph $\mathcal{K}$.</p>
 <h3 id="standards-of-proof-as-distance-thresholds">Standards of Proof as Distance Thresholds</h3>
 <p>Different standards of proof correspond to different thresholds on this distance. The standard of proof determines how much shorter the plaintiff&rsquo;s optimal path must be relative to the defendant&rsquo;s optimal path:</p>
-<p><strong>Preponderance of the evidence:</strong> $\text{BF}_{\text{law}}(\gamma^*_\pi) < \text{BF}_{\text{law}}(\gamma^*_\delta)$. The plaintiff&rsquo;s optimal path is shorter than the defendant&rsquo;s. In graph terms: the distance from the facts to the plaintiff&rsquo;s goal is less than the distance from the facts to the defendant&rsquo;s goal. This is the standard in civil cases.</p>
-<p><strong>Clear and convincing evidence:</strong> $\text{BF}_{\text{law}}(\gamma^*_\pi) < \alpha \cdot \text{BF}_{\text{law}}(\gamma^*_\delta)$ for some $\alpha < 1$. The plaintiff&rsquo;s path must be <em>substantially</em> shorter — not just shorter, but shorter by a margin. This is the standard for fraud claims, some involuntary commitment proceedings, and other cases where the stakes are high.</p>
-<p><strong>Beyond reasonable doubt:</strong> $\text{BF}_{\text{law}}(\gamma^*_\pi) < \epsilon$ for small $\epsilon$. The path to guilt is so short — the evidence so overwhelming — that no reasonable alternative path exists. The threshold $\epsilon$ is not zero (absolute certainty is not required) but it is very small. This is the criminal standard.</p>
+<p><strong>Preponderance of the evidence:</strong> $\text{BF}_{\text{law}}(\gamma^*_\pi) &lt; \text{BF}_{\text{law}}(\gamma^*_\delta)$. The plaintiff&rsquo;s optimal path is shorter than the defendant&rsquo;s. In graph terms: the distance from the facts to the plaintiff&rsquo;s goal is less than the distance from the facts to the defendant&rsquo;s goal. This is the standard in civil cases.</p>
+<p><strong>Clear and convincing evidence:</strong> $\text{BF}_{\text{law}}(\gamma^*_\pi) &lt; \alpha \cdot \text{BF}_{\text{law}}(\gamma^*_\delta)$ for some $\alpha &lt; 1$. The plaintiff&rsquo;s path must be <em>substantially</em> shorter — not just shorter, but shorter by a margin. This is the standard for fraud claims, some involuntary commitment proceedings, and other cases where the stakes are high.</p>
+<p><strong>Beyond reasonable doubt:</strong> $\text{BF}_{\text{law}}(\gamma^*_\pi) &lt; \epsilon$ for small $\epsilon$. The path to guilt is so short — the evidence so overwhelming — that no reasonable alternative path exists. The threshold $\epsilon$ is not zero (absolute certainty is not required) but it is very small. This is the criminal standard.</p>
 <p>The geometric interpretation makes the relationship among these standards precise. They are not three different &ldquo;levels of confidence&rdquo; (a psychological notion that resists formalization). They are three different <em>distance thresholds</em> on the same graph (a mathematical notion that admits computation).</p>
 <h3 id="burden-shifting-as-weight-reassignment">Burden-Shifting as Weight Reassignment</h3>
 <p>When the burden shifts — as in the McDonnell Douglas framework — the edge weights change: dimensions that the plaintiff previously had to traverse become the defendant&rsquo;s responsibility.</p>
@@ -323,7 +329,9 @@
       </div>
 
       <div class="chapter-nav-bottom">
-        <a href="index.html" class="nav-toc">&larr; Contents</a>
+        <a href="ch03_judicial_complex.html" class="nav-prev">&larr; Chapter 3: The Judicial Reasoning Space</a>
+        <a href="index.html" class="nav-toc">Contents</a>
+        <a href="ch05_hohfeldian_group.html" class="nav-next">Chapter 5: The $D_4$ Hohfeldian Group &rarr;</a>
       </div>
     </div>
   </article>
@@ -351,6 +359,7 @@
         {left: '\\\\(', right: '\\\\)', display: false},
         {left: '\\\\[', right: '\\\\]', display: true}
       ],
+      ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
       throwOnError: false
     });"></script>
 </body>

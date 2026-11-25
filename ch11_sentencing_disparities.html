@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Chapter 11: Sentencing Disparities as Gauge Violation Tensors &mdash; Geometric Law</title>
   <meta name="description" content="Chapter 11: Sentencing Disparities as Gauge Violation Tensors from Geometric Law: Symmetry, Invariance, and the Structure of Legal Reasoning, by Andrew H. Bond.">
+  <meta name="generator" content="geometric-series build kit">
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="stylesheet" href="../book/book.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,7 +14,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
 </head>
 
-<body data-book-slug="geometric-law">
+<body data-book-slug="geometric-law" data-chapter-id="ch11_sentencing_disparities">
   <nav id="main-nav">
     <div class="nav-inner">
       <a href="../index.html" class="nav-brand">
@@ -36,6 +37,11 @@
         <span class="breadcrumb-sep">&rsaquo;</span>
         <span class="breadcrumb-current">Chapter 11: Sentencing Disparities as Gauge Violation Tensors</span>
       </nav>
+      <div class="chapter-nav-top">
+        <a href="ch10_legal_failures.html" class="nav-prev">&larr; Chapter 10: Legal Failures as Geometric Pathologies</a>
+        <a href="index.html" class="nav-toc">Contents</a>
+        <a href="ch12_adversarial_system.html" class="nav-next">Chapter 12: The Adversarial System as Manifold Exploration &rarr;</a>
+      </div>
 
       <div class="chapter-content">
 <h1 id="chapter-11-sentencing-disparities-as-gauge-violation-tensors">Chapter 11: Sentencing Disparities as Gauge Violation Tensors</h1>
@@ -175,9 +181,9 @@
 <h2 id="the-structure-of-the-tensor">The Structure of the Tensor</h2>
 <h3 id="symmetry-properties">Symmetry Properties</h3>
 <p>The gauge violation tensor has structural properties that constrain its form and reveal the geometry of the underlying injustice.</p>
-<p><strong>Non-negativity.</strong> Each entry $V_{ij} \geq 0$, because the tensor measures the absolute magnitude of the gauge violation, not its direction. A system that systematically sentences Black defendants more harshly and a system that systematically sentences Black defendants more leniently both have $V_{11} > 0$. The direction of the violation is captured by a <em>signed</em> version of the tensor:</p>
+<p><strong>Non-negativity.</strong> Each entry $V_{ij} \geq 0$, because the tensor measures the absolute magnitude of the gauge violation, not its direction. A system that systematically sentences Black defendants more harshly and a system that systematically sentences Black defendants more leniently both have $V_{11} &gt; 0$. The direction of the violation is captured by a <em>signed</em> version of the tensor:</p>
 <p>$$V_{ij}^{\text{signed}} = \frac{1}{|S|} \sum_{s \in S} \frac{O_j(\tau_i(s)) - O_j(s)}{O_j(s)}$$</p>
-<p>The signed tensor reveals which group is disadvantaged: $V_{ij}^{\text{signed}} > 0$ means group $A$ receives harsher treatment; $V_{ij}^{\text{signed}} < 0$ means group $B$ does.</p>
+<p>The signed tensor reveals which group is disadvantaged: $V_{ij}^{\text{signed}} &gt; 0$ means group $A$ receives harsher treatment; $V_{ij}^{\text{signed}} &lt; 0$ means group $B$ does.</p>
 <p><strong>Row structure.</strong> Each row of the tensor corresponds to a single transformation (e.g., race swap). The row sum is the total gauge violation due to that transformation across all outcome dimensions:</p>
 <p>$$V_{i \cdot} = \sum_j V_{ij}$$</p>
 <p>A high row sum means that the transformation produces large gauge violations across many outcome dimensions — the system is comprehensively biased along that axis.</p>
@@ -213,15 +219,15 @@
 <p>$$V_{(ik)j} = V_{ij}^{\text{combined}} - V_{ij}^{\text{separate}} - V_{kj}^{\text{separate}}$$</p>
 <p>where $V_{ij}^{\text{combined}}$ is the gauge violation when both characteristics $i$ and $k$ are transformed simultaneously, and $V_{ij}^{\text{separate}}$ and $V_{kj}^{\text{separate}}$ are the violations when each is transformed alone.</p>
 <p>If $V_{(ik)j} = 0$, the gauge violations are <em>additive</em>: the combined violation equals the sum of the individual violations. There is no intersectional effect.</p>
-<p>If $V_{(ik)j} > 0$, the gauge violations are <em>superadditive</em>: the combined violation exceeds the sum of the individual violations. The intersection creates <em>additional</em> discrimination beyond what either axis produces alone.</p>
-<p>If $V_{(ik)j} < 0$, the gauge violations are <em>subadditive</em>: the combined violation is less than the sum of the individual violations. The intersection provides a <em>protective</em> effect — discrimination along one axis is partially offset by the other.</p>
+<p>If $V_{(ik)j} &gt; 0$, the gauge violations are <em>superadditive</em>: the combined violation exceeds the sum of the individual violations. The intersection creates <em>additional</em> discrimination beyond what either axis produces alone.</p>
+<p>If $V_{(ik)j} &lt; 0$, the gauge violations are <em>subadditive</em>: the combined violation is less than the sum of the individual violations. The intersection provides a <em>protective</em> effect — discrimination along one axis is partially offset by the other.</p>
 <h3 id="the-intersectional-tensor">The Intersectional Tensor</h3>
 <p>The full intersectional analysis extends the gauge violation tensor from a matrix to a higher-order tensor. The second-order intersectional tensor $V_{ikj}$ has three indices: transformation $i$, transformation $k$, and outcome $j$. Each entry measures the <em>interaction effect</em> between two gauge transformations.</p>
 <p>For $n$ transformations and $m$ outcomes, the full intersectional analysis requires computing $\binom{n}{2} \times m$ interaction terms. For the five transformations and five outcomes used above, this is $10 \times 5 = 50$ interaction terms — a substantial but tractable computation.</p>
 <p>The most important intersectional terms are typically:</p>
 <ul>
 <li>
-<p>$V_{(12)1}$ (race $\times$ gender interaction on sentence): Does the racial disparity in sentencing differ by gender? If $V_{(12)1} > 0$, Black men face <em>more</em> racial discrimination than Black women (superadditive). If $V_{(12)1} < 0$, Black women face <em>less</em> racial discrimination than Black men (subadditive, but note this could mean Black women face a different form of intersectional discrimination that is not captured by the sentencing outcome).</p>
+<p>$V_{(12)1}$ (race $\times$ gender interaction on sentence): Does the racial disparity in sentencing differ by gender? If $V_{(12)1} &gt; 0$, Black men face <em>more</em> racial discrimination than Black women (superadditive). If $V_{(12)1} &lt; 0$, Black women face <em>less</em> racial discrimination than Black men (subadditive, but note this could mean Black women face a different form of intersectional discrimination that is not captured by the sentencing outcome).</p>
 </li>
 <li>
 <p>$V_{(13)2}$ (race $\times$ SES interaction on bail): Does the socioeconomic disparity in bail differ by race? This captures the compounding of racial and class disadvantage in pretrial detention.</p>
@@ -231,13 +237,13 @@
 <p>The intersectional tensor makes specific empirical predictions that can be tested against sentencing data:</p>
 <ol>
 <li>
-<p><strong>Prediction:</strong> $V_{(12)1} > 0$ — the race-gender interaction on sentencing is superadditive. Black men face more racial discrimination in sentencing than Black women. This prediction is consistent with the Sentencing Commission&rsquo;s finding that gender and race interact: the 19.1% racial disparity is concentrated among male defendants.</p>
+<p><strong>Prediction:</strong> $V_{(12)1} &gt; 0$ — the race-gender interaction on sentencing is superadditive. Black men face more racial discrimination in sentencing than Black women. This prediction is consistent with the Sentencing Commission&rsquo;s finding that gender and race interact: the 19.1% racial disparity is concentrated among male defendants.</p>
 </li>
 <li>
-<p><strong>Prediction:</strong> $V_{(13)2} > 0$ — the race-SES interaction on bail is superadditive. Poor Black defendants face more racial discrimination in bail than affluent Black defendants. This prediction follows from the role of &ldquo;community ties&rdquo; and &ldquo;ability to pay&rdquo; in bail decisions, both of which are simultaneously race- and SES-correlated.</p>
+<p><strong>Prediction:</strong> $V_{(13)2} &gt; 0$ — the race-SES interaction on bail is superadditive. Poor Black defendants face more racial discrimination in bail than affluent Black defendants. This prediction follows from the role of &ldquo;community ties&rdquo; and &ldquo;ability to pay&rdquo; in bail decisions, both of which are simultaneously race- and SES-correlated.</p>
 </li>
 <li>
-<p><strong>Prediction:</strong> $V_{(25)1} > 0$ — the gender-citizenship interaction on sentencing is superadditive. Non-citizen women face more gender discrimination in sentencing than citizen women. This prediction follows from the compounding of immigration detention and gender norms.</p>
+<p><strong>Prediction:</strong> $V_{(25)1} &gt; 0$ — the gender-citizenship interaction on sentencing is superadditive. Non-citizen women face more gender discrimination in sentencing than citizen women. This prediction follows from the compounding of immigration detention and gender norms.</p>
 </li>
 </ol>
 <p>Each prediction is testable using existing sentencing data. The tensor framework converts vague claims about &ldquo;intersectionality&rdquo; into precise, quantitative predictions about specific interaction terms.</p>
@@ -286,7 +292,7 @@
 <p>What level of gauge violation is acceptable? The framework does not prescribe a specific threshold — that is a policy decision. But it provides a framework for thinking about benchmarks:</p>
 <p><strong>Zero benchmark.</strong> Perfect gauge invariance: $V_{ij} = 0$ for all $(i,j)$. This is the ideal but is likely unachievable in practice, given the noise in legal decision-making and the impossibility of perfectly controlling for all legally relevant variables.</p>
 <p><strong>Statistical noise benchmark.</strong> The gauge violation due to random variation in case characteristics and judicial decision-making. Even a perfectly gauge-invariant system would show some non-zero $V_{ij}$ due to imperfect matching and sampling error. The noise benchmark is the $V_{ij}$ that would be expected under the null hypothesis of gauge invariance.</p>
-<p><strong>Improvement benchmark.</strong> A percentage reduction from the current level. If $V_{11} = 0.191$ today, a benchmark might be $V_{11} < 0.10$ within five years — a 48% reduction.</p>
+<p><strong>Improvement benchmark.</strong> A percentage reduction from the current level. If $V_{11} = 0.191$ today, a benchmark might be $V_{11} &lt; 0.10$ within five years — a 48% reduction.</p>
 <p><strong>Comparative benchmark.</strong> Match the best-performing jurisdiction. If District $A$ has $V_{11} = 0.08$ and District $B$ has $V_{11} = 0.24$, District $B$&rsquo;s benchmark might be to match District $A$&rsquo;s level.</p>
 <h2 id="worked-example-computing-math149-for-a-federal-district">Worked Example: Computing $V_{ij}$ for a Federal District</h2>
 <h3 id="data">Data</h3>
@@ -435,16 +441,16 @@
 <h2 id="technical-appendix">Technical Appendix</h2>
 <p><strong>Definition (Gauge Violation Tensor — Full).</strong> For a set of cases $S$, a set of gauge transformations $\mathcal{G} = \{\tau_1, \ldots, \tau_m\}$, and a set of outcome functions $\mathcal{O} = \{O_1, \ldots, O_n\}$:</p>
 <p>$$V_{ij} = \frac{1}{|S|} \sum_{s \in S} \frac{|O_j(\tau_i(s)) - O_j(s)|}{\max(O_j(s), \epsilon)}$$</p>
-<p>where $\epsilon > 0$ is a regularization constant to avoid division by zero.</p>
+<p>where $\epsilon &gt; 0$ is a regularization constant to avoid division by zero.</p>
 <p><strong>Definition (Signed Gauge Violation Tensor).</strong></p>
 <p>$$V_{ij}^{\text{signed}} = \frac{1}{|S|} \sum_{s \in S} \frac{O_j(\tau_i(s)) - O_j(s)}{\max(O_j(s), \epsilon)}$$</p>
-<p>The signed tensor has $V_{ij}^{\text{signed}} > 0$ when transformation $\tau_i$ increases outcome $O_j$ and $V_{ij}^{\text{signed}} < 0$ when it decreases it. The unsigned tensor satisfies $V_{ij} = |V_{ij}^{\text{signed}}|$ when all cases have the same direction of violation (all advantages go to the same group).</p>
+<p>The signed tensor has $V_{ij}^{\text{signed}} &gt; 0$ when transformation $\tau_i$ increases outcome $O_j$ and $V_{ij}^{\text{signed}} &lt; 0$ when it decreases it. The unsigned tensor satisfies $V_{ij} = |V_{ij}^{\text{signed}}|$ when all cases have the same direction of violation (all advantages go to the same group).</p>
 <p><strong>Definition (Intersectional Gauge Violation Tensor).</strong> The second-order intersectional tensor:</p>
 <p>$$V_{ikj} = V_{ij}^{(\tau_i \circ \tau_k)} - V_{ij}^{(\tau_i)} - V_{kj}^{(\tau_k)}$$</p>
 <p>where $V_{ij}^{(\tau_i \circ \tau_k)}$ is the gauge violation when both transformations $\tau_i$ and $\tau_k$ are applied simultaneously.</p>
 <p><strong>Proposition (SVD of the Gauge Violation Tensor).</strong> The gauge violation tensor $V \in \mathbb{R}^{m \times n}$ admits a singular value decomposition $V = U \Sigma W^T$ where:
 - $U \in \mathbb{R}^{m \times r}$ is the matrix of left singular vectors (transformation modes)
-- $\Sigma = \text{diag}(\sigma_1, \ldots, \sigma_r)$ with $\sigma_1 \geq \cdots \geq \sigma_r > 0$
+- $\Sigma = \text{diag}(\sigma_1, \ldots, \sigma_r)$ with $\sigma_1 \geq \cdots \geq \sigma_r &gt; 0$
 - $W \in \mathbb{R}^{n \times r}$ is the matrix of right singular vectors (outcome modes)
 - $r = \text{rank}(V) \leq \min(m, n)$</p>
 <p>The fraction of total violation explained by the first $k$ modes is:</p>
@@ -454,14 +460,16 @@
 <p>where $\|V\|_1$ is the elementwise $L_1$ norm. Equivalently, $\text{LBI} = \frac{1}{m \cdot n} \text{tr}(V \cdot \mathbf{1}_{n \times 1} \cdot \mathbf{1}_{1 \times m})$.</p>
 <p><strong>Proposition (Statistical Significance).</strong> Under the null hypothesis of gauge invariance ($V_{ij} = 0$), the estimated $\hat{V}_{ij}$ from a sample of $N$ matched pairs is approximately normally distributed:</p>
 <p>$$\hat{V}_{ij} \sim \mathcal{N}\left(0, \frac{\sigma_{ij}^2}{N}\right)$$</p>
-<p>where $\sigma_{ij}^2$ is the variance of the pairwise differences. The null hypothesis is rejected at level $\alpha$ when $|\hat{V}_{ij}| > z_{\alpha/2} \cdot \sigma_{ij} / \sqrt{N}$.</p>
+<p>where $\sigma_{ij}^2$ is the variance of the pairwise differences. The null hypothesis is rejected at level $\alpha$ when $|\hat{V}_{ij}| &gt; z_{\alpha/2} \cdot \sigma_{ij} / \sqrt{N}$.</p>
 <hr />
 <h2 id="notes-on-sources">Notes on Sources</h2>
 <p>The gauge violation tensor is the legal application of the gauge violation measurement methodology developed in the Geometric Ethics framework (Bond, 2026). The concept directly extends the gauge violation tensor from Geometric Reasoning Chapter 8 (as referenced in the SERIES_OUTLINES). Sentencing disparity data is from the U.S. Sentencing Commission&rsquo;s <em>Demographic Differences in Sentencing</em> reports (2012, 2017, 2020). The 19.1% racial disparity figure is from the Commission&rsquo;s 2017 report. Gender disparities in sentencing are documented in Starr (2015), &ldquo;Estimating Gender Disparities in Federal Criminal Cases.&rdquo; Bail disparities are documented in Arnold, Dobbie, and Yang (2018), &ldquo;Racial Bias in Bail Decisions.&rdquo; Intersectionality theory was formalized by Crenshaw (1989), &ldquo;Demarginalizing the Intersection of Race and Sex.&rdquo; The SVD-based decomposition of fairness tensors is methodologically related to principal component analysis of bias in machine learning (Bolukbasi et al., 2016). The matched-pair analysis methodology follows Rosenbaum (2002), <em>Observational Studies</em>. The Blinder-Oaxaca decomposition was introduced by Blinder (1973) and Oaxaca (1973) for wage gap analysis and has been applied to sentencing by Rehavi and Starr (2014).</p>
       </div>
 
       <div class="chapter-nav-bottom">
-        <a href="index.html" class="nav-toc">&larr; Contents</a>
+        <a href="ch10_legal_failures.html" class="nav-prev">&larr; Chapter 10: Legal Failures as Geometric Pathologies</a>
+        <a href="index.html" class="nav-toc">Contents</a>
+        <a href="ch12_adversarial_system.html" class="nav-next">Chapter 12: The Adversarial System as Manifold Exploration &rarr;</a>
       </div>
     </div>
   </article>
@@ -489,6 +497,7 @@
         {left: '\\\\(', right: '\\\\)', display: false},
         {left: '\\\\[', right: '\\\\]', display: true}
       ],
+      ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
       throwOnError: false
     });"></script>
 </body>

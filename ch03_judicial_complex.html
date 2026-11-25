@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Chapter 3: The Judicial Reasoning Space &mdash; Geometric Law</title>
   <meta name="description" content="Chapter 3: The Judicial Reasoning Space from Geometric Law: Symmetry, Invariance, and the Structure of Legal Reasoning, by Andrew H. Bond.">
+  <meta name="generator" content="geometric-series build kit">
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="stylesheet" href="../book/book.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,7 +14,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
 </head>
 
-<body data-book-slug="geometric-law">
+<body data-book-slug="geometric-law" data-chapter-id="ch03_judicial_complex">
   <nav id="main-nav">
     <div class="nav-inner">
       <a href="../index.html" class="nav-brand">
@@ -36,6 +37,11 @@
         <span class="breadcrumb-sep">&rsaquo;</span>
         <span class="breadcrumb-current">Chapter 3: The Judicial Reasoning Space</span>
       </nav>
+      <div class="chapter-nav-top">
+        <a href="ch02_hohfeld.html" class="nav-prev">&larr; Chapter 2: Hohfeld&#x27;s Original Insight</a>
+        <a href="index.html" class="nav-toc">Contents</a>
+        <a href="ch04_legal_metric.html" class="nav-next">Chapter 4: The Legal Metric &rarr;</a>
+      </div>
 
       <div class="chapter-content">
 <h1 id="chapter-3-the-judicial-reasoning-space">Chapter 3: The Judicial Reasoning Space</h1>
@@ -120,7 +126,7 @@
 <p><strong>Directed edges (1-simplices).</strong> A directed edge $c_i \to c_j$ exists when case $c_j$ cites case $c_i$ (the later case relies on the earlier one). Directionality encodes two asymmetries:</p>
 <ul>
 <li>
-<p><em>Temporal precedence:</em> $\tau(c_i) < \tau(c_j)$, since a case cannot cite a future decision. The citation graph is a directed acyclic graph (DAG) with respect to time.</p>
+<p><em>Temporal precedence:</em> $\tau(c_i) &lt; \tau(c_j)$, since a case cannot cite a future decision. The citation graph is a directed acyclic graph (DAG) with respect to time.</p>
 </li>
 <li>
 <p><em>Hierarchical authority:</em> $\ell(c_i) \geq \ell(c_j)$ for binding precedent. A district court must follow a Supreme Court precedent (low traversal cost), but the Supreme Court is not bound by the district court (high or infinite cost in the reverse direction).</p>
@@ -197,7 +203,7 @@
 <p>The continuum limit is useful as a <em>theoretical tool</em>, not as a computational method. It tells us that the concepts we borrow from differential geometry — curvature, geodesics, parallel transport, holonomy — have well-defined analogues in the discrete setting. The discrete complex is primary; the continuous manifold is its asymptotic approximation.</p>
 <h3 id="why-not-start-with-a-manifold">Why Not Start with a Manifold?</h3>
 <p>One might ask: why not define the legal space as a continuous manifold from the start, and treat decided cases as sample points on it? This is the approach taken by some machine learning models of legal reasoning, which embed cases in a continuous vector space and compute distances using standard metrics.</p>
-<p>The answer is that continuity is a <em>fiction</em> in the legal domain. Legal states are discrete: there are finitely many decided cases, and each case is a distinct point. The transition between &ldquo;liable&rdquo; and &ldquo;not liable&rdquo; is a sharp boundary, not a continuous gradient. The hierarchical authority structure is a discrete lattice (trial $<$ appellate $<$ supreme), not a continuous ordering.</p>
+<p>The answer is that continuity is a <em>fiction</em> in the legal domain. Legal states are discrete: there are finitely many decided cases, and each case is a distinct point. The transition between &ldquo;liable&rdquo; and &ldquo;not liable&rdquo; is a sharp boundary, not a continuous gradient. The hierarchical authority structure is a discrete lattice (trial $&lt;$ appellate $&lt;$ supreme), not a continuous ordering.</p>
 <p>Starting with a simplicial complex respects the discrete nature of legal data. The continuum limit is then a <em>theorem</em> — a result that tells us when continuous methods provide good approximations — not an <em>assumption</em> that forces us to smooth over the sharp boundaries that are essential to legal reasoning.</p>
 <h2 id="constructing-the-attribute-vectors">Constructing the Attribute Vectors</h2>
 <h3 id="from-case-text-to-legal-coordinates">From Case Text to Legal Coordinates</h3>
@@ -228,7 +234,7 @@
 <p><strong>Ground-truth calibration.</strong> A validation set of approximately 200 cases is scored by legal experts (law professors or experienced practitioners) on all eight dimensions. The probes&rsquo; $F_1$ scores against this ground truth provide the quality floor.</p>
 </li>
 <li>
-<p><strong>Confidence thresholding.</strong> Scores near 0.5 (low confidence) are flagged as uncertain. Only cases where all eight probes exceed a confidence threshold $|p_k - 0.5| > \delta$ are used for metric calibration.</p>
+<p><strong>Confidence thresholding.</strong> Scores near 0.5 (low confidence) are flagged as uncertain. Only cases where all eight probes exceed a confidence threshold $|p_k - 0.5| &gt; \delta$ are used for metric calibration.</p>
 </li>
 <li>
 <p><strong>Consistency checks.</strong> Legal dimensions have known structural constraints: procedural posture ($d_3$) should be high in cases that turn on standing or jurisdiction; remedial scope ($d_7$) should correlate with the presence of damages language.</p>
@@ -442,7 +448,9 @@
       </div>
 
       <div class="chapter-nav-bottom">
-        <a href="index.html" class="nav-toc">&larr; Contents</a>
+        <a href="ch02_hohfeld.html" class="nav-prev">&larr; Chapter 2: Hohfeld&#x27;s Original Insight</a>
+        <a href="index.html" class="nav-toc">Contents</a>
+        <a href="ch04_legal_metric.html" class="nav-next">Chapter 4: The Legal Metric &rarr;</a>
       </div>
     </div>
   </article>
@@ -470,6 +478,7 @@
         {left: '\\\\(', right: '\\\\)', display: false},
         {left: '\\\\[', right: '\\\\]', display: true}
       ],
+      ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
       throwOnError: false
     });"></script>
 </body>

@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Chapter 6: Precedent as Heuristic Field &mdash; Geometric Law</title>
   <meta name="description" content="Chapter 6: Precedent as Heuristic Field from Geometric Law: Symmetry, Invariance, and the Structure of Legal Reasoning, by Andrew H. Bond.">
+  <meta name="generator" content="geometric-series build kit">
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="stylesheet" href="../book/book.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,7 +14,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
 </head>
 
-<body data-book-slug="geometric-law">
+<body data-book-slug="geometric-law" data-chapter-id="ch06_precedent_heuristic">
   <nav id="main-nav">
     <div class="nav-inner">
       <a href="../index.html" class="nav-brand">
@@ -36,6 +37,11 @@
         <span class="breadcrumb-sep">&rsaquo;</span>
         <span class="breadcrumb-current">Chapter 6: Precedent as Heuristic Field</span>
       </nav>
+      <div class="chapter-nav-top">
+        <a href="ch05_hohfeldian_group.html" class="nav-prev">&larr; Chapter 5: The $D_4$ Hohfeldian Group</a>
+        <a href="index.html" class="nav-toc">Contents</a>
+        <a href="ch07_constitutional_topology.html" class="nav-next">Chapter 7: Constitutional Review as Path Homology &rarr;</a>
+      </div>
 
       <div class="chapter-content">
 <h1 id="chapter-6-precedent-as-heuristic-field">Chapter 6: Precedent as Heuristic Field</h1>
@@ -146,7 +152,7 @@
 3. Estimate the cost of proving that the stated reason is pretextual.</p>
 <p>The heuristic at each stage approximates the remaining path length. A plaintiff who has already established the prima facie case and shown that the employer&rsquo;s reason is weak has a low heuristic value — she is close to the goal. A plaintiff who has not yet established the prima facie case has a high heuristic value.</p>
 <p><strong>Strict scrutiny.</strong> For constitutional challenges, $h_{\text{strict}}(p)$ estimates the distance to showing that a law is not narrowly tailored to a compelling government interest. This heuristic assigns <em>high</em> estimated cost to the government&rsquo;s defense path (the government must overcome the presumption of unconstitutionality) and <em>low</em> estimated cost to the challenger&rsquo;s path (the challenger need only show that less restrictive alternatives exist).</p>
-<p><strong>Stare decisis.</strong> Precedent provides a <em>pattern database</em> — pre-computed optimal paths from previously solved positions. When the current case is factually close to a precedent ($d(p, p_P) < \epsilon$), the precedent&rsquo;s path provides a near-optimal heuristic. This is why lawyers cite cases: they are importing pre-computed heuristics into the current search.</p>
+<p><strong>Stare decisis.</strong> Precedent provides a <em>pattern database</em> — pre-computed optimal paths from previously solved positions. When the current case is factually close to a precedent ($d(p, p_P) &lt; \epsilon$), the precedent&rsquo;s path provides a near-optimal heuristic. This is why lawyers cite cases: they are importing pre-computed heuristics into the current search.</p>
 <hr />
 <blockquote>
 <p><strong>RUNNING EXAMPLE — McDONNELL DOUGLAS AS A HEURISTIC IN SANTOS v. TECH COMPANY</strong></p>
@@ -166,7 +172,7 @@
 <p><strong>Theorem (Admissibility of Doctrinal Heuristics).</strong> A doctrinal heuristic $h_D$ is admissible if the doctrine $D$ correctly identifies the elements of a legal claim and assigns non-negative estimated costs that do not exceed actual proving costs. If $h_D$ is admissible, $A^*$ search using $h_D$ is guaranteed to find the optimal legal argument.</p>
 <p><strong>Proof sketch.</strong> Legal doctrines that decompose claims into elements (duty + breach + causation + damages, for example) produce heuristics that sum estimated costs of remaining elements. Each element&rsquo;s estimated cost is a lower bound on the actual proving cost (the element might be easier to prove than estimated, due to shortcuts like res ipsa loquitur or stipulations). Therefore the sum of estimated costs is a lower bound on the total remaining cost, which is the definition of admissibility. By the admissibility theorem for $A^*$, the search is guaranteed to find the optimal path. $\square$</p>
 <h3 id="inadmissible-heuristics-in-legal-practice">Inadmissible Heuristics in Legal Practice</h3>
-<p>Not all legal strategies correspond to admissible heuristics. An <em>overaggressive</em> legal theory underestimates cost — it assumes elements will be easier to establish than they actually are, leading the search toward arguments that fail at trial. This is inadmissibility through underestimation: $h(n) > h^*(n)$ because the heuristic is too optimistic about the remaining cost.</p>
+<p>Not all legal strategies correspond to admissible heuristics. An <em>overaggressive</em> legal theory underestimates cost — it assumes elements will be easier to establish than they actually are, leading the search toward arguments that fail at trial. This is inadmissibility through underestimation: $h(n) &gt; h^*(n)$ because the heuristic is too optimistic about the remaining cost.</p>
 <p>Wait — this is backwards. An inadmissible heuristic <em>overestimates</em> the true cost, causing $A^*$ to miss optimal paths by avoiding regions that appear (but are not actually) costly. Let us be precise.</p>
 <p>An <em>overconservative</em> strategy overestimates the remaining cost. It says &ldquo;this argument will be very expensive to complete,&rdquo; when in fact the argument could be completed cheaply. This causes the search to avoid the argument in favor of apparently cheaper alternatives, potentially missing the optimal path. The result: settlement when litigation would have succeeded, or failure to pursue a winning theory because it &ldquo;looked&rdquo; too hard.</p>
 <p>An <em>overaggressive</em> strategy underestimates the remaining cost. Strictly speaking, this preserves admissibility (underestimation is exactly what admissibility requires). But it degrades the heuristic&rsquo;s <em>efficiency</em>: a heuristic that estimates zero remaining cost for every node is admissible but useless — it provides no guidance, and $A^*$ degenerates to Dijkstra. An overaggressive heuristic that estimates very low costs everywhere will explore many irrelevant paths before finding the optimal one.</p>
@@ -206,7 +212,7 @@
 </ul>
 <p>The <em>minimax value</em> of the dispute is:</p>
 <p>$$V(c_0) = \min_{\gamma_\delta} \max_{\gamma_\pi} \left[ \text{BF}_{\text{law}}(\gamma_\delta) - \text{BF}_{\text{law}}(\gamma_\pi) \right]$$</p>
-<p>If $V(c_0) > 0$, the plaintiff prevails; if $V(c_0) \leq 0$, the defendant prevails.</p>
+<p>If $V(c_0) &gt; 0$, the plaintiff prevails; if $V(c_0) \leq 0$, the defendant prevails.</p>
 <h3 id="motions-as-search-pruning">Motions as Search Pruning</h3>
 <p>Procedural motions correspond to search-pruning operations — moves that eliminate entire branches of the search tree:</p>
 <p><strong>Motion to dismiss (Rule 12(b)(6)).</strong> The defendant claims that even taking all facts as true, no path from $c_0$ to $G_\pi$ exists within the legal constraints. This is a graph-connectivity assertion: the goal region $G_\pi$ is <em>unreachable</em> from $c_0$ in $\mathcal{K}$. If the motion is granted, the entire search tree rooted at $c_0$ is pruned.</p>
@@ -214,10 +220,10 @@
 <p><strong>Motion in limine.</strong> Exclusion of evidence corresponds to removing edges from the judicial complex — eliminating argument paths that rely on the excluded evidence. If a key piece of evidence is excluded, the paths that require it become impassable, potentially transforming a short path to $G_\pi$ into a long path or no path at all.</p>
 <h3 id="settlement-as-shortcut">Settlement as Shortcut</h3>
 <p><strong>Definition (Settlement Region).</strong> A <em>settlement</em> is a vertex $c_s \in \mathcal{K}$ that both parties prefer to the expected outcome of continued litigation:</p>
-<p>$$c_s \in \{ c \in \mathcal{K} \mid U_\pi(c) > \mathbb{E}[U_\pi(\gamma^*_\pi)] \text{ and } U_\delta(c) > \mathbb{E}[U_\delta(\gamma^*_\delta)] \}$$</p>
+<p>$$c_s \in \{ c \in \mathcal{K} \mid U_\pi(c) &gt; \mathbb{E}[U_\pi(\gamma^*_\pi)] \text{ and } U_\delta(c) &gt; \mathbb{E}[U_\delta(\gamma^*_\delta)] \}$$</p>
 <p>where $U_\pi, U_\delta$ are the utility functions of plaintiff and defendant.</p>
 <p><strong>Proposition (Settlement Existence).</strong> A non-empty settlement region exists whenever the sum of both parties&rsquo; expected litigation costs exceeds the graph distance between their goal regions:</p>
-<p>$$\mathbb{E}[\text{BF}_{\text{law}}(\gamma^*_\pi)] + \mathbb{E}[\text{BF}_{\text{law}}(\gamma^*_\delta)] > d_{\mathcal{K}}(G_\pi, G_\delta)$$</p>
+<p>$$\mathbb{E}[\text{BF}_{\text{law}}(\gamma^*_\pi)] + \mathbb{E}[\text{BF}_{\text{law}}(\gamma^*_\delta)] &gt; d_{\mathcal{K}}(G_\pi, G_\delta)$$</p>
 <p>This explains the empirical observation that the vast majority of legal disputes settle: litigation costs (path lengths) almost always exceed the distance between the parties&rsquo; positions. Settlement is a shortcut — a direct edge from the current position to a mutually acceptable vertex, bypassing the long and expensive litigation path.</p>
 <hr />
 <blockquote>
@@ -293,7 +299,7 @@
 <p><strong>Heuristic 2: Direct evidence.</strong> One step:
 - Step 1 (produce direct evidence of discriminatory intent): estimated cost 8.0 friction units
 - Total estimated remaining cost from start: $h_{\text{direct}}(c_0) = 8.0$</p>
-<p><strong>Analysis.</strong> The McDonnell Douglas heuristic estimates a lower total cost ($6.5 < 8.0$), so $A^*$ will explore the McDonnell Douglas path first. If the plaintiff indeed lacks direct evidence, the McDonnell Douglas path is genuinely cheaper — the heuristic&rsquo;s guidance is correct.</p>
+<p><strong>Analysis.</strong> The McDonnell Douglas heuristic estimates a lower total cost ($6.5 &lt; 8.0$), so $A^*$ will explore the McDonnell Douglas path first. If the plaintiff indeed lacks direct evidence, the McDonnell Douglas path is genuinely cheaper — the heuristic&rsquo;s guidance is correct.</p>
 <p>But suppose the plaintiff <em>does</em> have a smoking-gun email. Then the actual cost of the direct evidence path is much lower than 8.0 — perhaps 1.0 (produce the email, authenticate it, done). The direct evidence heuristic overestimated the cost, making it inadmissible at this particular node. A better heuristic would condition on whether direct evidence exists: if yes, $h_{\text{direct}} = 1.0$; if no, $h_{\text{direct}} = \infty$ (the path is impassable).</p>
 <p>This illustrates a general principle: <strong>good doctrinal heuristics are context-sensitive</strong>. The best heuristic is not a fixed function but a function that conditions on the available evidence. McDonnell Douglas is a good heuristic precisely because it adapts to the evidence: if the plaintiff has direct evidence, she can bypass the burden-shifting framework entirely. The doctrine accommodates both paths, functioning as a <em>portfolio of heuristics</em> rather than a single fixed estimate.</p>
 <h2 id="chapter-summary">Chapter Summary</h2>
@@ -331,7 +337,7 @@
 <p><strong>Definition (Adversarial Legal Search).</strong> A two-player search game $(c_0, G_\pi, G_\delta, \text{BF}_{\text{law}})$ where the plaintiff seeks $\min_{\gamma_\pi} \text{BF}_{\text{law}}(\gamma_\pi)$ to $G_\pi$ and the defendant seeks $\min_{\gamma_\delta} \text{BF}_{\text{law}}(\gamma_\delta)$ to $G_\delta$. The minimax value is:</p>
 <p>$$V(c_0) = \min_{\gamma_\delta} \max_{\gamma_\pi} [\text{BF}_{\text{law}}(\gamma_\delta) - \text{BF}_{\text{law}}(\gamma_\pi)]$$</p>
 <p><strong>Proposition (Settlement Existence).</strong> A non-empty settlement region exists when:</p>
-<p>$$\mathbb{E}[\text{BF}_{\text{law}}(\gamma^*_\pi)] + \mathbb{E}[\text{BF}_{\text{law}}(\gamma^*_\delta)] > d_{\mathcal{K}}(G_\pi, G_\delta)$$</p>
+<p>$$\mathbb{E}[\text{BF}_{\text{law}}(\gamma^*_\pi)] + \mathbb{E}[\text{BF}_{\text{law}}(\gamma^*_\delta)] &gt; d_{\mathcal{K}}(G_\pi, G_\delta)$$</p>
 <p><em>Proof.</em> If the combined litigation costs exceed the distance between goal regions, there exist vertices between $G_\pi$ and $G_\delta$ that are cheaper for both parties to reach than their respective litigation endpoints. Any such vertex is a settlement point. $\square$</p>
 <p><strong>Definition (Heuristic Field Strength).</strong> The <em>heuristic field strength</em> at a vertex $c \in \mathcal{K}$ is:</p>
 <p>$$\mathcal{H}(c) = \frac{h^*(c) - h_{\text{zero}}(c)}{h^*(c)} = 1 - \frac{0}{h^*(c)} = 1$$</p>
@@ -342,7 +348,9 @@
       </div>
 
       <div class="chapter-nav-bottom">
-        <a href="index.html" class="nav-toc">&larr; Contents</a>
+        <a href="ch05_hohfeldian_group.html" class="nav-prev">&larr; Chapter 5: The $D_4$ Hohfeldian Group</a>
+        <a href="index.html" class="nav-toc">Contents</a>
+        <a href="ch07_constitutional_topology.html" class="nav-next">Chapter 7: Constitutional Review as Path Homology &rarr;</a>
       </div>
     </div>
   </article>
@@ -370,6 +378,7 @@
         {left: '\\\\(', right: '\\\\)', display: false},
         {left: '\\\\[', right: '\\\\]', display: true}
       ],
+      ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
       throwOnError: false
     });"></script>
 </body>

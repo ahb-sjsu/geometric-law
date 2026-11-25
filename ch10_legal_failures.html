@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Chapter 10: Legal Failures as Geometric Pathologies &mdash; Geometric Law</title>
   <meta name="description" content="Chapter 10: Legal Failures as Geometric Pathologies from Geometric Law: Symmetry, Invariance, and the Structure of Legal Reasoning, by Andrew H. Bond.">
+  <meta name="generator" content="geometric-series build kit">
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="stylesheet" href="../book/book.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,7 +14,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
 </head>
 
-<body data-book-slug="geometric-law">
+<body data-book-slug="geometric-law" data-chapter-id="ch10_legal_failures">
   <nav id="main-nav">
     <div class="nav-inner">
       <a href="../index.html" class="nav-brand">
@@ -36,6 +37,11 @@
         <span class="breadcrumb-sep">&rsaquo;</span>
         <span class="breadcrumb-current">Chapter 10: Legal Failures as Geometric Pathologies</span>
       </nav>
+      <div class="chapter-nav-top">
+        <a href="ch09_stare_decisis.html" class="nav-prev">&larr; Chapter 9: Stare Decisis as Parallel Transport</a>
+        <a href="index.html" class="nav-toc">Contents</a>
+        <a href="ch11_sentencing_disparities.html" class="nav-next">Chapter 11: Sentencing Disparities as Gauge Violation Tensors &rarr;</a>
+      </div>
 
       <div class="chapter-content">
 <h1 id="chapter-10-legal-failures-as-geometric-pathologies">Chapter 10: Legal Failures as Geometric Pathologies</h1>
@@ -99,7 +105,7 @@
 <p>The most visible form of heuristic corruption in the legal system is the influence of media coverage on sentencing. When a crime receives extensive media attention, the judge&rsquo;s heuristic for &ldquo;appropriate sentence&rdquo; is contaminated by the salience of the crime — by how vivid, dramatic, and emotionally charged the media coverage has been.</p>
 <p>The mechanism is well-documented in cognitive psychology: the <em>availability heuristic</em> causes people to overestimate the frequency and severity of events that are easily recalled. A judge who has been exposed to extensive media coverage of a crime overestimates the severity of similar crimes and underestimates the severity of crimes that receive little coverage. The doctrinal heuristic absorbs this bias:</p>
 <p>$$h_{\text{sentencing}}^{\text{corrupted}}(c) = h_{\text{sentencing}}^{\text{true}}(c) + \alpha \cdot \text{media\_salience}(c)$$</p>
-<p>where $\alpha > 0$ is the media influence coefficient. The corrupted heuristic assigns higher estimated cost (more severe sentence) to cases with high media salience, regardless of their actual legal severity.</p>
+<p>where $\alpha &gt; 0$ is the media influence coefficient. The corrupted heuristic assigns higher estimated cost (more severe sentence) to cases with high media salience, regardless of their actual legal severity.</p>
 <p>The empirical evidence is substantial. Studies have shown that sentences are measurably harsher for crimes that receive media coverage, after controlling for offense severity and criminal history. The effect is strongest in jurisdictions where judges are elected — where media salience translates directly into political pressure.</p>
 <h3 id="racial-bias-as-heuristic-corruption">Racial Bias as Heuristic Corruption</h3>
 <p>A deeper and more pervasive form of heuristic corruption is the encoding of racial bias in the precedent field. The body of case law — the accumulated weight deformation that defines the legal heuristic — was built in a society with a long history of racial injustice. The precedents encode the biases of the judges who decided them, the lawyers who argued them, and the social conditions in which they arose.</p>
@@ -153,7 +159,7 @@
 <p><strong>Definition (Legal Local Minimum).</strong> A <em>legal local minimum</em> is a vertex $c_{\text{min}} \in \mathcal{K}$ (corresponding to an established precedent) such that:</p>
 <ol>
 <li>The outcome at $c_{\text{min}}$ is suboptimal: $J_{\text{law}}(c_{\text{min}})$ is worse (less just, less efficient, less coherent) than $J_{\text{law}}(c_{\text{global}})$ at the global optimum.</li>
-<li>All neighboring vertices have higher cost: $\text{BF}_{\text{law}}(\gamma) > \text{BF}_{\text{law}}(c_{\text{min}})$ for all short paths $\gamma$ from $c_{\text{min}}$ to any other vertex in the goal region.</li>
+<li>All neighboring vertices have higher cost: $\text{BF}_{\text{law}}(\gamma) &gt; \text{BF}_{\text{law}}(c_{\text{min}})$ for all short paths $\gamma$ from $c_{\text{min}}$ to any other vertex in the goal region.</li>
 <li>The cost barrier to the global optimum is high: the overruling cost (from Chapter 9) exceeds the benefit of reaching the better outcome.</li>
 </ol>
 <p>The system is trapped: the local minimum is not the best outcome, but the cost of escaping exceeds the improvement from reaching a better outcome.</p>
@@ -302,23 +308,25 @@
 <p>$$\Delta_{\text{hijack}} = f_{\text{true}}(\gamma^*_{\text{true}}) - f_{\text{true}}(\gamma^*_{\text{proxy}})$$</p>
 <p>where $\gamma^*_{\text{true}}$ and $\gamma^*_{\text{proxy}}$ are the optimal paths under the true and proxy objectives, respectively.</p>
 <p><strong>Definition (Legal Local Minimum — Formal).</strong> A vertex $c_{\text{min}} \in \mathcal{K}$ is a legal local minimum of depth $\delta$ if:</p>
-<p>$$f_{\text{true}}(c_{\text{min}}) - f_{\text{true}}(c_{\text{global}}) = \delta > 0$$</p>
+<p>$$f_{\text{true}}(c_{\text{min}}) - f_{\text{true}}(c_{\text{global}}) = \delta &gt; 0$$</p>
 <p>and for all paths $\gamma$ from $c_{\text{min}}$ of length $\leq L$:</p>
-<p>$$\max_{c \in \gamma} \text{Cost}(c) - \text{Cost}(c_{\text{min}}) > B$$</p>
-<p>where $B$ is the barrier height and $L$ is the maximum path length considered. The minimum is inescapable when $B > \delta$ — the cost of climbing out exceeds the benefit of reaching the global optimum.</p>
+<p>$$\max_{c \in \gamma} \text{Cost}(c) - \text{Cost}(c_{\text{min}}) &gt; B$$</p>
+<p>where $B$ is the barrier height and $L$ is the maximum path length considered. The minimum is inescapable when $B &gt; \delta$ — the cost of climbing out exceeds the benefit of reaching the global optimum.</p>
 <p><strong>Proposition (Feedback Amplification).</strong> Let $h_t$ denote the heuristic at time $t$ and $V_t$ denote the gauge violation at time $t$. If heuristic corruption and gauge breaking interact via the feedback loop:</p>
 <p>$$h_{t+1}(c) = h_t(c) + \alpha \cdot V_t(c)$$
 $$V_{t+1}(c) = V_t(c) + \beta \cdot \epsilon_t(c)$$</p>
 <p>where $\epsilon_t = h_t - h^{\text{true}}$ is the heuristic corruption, then the combined pathology grows exponentially:</p>
 <p>$$\|\epsilon_t\| \sim e^{\sqrt{\alpha \beta} \cdot t}$$</p>
-<p>when $\alpha \beta > 0$. <em>Proof.</em> The coupled system $\epsilon_{t+1} = \epsilon_t + \alpha \beta \epsilon_{t-1}$ has eigenvalues $\lambda_\pm = \frac{1 \pm \sqrt{1 + 4\alpha\beta}}{2}$, and $|\lambda_+| > 1$ when $\alpha\beta > 0$, giving exponential growth. $\square$</p>
+<p>when $\alpha \beta &gt; 0$. <em>Proof.</em> The coupled system $\epsilon_{t+1} = \epsilon_t + \alpha \beta \epsilon_{t-1}$ has eigenvalues $\lambda_\pm = \frac{1 \pm \sqrt{1 + 4\alpha\beta}}{2}$, and $|\lambda_+| &gt; 1$ when $\alpha\beta &gt; 0$, giving exponential growth. $\square$</p>
 <hr />
 <h2 id="notes-on-sources">Notes on Sources</h2>
 <p>The four geometric pathologies (heuristic corruption, objective hijacking, local minima, gauge breaking) are mapped from the AI alignment failure modes identified in the Geometric Ethics framework (Bond, 2026). Plea bargaining statistics are from the Bureau of Justice Statistics (2022). The sentencing disparity data is from the U.S. Sentencing Commission&rsquo;s <em>Demographic Differences in Sentencing</em> reports (2012, 2017). Qualified immunity was established in <em>Harlow v. Fitzgerald</em>, 457 U.S. 800 (1982), and has been criticized by, among others, Judge Don Willett (concurrence in <em>Zadeh v. Robinson</em>, 5th Cir. 2019) and Justice Clarence Thomas (dissent from certiorari in <em>Baxter v. Bracey</em>, 2020). The third-party doctrine was established in <em>Smith v. Maryland</em>, 442 U.S. 735 (1979), and limited in <em>Carpenter v. United States</em>, 585 U.S. 296 (2018). <em>Whren v. United States</em>, 517 U.S. 806 (1996), held that the subjective intent behind a traffic stop is irrelevant if there is any objective basis. The crack/powder cocaine sentencing disparity was established by the Anti-Drug Abuse Act of 1986 and partially addressed by the Fair Sentencing Act of 2010. Media influence on sentencing is documented in Lim, Snyder, and Strömberg (2015). The feedback amplification model is original to this chapter.</p>
       </div>
 
       <div class="chapter-nav-bottom">
-        <a href="index.html" class="nav-toc">&larr; Contents</a>
+        <a href="ch09_stare_decisis.html" class="nav-prev">&larr; Chapter 9: Stare Decisis as Parallel Transport</a>
+        <a href="index.html" class="nav-toc">Contents</a>
+        <a href="ch11_sentencing_disparities.html" class="nav-next">Chapter 11: Sentencing Disparities as Gauge Violation Tensors &rarr;</a>
       </div>
     </div>
   </article>
@@ -346,6 +354,7 @@ $$V_{t+1}(c) = V_t(c) + \beta \cdot \epsilon_t(c)$$</p>
         {left: '\\\\(', right: '\\\\)', display: false},
         {left: '\\\\[', right: '\\\\]', display: true}
       ],
+      ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
       throwOnError: false
     });"></script>
 </body>

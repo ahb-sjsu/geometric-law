@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Chapter 15: AI Legal Reasoning &mdash; Geometric Law</title>
   <meta name="description" content="Chapter 15: AI Legal Reasoning from Geometric Law: Symmetry, Invariance, and the Structure of Legal Reasoning, by Andrew H. Bond.">
+  <meta name="generator" content="geometric-series build kit">
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="stylesheet" href="../book/book.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,7 +14,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
 </head>
 
-<body data-book-slug="geometric-law">
+<body data-book-slug="geometric-law" data-chapter-id="ch15_ai_legal">
   <nav id="main-nav">
     <div class="nav-inner">
       <a href="../index.html" class="nav-brand">
@@ -36,6 +37,11 @@
         <span class="breadcrumb-sep">&rsaquo;</span>
         <span class="breadcrumb-current">Chapter 15: AI Legal Reasoning</span>
       </nav>
+      <div class="chapter-nav-top">
+        <a href="ch14_international_law.html" class="nav-prev">&larr; Chapter 14: International Law as Multi-Manifold Diplomacy</a>
+        <a href="index.html" class="nav-toc">Contents</a>
+        <a href="ch16_open_questions.html" class="nav-next">Chapter 16: Open Questions &rarr;</a>
+      </div>
 
       <div class="chapter-content">
 <h1 id="chapter-15-ai-legal-reasoning">Chapter 15: AI Legal Reasoning</h1>
@@ -238,13 +244,9 @@
 </tr>
 <tr>
 <td>$d_2$ (Factual nexus)</td>
-<td>Transactions &gt; $10K trigger reporting</td>
-<td>Customer financial data is protected</td>
-</tr>
-<tr>
-<td>$d_4$ (Statutory authority)</td>
+<td>Transactions &gt; $10K trigger reporting | Customer financial data is protected |
+| $d_4$ (Statutory authority)</td>
 <td>Federal: Bank Secrecy Act</td>
-<td>State: Financial Privacy Act</td>
 </tr>
 <tr>
 <td>$d_5$ (Constitutional conformity)</td>
@@ -379,7 +381,7 @@
 <h2 id="technical-appendix">Technical Appendix</h2>
 <p><strong>Definition (Legal Embedding Function).</strong> A legal embedding function $\mathcal{E}: \mathcal{D} \to \mathbb{R}^d$ maps documents to a $d$-dimensional vector space satisfying:</p>
 <p>(i) <strong>Semantic preservation:</strong> $\text{cos\_sim}(\mathcal{E}(c_i), \mathcal{E}(c_j)) \geq \tau$ whenever $c_i$ and $c_j$ address the same legal issue.</p>
-<p>(ii) <strong>Language agnosticism:</strong> $\|\mathcal{E}(c) - \mathcal{E}(g \cdot c)\| < \epsilon$ for all style transformations $g \in G_{\text{style}}$, where $\epsilon$ is a tolerance parameter.</p>
+<p>(ii) <strong>Language agnosticism:</strong> $\|\mathcal{E}(c) - \mathcal{E}(g \cdot c)\| &lt; \epsilon$ for all style transformations $g \in G_{\text{style}}$, where $\epsilon$ is a tolerance parameter.</p>
 <p><strong>Definition (Linear Probe).</strong> For dimension $d_k$, the linear probe is a function $f_k: \mathbb{R}^d \to [0, 1]$ defined by $f_k(\mathbf{e}) = \sigma(\mathbf{w}_k^T \mathbf{e} + b_k)$, where $\mathbf{w}_k \in \mathbb{R}^d$ and $b_k \in \mathbb{R}$ are trained by minimizing:</p>
 <p>$$\mathcal{L}_k = \sum_{i=1}^{N_{\text{train}}} \ell(f_k(\mathbf{e}_i), v_k^{\text{true}}(c_i)) + \lambda \|\mathbf{w}_k\|^2$$</p>
 <p>where $\ell$ is the cross-entropy or MSE loss, $v_k^{\text{true}}$ is the expert-labeled dimension score, and $\lambda$ is a regularization parameter.</p>
@@ -388,7 +390,7 @@
 <p>where $\omega_k$ is the weight of dimension $d_k$ (summing to 1), $\pi_g$ is the weight of transformation $g$ (summing to 1), and $\text{LBI}_g^k$ is the dimension-transformation-specific bond index. This decomposition allows targeted diagnosis: high $\text{LBI}_g^k$ identifies the specific transformation $g$ and dimension $d_k$ where gauge invariance fails.</p>
 <p><strong>Proposition (Gauge-Invariant Training).</strong> Adding a gauge-invariance penalty to the training loss:</p>
 <p>$$\mathcal{L}_{\text{GI}} = \mathcal{L}_{\text{task}} + \mu \sum_{g \in G_{\text{irrelevant}}} \|\mathcal{S}(c) - \mathcal{S}(g \cdot c)\|^2$$</p>
-<p>with $\mu > 0$, reduces the LBI at convergence. If $\mu$ is sufficiently large relative to the task loss, the LBI approaches 0, but at the cost of reduced task performance (the accuracy-invariance tradeoff).</p>
+<p>with $\mu &gt; 0$, reduces the LBI at convergence. If $\mu$ is sufficiently large relative to the task loss, the LBI approaches 0, but at the cost of reduced task performance (the accuracy-invariance tradeoff).</p>
 <p><strong>Definition (Retrieval Precision at $k$).</strong> For a query case $c_q$ with expert-judged relevant cases $R_q$:</p>
 <p>$$P@k = \frac{|\{\text{top-}k \text{ retrieved}\} \cap R_q|}{k}$$</p>
 <p><strong>Definition (Legal Bond Index for AI Systems — Full Statement).</strong> For a system $\mathcal{S}$, test distribution $\mathcal{D}$, and irrelevant transformation group $G_{\text{irrelevant}}$:</p>
@@ -403,7 +405,9 @@
       </div>
 
       <div class="chapter-nav-bottom">
-        <a href="index.html" class="nav-toc">&larr; Contents</a>
+        <a href="ch14_international_law.html" class="nav-prev">&larr; Chapter 14: International Law as Multi-Manifold Diplomacy</a>
+        <a href="index.html" class="nav-toc">Contents</a>
+        <a href="ch16_open_questions.html" class="nav-next">Chapter 16: Open Questions &rarr;</a>
       </div>
     </div>
   </article>
@@ -431,6 +435,7 @@
         {left: '\\\\(', right: '\\\\)', display: false},
         {left: '\\\\[', right: '\\\\]', display: true}
       ],
+      ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
       throwOnError: false
     });"></script>
 </body>
