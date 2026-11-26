@@ -331,7 +331,7 @@ The limits of the paper's evidence are also part of what is known. The validatio
 
 ## Worked Example 2: Statutory Conflict Resolution
 
-**Scenario.** A federal statute requires financial institutions to report suspicious transactions exceeding $10,000 to the Financial Crimes Enforcement Network (FinCEN). A state privacy statute prohibits financial institutions from disclosing customer financial information to government agencies without a warrant. A bank operating in both jurisdictions faces contradictory obligations.
+**Scenario.** A federal statute requires financial institutions to report suspicious transactions exceeding \$10,000 to the Financial Crimes Enforcement Network (FinCEN). A state privacy statute prohibits financial institutions from disclosing customer financial information to government agencies without a warrant. A bank operating in both jurisdictions faces contradictory obligations.
 
 **Step 1: Embedding.** The two statutes and the bank's compliance inquiry are embedded. The embedding captures the statutory conflict: federal reporting requirement versus state privacy protection.
 
@@ -340,7 +340,7 @@ The limits of the paper's evidence are also part of what is known. The validatio
 | Dimension | Federal statute | State statute |
 |-----------|----------------|---------------|
 | $d_1$ (Entitlement) | Bank has a duty to report | Customer has a right to privacy |
-| $d_2$ (Factual nexus) | Transactions > $10K trigger reporting | Customer financial data is protected |
+| $d_2$ (Factual nexus) | Transactions > \$10K trigger reporting | Customer financial data is protected |
 | $d_4$ (Statutory authority) | Federal: Bank Secrecy Act | State: Financial Privacy Act |
 | $d_5$ (Constitutional conformity) | Federal power to regulate interstate commerce | State power to protect citizen privacy |
 
@@ -350,7 +350,7 @@ $c_{\text{bank holds data}} \to c_{\text{federal duty: report}} \to c_{\text{sta
 
 The holonomy is non-trivial: the bank starts with a "duty to report" (from the federal statute) and arrives at a "duty not to report" (from the state statute) — a Hohfeldian contradiction. The Wilson loop $W(\gamma) = s$ (jural negation), indicating a genuine inconsistency.
 
-**Step 4: Resolution.** The Supremacy Clause resolves the conflict. The federal statute preempts the state statute to the extent of the conflict. In the geometric framework, preemption removes the state-law edges from the judicial complex, collapsing the non-trivial Wilson loop to the identity. The bank's obligation is determined by federal law alone: report suspicious transactions above $10,000.
+**Step 4: Resolution.** The Supremacy Clause resolves the conflict. The federal statute preempts the state statute to the extent of the conflict. In the geometric framework, preemption removes the state-law edges from the judicial complex, collapsing the non-trivial Wilson loop to the identity. The bank's obligation is determined by federal law alone: report suspicious transactions above \$10,000.
 
 **Step 5: Gauge invariance test.** The LIP test for this analysis: swap the jurisdictions (make the reporting requirement a state law and the privacy protection a federal law). The topological analysis should produce the same structure (a non-trivial Wilson loop), but the resolution should reverse (the federal privacy protection now preempts the state reporting requirement). A gauge-invariant system applies the Supremacy Clause based on the constitutional structure — which law is federal, which is state — not on the content of the laws.
 

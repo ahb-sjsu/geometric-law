@@ -236,7 +236,7 @@ This coupling is the crucial structural feature that distinguishes the legal dom
 >
 > *Judge Rivera now turns to the rent increase. The question is not about first-order relations (who has what right or duty) but about second-order relations (who has the power to change the first-order structure).*
 >
-> *The lease fixes rent at $2,400 per month for 24 months. Chen claims that a new city ordinance authorizes landlords to increase rent annually by up to 5%. The question is: does the ordinance give Chen a **power** to increase the rent, overriding the lease's grant of **immunity** to Thompson?*
+> *The lease fixes rent at \$2,400 per month for 24 months. Chen claims that a new city ordinance authorizes landlords to increase rent annually by up to 5%. The question is: does the ordinance give Chen a **power** to increase the rent, overriding the lease's grant of **immunity** to Thompson?*
 >
 > *The analysis proceeds through second-order Hohfeldian positions:*
 >
@@ -244,7 +244,7 @@ This coupling is the crucial structural feature that distinguishes the legal dom
 >
 > *2. **The ordinance creates a power.** The city ordinance purports to grant landlords a power to increase rent by up to 5% annually. This would convert Chen's disability into a power, and Thompson's immunity into a liability.*
 >
-> *3. **The conflict is second-order.** The dispute is not about whether Thompson owes $2,400 or $2,520. It is about whether the ordinance has the **power** to modify the Hohfeldian structure created by the lease. This is a second-order question — a question about the power to create powers.*
+> *3. **The conflict is second-order.** The dispute is not about whether Thompson owes \$2,400 or \$2,520. It is about whether the ordinance has the **power** to modify the Hohfeldian structure created by the lease. This is a second-order question — a question about the power to create powers.*
 >
 > *4. **Resolution requires third-order analysis.** Does the city have the power (via its police power) to enact an ordinance that modifies private lease immunities? Does the Contracts Clause of the federal Constitution grant Thompson a constitutional immunity against retroactive impairment of contract rights? These are questions about the boundaries of governmental power — the highest level of Hohfeldian analysis.*
 >

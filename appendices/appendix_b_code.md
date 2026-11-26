@@ -36,7 +36,7 @@ for case in cases:
         complex.add_directed_edge(case.id, cited_id)
 ```
 
-The `LegalDimensionExtractor` uses linear probes trained on annotated legal data (Chapter 3, Section 3.4). Each probe is a logistic regression classifier that maps the 768-dimensional LaBSE embedding to a scalar score on one of the eight legal dimensions. The probes are trained on a hand-annotated dataset of 2,000 case passages, validated at 82% mean accuracy across dimensions.
+The `LegalDimensionExtractor` uses linear probes trained on annotated legal data (Chapter 3, section "From Case Text to Legal Coordinates"). Each probe is a logistic regression classifier that maps the 768-dimensional LaBSE embedding to a scalar score on one of the eight legal dimensions. The probes are trained on a hand-annotated dataset of 2,000 case passages, validated at 82% mean accuracy across dimensions.
 
 ---
 

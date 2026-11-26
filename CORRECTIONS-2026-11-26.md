@@ -175,3 +175,13 @@ The paper is "The Legal Bond Index: A Matched-Neighbourhood Diagnostic of Algori
 5. **The README epistemic status** still reads "posited framework with one instrumented corner" (the legal text embedding). It was not changed. The COMPAS measurement does not instrument the framework, since the paper does not use it.
 
 6. **The Lean file** (`LbiImpossibility.lean`) is not mentioned in the paper's text. The book describes what its header states and says it was not rebuilt for this volume.
+
+## Repaired in the survey of 2026-11-26: mechanical defects
+
+Found by the series checker (`tools/series-build/series_check.py` in erisml-lib), with its paragraph checks also run on the text as the build reads it (LF line ends). Hard defects: 8 before, 6 after; the six are listed under "Left as they are".
+
+- **Literal dollar signs.** Amounts written with a bare `$` now use `\$`: the two rent sentences of the Thompson v. Chen running example (Chapter 2, Hohfeld's Second Square), and the reporting threshold in the scenario, the dimension table and Step 4 of Worked Example 2 (Chapter 15). The checker counted an odd number of dollar signs in these paragraphs.
+
+### Left as they are
+
+- **Front matter, Key Results at a Glance, and Chapter 9, Notes on Sources.** "AJ Theorem 7.2", 6.1, 7.1, 5.1, 7.3, and "Theorem 7.1 in the AJ manuscript", are theorem numbers of the companion paper *Algorithmic Jurisprudence*, as the note under the table says. They are correct; the checker counts every "Theorem N.M" against this book's own numbering.
