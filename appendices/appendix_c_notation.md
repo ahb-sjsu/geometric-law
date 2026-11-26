@@ -118,6 +118,6 @@ This appendix collects the notation used throughout the book. Conventions are co
 - **[Conditional Theorem.]** — results following from axioms
 - **[Speculation/Extension.]** — forward-looking claims
 
-**Series references.** Books in the Geometric Series are cited as Bond (2026a) through Bond (2026h), corresponding to *Geometric Methods* (a), *Geometric Reasoning* (b), *Geometric Ethics* (c), *Geometric Economics* (d), *Geometric Law* (e, this volume), *Geometric Cognition* (f), *Geometric Communication* (g), and *Geometric Medicine* (h).
+**Series references.** Books in the Geometric Series are cited as Bond (2026a) through Bond (2026h), corresponding to *Geometric Methods* (a), *Geometric Ethics* (b), *Geometric Reasoning* (c), *Geometric Economics* (d), *Geometric Law* (e, this volume), *Geometric Cognition* (f), *Geometric Communication* (g), and *Geometric Medicine* (h).
 
 **Running example.** All chapter-opening scenarios feature Judge Elena Rivera, a fictional federal district court judge in San Francisco. Rivera's cases are constructed to illustrate every geometric structure in the book; they are not based on actual cases or persons.

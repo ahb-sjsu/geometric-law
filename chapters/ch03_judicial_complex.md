@@ -250,15 +250,15 @@ Starting with a simplicial complex respects the discrete nature of legal data. T
 
 The attribute vector $\mathbf{v}(c_i) \in \mathbb{R}^8$ is the fundamental datum of the judicial complex: it locates each decided case in eight-dimensional legal space. But how do we compute it?
 
-The answer is an NLP pipeline that mirrors the methodology validated in the Geometric Ethics programme:
+The answer is an NLP pipeline that follows the methodology of the Geometric Ethics programme (exploratory and model-mediated in that volume's claim ledger):
 
-**Step 1: Embedding.** Given the text $t_i$ of a judicial opinion, compute a multilingual embedding $\mathbf{e}(t_i) \in \mathbb{R}^d$ using a pre-trained sentence encoder such as LaBSE. LaBSE produces 768-dimensional embeddings that are language-invariant — the same legal concept in English, Spanish, or Mandarin maps to the same region of embedding space.
+**Step 1: Embedding.** Given the text $t_i$ of a judicial opinion, compute a multilingual embedding $\mathbf{e}(t_i) \in \mathbb{R}^d$ using a pre-trained sentence encoder such as LaBSE. LaBSE produces 768-dimensional embeddings that place translations close together; *Geometric Ethics* reports that language identity is still recoverable from such representations (§17.10).
 
 **Step 2: Dimension scoring.** Train eight linear probes $f_k: \mathbb{R}^d \to [0, 1]$ ($k = 1, \ldots, 8$), one for each legal dimension $d_k$. Each probe is a logistic regression classifier trained on a labeled corpus of legal texts annotated for the presence or absence of each dimension. The output is the attribute vector:
 
 $$\mathbf{v}(c_i) = \bigl(f_1(\mathbf{e}(t_i)), \; f_2(\mathbf{e}(t_i)), \; \ldots, \; f_8(\mathbf{e}(t_i))\bigr) \in [0,1]^8$$
 
-This architecture directly replicates the methodology validated in the parent framework, where nine moral-dimension probes achieved $F_1 = 0.74\text{--}0.91$.
+This architecture follows the methodology of the parent framework, where linear probes for the nine moral dimensions are reported, in a study reported by Thiele (2026, unpublished), at $F_1 = 0.74\text{--}0.91$. The rights-and-duties axis failed its preregistered gate there (*Geometric Ethics* §5.3).
 
 **Step 3: Covariance estimation.** From the full corpus of $N$ scored cases, estimate the $8 \times 8$ covariance matrix $\hat{\Sigma}$ of the attribute vectors:
 
@@ -446,4 +446,4 @@ where $\mathbf{e}(t_i)$ is the LaBSE embedding, $\sigma$ is the sigmoid function
 
 ## Notes on Sources
 
-The simplicial complex construction draws on Hatcher (2002) for algebraic topology, Edelsbrunner and Harer (2010) for persistent homology, and Grigor'yan, Lin, Muranov, and Yau (2012, 2014) for path homology on directed graphs. The eight legal dimensions are synthesized from Hart (1961), Posner (1990), and the Restatements of Law, cross-referenced with the nine moral dimensions of Bond (2026a, *Geometric Ethics*). The NLP calibration pipeline adapts the methodology of Bond (2026a), independently replicated by Thiele (2026). The voter ID case law includes *Harper v. Virginia Board of Elections* (1966), *Crawford v. Marion County Election Board* (2008), *Shelby County v. Holder* (2013), and *Brnovich v. Democratic National Committee* (2021). Hart's core/penumbra distinction appears in *The Concept of Law* (1961). Sunstein's incompletely theorized agreements appear in *Legal Reasoning and Political Conflict* (1996). Dworkin's integrity thesis appears in *Law's Empire* (1986).
+The simplicial complex construction draws on Hatcher (2002) for algebraic topology, Edelsbrunner and Harer (2010) for persistent homology, and Grigor'yan, Lin, Muranov, and Yau (2012, 2014) for path homology on directed graphs. The eight legal dimensions are synthesized from Hart (1961), Posner (1990), and the Restatements of Law, cross-referenced with the nine moral dimensions of Bond (2026b, *Geometric Ethics*). The NLP calibration pipeline adapts the methodology of Bond (2026b), which a study reported by Thiele (2026, unpublished) applied in six languages. The voter ID case law includes *Harper v. Virginia Board of Elections* (1966), *Crawford v. Marion County Election Board* (2008), *Shelby County v. Holder* (2013), and *Brnovich v. Democratic National Committee* (2021). Hart's core/penumbra distinction appears in *The Concept of Law* (1961). Sunstein's incompletely theorized agreements appear in *Legal Reasoning and Political Conflict* (1996). Dworkin's integrity thesis appears in *Law's Empire* (1986).
