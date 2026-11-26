@@ -16,7 +16,9 @@
 **boundary penalty** ($\beta_k$), 3, 4, 13 --- discrete cost of crossing a regime boundary (criminal/civil, federal/state)
 **breach of contract**, 13 --- crossing a contractually constructed boundary on the legal manifold
 
+**caliper**, 8 --- restriction of a matched comparison to individuals whose nearest comparator in the other group is close enough; one of the matching-parity specifications
 **circuit split**, 1, 5 --- opposite outcomes in different circuits on the same legal question; Wilson loop with non-trivial holonomy
+**conditional randomization test**, 8, 11, 15 --- significance test that redraws each protected-attribute label from its estimated probability given the legitimate features; calibrated where the permutation test is not
 **conservation of liability**, 9 --- Noether's theorem applied to Hohfeldian gauge group; plaintiff's gain = defendant's loss on transferable dimensions
 **constitutional conformity** ($d_5$), 3, 7, 8 --- fifth legal dimension; topological compatibility with constitutional subcomplex
 **constitutional review**, 7 --- statute is constitutional iff its addition to $\mathcal{K}$ preserves path homology of $\mathcal{C}$
@@ -59,7 +61,7 @@
 **Judicial Bond Invariance Principle** (JBIP), 8 --- structural invariance: legal outcomes invariant under Hohfeldian gauge transformations applied to party labels and positions
 **jural negation**, 2, 5 --- Hohfeldian operation swapping opposites; right $\leftrightarrow$ no-right, duty $\leftrightarrow$ liberty; generator $s$ of $V_4$
 
-**Legal Bond Index** (LBI), 8, 11 --- aggregate quantitative measure of gauge violation; moral-domain baseline 0.155 quoted from *Geometric Ethics*, legal baseline unmeasured
+**Legal Bond Index** (LBI), 5, 8, 11, 15, 16 --- aggregate quantitative measure of gauge violation; moral-domain baseline 0.155 quoted from *Geometric Ethics*, legal baseline on that scale unmeasured; measured form, *see* matched-neighborhood ratio
 **legal friction** ($\text{BF}_{\text{law}}$), 4, 6 --- total path cost on the judicial complex; sum of edge weights along litigation path
 **Legal Invariance Principle** (LIP), 8 --- $J_{\text{law}}(\tau(x)) = J_{\text{law}}(x)$ for all $\tau \in \mathcal{T}_{\text{irrelevant}}$; foundational axiom
 **legal metric**, 4 --- Mahalanobis distance + boundary penalties; $d(x,y) = d_M(x,y) + \sum_k \beta_k$
@@ -69,6 +71,8 @@
 
 **Mahalanobis distance**, 4, A --- $\sqrt{(x-y)^T \Sigma^{-1} (x-y)}$; natural metric on the judicial manifold
 **manifold**, *see* judicial complex
+**matched-neighborhood ratio**, 8, 11, 15, 16 --- measured form of the Legal Bond Index; mean score gap to the $k$ nearest neighbors of the other group divided by the mean gap to the $k$ nearest of the same group, in a Mahalanobis metric on legitimate predictors; equals 1 when there is no excess; for COMPAS 1.041 to 1.069 across scales, 1.00 to 1.02 under matching parity
+**matching parity**, 8, 11 --- requirement that comparators across groups be as close as comparators within groups; without it a matched index is inflated mechanically
 
 **no-right**, 2, 5 --- Hohfeldian first-square position; absence of claim; correlative of liberty; opposite of right
 **Noether's theorem**, 9, A --- continuous symmetry $\to$ conservation law; applied to Hohfeldian gauge group to derive liability conservation
@@ -77,6 +81,7 @@
 
 **parallel transport**, 9 --- carrying a legal rule along a citation path; stare decisis formalized
 **path homology** ($\widetilde{H}_n^{\text{path}}$), 7 --- topological invariant of directed graphs; basis for constitutional review
+**permutation test**, 8, 11, 15 --- miscalibrated for matched indices on recorded data; rejected on 56.5% of race-blind synthetic datasets at a nominal 5% in the COMPAS validation
 **plea bargaining**, 10, 12 --- defendant agrees with prosecutor regardless of guilt; objective hijacking on the legal manifold
 **power**, 2, 5 --- Hohfeldian second-square position; ability to change another's legal position; correlative of liability
 **precedent**, 6, 9 --- prior decided cases; functions as heuristic field (Ch. 6) and parallel transport source (Ch. 9)
@@ -127,6 +132,7 @@
 ## Institutions and Data Sources
 
 **CourtListener**, 3, B --- open-access repository of court opinions; primary data source for judicial complex construction
+**COMPAS**, 8, 15, 16 --- proprietary recidivism risk score; the ProPublica file for Broward County, Florida, is the dataset of the one measured Legal Bond Index in this volume
 **Federal Sentencing Guidelines**, 1, 11 --- U.S. Sentencing Commission guidelines; constrain judicial discretion within computed ranges
 **International Court of Justice**, 14 --- principal judicial organ of the United Nations; global path-homology verifier
 **Supreme Court of the United States**, 1, 5, 7, 8 --- final arbiter of circuit splits; constitutional review
@@ -150,6 +156,7 @@
 **$\widetilde{H}_n^{\text{path}}$** (path homology), 7 --- topological invariant of the citation network
 **$J_{\text{law}}$** (legal judgment function), 8 --- maps legal situations to legal outcomes
 **$\mathcal{K}$** (judicial complex), 3 --- weighted directed simplicial complex of decided cases
+**$\text{LBI}_k(f, g)$** (matched-neighborhood Legal Bond Index), 8 --- ratio of cross-group to within-group score gaps at neighborhood scale $k$; centered on 1
 **$\Sigma$** (covariance matrix), 4, 11 --- $8 \times 8$ SPD matrix encoding dimension interactions
 **$\tau$** (gauge transformation), 8 --- legally irrelevant re-description
 **$V_{ij}$** (gauge violation tensor), 8, 11 --- measures invariance failure: $J_j(\tau_i(x)) - J_j(x)$

@@ -48,7 +48,7 @@
 *A statute is constitutional iff its addition to $\mathcal{K}$ preserves the path homology of the constitutional subcomplex $\mathcal{C}$. Path homology for directed graphs. The topological interpretation of strict scrutiny, intermediate scrutiny, and rational basis. The Supremacy Clause as a topological constraint. Running example: Rivera evaluates a First Amendment challenge.*
 
 **Chapter 8. Equal Protection as Gauge Invariance**
-*The Legal Invariance Principle (LIP): legal outcomes must be invariant under legally irrelevant transformations. Equal protection = gauge invariance under the group of protected-characteristic transformations. The gauge violation tensor $V_{ij}$. The Legal Bond Index as quantitative measure. The JBIP as structural invariance. Running example: Rivera performs the race-swap mental experiment.*
+*The Legal Invariance Principle (LIP): legal outcomes must be invariant under legally irrelevant transformations. Equal protection = gauge invariance under the group of protected-characteristic transformations. The gauge violation tensor $V_{ij}$. The Legal Bond Index as quantitative measure. The measured form of the index, a matched-neighborhood ratio, and its one measurement, on COMPAS risk scores, with what reduces it and what it does not show. The JBIP as structural invariance. Running example: Rivera performs the race-swap mental experiment.*
 
 **Chapter 9. Stare Decisis as Parallel Transport**
 *Following precedent is parallel transport: carrying a legal rule along a citation path. Holonomy explains doctrinal evolution without explicit overruling. Conservation laws from Noether's theorem applied to the Hohfeldian gauge group. Liability conservation in closed bilateral disputes. Running example: Rivera traces a precedent chain and finds doctrinal drift.*
@@ -77,14 +77,14 @@
 *Each nation's legal system is a separate manifold with its own metric. International law constructs a shared product space with agreed boundaries. Treaty interpretation as parallel transport between national manifolds. The International Court of Justice as a global path-homology verifier. Running example: Rivera handles an extradition request involving conflicting legal regimes.*
 
 **Chapter 15. AI Legal Reasoning**
-*What geometrically principled legal AI requires: gauge invariance under equal protection, topological consistency with constitutional structure, conservation compliance. The NLP pipeline for judicial complex construction. Linear probes for legal dimension extraction. Current limitations: 82% probe accuracy, uncalibrated metric, incomplete conservation. Running example: Rivera evaluates an AI-generated legal analysis.*
+*What geometrically principled legal AI requires: gauge invariance under equal protection, topological consistency with constitutional structure, conservation compliance. The NLP pipeline for judicial complex construction. Linear probes for legal dimension extraction. Testing invariance from recorded data: the screening procedure, the conditional randomization test, and why the permutation test is miscalibrated. Current limitations: 82% probe accuracy, uncalibrated metric, incomplete conservation. Running example: Rivera evaluates an AI-generated legal analysis.*
 
 ---
 
 ## Part VI: Horizons
 
 **Chapter 16. Open Questions**
-*Can we measure the legal metric from case law? What is the legal analogue of the No Escape Theorem? Is there a legal Noether conservation beyond bilateral disputes? Can circuit splits be predicted before they emerge? What would a geometrically complete legal system look like? Honest assessment of what the framework cannot yet explain.*
+*Can we measure the legal metric from case law? What is the legal analogue of the No Escape Theorem? Is there a legal Noether conservation beyond bilateral disputes? Can circuit splits be predicted before they emerge? What would a geometrically complete legal system look like? What has been measured: one result on legal data and its limits. Honest assessment of what the framework cannot yet explain.*
 
 ---
 

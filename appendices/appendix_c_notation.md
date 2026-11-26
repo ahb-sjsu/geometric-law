@@ -64,6 +64,8 @@ This appendix collects the notation used throughout the book. Conventions are co
 | $J_{\text{law}}(x)$ | Legal judgment function | Ch. 8 |
 | $V_{ij}$ | Gauge violation tensor: $J_j(\tau_i(x)) - J_j(x)$ | Ch. 8 |
 | LBI | Legal Bond Index: aggregate gauge violation measure | Ch. 8 |
+| $\text{LBI}_k(f, g)$ | Legal Bond Index, matched-neighborhood form: ratio of cross-group to within-group score gaps for algorithm $f$ and protected attribute $g$ at neighborhood scale $k$; equals 1 when there is no excess | Ch. 8 |
+| $N_k(i, c)$ | The $k$ nearest neighbors of individual $i$ with protected attribute $c$, in the Mahalanobis metric on legitimate predictors | Ch. 8 |
 
 ---
 

@@ -113,6 +113,8 @@ The `swap_demographic` function performs a counterfactual transformation: it mod
 
 A perfectly gauge-invariant system has $\|V\| = 0$. The baseline Bond Index of 0.155 quoted from the Geometric Ethics experiments is a moral-domain figure. The legal baseline remains to be measured.
 
+The code above is the transformation form of the index, which needs a model that can be run again on a changed case. The one measurement on legal data in this volume uses a different form, the matched-neighborhood ratio of Chapter 8, which needs only a record of inputs, outputs and the protected attribute. It was computed for COMPAS risk scores and is a ratio centered on 1 (1.049 at the illustrative scale $k = 20$, and 1.00 to 1.02 under matching parity), so it is not a value of `lbi.total` and is not comparable with 0.155. Its reference implementation is a separate script, archived with the paper "The Legal Bond Index" (Bond, in press, *Journal of Science and Law*) at doi:10.5281/zenodo.21310251.
+
 ---
 
 ## B.4 Path Homology for Constitutional Review

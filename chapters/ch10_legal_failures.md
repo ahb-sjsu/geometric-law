@@ -296,6 +296,8 @@ The geometric framework suggests remediation strategies for each pathology:
 
 **For gauge breaking:** Measure and publish the LBI. Transparency is the first step: when gauge violations are visible, they create pressure for correction. Concretely: compute the LBI for every federal court, publish the results, and establish benchmarks for acceptable levels of gauge violation.
 
+The one index of this kind that has been computed on legal data shows what such a publication would have to contain. It is the matched-neighborhood index for COMPAS risk scores (Chapter 8), which measures an algorithm and not a court. Its unadjusted value at the illustrative scale is 1.049 on a scale where 1 means no excess. Under specifications that force the matches across race to be as close as the matches within race, it falls to between 1.00 and 1.02. A published figure therefore needs its matching diagnostics, its confidence intervals and a calibrated significance test beside it, and the paper that reports this one proposes no benchmark, on the ground that none can yet be defended. The values used for Rivera's docket in this chapter are illustrative and on a different scale.
+
 ## Worked Example: A System Exhibiting All Four Pathologies
 
 ### Scenario

@@ -233,6 +233,8 @@ where $S$ is a set of test cases, $\tau$ ranges over bond-preserving transformat
 
 The form above is the mean absolute change, which lies in $[0, 1]$ when outcomes are scaled to that range. The Technical Appendix gives the normalized form used in computation, in which each change is divided by the size of the original outcome. Chapter 11 averages the normalized form over outcome dimensions, and Chapter 15 defines a variant for AI systems, with Mahalanobis distances between system outputs and its own normalization. Values of the different forms are not directly comparable.
 
+A further form, a ratio centered on 1, is the one that has been computed on legal data. It is defined in the section "The Measured Form of the Index" below. Its values are on a different scale again.
+
 An LBI of 0 means perfect invariance: the system produces identical outcomes for equivalent cases. An LBI of 1 means maximum variance: the system's outcomes are as different as possible for equivalent cases. Any value between 0 and 1 indicates partial gauge violation.
 
 ### Decomposing the LBI
@@ -253,6 +255,8 @@ The parent framework — Geometric Ethics — established an empirical baseline 
 
 For legal systems, the LBI should be computed from actual sentencing data, actual bail decisions, actual verdict patterns. The U.S. Sentencing Commission data suggests that $\text{LBI}_{\text{race}}$ for federal sentencing is approximately 0.19. State-level data suggests even higher values. The LBI provides a common currency for comparing gauge violation across jurisdictions, across time, and across types of legal decisions.
 
+The figure of 0.19 restates the Commission's 19.1% as a relative change. It is not a computation of the index from case data. One computation on legal data exists, for the scores of one risk-assessment algorithm, and it uses a different form of the index on a different scale. It is reported in the section "The Measured Form of the Index" below. Its headline value, a ratio of 1.049, cannot be set beside 0.155 or 0.19. For the forms defined above, the legal baseline remains unmeasured.
+
 ### The Wilson Loop Test
 
 In gauge theory, the most powerful test for gauge invariance is the Wilson loop: transport a quantity around a closed path and check whether it returns to its original value. If it does, the gauge field is trivial along that path. If it does not, there is a gauge violation — the "holonomy" of the loop is non-trivial.
@@ -268,6 +272,143 @@ In legal terms: take a legal principle and apply it through a sequence of cases 
 **Proposition (Wilson Loop Test for Consistency).** A body of case law is internally consistent if and only if all Wilson loops in the precedent-defined connection are trivial. Non-trivial Wilson loops identify specific circuits of legal reasoning that produce contradictions.
 
 For equal protection specifically, the Wilson loop test asks: start with a case involving a defendant of race $r_1$. Follow the legal reasoning through a chain of precedents. Apply those precedents to a case with a defendant of race $r_2$. Follow the reasoning back through another chain of precedents to a case equivalent to the starting case. Has the Hohfeldian structure changed? If it has, the precedent system contains a racial gauge violation that is detectable by the loop.
+
+## The Measured Form of the Index
+
+### One Measurement on Legal Data
+
+The forms of the Legal Bond Index defined above all ask for the same operation. Take a case, change a protected characteristic, evaluate the case again, and compare. For a decided case that operation cannot be performed. The index has therefore been defined in this chapter and not computed.
+
+One computation now exists. The paper "The Legal Bond Index: A Matched-Neighbourhood Diagnostic of Algorithmic Disparity, Applied to COMPAS" (Bond, in press, *Journal of Science and Law*) defines a form of the index that needs only recorded data, and computes it for one risk-scoring algorithm on one public dataset. It is the only measurement on legal data reported in this volume. Every other index value in this chapter is illustrative.
+
+Three things should be said before the numbers. First, the object measured is the score of an algorithm, not the judgment of a court. Second, the paper stands on its own. Its author note says that it "makes no use of" the judicial complex or the invariance machinery, so its result measures a disparity in one set of scores and is not a test of the geometric framework of this book. Third, the paper states what reduces its finding and what the finding cannot show at the same length as the finding itself. This section does the same.
+
+### The Matched-Neighborhood Definition
+
+Let each individual $i$ have a vector $\mathbf{x}_i \in \mathbb{R}^d$ of legitimate predictors, a binary protected attribute $g_i \in \{0, 1\}$, and a score $f(i)$ assigned by the algorithm. Distance between individuals is the Mahalanobis distance on the legitimate predictors:
+
+$$d_M(\mathbf{x}_i, \mathbf{x}_j) = \sqrt{(\mathbf{x}_i - \mathbf{x}_j)^T \Sigma^{-1} (\mathbf{x}_i - \mathbf{x}_j)}$$
+
+where $\Sigma$ is the empirical covariance of the predictors over the population. This is the metric of Chapter 4 applied to a different space. Its coordinates are recorded predictors of a score, not the eight legal dimensions.
+
+**Definition (Legal Bond Index, Matched-Neighborhood Form).** At neighborhood scale $k \geq 1$, the Legal Bond Index of an algorithm $f$ with respect to a protected attribute $g$ is
+
+$$\text{LBI}_k(f, g) = \frac{\mathbb{E}_i \left[ \operatorname{mean}_{j \in N_k(i, \neg g_i)} \lvert f(i) - f(j) \rvert \right]}{\mathbb{E}_i \left[ \operatorname{mean}_{j \in N_k(i, g_i)} \lvert f(i) - f(j) \rvert \right]}$$
+
+where $N_k(i, c)$ is the set of the $k$ individuals other than $i$ that are nearest to $i$ in the metric $d_M$ and have protected attribute $c$, where $\neg g_i = 1 - g_i$, and where $\mathbb{E}_i$ is the mean over individuals.
+
+The numerator is the average score gap between an individual and the $k$ nearest neighbors of the other group. The denominator is the average score gap between an individual and the $k$ nearest neighbors of the same group. A value of 1 means that scores diverge no more across the protected attribute than within it, among neighbors matched on the stated predictors. A value above 1 means that they diverge more. A value below 1 means that they diverge less.
+
+The scale $k$ is the number of neighbors of each group that are used. Small $k$ compares tight matches, with more sampling noise. Large $k$ gives up tightness for stability. No scale is privileged in advance, so the paper treats the whole curve $k \mapsto \text{LBI}_k$ over scales fixed beforehand as the object of inference, and uses $k = 20$ as an illustrative scale for detailed diagnostics.
+
+### How This Form Relates to the Others
+
+The forms defined earlier in this chapter, in Chapter 5, in Chapter 11 and in Chapter 15 are transformation forms. Each compares a case with a transformed copy of itself, and each equals 0 under perfect invariance. They are the theoretical forms of this book. None has been computed on legal data, and the book has not fixed which of them is the definition.
+
+The form of the paper is a comparison form. No case is transformed. Different people are compared, and the comparison across groups is divided by the same comparison within groups. It is a ratio centered on 1. It is the operational form of the index, the one that has been measured.
+
+The two kinds meet at one point. The numerator of the ratio is what a matched-pair estimate of the mean absolute change would be, the mean absolute score gap between each individual and matched neighbors of the other group. On the COMPAS data at $k = 20$ that gap is 2.323 deciles. It is far from zero because matched neighbors are different people, whose scores differ for many reasons that have nothing to do with the protected attribute. The gap to matched neighbors of the same group, 2.215 deciles, shows how large that common part is. The ratio $2.323 / 2.215 = 1.049$ sets the one against the other. A transformation form needs no such denominator, because a case compared with its own copy shows no gap at all when nothing depends on the characteristic that was changed.
+
+The scales must therefore not be mixed. A ratio of 1.049 is not an index of 0.049 on the scale from 0 to 1. It is not comparable with the illustrative values 0.19 and 0.08 of this chapter, with the threshold 0.05 of Chapter 15, or with the moral-domain figure 0.155. None of those values can be converted into the ratio, and the ratio cannot be converted into any of them.
+
+### The COMPAS Result
+
+COMPAS is a commercial instrument that scores a defendant from 1 to 10 for the risk of recidivism within two years. The data are the file that ProPublica published for Broward County, Florida, which holds 7,214 records. ProPublica's standard filter leaves 6,172. The restriction to African-American and Caucasian defendants leaves $n = 5{,}278$, of whom 3,175 are African-American and 2,103 are Caucasian. The score is the general recidivism decile. The legitimate predictors are six: age, the count of adult prior offenses, three counts of juvenile offenses (felony, misdemeanor and other), and an indicator that the current charge is a felony.
+
+The index was computed at six scales fixed in advance, for race and for sex.
+
+| Scale $k$ | Index for race | 95% interval | Index for sex | 95% interval |
+|-----------|----------------|--------------|---------------|--------------|
+| 1 | 1.045 | 1.002 to 1.089 | 0.962 | 0.935 to 1.032 |
+| 5 | 1.043 | 1.010 to 1.074 | 1.012 | 0.974 to 1.043 |
+| 10 | 1.041 | 1.017 to 1.068 | 1.016 | 0.987 to 1.043 |
+| 20 | 1.049 | 1.027 to 1.072 | 1.021 | 0.998 to 1.044 |
+| 50 | 1.060 | 1.041 to 1.079 | 1.028 | 1.008 to 1.048 |
+| 100 | 1.069 | 1.053 to 1.087 | 1.041 | 1.023 to 1.060 |
+
+The intervals are pointwise, one for each scale. They come from a bootstrap of 1,000 replicates in which the neighborhoods are formed again inside every replicate, because the same defendant serves as a neighbor of many others.
+
+The curve for race lies above 1 at every scale, between 1.041 and 1.069, and every interval excludes 1, narrowly at $k = 1$. At $k = 20$ the index is 1.049. When defendants are matched on the six predictors, COMPAS scores diverge on average about 5% more across race than within race. The curve, not any single point on it, is the finding.
+
+The curve for sex is not distinguishable from 1 at scales up to 20, and the global tests described below do not reject for sex ($p = 0.39$ for the plain permutation test and $p = 0.90$ for the conditional test). The paper withdraws the claim of an earlier version that there is a smaller effect for sex. It reports the index for sex as a methodological comparison and not as an alleged violation, since courts have upheld the express use of sex in risk assessment.
+
+The index is largest when the score is cut at the threshold that ProPublica used, a decile of 5 or more, which is the medium-or-high class. There the index is 1.092. Matched neighbors of the other race disagree on the class 37.3% of the time, against 34.2% for matched neighbors of the same race. That is an excess of 3.1 percentage points, or 9.2% in relative terms. An index of 1.092 is a relative increase in disagreement of 9.2%, not an increase of nine points. At the threshold of a decile of 8 or more, the high class alone, the index is 1.026 (24.6% against 24.0%).
+
+The disparity is not symmetric. Computed with African-American defendants as the focal group the index at $k = 20$ is 1.027, and with Caucasian defendants as the focal group it is 1.087.
+
+### What Reduces the Figure
+
+A ratio of this kind can be inflated mechanically. Nothing in the definition forces the two sets of neighbors to be equally close. If neighbors of the other group are farther away in the space of predictors, their scores may differ more even under a score that ignores the protected attribute altogether.
+
+On the COMPAS data that concern is partly borne out. At $k = 20$ the mean distance to neighbors of the other race is 0.458, against 0.357 to neighbors of the same race. The distance ratio is 1.28. It falls from 1.52 at $k = 1$ to 1.17 at $k = 100$.
+
+The paper therefore estimates the index again at $k = 20$ under specifications that tighten the matching or force parity between the two sets of neighbors.
+
+| Specification | Index | Defendants used |
+|---------------|-------|-----------------|
+| Unrestricted | 1.049 | 5,278 |
+| Exact match on the felony indicator, then Mahalanobis | 1.050 | 5,278 |
+| Caliper at the 90th percentile | 1.022 | 4,656 |
+| Caliper at the 75th percentile | 1.012 | 3,826 |
+| Neighborhoods of fixed radius | 1.022 | 4,171 |
+| Coarsened exact matching, then Mahalanobis | 1.009 | 3,159 |
+| Same-race comparators matched on distance | 1.003 | 5,278 |
+
+A caliper leaves out every defendant whose nearest comparator of the other race is farther than the stated percentile of the distances to nearest comparators of the same race. Coarsened exact matching compares only within strata of age, prior offenses, any juvenile record and the felony indicator. Its interval is 1.000 to 1.018. The last specification draws same-race comparators at the distances of the cross-race set. The paper notes that it overcorrects, since the same-race comparators it selects are on average farther away than the cross-race ones (0.662 against 0.458), and reads its value as a lower bound.
+
+Under matching parity the estimate falls to between 1.00 and 1.02. Leaving out the 5% of defendants with the largest gaps lowers the index from 1.049 to 1.009, so the unadjusted figure is driven in large part by its upper tail. The paper puts the mechanical component, the part that comes from poorer matches across race, at about 0.01 to 0.015 of the excess of 0.049.
+
+The choice of predictors and the choice of metric move the figure much less. Every set of predictors that was tried gives an index of at least 1.034, including the set that drops the juvenile counts, and five other distance constructions agree with the Mahalanobis value to within 0.005. The paper warns against reading that as more than it is. Robustness to the family of metric is not robustness to the quality of the match.
+
+### The Test
+
+Whether what remains is distinguishable from nothing is a question for a significance test, and the paper finds that the usual one is the wrong test here. A permutation of the race labels destroys the dependence between race and the predictors, which is the very thing that produces the mechanical component. A conditional randomization test keeps that dependence. Its null distribution is centered at 1.015, not at 1.000. Against it the observed index at $k = 20$ stands 4.9 standard deviations above the null ($z = 4.9$), and the global test across all six scales gives $p = 0.001$. Chapter 15 sets out the test, its validation on scores with known structure, and the finding that the ordinary permutation test rejects on 56.5% of race-blind datasets at a nominal level of 5%.
+
+### The Two-Sided Reading
+
+The paper calls its own summary two-sided, and both sides belong in any restatement of it.
+
+On one side, COMPAS scores carry a component associated with race beyond what the six predictors explain. It survives a test whose null already contains the mechanical effect of poorer matching. It is concentrated among defendants who have few close comparators of the other race and in the upper tail of the gaps. It is asymmetric between the two focal groups. It is largest at the threshold that drove the public controversy.
+
+On the other side, the unadjusted index overstates the size of that component. Part of the excess is mechanical, and the specifications that force matching parity put the adjusted figure at 1.00 to 1.02. The paper describes the result as "small in magnitude, statistically unambiguous".
+
+### What the Measurement Does Not Show
+
+The limits stated in the paper are these.
+
+1. **The predictors are a subset.** The public file holds only some of the variables that COMPAS uses. Items on substance use, education and employment are absent and could not be matched on. The analysis therefore cannot confirm that the defendants compared were fully similarly situated, cannot isolate a causal effect of race, and cannot establish discrimination. Every finding is conditional on the measured predictors.
+
+2. **Some predictors are contested.** Counts of prior and juvenile offenses reflect policing, surveillance and charging practice as well as conduct. Matching on them can understate a disparity, just as omitting a legitimate predictor can overstate one. The choice of what counts as legitimate is normative, and the availability of data cannot settle it.
+
+3. **Nothing is transformed.** Different people are compared. An index above 1 shows that scores diverge more across groups than within them among neighbors chosen on the stated predictors. It does not show that the algorithm uses race.
+
+4. **The index is a summary.** It is built from local comparisons and then averaged. It is not a verdict on any individual case.
+
+5. **The validation is local.** The checks on scores with known structure use the COMPAS predictors and one linear family of scores. Whether the index and its test behave the same way for other algorithms, jurisdictions or decisions has not been tested.
+
+6. **The scope is one instrument.** The result concerns one algorithm, one county, one public dataset, and a binary contrast between two groups.
+
+7. **There is no threshold.** The paper proposes no value of the index above which a system fails. It withdrew the descriptive ranges of an earlier draft because no benchmark yet grounds them.
+
+8. **It is not a legal finding.** Under *Washington v. Davis*, 426 U.S. 229 (1976), and *McCleskey v. Kemp*, 481 U.S. 279 (1987), a statistical disparity does not make out an equal protection claim without proof of discriminatory purpose. A high index does not establish a violation of any legal rule, and a low index does not license deployment.
+
+The paper describes the index as "a research-stage screening signal that may contribute one input to an audit, not a validated regulatory audit standard". This book uses it in no stronger sense.
+
+The measurement bears on one prediction of this chapter, made in the next section, that the index should be smallest for race and larger for sex. For COMPAS the opposite order was found. The index for race is distinguishable from 1 and the index for sex is not. One algorithm scored on one dataset is not a test of the tiers of scrutiny, and the measured index is not the form in which the prediction is stated. The observation is recorded here and no conclusion is drawn from it.
+
+### Relation to the Impossibility Results
+
+COMPAS is the instrument over which the modern dispute about algorithmic fairness began. ProPublica reported in 2016 that among defendants who did not reoffend, Black defendants were far more often classified as higher risk. The vendor replied that among defendants classified as higher risk, the rate of reoffending was about the same across races. On the 5,278 defendants of the paper both patterns appear. The false positive rate is 0.423 for African-American defendants and 0.220 for Caucasian defendants. The rate of recidivism among those classified medium or high is 0.650 and 0.595.
+
+Chouldechova (2017) and Kleinberg, Mullainathan and Raghavan (2017) showed that the two criteria cannot both be met when the base rates of the groups differ, except in trivial cases. Here the base rates are 0.523 and 0.391. The disagreement cannot be resolved by data, because it is a disagreement about which property a fair score should have.
+
+The impossibility results constrain statistics of whole groups. The matched-neighborhood index is not such a statistic, and the results do not constrain it. An algorithm can have an index of 1 while meeting neither criterion, and conversely. The index does not settle the dispute between the two criteria. It answers a different question, whether scores differ more across groups than within them among defendants who are close on the stated predictors. The proposition on disparate impact in the Technical Appendix of this chapter draws the same line in the terms of this book: an invariant rule applied to groups with different distributions produces different aggregates, so a difference between aggregates is not by itself evidence that the rule is not invariant.
+
+A Lean file kept with the source of the paper states two facts and describes them as checked by the proof assistant. The first is the identity that holds on any confusion matrix with positive entries:
+
+$$\text{FPR} = \frac{p}{1 - p} \cdot \frac{1 - \text{PPV}}{\text{PPV}} \cdot (1 - \text{FNR})$$
+
+where $p$ is the base rate, PPV is the positive predictive value, and FPR and FNR are the false positive and false negative rates. The second is its consequence: two groups with equal PPV, equal FNR and different base rates have different false positive rates. The file says of itself that these are checks of the arithmetic the paper cites and not a formalization of the cited papers. It proves nothing about the index, whose values are empirical. The file was not rebuilt for this volume.
 
 ## The Tiers of Scrutiny as Gauge-Breaking Terms
 
@@ -459,7 +600,7 @@ These entries quantify the gauge violation: the statute's effects change by 15-3
 
 3. The Judicial Bond Invariance Principle (JBIP) strengthens the LIP by identifying the specific structure — Hohfeldian bonds — whose preservation defines legal equivalence. The JBIP is the Bond Invariance Principle from Geometric Ethics, specialized to law.
 
-4. The Legal Bond Index (LBI) quantifies gauge violation. It can be decomposed along the generators of the equal protection gauge group to identify which protected characteristics suffer the most variance. The LBI is empirically measurable from existing data.
+4. The Legal Bond Index (LBI) quantifies gauge violation. It can be decomposed along the generators of the equal protection gauge group to identify which protected characteristics suffer the most variance. The forms defined for it in this book compare a case with a transformed copy of itself and have not been computed on legal data.
 
 5. The tiers of scrutiny (strict, intermediate, rational basis) are gauge-breaking thresholds: they specify how much gauge violation is permissible for different types of transformations.
 
@@ -468,6 +609,8 @@ These entries quantify the gauge violation: the statute's effects change by 15-3
 7. Gauge invariance under equal protection generates the entitlement balance: in a closed bilateral dispute, the net change in Hohfeldian entitlements is zero.
 
 8. Disparate impact is spontaneous gauge breaking: the laws are facially neutral but the ground state (the baseline distribution of social conditions) is not gauge-invariant, causing asymmetric outcomes.
+
+9. One form of the index has been measured. It is the matched-neighborhood ratio of the paper "The Legal Bond Index" (in press), a ratio centered on 1 that compares score gaps across groups with score gaps within groups among neighbors matched on legitimate predictors. For COMPAS risk scores ($n = 5{,}278$) it lies between 1.041 and 1.069 across neighborhood scales and is 1.049 at $k = 20$. Under matching parity it falls to between 1.00 and 1.02, and neighbors of the other race are on average 1.28 times as far away as neighbors of the same race. The result is conditional on the measured predictors, which are a subset of what COMPAS uses. It is a screening diagnostic for one algorithm on one public dataset. It is not a finding of legal unfairness, not a causal effect of race, and not on the same scale as the other index values in this book.
 
 ---
 
@@ -509,4 +652,4 @@ where $T(c_i, c_j)$ is the parallel transport matrix encoding how Hohfeldian lab
 
 ## Notes on Sources
 
-The Equal Protection Clause is the first section of the Fourteenth Amendment, ratified in 1868. Justice Harlan's dissent in *Plessy v. Ferguson*, 163 U.S. 537 (1896), articulated the "color-blind Constitution" principle that the majority would not adopt until *Brown v. Board of Education*, 347 U.S. 483 (1954). The tiered scrutiny framework was established through *Korematsu v. United States*, 323 U.S. 214 (1944) (strict scrutiny for race), *Craig v. Boren*, 429 U.S. 190 (1976) (intermediate scrutiny for sex), and *Williamson v. Lee Optical*, 348 U.S. 483 (1955) (rational basis). The sentencing disparity data is from the U.S. Sentencing Commission, *Demographic Differences in Sentencing* (2017). The gauge-theoretic interpretation of equal protection is original to the Algorithmic Jurisprudence framework. The Legal Invariance Principle and Judicial Bond Invariance Principle are defined in Bond's AJ manuscript (2026). The Legal Bond Index generalizes the Bond Index from Geometric Ethics. *Students for Fair Admissions v. Harvard*, 600 U.S. 181 (2023), restricted race-conscious admissions. *United States v. Booker*, 543 U.S. 220 (2005), made the federal sentencing guidelines advisory. The disparate impact framework was established in *Griggs v. Duke Power Co.*, 401 U.S. 424 (1971). The Wilson loop originates in lattice gauge theory; see Wilson (1974).
+The Equal Protection Clause is the first section of the Fourteenth Amendment, ratified in 1868. Justice Harlan's dissent in *Plessy v. Ferguson*, 163 U.S. 537 (1896), articulated the "color-blind Constitution" principle that the majority would not adopt until *Brown v. Board of Education*, 347 U.S. 483 (1954). The tiered scrutiny framework was established through *Korematsu v. United States*, 323 U.S. 214 (1944) (strict scrutiny for race), *Craig v. Boren*, 429 U.S. 190 (1976) (intermediate scrutiny for sex), and *Williamson v. Lee Optical*, 348 U.S. 483 (1955) (rational basis). The sentencing disparity data is from the U.S. Sentencing Commission, *Demographic Differences in Sentencing* (2017). The gauge-theoretic interpretation of equal protection is original to the Algorithmic Jurisprudence framework. The Legal Invariance Principle and Judicial Bond Invariance Principle are defined in Bond's AJ manuscript (2026). The Legal Bond Index generalizes the Bond Index from Geometric Ethics. The matched-neighborhood form, the COMPAS figures, the matching diagnostics and the stated limits are from Bond, "The Legal Bond Index: A Matched-Neighbourhood Diagnostic of Algorithmic Disparity, Applied to COMPAS," accepted by the *Journal of Science and Law* and in press at the time of writing. Its reference implementation is archived at doi:10.5281/zenodo.21310251. The COMPAS data are from Angwin, Larson, Mattu, and Kirchner (2016, "Machine Bias," *ProPublica*). The vendor's reply is Dieterich, Mendoza, and Brennan (2016). The impossibility results are Chouldechova (2017) and Kleinberg, Mullainathan, and Raghavan (2017). *Students for Fair Admissions v. Harvard*, 600 U.S. 181 (2023), restricted race-conscious admissions. *United States v. Booker*, 543 U.S. 220 (2005), made the federal sentencing guidelines advisory. The disparate impact framework was established in *Griggs v. Duke Power Co.*, 401 U.S. 424 (1971). The Wilson loop originates in lattice gauge theory; see Wilson (1974).

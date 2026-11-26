@@ -36,7 +36,7 @@ March 2026
 | **8 legal dimensions** | Entitlement, factual nexus, procedure, statutory authority, constitutionality, precedent, remedies, public interest | Ch. 3 |
 | **Legal Invariance Principle** (LIP) | Legal judgments must be invariant under legally irrelevant transformations | Ch. 8 |
 | **Hohfeldian gauge group** | $V_4$ on each square of jural relations; the group of the full octad, formerly $D_4 \rtimes_\varphi D_4$, is withdrawn pending restatement (2026-11-26) | Ch. 2, 5 |
-| **Legal Bond Index** | Quantitative measure of judicial inconsistency under gauge transformations | Ch. 8 |
+| **Legal Bond Index** | Quantitative measure of judicial inconsistency under gauge transformations. Its measured form is a matched-neighborhood ratio centered on 1 | Ch. 8 |
 | **Path homology** | Topological invariant of directed graphs; constitutionality = homology preservation | Ch. 7 |
 | **Doctrinal heuristic** $h_D(n)$ | Legal doctrine as A* heuristic function guiding search through $\mathcal{K}$ | Ch. 6 |
 | **Precedential weight deformation** | Stare decisis as local modification of edge weights | Ch. 9 |
@@ -52,9 +52,10 @@ March 2026
 | Hohfeldian relations on each square form $V_4$; $D_4 \rtimes D_4$ (AJ Theorem 5.1) is withdrawn pending restatement, 2026-11-26 | Ch. 2, 5 |
 | Due process = well-definedness on quotient space (conditional theorem; AJ Theorem 7.3) | Ch. 8 |
 | Cross-lingual invariance of normative structure (109K passages, 11 languages; exploratory and model-mediated in that volume's claim ledger) | Geometric Ethics |
-| Bond Index baseline from the moral domain: 0.155 (the legal baseline remains to be measured) | Geometric Ethics |
+| Bond Index baseline from the moral domain: 0.155 (no legal value on that scale has been measured) | Geometric Ethics |
+| Legal Bond Index, matched-neighborhood form, for COMPAS risk scores ($n = 5{,}278$): 1.041 to 1.069 across neighborhood scales, 1.049 at $k = 20$ (95% interval 1.027 to 1.072). Under matching parity: 1.00 to 1.02. Conditional on the measured predictors. A research-stage screening diagnostic for one algorithm, not a finding of legal unfairness | Ch. 8; Bond (in press), *Journal of Science and Law* |
 
-Note: The AJ theorem numbers refer to the companion paper *Algorithmic Jurisprudence* (Bond, 2026), not to chapter numbers in this book. The theorems are conditional on the model's axioms. None is a measured result of this volume.
+Note: The AJ theorem numbers refer to the companion paper *Algorithmic Jurisprudence* (Bond, 2026), not to chapter numbers in this book. The theorems are conditional on the model's axioms. None is a measured result of this volume. The one measurement on legal data is the last row. It is a ratio centered on 1, on a different scale from the 0.155 of the row above, and it measures the scores of an algorithm. It is taken from a paper that makes no use of the framework of this book and is not a test of it.
 
 ## How to Read This Book
 

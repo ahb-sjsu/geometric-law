@@ -125,3 +125,53 @@ The SU(2) gauge prediction and hysteresis, which *Geometric Ethics* records as r
 11. **Statistical significance of a tensor entry (Chapter 11, Technical Appendix).** The proposition gives a normal distribution with mean zero for an entry that is a mean of absolute values. Under the null hypothesis such a mean is positive. A restatement needs the signed tensor and was not attempted.
 
 12. **The running example of Chapter 12.** The hypothetical appeal speaks of a jury verdict, and the worked example speaks of a bench trial. Each is a separate hypothetical, so nothing was changed, but the author may wish them to agree.
+
+## Integration of the Legal Bond Index paper (2026-11-26)
+
+The paper is "The Legal Bond Index: A Matched-Neighbourhood Diagnostic of Algorithmic Disparity, Applied to COMPAS" (Bond), accepted by the *Journal of Science and Law* and in press. The book cites it as in press, with no volume or page. Every number was taken from the accepted text (`lbi_manuscript.tex`) and checked against `outputs/revision2_results.json`. The two agree to the printed precision. No figure file and no figure caption was changed. No running example was changed, and no real figure was attached to Judge Rivera's docket.
+
+### What was added, and where
+
+1. **Chapter 8, new section "The Measured Form of the Index"**, placed after "The Wilson Loop Test" and before "The Tiers of Scrutiny as Gauge-Breaking Terms". Nine subsections. "One Measurement on Legal Data" says what the measurement is and that the paper makes no use of this book's framework. "The Matched-Neighborhood Definition" gives the paper's definition. "How This Form Relates to the Others" calls the earlier forms transformation forms (theoretical, equal to 0 under invariance, not computed on legal data) and the paper's form a comparison form (a ratio centered on 1, the operational form), and says the scales must not be mixed. "The COMPAS Result" gives the data, the curve over six scales for race and sex, the threshold result and the focal-group asymmetry. "What Reduces the Figure" gives the distance ratio 1.28 and the table of matching-parity specifications (1.00 to 1.02). "The Test" gives the conditional randomization result. "The Two-Sided Reading" restates the paper's summary. "What the Measurement Does Not Show" lists eight limits and quotes "a research-stage screening signal that may contribute one input to an audit, not a validated regulatory audit standard". "Relation to the Impossibility Results" covers Chouldechova and Kleinberg et al. and says what the Lean file states and what it does not.
+
+2. **Chapter 8, smaller changes.** One paragraph after the definition names the measured form as a further form. "Empirical Baseline" now says that 0.19 restates the Commission's 19.1% and is not a computed index, that one computation exists on a different scale, and that the baseline for the forms defined in the chapter remains unmeasured. Summary item 4 no longer says the index "is empirically measurable from existing data" without qualification. Summary item 9 is new. The Notes on Sources cite the paper, ProPublica, the vendor's reply and the two impossibility papers.
+
+3. **Chapter 15, new section "Testing Invariance from Recorded Data"**, placed after "The Legal Bond Index in Practice" and before Worked Example 1. Five subsections: when the swap test is not available, the paper's four-step screening procedure, why the permutation test fails (with the table of three null constructions), the validation on scores with known structure (with the seven-row table), and what the chapter takes from the paper, including its limits. Criterion 2 now points to this section. The paragraph on comparability says the measured form is on another scale and the 0.05 threshold does not apply to it. Summary item 7 is new. The Notes on Sources cite the paper.
+
+4. **Chapter 16, new section "What Has Been Measured"**, placed before Open Problem 1. It lists what is known from the one measurement and what is not, and says the measurement leaves the five open problems open and does not calibrate the legal metric. One sentence under "Sensitivity analysis" in Open Problem 1 reports the paper's sensitivity result and says it concerns a different metric. Summary item 8 is new. The Notes on Sources cite the paper.
+
+5. **Chapter 5.** After the sentence that the legal baseline remains to be measured, one paragraph says a measurement exists in a different form on a different scale and that the baseline for the form defined there is still unmeasured. "Measuring the LBI in Practice" gains a paragraph on the third route, comparison of recorded cases.
+
+6. **Chapter 10, "Breaking the Feedback Loop".** One paragraph after the remedy "Measure and publish the LBI" says what the one measured index shows a publication would need (matching diagnostics, intervals, a calibrated test) and that the paper proposes no benchmark.
+
+7. **Chapter 11.** "The Matching Problem" gains the matched-neighborhood comparison as a method and a caution on match quality. "Setting Benchmarks" gains the measured null level (1.009 in simulation, 1.015 as the centre of the calibrated null). The Technical Appendix gains a remark on randomization tests after the proposition on statistical significance. Summary item 2 and the Notes on Sources are extended.
+
+8. **Front matter and Chapter 0.** The key-results tables gain a row for the measurement with its attenuation and its status, and the row for 0.155 now reads "no legal value on that scale has been measured". The core-objects row for the index names the measured form. The Series Foreword gains a paragraph on the paper. The Preface sentence on 19.1% is followed by a sentence that attributes the figure to the Sentencing Commission and points to Chapter 8.
+
+9. **Back matter and appendices.** The bibliography has a new section, "Algorithmic Fairness and Risk Assessment", with the paper (in press) and four sources. The table of contents entries for Chapters 8, 15 and 16 mention the new sections. The index has new entries (caliper, conditional randomization test, matched-neighborhood ratio, matching parity, permutation test, COMPAS, and the symbol for the ratio) and a revised entry for the Legal Bond Index. Appendix B says its code is the transformation form and points to the paper's archive for the measured form. Appendix C has two new notation rows.
+
+### Effect on the earlier Unresolved items
+
+- **Item 5 (the source of 0.155).** Left open. The paper does not contain the figure. The book now says in each place that the measured ratio is on a different scale and cannot be set beside 0.155. The source of 0.155 is still needed.
+
+- **Item 7 (which form of the index is the definition).** Partly settled. The book now says plainly that the paper's matched-neighborhood ratio is the measured, operational form, and that the forms of Chapters 5, 8, 11 and 15 are theoretical forms that have not been computed on legal data. Which of the theoretical forms is the definition is still open, as are the two normalizers of Chapter 15. The values 0.05, 0.08 and 0.19 are now said not to be on the scale of the measured form. Which theoretical form each belongs to is still not stated.
+
+- **Item 10 (sentencing figures stated as data, Chapter 8).** Partly settled. The text now says that 0.19 restates the Commission's 19.1% as a relative change and is not a computed index. "State-level data suggests even higher values" still has no source and was not changed.
+
+- **Item 11 (statistical significance of a tensor entry, Chapter 11).** Left open. The new remark gives the calibrated alternative for matched estimates and says it has been established for one index on one dataset only. The proposition itself was not restated.
+
+- **Statements that the legal baseline is unmeasured** (Chapters 5 and 8, front matter, Chapter 0, Appendix B, index; Reconciled item 23). Qualified, not removed. No value of the transformation forms has been measured for any court or dataset. One value of a different form has been measured for one algorithm.
+
+### New points for the author
+
+1. **The tiers of scrutiny prediction (Chapter 8).** The chapter predicts that the index should be smallest for race and larger for sex. For COMPAS the paper finds the index for race distinguishable from 1 and the index for sex not. The new section records this in one paragraph and draws no conclusion, since COMPAS is one algorithm and the measured form is not the form of the prediction.
+
+2. **Thresholds.** Chapter 15 uses a threshold of 0.05 from the Algorithmic Jurisprudence manuscript, and Chapter 10 calls for benchmarks. The paper proposes no threshold and withdrew the descriptive ranges of an earlier draft. The book now says the 0.05 belongs to the swap form only.
+
+3. **The Acknowledgments (front matter).** They say the empirical work underlying the Legal Bond Index was conducted using the legal-retrieval Kaggle dataset. The measured index of the paper was computed on the ProPublica COMPAS file. The sentence was not changed (see also Unresolved item 6).
+
+4. **The paper's author note.** It cites the companion theoretical work on the judicial complex with two references whose titles are an economics monograph and a working paper on bounded rationality. Neither is this volume or the Algorithmic Jurisprudence manuscript. The paper's proofing is closed, so this is recorded only.
+
+5. **The README epistemic status** still reads "posited framework with one instrumented corner" (the legal text embedding). It was not changed. The COMPAS measurement does not instrument the framework, since the paper does not use it.
+
+6. **The Lean file** (`LbiImpossibility.lean`) is not mentioned in the paper's text. The book describes what its header states and says it was not rebuilt for this volume.

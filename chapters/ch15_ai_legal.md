@@ -167,6 +167,8 @@ $$\text{LBI} = \frac{1}{|G_{\text{irrelevant}}|} \sum_{g \in G_{\text{irrelevant
 
 An LBI of 0 indicates perfect gauge invariance. An LBI above a threshold (the Algorithmic Jurisprudence manuscript suggests 0.05) indicates a violation requiring correction.
 
+This test requires a system that can be run again on rewritten inputs. When only a record of inputs and outputs is available, the test is replaced by a comparison of matched cases, and the significance test needs care. The section "Testing Invariance from Recorded Data" below sets out that case.
+
 **Criterion 3: Topological consistency.** The constructed judicial complex must not contain spurious Wilson loops — directed cycles with non-trivial holonomy that do not correspond to genuine legal inconsistencies. Validation: compute Wilson loops on a subset of known-consistent citation chains and verify that the holonomy is trivial.
 
 **Criterion 4: Retrieval accuracy.** Given a query case, the system should retrieve precedents that legal experts judge to be relevant. Validation: compare the system's top-$k$ retrieved cases against expert judgments using standard retrieval metrics (precision@$k$, recall@$k$, normalized discounted cumulative gain).
@@ -220,6 +222,81 @@ This identifies which transformation (race, gender, style) causes the largest vi
 **Comparability.** The LBI is normalized, so it can be compared across systems, across jurisdictions, and across time periods. An LBI of 0.08 for JurisGraph can be compared to the LBI of the human legal system (estimated from sentencing disparity data) to determine whether the AI system is more or less biased than human judges.
 
 **Actionability.** A high LBI identifies specific gauge violations that can be corrected by targeted interventions: rebalancing the training data, adding gauge-invariance constraints to the loss function, or post-processing the dimension scores to remove dependence on legally irrelevant features.
+
+The comparability claimed here holds within one form of the index. The matched-neighborhood form of Chapter 8, which is the form that has been measured, is a ratio centered on 1. Its values cannot be compared with values of the form defined in this section, and the threshold of 0.05 does not apply to it.
+
+## Testing Invariance from Recorded Data
+
+### When the Swap Test Is Not Available
+
+The test of Criterion 2 rewrites a case and runs the system again. It needs a system that the tester can run on inputs of the tester's choosing. Many instruments in legal use cannot be tested in that way from outside. The instrument is proprietary, and the auditor holds only a record of the inputs it received and the scores it returned. The COMPAS risk score is the standard example.
+
+The matched-neighborhood form of the Legal Bond Index (Chapter 8) is built for that setting. It was introduced and applied to COMPAS in the paper "The Legal Bond Index" (Bond, in press, *Journal of Science and Law*). It needs a dataset that holds the legitimate inputs of the algorithm, its outputs, and the protected attribute. The algorithm need not take the protected attribute as an input, and COMPAS does not ask for race. No access to parameters, training data or vendor documentation is needed.
+
+The price is stated in Chapter 8 and repeated here. No case is transformed. Different people are compared, and whatever the index reports is conditional on the predictors that the audit dataset holds. Where those are a subset of the true inputs of the instrument, as they are for COMPAS, an index above 1 does not establish that fully similarly situated people were treated differently, and an index of 1 does not certify that they were not.
+
+### The Screening Procedure
+
+The paper offers a candidate procedure in four steps.
+
+1. Obtain a sample of the inputs and outputs of the algorithm, joined to the protected attribute from administrative records. The sample should run to thousands. The COMPAS analysis used $n = 5{,}278$.
+2. Specify the set of legitimate features. This is a normative input that the audit cannot supply. It must come from statute, regulation or expert designation.
+3. Compute the index for the protected attribute across neighborhood scales $k$ fixed in advance, together with diagnostics of matching quality: the distances to neighbors of each group, and the index under specifications that force matching parity.
+4. Report the curve over $k$, pointwise confidence intervals, the global $p$-value of a calibrated randomization test, and the underlying rates of disagreement across and within groups at the decision threshold in use.
+
+The paper proposes no numerical threshold for the result. It reads an elevated index as a reason to disaggregate and investigate, weighed beside the standard fairness metrics, and not as a failure against a cutoff.
+
+### Why the Permutation Test Fails Here
+
+The natural significance test permutes the labels of the protected attribute and computes the index again. The paper shows that this test is wrong for the purpose, and the reason applies to any test of invariance run on recorded data.
+
+A permutation of the labels tests the hypothesis that the labels are independent of everything, the scores and the legitimate features alike. In recorded data the protected attribute is correlated with the legitimate features. That correlation makes neighbors of the other group lie farther away than neighbors of the same group, which by itself lifts the index above 1 even for a score that ignores the protected attribute (Chapter 8). Permutation destroys the correlation. Its null distribution therefore leaves out an effect that a blind score would show, and it rejects too often.
+
+The paper reports three null constructions, each with 1,000 draws on the full sample.
+
+| Null construction | Null mean at $k = 20$ | Null standard deviation | $z$ of the observed 1.049 | Global $p$ |
+|-------------------|-----------------------|-------------------------|---------------------------|------------|
+| Plain permutation of the labels | 1.0013 | 0.0049 | 9.7 | 0.001 |
+| Permutation within deciles of the propensity score | 1.0124 | 0.0066 | 5.5 | 0.001 |
+| Conditional randomization test | 1.0150 | 0.0068 | 4.9 | 0.001 |
+
+The conditional randomization test draws each label afresh from the estimated probability $\hat{P}(\text{race} \mid \mathbf{x}_i)$, fitted by logistic regression on the legitimate features. The dependence between the label and the features is kept, so any mechanical contribution of that dependence to the index is present in the null draws as well. The permutation within propensity deciles is a check on the logistic model that does not rely on it. The global $p$-value is for the largest standardized value over the six scales $k \in \{1, 5, 10, 20, 50, 100\}$, compared with the null distribution of the same maximum, so the claim does not rest on a scale chosen after the fact.
+
+The two stricter nulls are not centered at 1. A race-blind score on these features is expected to give an index of about 1.015. Against that null the observed index still rejects, with $z = 4.9$ and a global $p$ of 0.001. The larger $z$ of the plain permutation test comes from a null centered at 1.001, which is the null of the wrong hypothesis.
+
+### Validation on Scores with Known Structure
+
+The paper checks the index and the tests on scores whose structure is known. The scores are synthetic. The features and the race labels are the real ones, so the real dependence between them is kept. The base score is a linear fit of the observed decile on the six features ($R^2 = 0.42$) plus Gaussian noise at the residual scale of 2.16 deciles. Four conditions are run. In the first the score is blind to race. In the second a direct coefficient $\beta$ on race is added, in deciles. In the third a proxy variable with correlation 0.8 to race is added with weight $\gamma$. In the fourth the score is blind to race but one legitimate predictor, the count of prior offenses, is withheld from the matching. Each condition has between 60 and 200 replicates, and each replicate is tested at the 5% level with 200 draws.
+
+| Condition | Mean index at $k = 20$ | Permutation test rejects | Conditional test rejects | Regression $t$-test rejects |
+|-----------|------------------------|--------------------------|--------------------------|-----------------------------|
+| Race-blind | 1.009 | 56.5% | 4.5% | 6.0% |
+| Direct, $\beta = 0.25$ | 1.015 | 88.3% | 21.7% | 100% |
+| Direct, $\beta = 0.5$ | 1.027 | 100% | 85.0% | 100% |
+| Direct, $\beta = 1.0$ | 1.071 | 100% | 100% | 100% |
+| Proxy, $\gamma = 0.5$ | 1.052 | 100% | 100% | 100% |
+| Proxy, $\gamma = 1.0$ | 1.153 | 100% | 100% | 100% |
+| Race-blind, predictor withheld | 1.015 | 88.3% | 5.0% | 1.7% |
+
+The table supports five statements, and they are the paper's.
+
+1. Under a race-blind score the index sits near 1 but not at it (1.009). The mechanical component is real and small on these data.
+2. The plain permutation test rejects on 56.5% of race-blind datasets at a nominal level of 5%. It should not be used with the index. The conditional test rejects on 4.5%, which is correct calibration.
+3. The index rises with the size of a direct effect (1.009, 1.015, 1.027, 1.071) and responds strongly to a proxy (1.153 at $\gamma = 1$), which an audit that only checks whether race is an input would miss.
+4. Withholding a legitimate predictor from the matching raises the index to 1.015, yet the conditional test still rejects only 5% of the time. The test conditions on the full set of recorded features, so it survives a poor matching space as long as the feature is recorded. When a legitimate determinant is not recorded at all, the index and every other observational diagnostic inherit the bias.
+5. A regression coefficient is more powerful than the index against a purely linear direct effect (100% against 21.7% at $\beta = 0.25$). Parametric tests do better on their home ground. The index makes no assumption about functional form, works on the outputs of a black box, including categorical ones, and comes with a calibrated test.
+
+### What This Chapter Takes from the Paper
+
+Three things carry over to the pipeline of this chapter, and each is a caution.
+
+**Calibrate the test, not only the statistic.** A test of invariance on recorded data must have a null that keeps the dependence between the protected attribute and the legitimate features. A statistic can be right and its significance test wrong. The swap test of Criterion 2 compares each case with its own transformed copy and does not rest on matching, so this finding concerns audits from recorded data, not the swap test.
+
+**Validate the metric before it anchors an audit.** The paper notes that where cases are documents and not feature vectors, a learned embedding could in principle supply the metric, but that general-purpose text embeddings conflate legal structure with generic textual similarity. A learned metric should be validated against external structure, such as citation networks or expert judgments of similarity, before a fairness audit is built on it. That is Criterion 5 of this chapter, stated as a precondition.
+
+**Do not read a number against a cutoff that has no grounding.** The threshold of 0.05 used in this chapter is the suggestion of the Algorithmic Jurisprudence manuscript for the swap form. The paper proposes no threshold for the matched-neighborhood form and withdrew the descriptive ranges of an earlier draft.
+
+The limits of the paper's evidence are also part of what is known. The validation uses one dataset and one linear family of scores. It establishes calibration and power in that setting. It does not establish that the index or its test will behave the same way for other algorithms, jurisdictions or decisions, and the paper says that each new setting needs its own validation against known structure before the index is relied on there. The paper calls the index "a research-stage screening signal that may contribute one input to an audit, not a validated regulatory audit standard".
 
 ## Worked Example 1: Fourteenth Amendment Analysis
 
@@ -385,6 +462,8 @@ The geometric standard is not a barrier to AI legal reasoning. It is a *blueprin
 
 6. The **geometric standard for legal AI** — gauge invariance, topological consistency, metric calibration, and conservation compliance — sets a higher bar than current industry practice but is principled, testable, and achievable.
 
+7. When a system cannot be run again on rewritten inputs, invariance is tested from recorded data with the **matched-neighborhood form** of the index (Chapter 8). The one application so far is to COMPAS risk scores. The ordinary permutation test is miscalibrated for this purpose. On race-blind synthetic scores it rejects 56.5% of the time at a nominal 5%, where a **conditional randomization test** rejects 4.5% of the time. The validation covers one dataset and one family of scores, no threshold is proposed, and the index is a research-stage screening signal, not a validated audit standard.
+
 ---
 
 ## Technical Appendix
@@ -433,4 +512,4 @@ labeled examples per dimension. For $d = 768$, $\epsilon = 0.05$, $\delta = 0.05
 
 ## Notes on Sources
 
-The NLP pipeline for legal analysis draws on the Algorithmic Jurisprudence manuscript (§8, §12). Language-agnostic embeddings are developed in Reimers and Gurevych (2019, *Sentence-BERT*) and Conneau et al. (2020, *Unsupervised Cross-lingual Representation Learning at Scale*). Legal-domain transformers include Chalkidis et al. (2020, *LEGAL-BERT*) and Zheng et al. (2021, *When Does Pretraining Help?*). Linear probes as diagnostic tools are developed by Alain and Bengio (2017) and Belinkov (2022, *Probing Classifiers*). The Mahalanobis distance in machine learning is discussed in De Maesschalck, Jouan-Rimbaud, and Massart (2000). The Legal Bond Index extends the Bond Index of Bond (2026a, *Geometric Ethics*, Ch. 14). The gauge-invariant training approach connects to fairness constraints in machine learning — see Hardt, Price, and Srebro (2016, *Equality of Opportunity in Supervised Learning*) and Zemel et al. (2013, *Learning Fair Representations*). Citation analysis in legal databases is reviewed in Fowler et al. (2007, *Network Analysis and the Law*). The stare decisis factors for overruling precedent originate with *Planned Parenthood v. Casey*, 505 U.S. 833 (1992). The retrieval accuracy metrics are standard in information retrieval — see Manning, Raghavan, and Schütze (2008, *Introduction to Information Retrieval*). The Ledoit-Wolf covariance estimator is developed in Ledoit and Wolf (2004). The accuracy-invariance tradeoff connects to the broader fairness-accuracy tradeoff literature — see Corbett-Davies and Goel (2018).
+The NLP pipeline for legal analysis draws on the Algorithmic Jurisprudence manuscript (§8, §12). Language-agnostic embeddings are developed in Reimers and Gurevych (2019, *Sentence-BERT*) and Conneau et al. (2020, *Unsupervised Cross-lingual Representation Learning at Scale*). Legal-domain transformers include Chalkidis et al. (2020, *LEGAL-BERT*) and Zheng et al. (2021, *When Does Pretraining Help?*). Linear probes as diagnostic tools are developed by Alain and Bengio (2017) and Belinkov (2022, *Probing Classifiers*). The Mahalanobis distance in machine learning is discussed in De Maesschalck, Jouan-Rimbaud, and Massart (2000). The Legal Bond Index extends the Bond Index of Bond (2026a, *Geometric Ethics*, Ch. 14). The matched-neighborhood form, the screening procedure, the three null constructions and the validation on synthetic scores are from Bond, "The Legal Bond Index: A Matched-Neighbourhood Diagnostic of Algorithmic Disparity, Applied to COMPAS," accepted by the *Journal of Science and Law* and in press at the time of writing, with its reference implementation archived at doi:10.5281/zenodo.21310251. The gauge-invariant training approach connects to fairness constraints in machine learning — see Hardt, Price, and Srebro (2016, *Equality of Opportunity in Supervised Learning*) and Zemel et al. (2013, *Learning Fair Representations*). Citation analysis in legal databases is reviewed in Fowler et al. (2007, *Network Analysis and the Law*). The stare decisis factors for overruling precedent originate with *Planned Parenthood v. Casey*, 505 U.S. 833 (1992). The retrieval accuracy metrics are standard in information retrieval — see Manning, Raghavan, and Schütze (2008, *Introduction to Information Retrieval*). The Ledoit-Wolf covariance estimator is developed in Ledoit and Wolf (2004). The accuracy-invariance tradeoff connects to the broader fairness-accuracy tradeoff literature — see Corbett-Davies and Goel (2018).

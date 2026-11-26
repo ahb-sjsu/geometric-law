@@ -31,6 +31,8 @@ The central constructions of this volume are the **judicial complex** $\mathcal{
 
 The empirical foundation draws from the companion paper *Algorithmic Jurisprudence* (Bond, 2026), the legal-retrieval Kaggle competition (109K passages across 11 languages), and the cross-lingual invariance experiments from *Geometric Ethics*. The results quoted from those sources: the Hohfeldian positions carry the Klein four-group $V_4$ (the D$_4$ structure stated in earlier versions is withdrawn), the Bond Index baseline from the moral domain is 0.155 (the legal baseline remains to be measured), and *Geometric Ethics* reports cross-lingual deontic transfer at 100% (confidence interval [99.96%, 100%]), measured through a multilingual embedding model and not on human subjects.
 
+One result on legal data has been added since. The paper "The Legal Bond Index: A Matched-Neighbourhood Diagnostic of Algorithmic Disparity, Applied to COMPAS" (Bond, in press, *Journal of Science and Law*) defines a form of the index that can be computed from recorded data and computes it for the COMPAS risk score on 5,278 defendants. The index is a ratio in which 1 means no excess disparity. It lies between 1.041 and 1.069 across neighborhood scales and falls to between 1.00 and 1.02 when the matches across race are forced to be as close as the matches within race. The result is conditional on the predictors in the public dataset, which are a subset of those the algorithm uses. It is a screening diagnostic, not proof of legal unfairness and not a causal effect of race. It is on a different scale from the 0.155 above and from the illustrative index values in the chapters. Chapter 8 reports it in full, with its limits.
+
 The relationship between this volume and its predecessor is worth noting. *Geometric Economics* proved that Nash equilibrium is the scalar projection of a richer geometric object (the BGE). This volume proves an analogous result for law: the binary verdict is the scalar projection of a richer geometric object (the eight-dimensional legal evaluation). In both cases, the projection is lossy, the loss is irrecoverable, and the richer object resolves puzzles that the scalar projection cannot address. The mathematical structure is inherited from the parent framework. The domain-specific content --- Hohfeld's taxonomy, constitutional topology, the adversarial system --- is original to the legal instantiation.
 
 Subsequent volumes extend the framework further: *Geometric Cognition* (Book 6) turns the manifold inward on the mind, *Geometric Communication* (Book 7) applies it across species and millennia, and *Geometric Medicine* (Book 8) brings it to the bedside where the stakes are highest. Each domain instantiation reveals new structure. Each confirms the same theorem: scalar reduction is irrecoverable, and the geometry matters.
@@ -61,7 +63,7 @@ For **legal scholars and practitioners**, the book provides a mathematical vocab
 
 For **mathematicians, physicists, and computer scientists** curious about applications of differential geometry, gauge theory, and simplicial topology to the social sciences, the book provides a worked example of what it means to apply these tools with rigor. The Hohfeldian gauge group is a genuine algebraic structure, not a metaphor. The path homology criterion for constitutionality is a genuine topological computation. The Legal Bond Index is a genuine quantitative measure. The framework is formal and falsifiable.
 
-For **citizens and policymakers** who believe that "equal justice under law" should be more than an inscription on a building, the book provides a tool. The Legal Bond Index measures whether the legal system satisfies the invariance it claims. A gauge violation tensor of 0.191 on the race-sentence component means that Black defendants receive sentences 19.1% longer than white defendants for equivalent crimes. This is not a political argument. It is a measurement. The framework converts normative demands into empirical tests.
+For **citizens and policymakers** who believe that "equal justice under law" should be more than an inscription on a building, the book provides a tool. The Legal Bond Index measures whether the legal system satisfies the invariance it claims. A gauge violation tensor of 0.191 on the race-sentence component means that Black defendants receive sentences 19.1% longer than white defendants for equivalent crimes. This is not a political argument. It is a measurement. The framework converts normative demands into empirical tests. The figure of 19.1% is the U.S. Sentencing Commission's. The one form of the Legal Bond Index that has been computed on legal data is a different quantity on a different scale, a matched-neighborhood ratio for the scores of one risk-assessment algorithm, and Chapter 8 reports it with what it does and does not show.
 
 ### A Note on Scope
 
@@ -88,7 +90,7 @@ Each chapter opens with a running example --- Judge Elena Rivera, a federal dist
 | **8 legal dimensions** | Entitlement, factual nexus, procedure, statutory authority, constitutionality, precedent, remedies, public interest | Ch. 3 |
 | **Legal Invariance Principle** (LIP) | Legal judgments must be invariant under legally irrelevant transformations | Ch. 8 |
 | **Hohfeldian gauge group** | $V_4$ on each square of jural relations; the group of the full octad, formerly $D_4 \rtimes_\varphi D_4$, is withdrawn pending restatement (2026-11-26) | Ch. 2, 5 |
-| **Legal Bond Index** | Quantitative measure of judicial inconsistency under gauge transformations | Ch. 8 |
+| **Legal Bond Index** | Quantitative measure of judicial inconsistency under gauge transformations. Its measured form is a matched-neighborhood ratio centered on 1 | Ch. 8 |
 | **Path homology** | Topological invariant of directed graphs; constitutionality = homology preservation | Ch. 7 |
 | **Doctrinal heuristic** $h_D(n)$ | Legal doctrine as A* heuristic function guiding search through $\mathcal{K}$ | Ch. 6 |
 | **Precedential weight deformation** | Stare decisis as local modification of edge weights via parallel transport | Ch. 9 |
@@ -104,7 +106,10 @@ Each chapter opens with a running example --- Judge Elena Rivera, a federal dist
 | Hohfeldian relations on each square form $V_4$ ($D_4 \rtimes D_4$ withdrawn pending restatement, 2026-11-26) | Ch. 2, 5 |
 | Due process = well-definedness on quotient space | Ch. 8 |
 | Cross-lingual invariance of normative structure (109K passages, 11 languages; exploratory and model-mediated in that volume's claim ledger) | *Geometric Ethics* |
-| Bond Index baseline from the moral domain: 0.155 (the legal baseline remains to be measured) | *Geometric Ethics* |
+| Bond Index baseline from the moral domain: 0.155 (no legal value on that scale has been measured) | *Geometric Ethics* |
+| Legal Bond Index, matched-neighborhood form, for COMPAS risk scores ($n = 5{,}278$): 1.041 to 1.069 across neighborhood scales, 1.049 at $k = 20$ (95% interval 1.027 to 1.072). Under matching parity: 1.00 to 1.02. Conditional on the measured predictors. A research-stage screening diagnostic for one algorithm, not a finding of legal unfairness | Ch. 8; Bond (in press), *Journal of Science and Law* |
+
+The last row is the one measurement on legal data in this volume. It is a ratio centered on 1, on a different scale from the 0.155 of the row above, and it measures the scores of an algorithm. It is taken from a paper that makes no use of the framework of this book and is not a test of it.
 
 ## Epistemic Status Classification
 

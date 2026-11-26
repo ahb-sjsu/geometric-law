@@ -79,6 +79,16 @@
 
 ---
 
+## Algorithmic Fairness and Risk Assessment
+
+- Angwin, J., Larson, J., Mattu, S., and Kirchner, L. (2016). "Machine Bias." *ProPublica*, May 23, 2016.
+- Bond, A. H. (in press). "The Legal Bond Index: A Matched-Neighbourhood Diagnostic of Algorithmic Disparity, Applied to COMPAS." *Journal of Science and Law.* Accepted for publication; no volume or page assigned at the time of writing. Reference implementation archived at doi:10.5281/zenodo.21310251.
+- Chouldechova, A. (2017). "Fair Prediction with Disparate Impact: A Study of Bias in Recidivism Prediction Instruments." *Big Data* 5(2): 153--163.
+- Dieterich, W., Mendoza, C., and Brennan, T. (2016). *COMPAS Risk Scales: Demonstrating Accuracy Equity and Predictive Parity.* Northpointe Inc. Research Department.
+- Kleinberg, J., Mullainathan, S., and Raghavan, M. (2017). "Inherent Trade-Offs in the Fair Determination of Risk Scores." *Proceedings of the 8th Innovations in Theoretical Computer Science Conference (ITCS)*, 43:1--43:23.
+
+---
+
 ## Contract Law and Private Ordering
 
 - Farnsworth, E. A. (2004). *Farnsworth on Contracts.* 3rd ed. Aspen.

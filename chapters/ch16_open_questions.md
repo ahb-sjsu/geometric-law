@@ -25,6 +25,35 @@ The geometric framework developed in this book is, by design, incomplete. The ju
 
 This incompleteness is a feature, not a bug. A framework that claimed completeness would be either trivial or false. The geometric framework claims only that legal reasoning has geometric structure and that the structure is partially capturable by the tools of differential geometry, algebraic topology, and gauge theory. The five open problems identified below are the specific points where "partially" matters most — where the framework's current tools are insufficient and new mathematics, new data, or new legal theory is required.
 
+## What Has Been Measured
+
+### One Result and Its Limits
+
+Before the open problems, the state of the evidence should be put plainly. This volume contains one measurement on legal data. It is the Legal Bond Index in its matched-neighborhood form, computed for COMPAS risk scores in the paper "The Legal Bond Index" (Bond, in press, *Journal of Science and Law*) and set out in Chapter 8. Everything else numerical in the book is a conditional theorem, an illustrative figure, or a result quoted from another source.
+
+What is known from that measurement is this.
+
+- For 5,278 defendants in the public ProPublica file, the index for race lies above 1 at every neighborhood scale tested, from 1.041 to 1.069. It is 1.049 at $k = 20$, with a 95% interval of 1.027 to 1.072.
+- Under specifications that force matching parity (calipers, coarsened exact matching, comparators matched on distance) the estimate falls to between 1.00 and 1.02. Neighbors of the other race are on average 1.28 times as far away as neighbors of the same race at $k = 20$, and a part of the unadjusted excess, about 0.01 to 0.015, is mechanical.
+- A conditional randomization test, whose null contains that mechanical part, still rejects ($z = 4.9$, global $p = 0.001$). The ordinary permutation test is miscalibrated for this index. It rejects on 56.5% of race-blind synthetic datasets at a nominal 5%, where the conditional test rejects on 4.5% (Chapter 15).
+- At the classification threshold that ProPublica used the index is 1.092. Matched neighbors of the other race disagree on the class 37.3% of the time, against 34.2% for the same race.
+- The index for sex is not distinguishable from 1 at scales up to 20, and the global test does not reject for it.
+
+What is not known is at least as long a list, and the paper states it.
+
+- The public file omits inputs that COMPAS uses (substance use, education, employment). The result is conditional on the measured predictors. It does not show that fully similarly situated defendants were treated differently, does not isolate a causal effect of race, and does not establish discrimination.
+- Some of the predictors that were matched on, prior and juvenile counts, are themselves racially patterned, so matching on them can understate a disparity.
+- The validation of the index and its test uses one dataset and one linear family of scores. Whether they behave the same way for other algorithms, jurisdictions or decisions is untested.
+- No threshold exists. The paper proposes none and says that one must come from policy.
+- The definition treats the protected attribute as binary. The extension to several classes is described as mechanical and has not been carried out.
+- The index is, in the paper's words, "a research-stage screening signal that may contribute one input to an audit, not a validated regulatory audit standard".
+
+### What It Does Not Settle in This Book
+
+The measurement leaves the five open problems where they were. The paper uses a Mahalanobis metric on six recorded predictors of a risk score. It does not use the eight legal dimensions, the judicial complex or the legal metric of Chapter 4, and it says so. The calibration of the legal metric (Open Problem 1) is untouched by it. The forms of the Legal Bond Index that this book defines, which compare a case with a transformed copy of itself, have still not been computed on legal data, and no value of the index for a court exists.
+
+Two questions that the paper raises belong on the list of open work. The first is transport. An index validated on one instrument has to be validated again, against scores of known structure, on each new one. The second is the metric for cases that are documents and not rows of a table. The paper notes that a learned embedding could supply the metric in principle, and that it should not be assumed adequate until it has been validated against external structure such as citation networks or expert judgments of similarity. That is Open Problem 1 seen from the side of a fairness audit.
+
 ## Open Problem 1: Metric Calibration
 
 ### The Problem
@@ -47,7 +76,7 @@ Several specific calibration questions remain open:
 
 **Cross-rater reliability.** The dimension scores depend on expert labeling, and experts disagree. Two legal scholars may assign different entitlement scores to the same case, reflecting genuine differences in legal interpretation rather than measurement error. The framework treats inter-rater disagreement as noise to be averaged out, but it may be signal — evidence that the "true" dimension score is indeterminate, and the metric is inherently uncertain.
 
-**Sensitivity analysis.** How much do the framework's conclusions change when the metric changes? If a small perturbation to $\Sigma$ changes the nearest precedent, flips the materiality assessment of a breach, or creates a spurious Wilson loop, the framework's conclusions are fragile and the calibration must be more precise. If the conclusions are robust to small perturbations, the calibration need only be approximate. A systematic sensitivity analysis — computing the framework's outputs under perturbations to $\Sigma$ and measuring the resulting variation — has not been performed.
+**Sensitivity analysis.** How much do the framework's conclusions change when the metric changes? If a small perturbation to $\Sigma$ changes the nearest precedent, flips the materiality assessment of a breach, or creates a spurious Wilson loop, the framework's conclusions are fragile and the calibration must be more precise. If the conclusions are robust to small perturbations, the calibration need only be approximate. A systematic sensitivity analysis — computing the framework's outputs under perturbations to $\Sigma$ and measuring the resulting variation — has not been performed. The nearest thing to it concerns a different metric. For the matched-neighborhood index on COMPAS, five alternative distance constructions on the six recorded predictors agree with the Mahalanobis value to within 0.005, while changes in the quality of the match move the estimate from 1.049 to between 1.00 and 1.02 (Chapter 8). That is a sensitivity analysis of one index on one dataset, not of the legal metric.
 
 ### What Would Solve It
 
@@ -345,8 +374,10 @@ If the five open problems are solved — or even substantially advanced — the 
 
 7. The framework's contribution is not to have solved all problems of legal reasoning but to have **translated** them into a mathematical language where they can be stated precisely and investigated rigorously.
 
+8. The volume holds **one measurement on legal data**: the matched-neighborhood Legal Bond Index for COMPAS risk scores, 1.041 to 1.069 across scales and 1.00 to 1.02 under matching parity, conditional on a subset of the predictors that COMPAS uses. It is a research-stage screening signal for one algorithm. It does not calibrate the legal metric, and it leaves the five open problems open.
+
 ---
 
 ## Notes on Sources
 
-The five open problems extend the discussion in the Algorithmic Jurisprudence manuscript (§13.4). Metric calibration connects to the broader problem of metric learning in machine learning — see Kulis (2013, *Metric Learning: A Survey*) and Bellet, Habrard, and Sebban (2015, *Metric Learning*). Cross-jurisdictional invariance connects to comparative law methodology — see Zweigert and Kötz (1998, *Introduction to Comparative Law*), Glenn (2014, *Legal Traditions of the World*), and Menski (2006, *Comparative Law in a Global Context*). The computability of the fundamental group is discussed in the context of the Adyan-Rabin theorem — see Adyan (1957) and Rabin (1958). Directed homotopy theory is developed by Grandis (2003, *Directed Algebraic Topology*) and Goubault (2000). Persistent homology was introduced by Edelsbrunner, Letscher, and Zomorodian (2002) and is surveyed in Edelsbrunner and Harer (2010, *Computational Topology*). Zigzag persistence is developed by Carlsson and de Silva (2010). Sheaves on topological spaces are standard — see Bredon (1997, *Sheaf Theory*). The fragmentation of international law is studied by the ILC (2006, *Report of the Study Group on Fragmentation*) and Koskenniemi (2006). The OECD BEPS project is documented in OECD (2015, *Explanatory Statement*). The concept of a coherence conjecture for the global legal system is original to the Geometric Law framework.
+The five open problems extend the discussion in the Algorithmic Jurisprudence manuscript (§13.4). The measured result and its limits are from Bond, "The Legal Bond Index: A Matched-Neighbourhood Diagnostic of Algorithmic Disparity, Applied to COMPAS," accepted by the *Journal of Science and Law* and in press at the time of writing. Metric calibration connects to the broader problem of metric learning in machine learning — see Kulis (2013, *Metric Learning: A Survey*) and Bellet, Habrard, and Sebban (2015, *Metric Learning*). Cross-jurisdictional invariance connects to comparative law methodology — see Zweigert and Kötz (1998, *Introduction to Comparative Law*), Glenn (2014, *Legal Traditions of the World*), and Menski (2006, *Comparative Law in a Global Context*). The computability of the fundamental group is discussed in the context of the Adyan-Rabin theorem — see Adyan (1957) and Rabin (1958). Directed homotopy theory is developed by Grandis (2003, *Directed Algebraic Topology*) and Goubault (2000). Persistent homology was introduced by Edelsbrunner, Letscher, and Zomorodian (2002) and is surveyed in Edelsbrunner and Harer (2010, *Computational Topology*). Zigzag persistence is developed by Carlsson and de Silva (2010). Sheaves on topological spaces are standard — see Bredon (1997, *Sheaf Theory*). The fragmentation of international law is studied by the ILC (2006, *Report of the Study Group on Fragmentation*) and Koskenniemi (2006). The OECD BEPS project is documented in OECD (2015, *Explanatory Statement*). The concept of a coherence conjecture for the global legal system is original to the Geometric Law framework.

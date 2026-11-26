@@ -328,6 +328,8 @@ The LBI provides a *quantitative test for judicial consistency*: a court system 
 
 An LBI of 0 means perfect gauge invariance: the system produces identical outcomes for all gauge-equivalent descriptions. An LBI of 1 means maximal gauge violation: the outcomes are completely unrelated under gauge transformations. The empirically calibrated baseline from the moral domain is approximately 0.155; the legal baseline remains to be measured.
 
+One measurement on legal data exists, in a different form of the index. Chapter 8 reports a matched-neighborhood ratio computed for the scores of one risk-assessment algorithm, COMPAS, from the paper "The Legal Bond Index" (Bond, in press, *Journal of Science and Law*). That ratio is centered on 1, not on 0, and its value of 1.049 at the illustrative scale is not comparable with 0.155 or with any value of the form defined here. For the form defined here the legal baseline is still unmeasured.
+
 ### Measuring the LBI in Practice
 
 To compute the LBI for a given court or jurisdiction:
@@ -339,6 +341,8 @@ To compute the LBI for a given court or jurisdiction:
 5. Average the differences to compute the LBI.
 
 Steps 1-2 can be automated. Step 3 is the bottleneck: submitting transformed cases to a real court requires actual litigation, which is impractical for large-scale measurement. For AI legal systems, however, the LBI is directly computable: generate transformed case descriptions, run them through the AI, and measure the output variance.
+
+There is a third route when the system cannot be run again at all and only a record of its inputs and outputs exists. No case is transformed. Each case is compared with recorded cases that are close to it on the legitimate inputs, in the other group and in its own group, and the two comparisons are set against each other. Chapter 8 gives this matched-neighborhood form and the one result obtained with it, and Chapter 15 gives its significance test.
 
 ## The Non-Commutativity of Legal Operations
 
