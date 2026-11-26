@@ -1,0 +1,155 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 420" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif">
+  <defs>
+    <style>
+      .title { font-size: 14px; font-weight: 600; fill: #333; }
+      .subtitle { font-size: 10px; fill: #666; }
+      .label { font-size: 11px; fill: #444; font-weight: 500; }
+      .small { font-size: 9px; fill: #555; }
+      .step-num { font-size: 16px; font-weight: 700; fill: #fff; }
+      .step-name { font-size: 11px; font-weight: 700; }
+      .step-desc { font-size: 9px; fill: #555; }
+      .step-detail { font-size: 8px; fill: #777; }
+      .arrow-flow { font-size: 9px; fill: #999; font-weight: 600; }
+    </style>
+    <marker id="flow-arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#9ecae1"/>
+    </marker>
+  </defs>
+
+  <text x="350" y="24" text-anchor="middle" class="title">Figure 15.1 — The 5-Step NLP Pipeline for Building the Judicial Complex</text>
+  <text x="350" y="40" text-anchor="middle" class="subtitle">From raw case text to a calibrated simplicial complex K with geometric structure. Each step is independently auditable.</text>
+
+  <!-- Step 1: Case Text -->
+  <g transform="translate(20, 70)">
+    <rect x="0" y="0" width="120" height="180" fill="#f3e5f5" stroke="#ce93d8" stroke-width="1.5" rx="8"/>
+    <circle cx="60" cy="30" r="16" fill="#7b1fa2"/>
+    <text x="60" y="35" text-anchor="middle" class="step-num">1</text>
+    <text x="60" y="60" text-anchor="middle" class="step-name" fill="#7b1fa2">Case Text</text>
+    <text x="60" y="78" text-anchor="middle" class="step-desc">Raw judicial opinions</text>
+
+    <rect x="10" y="90" width="100" height="80" fill="#ede7f6" rx="4"/>
+    <text x="60" y="106" text-anchor="middle" class="step-detail" fill="#4a148c">Input format:</text>
+    <text x="60" y="120" text-anchor="middle" class="step-detail">Full text of opinions</text>
+    <text x="60" y="134" text-anchor="middle" class="step-detail">Holdings, dicta, facts</text>
+    <text x="60" y="148" text-anchor="middle" class="step-detail">Citation metadata</text>
+    <text x="60" y="162" text-anchor="middle" class="step-detail">Court, date, parties</text>
+  </g>
+
+  <!-- Arrow 1→2 -->
+  <line x1="142" y1="160" x2="160" y2="160" stroke="#9ecae1" stroke-width="2.5" marker-end="url(#flow-arrow)"/>
+
+  <!-- Step 2: LaBSE Embedding -->
+  <g transform="translate(162, 70)">
+    <rect x="0" y="0" width="120" height="180" fill="#e3f2fd" stroke="#90caf9" stroke-width="1.5" rx="8"/>
+    <circle cx="60" cy="30" r="16" fill="#1565c0"/>
+    <text x="60" y="35" text-anchor="middle" class="step-num">2</text>
+    <text x="60" y="60" text-anchor="middle" class="step-name" fill="#1565c0">LaBSE</text>
+    <text x="60" y="75" text-anchor="middle" class="step-name" fill="#1565c0">Embedding</text>
+
+    <rect x="10" y="88" width="100" height="82" fill="#bbdefb" rx="4"/>
+    <text x="60" y="104" text-anchor="middle" class="step-detail" fill="#0d47a1">768-dim vectors</text>
+    <text x="60" y="118" text-anchor="middle" class="step-detail">Multilingual BERT</text>
+    <text x="60" y="132" text-anchor="middle" class="step-detail">Sentence-level</text>
+    <text x="60" y="146" text-anchor="middle" class="step-detail">embeddings</text>
+    <text x="60" y="162" text-anchor="middle" class="step-detail" fill="#0d47a1">text → v ∈ ℝ⁷⁶⁸</text>
+  </g>
+
+  <!-- Arrow 2→3 -->
+  <line x1="284" y1="160" x2="302" y2="160" stroke="#9ecae1" stroke-width="2.5" marker-end="url(#flow-arrow)"/>
+
+  <!-- Step 3: 8 Dimension Probes -->
+  <g transform="translate(304, 70)">
+    <rect x="0" y="0" width="120" height="180" fill="#e8f5e9" stroke="#81c784" stroke-width="1.5" rx="8"/>
+    <circle cx="60" cy="30" r="16" fill="#2e7d32"/>
+    <text x="60" y="35" text-anchor="middle" class="step-num">3</text>
+    <text x="60" y="60" text-anchor="middle" class="step-name" fill="#2e7d32">8 Dimension</text>
+    <text x="60" y="75" text-anchor="middle" class="step-name" fill="#2e7d32">Probes</text>
+
+    <rect x="10" y="88" width="100" height="82" fill="#c8e6c9" rx="4"/>
+    <text x="60" y="104" text-anchor="middle" class="step-detail" fill="#1b5e20">Linear classifiers</text>
+    <text x="60" y="118" text-anchor="middle" class="step-detail">d₁ entitlement</text>
+    <text x="60" y="130" text-anchor="middle" class="step-detail">d₂ factual nexus</text>
+    <text x="60" y="142" text-anchor="middle" class="step-detail">... d₇ remedies</text>
+    <text x="60" y="154" text-anchor="middle" class="step-detail">d₈ public interest</text>
+    <text x="60" y="166" text-anchor="middle" class="step-detail" fill="#1b5e20">v → (d₁,...,d₈) ∈ ℝ⁸</text>
+  </g>
+
+  <!-- Arrow 3→4 -->
+  <line x1="426" y1="160" x2="444" y2="160" stroke="#9ecae1" stroke-width="2.5" marker-end="url(#flow-arrow)"/>
+
+  <!-- Step 4: Covariance Σ → Edge Weights -->
+  <g transform="translate(446, 70)">
+    <rect x="0" y="0" width="120" height="180" fill="#fff3e0" stroke="#ffb74d" stroke-width="1.5" rx="8"/>
+    <circle cx="60" cy="30" r="16" fill="#e65100"/>
+    <text x="60" y="35" text-anchor="middle" class="step-num">4</text>
+    <text x="60" y="60" text-anchor="middle" class="step-name" fill="#e65100">Covariance Σ</text>
+    <text x="60" y="75" text-anchor="middle" class="step-name" fill="#e65100">Edge Weights</text>
+
+    <rect x="10" y="88" width="100" height="82" fill="#ffe0b2" rx="4"/>
+    <text x="60" y="104" text-anchor="middle" class="step-detail" fill="#bf360c">8×8 covariance</text>
+    <text x="60" y="118" text-anchor="middle" class="step-detail">Mahalanobis distance</text>
+    <text x="60" y="132" text-anchor="middle" class="step-detail">Case-pair similarity</text>
+    <text x="60" y="146" text-anchor="middle" class="step-detail">Edge weight w_ij</text>
+    <text x="60" y="162" text-anchor="middle" class="step-detail" fill="#bf360c">d(i,j) = Δᵀ Σ⁻¹ Δ</text>
+  </g>
+
+  <!-- Arrow 4→5 -->
+  <line x1="568" y1="160" x2="586" y2="160" stroke="#9ecae1" stroke-width="2.5" marker-end="url(#flow-arrow)"/>
+
+  <!-- Step 5: Calibrated K -->
+  <g transform="translate(558, 70)">
+    <rect x="0" y="0" width="120" height="180" fill="#fce4ec" stroke="#f48fb1" stroke-width="1.5" rx="8"/>
+    <circle cx="60" cy="30" r="16" fill="#c2185b"/>
+    <text x="60" y="35" text-anchor="middle" class="step-num">5</text>
+    <text x="60" y="60" text-anchor="middle" class="step-name" fill="#c2185b">Calibrated</text>
+    <text x="60" y="75" text-anchor="middle" class="step-name" fill="#c2185b">Complex K</text>
+
+    <rect x="10" y="88" width="100" height="82" fill="#f8bbd0" rx="4"/>
+    <text x="60" y="104" text-anchor="middle" class="step-detail" fill="#880e4f">Simplicial complex</text>
+    <text x="60" y="118" text-anchor="middle" class="step-detail">Nodes = cases</text>
+    <text x="60" y="132" text-anchor="middle" class="step-detail">Edges = citations</text>
+    <text x="60" y="146" text-anchor="middle" class="step-detail">Weights = distance</text>
+    <text x="60" y="162" text-anchor="middle" class="step-detail" fill="#880e4f">K = (V, E, w, g, ∇)</text>
+  </g>
+
+  <!-- Bottom: What each step produces -->
+  <g transform="translate(20, 280)">
+    <rect x="0" y="0" width="660" height="55" fill="#f5f5f5" stroke="#e0e0e0" stroke-width="1" rx="6"/>
+    <text x="330" y="18" text-anchor="middle" class="label" fill="#333">Pipeline Outputs at Each Stage</text>
+
+    <text x="65" y="38" text-anchor="middle" class="step-detail" fill="#7b1fa2" font-weight="600">~1M opinions</text>
+    <text x="65" y="48" text-anchor="middle" class="step-detail" fill="#7b1fa2">(CourtListener)</text>
+
+    <text x="205" y="38" text-anchor="middle" class="step-detail" fill="#1565c0" font-weight="600">768-d vectors</text>
+    <text x="205" y="48" text-anchor="middle" class="step-detail" fill="#1565c0">per sentence</text>
+
+    <text x="345" y="38" text-anchor="middle" class="step-detail" fill="#2e7d32" font-weight="600">8-d coordinates</text>
+    <text x="345" y="48" text-anchor="middle" class="step-detail" fill="#2e7d32">per case</text>
+
+    <text x="485" y="38" text-anchor="middle" class="step-detail" fill="#e65100" font-weight="600">Edge weights</text>
+    <text x="485" y="48" text-anchor="middle" class="step-detail" fill="#e65100">pairwise d(i,j)</text>
+
+    <text x="615" y="38" text-anchor="middle" class="step-detail" fill="#c2185b" font-weight="600">Full complex K</text>
+    <text x="615" y="48" text-anchor="middle" class="step-detail" fill="#c2185b">with geometry</text>
+  </g>
+
+  <!-- Validation box -->
+  <g transform="translate(20, 350)">
+    <rect x="0" y="0" width="320" height="55" fill="#e8eaf6" stroke="#7986cb" stroke-width="1" rx="5"/>
+    <text x="160" y="16" text-anchor="middle" class="label" fill="#283593">Calibration Checks</text>
+    <text x="15" y="31" class="step-detail" fill="#283593">Probe accuracy: AUC &gt; 0.85 on held-out opinions</text>
+    <text x="15" y="43" class="step-detail" fill="#283593">Σ positive-definite: all eigenvalues &gt; 0</text>
+    <text x="15" y="55" class="step-detail" fill="#283593">Citation prediction: d(i,j) predicts citation with r &gt; 0.6</text>
+  </g>
+
+  <g transform="translate(360, 350)">
+    <rect x="0" y="0" width="320" height="55" fill="#fff3e0" stroke="#ffb74d" stroke-width="1" rx="5"/>
+    <text x="160" y="16" text-anchor="middle" class="label" fill="#e65100">Geometric Properties of K</text>
+    <text x="15" y="31" class="step-detail" fill="#e65100">Connection ∇: parallel transport of legal rules</text>
+    <text x="15" y="43" class="step-detail" fill="#e65100">Curvature R: circuit splits, doctrinal drift</text>
+    <text x="15" y="55" class="step-detail" fill="#e65100">Homology H*: constitutional consistency</text>
+  </g>
+
+  <!-- Caption -->
+  <text x="350" y="418" text-anchor="middle" class="subtitle">Each step is independently auditable and reproducible. The full pipeline transforms unstructured case law into a geometric object amenable to rigorous analysis.</text>
+</svg>

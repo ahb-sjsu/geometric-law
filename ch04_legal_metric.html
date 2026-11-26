@@ -40,7 +40,7 @@
       <div class="chapter-nav-top">
         <a href="ch03_judicial_complex.html" class="nav-prev">&larr; Chapter 3: The Judicial Reasoning Space</a>
         <a href="index.html" class="nav-toc">Contents</a>
-        <a href="ch05_hohfeldian_group.html" class="nav-next">Chapter 5: The $D_4$ Hohfeldian Group &rarr;</a>
+        <a href="ch05_hohfeldian_group.html" class="nav-next">Chapter 5: The Hohfeldian Gauge Group &rarr;</a>
       </div>
 
       <div class="chapter-content">
@@ -119,7 +119,7 @@
 <h3 id="the-three-components">The Three Components</h3>
 <p>The Mahalanobis distance between attribute vectors is only the first component of the edge weight. The full weight of a directed edge $c_i \to c_j$ in the judicial complex is:</p>
 <p><strong>Definition (Asymmetric Edge Weights).</strong> The weight of a directed edge $c_i \to c_j$ in $\mathcal{K}$ is:</p>
-<p>$$w(c_i \to c_j) = \underbrace{\Delta \mathbf{v}(c_i, c_j)^T \, \Sigma^{-1} \, \Delta \mathbf{v}(c_i, c_j)}_{\text{Mahalanobis distance}} + \underbrace{\beta \cdot \mathbf{1}[\text{regime boundary}]}_{\text{boundary penalty}} + \underbrace{h(\ell(c_i), \ell(c_j))}_{\text{hierarchical cost}}$$</p>
+<p>$$w(c_i \to c_j) = \underbrace{\Delta \mathbf{v}(c_i, c_j)^T \, \Sigma^{-1} \, \Delta \mathbf{v}(c_i, c_j)}_{\text{squared Mahalanobis distance}} + \underbrace{\beta \cdot \mathbf{1}[\text{regime boundary}]}_{\text{boundary penalty}} + \underbrace{h(\ell(c_i), \ell(c_j))}_{\text{hierarchical cost}}$$</p>
 <p>The three terms correspond to three distinct sources of legal &ldquo;friction&rdquo; — costs that make legal arguments harder to traverse:</p>
 <h3 id="component-1-doctrinal-distance">Component 1: Doctrinal Distance</h3>
 <p>The Mahalanobis term $\Delta \mathbf{v}^T \Sigma^{-1} \Delta \mathbf{v}$ measures the <em>doctrinal distance</em> between two cases — how different they are along the eight legal dimensions, accounting for cross-dimensional correlations.</p>
@@ -153,7 +153,7 @@
 <p>The three terms correspond to:</p>
 <ol>
 <li>
-<p><strong>Argument complexity</strong> — the total edge weight along the path. More doctrinal steps and larger dimensional differences cost more. A brief that cites twenty cases to establish a point has higher argument complexity than a brief that cites three closely related cases.</p>
+<p><strong>Argument complexity</strong> — the edge weight along the path apart from its boundary penalties, which are written out as the second term and counted once. The Technical Appendix gives the equivalent compact form, with the penalties inside the edge weight. More doctrinal steps and larger dimensional differences cost more. A brief that cites twenty cases to establish a point has higher argument complexity than a brief that cites three closely related cases.</p>
 </li>
 <li>
 <p><strong>Boundary penalties</strong> — the cost of crossing regime boundaries. Changing legal regimes, establishing jurisdiction, overcoming presumptions — each crossing adds a discrete cost.</p>
@@ -258,6 +258,8 @@
 <p><strong>Step 4: Hierarchical cost.</strong> The edge goes from the Supreme Court ($\ell_A = \text{supreme}$) to the district court ($\ell_B = \text{trial}$): binding authority. Hierarchical cost: $h = 0$.</p>
 <p><strong>Step 5: Total edge weight.</strong> $w(c_A \to c_B) = 5.3125 + 0 + 0 = 5.3125$.</p>
 <p><strong>Reverse edge weight.</strong> $w(c_B \to c_A)$ would have $h = \infty$ (a district court cannot bind the Supreme Court), so this edge is impassable in the reverse direction. The asymmetry is extreme: the edge from the Supreme Court to the district court is costless (in hierarchical terms), while the reverse edge has infinite cost.</p>
+<p><img alt="Figure 4.1" src="figures/ch04_fig1.svg" /></p>
+<p><em>Figure 4.1. The squared Mahalanobis distance of the worked example, split by dimension. Each bar is the squared difference between the two attribute vectors on one dimension, divided by the variance 0.04 that the example assumes for every dimension. The bars sum to 5.3125. Precedential constraint (d6) and factual nexus (d2) supply most of it. The boundary penalty and the hierarchical cost are both 0 on this edge, so 5.3125 is also the edge weight. The vectors and the diagonal covariance are the chapter&rsquo;s illustrative values, not calibrated ones.</em></p>
 <h2 id="cross-dimensional-correlations-what-the-data-should-show">Cross-Dimensional Correlations: What the Data Should Show</h2>
 <h3 id="predicted-correlations">Predicted Correlations</h3>
 <p>The covariance matrix $\Sigma$ is not merely a statistical artifact. Its off-diagonal entries make <em>testable predictions</em> about the structure of legal reasoning. The framework predicts specific patterns of cross-dimensional correlation that should emerge from any well-scored corpus of legal cases.</p>
@@ -331,7 +333,7 @@
       <div class="chapter-nav-bottom">
         <a href="ch03_judicial_complex.html" class="nav-prev">&larr; Chapter 3: The Judicial Reasoning Space</a>
         <a href="index.html" class="nav-toc">Contents</a>
-        <a href="ch05_hohfeldian_group.html" class="nav-next">Chapter 5: The $D_4$ Hohfeldian Group &rarr;</a>
+        <a href="ch05_hohfeldian_group.html" class="nav-next">Chapter 5: The Hohfeldian Gauge Group &rarr;</a>
       </div>
     </div>
   </article>

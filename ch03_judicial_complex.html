@@ -59,7 +59,7 @@
 </blockquote>
 <hr />
 <h2 id="the-need-for-a-legal-space">The Need for a Legal Space</h2>
-<p>Chapter 1 argued that legal evaluation has geometric structure — that the binary verdict destroys information about the multi-dimensional reality of legal reasoning. Chapter 2 showed that the fundamental unit of legal analysis, the Hohfeldian relation, has the algebraic structure of the dihedral group $D_4$. Now we need a space in which these structures live.</p>
+<p>Chapter 1 argued that legal evaluation has geometric structure — that the binary verdict destroys information about the multi-dimensional reality of legal reasoning. Chapter 2 showed that the fundamental unit of legal analysis, the Hohfeldian relation, has the algebraic structure of the Klein four-group $V_4$. Now we need a space in which these structures live.</p>
 <p>What would such a space look like? We need three things:</p>
 <ol>
 <li>
@@ -115,6 +115,8 @@
 <p><em>The attribute vector is $\mathbf{v} = (0.9, 0.7, 0.8, 0.6, 0.8, 0.5, 0.7, 0.9)$. This vector locates the case in eight-dimensional legal space.</em></p>
 </blockquote>
 <hr />
+<p><img alt="Figure 3.1" src="figures/ch03_fig1.svg" /></p>
+<p><em>Figure 3.1. The attribute vector of the voting rights case in the running example, one score from 0 to 1 on each of the eight legal dimensions: v = (0.9, 0.7, 0.8, 0.6, 0.8, 0.5, 0.7, 0.9). The scores are the ones Judge Rivera assigns in the example. They are illustrative, not the output of a scoring run.</em></p>
 <h2 id="the-judicial-complex-construction">The Judicial Complex: Construction</h2>
 <h3 id="why-a-simplicial-complex">Why a Simplicial Complex?</h3>
 <p>The space of legal states is fundamentally <em>discrete</em>. There are finitely many decided cases, finitely many statutes, and finitely many constitutional provisions. Legal states do not form a continuum — you cannot &ldquo;continuously vary&rdquo; a case from <em>Brown v. Board of Education</em> to <em>Plessy v. Ferguson</em>. Cases are discrete points, and the connections between them (citations, doctrinal relationships) are discrete edges.</p>
@@ -429,6 +431,8 @@
 - Total weight: comparable to the <em>Crawford</em> edge, but the dimensional profile differs.</p>
 <p>This mini-complex illustrates the basic structure: cases as vertices, citations as directed edges, attribute vectors as coordinates, and edge weights as costs of doctrinal traversal. The full judicial complex for voting rights law would contain thousands of cases and tens of thousands of edges, but the structure is the same.</p>
 <hr />
+<p><img alt="Figure 3.2" src="figures/ch03_fig2.svg" /></p>
+<p><em>Figure 3.2. The mini-complex of the worked example: five voter identification cases as vertices and six citations as directed edges, each running from the earlier case to the later case that cites it. The four Supreme Court cases bind the district court case at the lower right. On the two edges into Rivera&rsquo;s case the largest change in the attribute vector is on d6, precedential constraint, which falls by 0.3 from Crawford and by 0.4 from Brnovich. The cases are placed in order of date, not to scale, and the attribute vectors are the example&rsquo;s illustrative scores.</em></p>
 <h2 id="technical-appendix">Technical Appendix</h2>
 <p><strong>Definition (Directed Weighted Simplicial Complex).</strong> A <em>directed weighted simplicial complex</em> is a tuple $\mathcal{K} = (V, E, S, \mathbf{v}, w)$ where:
 - $V$ is a finite set of vertices.

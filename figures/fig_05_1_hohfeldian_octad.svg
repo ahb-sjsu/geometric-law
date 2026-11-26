@@ -1,0 +1,138 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 480" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif">
+  <defs>
+    <style>
+      .title { font-size: 14px; font-weight: 600; fill: #333; }
+      .subtitle { font-size: 10px; fill: #666; }
+      .label { font-size: 11px; fill: #444; font-weight: 500; }
+      .small { font-size: 9px; fill: #555; }
+      .node-text { font-size: 11px; font-weight: 700; fill: #fff; }
+      .arrow-label { font-size: 8px; fill: #666; font-style: italic; }
+      .group-title { font-size: 12px; font-weight: 700; }
+      .formula { font-size: 10px; fill: #333; font-style: italic; }
+    </style>
+    <marker id="arr-teal" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#00897b"/>
+    </marker>
+    <marker id="arr-orange" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#e65100"/>
+    </marker>
+    <marker id="arr-gray" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#666"/>
+    </marker>
+    <marker id="arr-purple" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#7b1fa2"/>
+    </marker>
+  </defs>
+
+  <text x="350" y="24" text-anchor="middle" class="title">Figure 5.1 — The D₄ ⋊ D₄ Hohfeldian Gauge Group</text>
+  <text x="350" y="40" text-anchor="middle" class="subtitle">The eight Hohfeldian positions form two D₄-symmetric squares joined by a semi-direct product. This is the gauge group of legal entitlements.</text>
+
+  <!-- First Square: Claim relations (teal) -->
+  <g transform="translate(60, 70)">
+    <rect x="-15" y="-15" width="280" height="320" fill="#e0f2f1" stroke="#80cbc4" stroke-width="1.5" rx="8"/>
+    <text x="125" y="8" text-anchor="middle" class="group-title" fill="#00695c">First Square: Claim Relations</text>
+    <text x="125" y="22" text-anchor="middle" class="small" fill="#00897b">Symmetry group D₄ — dihedral group of the square</text>
+
+    <!-- Four nodes arranged as a square -->
+    <!-- Right (top-left) -->
+    <rect x="30" y="50" width="90" height="34" fill="#00897b" rx="6"/>
+    <text x="75" y="72" text-anchor="middle" class="node-text">Right</text>
+
+    <!-- Duty (top-right) -->
+    <rect x="155" y="50" width="90" height="34" fill="#00897b" rx="6"/>
+    <text x="200" y="72" text-anchor="middle" class="node-text">Duty</text>
+
+    <!-- No-right (bottom-right) -->
+    <rect x="155" y="200" width="90" height="34" fill="#00897b" rx="6"/>
+    <text x="200" y="222" text-anchor="middle" class="node-text">No-right</text>
+
+    <!-- Liberty (bottom-left) -->
+    <rect x="30" y="200" width="90" height="34" fill="#00897b" rx="6"/>
+    <text x="75" y="222" text-anchor="middle" class="node-text">Liberty</text>
+
+    <!-- Correlative arrows (horizontal) -->
+    <line x1="120" y1="67" x2="153" y2="67" stroke="#00897b" stroke-width="1.5" marker-end="url(#arr-teal)"/>
+    <line x1="155" y1="67" x2="122" y2="67" stroke="#00897b" stroke-width="1.5" marker-end="url(#arr-teal)"/>
+    <text x="137" y="58" text-anchor="middle" class="arrow-label" fill="#00695c">correlative</text>
+
+    <line x1="120" y1="217" x2="153" y2="217" stroke="#00897b" stroke-width="1.5" marker-end="url(#arr-teal)"/>
+    <line x1="155" y1="217" x2="122" y2="217" stroke="#00897b" stroke-width="1.5" marker-end="url(#arr-teal)"/>
+    <text x="137" y="243" text-anchor="middle" class="arrow-label" fill="#00695c">correlative</text>
+
+    <!-- Opposite arrows (vertical) -->
+    <line x1="75" y1="84" x2="75" y2="198" stroke="#c62828" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arr-gray)"/>
+    <text x="55" y="145" text-anchor="middle" class="arrow-label" fill="#c62828">opposite</text>
+
+    <line x1="200" y1="84" x2="200" y2="198" stroke="#c62828" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arr-gray)"/>
+    <text x="220" y="145" text-anchor="middle" class="arrow-label" fill="#c62828">opposite</text>
+
+    <!-- Diagonal: contradictory -->
+    <line x1="110" y1="84" x2="165" y2="200" stroke="#999" stroke-width="1" stroke-dasharray="3,4"/>
+    <line x1="165" y1="84" x2="110" y2="200" stroke="#999" stroke-width="1" stroke-dasharray="3,4"/>
+    <text x="137" y="148" text-anchor="middle" class="arrow-label" fill="#888">contra-</text>
+    <text x="137" y="158" text-anchor="middle" class="arrow-label" fill="#888">dictory</text>
+
+    <text x="125" y="285" text-anchor="middle" class="formula" fill="#00695c">D₄ = ⟨r, s | r⁴ = s² = 1, srs = r⁻¹⟩</text>
+  </g>
+
+  <!-- Second Square: Power relations (orange) -->
+  <g transform="translate(380, 70)">
+    <rect x="-15" y="-15" width="280" height="320" fill="#fff3e0" stroke="#ffb74d" stroke-width="1.5" rx="8"/>
+    <text x="125" y="8" text-anchor="middle" class="group-title" fill="#e65100">Second Square: Power Relations</text>
+    <text x="125" y="22" text-anchor="middle" class="small" fill="#f57f17">Symmetry group D₄ — dihedral group of the square</text>
+
+    <!-- Power (top-left) -->
+    <rect x="30" y="50" width="90" height="34" fill="#e65100" rx="6"/>
+    <text x="75" y="72" text-anchor="middle" class="node-text">Power</text>
+
+    <!-- Liability (top-right) -->
+    <rect x="155" y="50" width="90" height="34" fill="#e65100" rx="6"/>
+    <text x="200" y="72" text-anchor="middle" class="node-text">Liability</text>
+
+    <!-- Disability (bottom-right) -->
+    <rect x="155" y="200" width="90" height="34" fill="#e65100" rx="6"/>
+    <text x="200" y="222" text-anchor="middle" class="node-text">Disability</text>
+
+    <!-- Immunity (bottom-left) -->
+    <rect x="30" y="200" width="90" height="34" fill="#e65100" rx="6"/>
+    <text x="75" y="222" text-anchor="middle" class="node-text">Immunity</text>
+
+    <!-- Correlative arrows -->
+    <line x1="120" y1="67" x2="153" y2="67" stroke="#e65100" stroke-width="1.5" marker-end="url(#arr-orange)"/>
+    <line x1="155" y1="67" x2="122" y2="67" stroke="#e65100" stroke-width="1.5" marker-end="url(#arr-orange)"/>
+    <text x="137" y="58" text-anchor="middle" class="arrow-label" fill="#e65100">correlative</text>
+
+    <line x1="120" y1="217" x2="153" y2="217" stroke="#e65100" stroke-width="1.5" marker-end="url(#arr-orange)"/>
+    <line x1="155" y1="217" x2="122" y2="217" stroke="#e65100" stroke-width="1.5" marker-end="url(#arr-orange)"/>
+    <text x="137" y="243" text-anchor="middle" class="arrow-label" fill="#e65100">correlative</text>
+
+    <!-- Opposite arrows -->
+    <line x1="75" y1="84" x2="75" y2="198" stroke="#c62828" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arr-gray)"/>
+    <text x="55" y="145" text-anchor="middle" class="arrow-label" fill="#c62828">opposite</text>
+
+    <line x1="200" y1="84" x2="200" y2="198" stroke="#c62828" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arr-gray)"/>
+    <text x="220" y="145" text-anchor="middle" class="arrow-label" fill="#c62828">opposite</text>
+
+    <!-- Diagonal: contradictory -->
+    <line x1="110" y1="84" x2="165" y2="200" stroke="#999" stroke-width="1" stroke-dasharray="3,4"/>
+    <line x1="165" y1="84" x2="110" y2="200" stroke="#999" stroke-width="1" stroke-dasharray="3,4"/>
+    <text x="137" y="148" text-anchor="middle" class="arrow-label" fill="#888">contra-</text>
+    <text x="137" y="158" text-anchor="middle" class="arrow-label" fill="#888">dictory</text>
+
+    <text x="125" y="285" text-anchor="middle" class="formula" fill="#e65100">D₄ = ⟨r, s | r⁴ = s² = 1, srs = r⁻¹⟩</text>
+  </g>
+
+  <!-- Semi-direct product connection -->
+  <g transform="translate(310, 160)">
+    <line x1="0" y1="0" x2="85" y2="0" stroke="#7b1fa2" stroke-width="2.5" marker-end="url(#arr-purple)"/>
+    <line x1="85" y1="0" x2="0" y2="0" stroke="#7b1fa2" stroke-width="2.5" marker-end="url(#arr-purple)"/>
+    <text x="42" y="-10" text-anchor="middle" class="small" fill="#7b1fa2" font-weight="600">semi-direct product</text>
+    <text x="42" y="18" text-anchor="middle" class="formula" fill="#7b1fa2">⋊</text>
+  </g>
+
+  <!-- Bottom: full group -->
+  <rect x="100" y="400" width="500" height="65" fill="#f3e5f5" stroke="#ce93d8" stroke-width="1" rx="6"/>
+  <text x="350" y="420" text-anchor="middle" class="group-title" fill="#7b1fa2">Full Hohfeldian Gauge Group: G = D₄ ⋊ D₄</text>
+  <text x="350" y="437" text-anchor="middle" class="small" fill="#7b1fa2">|G| = 64 elements. Powers can create/destroy claim relations, but not vice versa — hence semi-direct, not direct.</text>
+  <text x="350" y="452" text-anchor="middle" class="small">Gauge transformations permute Hohfeldian positions. A legal rule is gauge-invariant iff it respects the full D₄ ⋊ D₄ symmetry.</text>
+</svg>

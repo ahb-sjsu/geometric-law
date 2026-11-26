@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 420" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif">
+  <defs>
+    <style>
+      .title { font-size: 14px; font-weight: 600; fill: #333; }
+      .subtitle { font-size: 10px; fill: #666; }
+      .label { font-size: 11px; fill: #444; font-weight: 500; }
+      .small { font-size: 9px; fill: #555; }
+      .failure-name { font-size: 12px; font-weight: 700; }
+      .failure-what { font-size: 9px; fill: #666; }
+    </style>
+  </defs>
+
+  <text x="350" y="24" text-anchor="middle" class="title">Figure 1.1 — Three Failures of Binary Law</text>
+  <text x="350" y="40" text-anchor="middle" class="subtitle">Guilty/not-guilty, constitutional/unconstitutional, binding/non-binding — binary projections destroy the geometric structure of legal reasoning.</text>
+
+  <!-- Column 1: Sentencing Disparities as Gauge Violation -->
+  <g transform="translate(20, 58)">
+    <rect x="0" y="0" width="210" height="310" fill="#f3e5f5" stroke="#ce93d8" stroke-width="1.5" rx="8"/>
+    <text x="105" y="25" text-anchor="middle" class="failure-name" fill="#7b1fa2">Sentencing Disparities</text>
+    <text x="105" y="42" text-anchor="middle" class="failure-what">Same crime → different sentences</text>
+
+    <!-- What binary law sees -->
+    <rect x="10" y="55" width="190" height="25" fill="#e1bee7" rx="3"/>
+    <text x="105" y="72" text-anchor="middle" class="small" fill="#4a148c" font-weight="600">Binary: guilty → sentence</text>
+
+    <!-- What it destroys -->
+    <rect x="10" y="90" width="190" height="110" fill="#fce4ec" stroke="#e57373" stroke-width="0.5" rx="3"/>
+    <text x="105" y="106" text-anchor="middle" class="small" fill="#c62828" font-weight="600">Destroys:</text>
+    <text x="20" y="120" class="small" fill="#c62828">• Which judge heard the case</text>
+    <text x="20" y="133" class="small" fill="#c62828">• Defendant's race, SES, gender</text>
+    <text x="20" y="146" class="small" fill="#c62828">• Jurisdiction-specific norms</text>
+    <text x="20" y="159" class="small" fill="#c62828">• Time of day, plea context</text>
+    <text x="20" y="172" class="small" fill="#c62828">• All gauge-variant factors</text>
+    <text x="20" y="185" class="small" fill="#c62828">• (should be invariant but aren't)</text>
+
+    <!-- Geometric diagnosis -->
+    <rect x="10" y="210" width="190" height="88" fill="#ede7f6" stroke="#b39ddb" stroke-width="0.5" rx="3"/>
+    <text x="105" y="228" text-anchor="middle" class="small" fill="#7b1fa2" font-weight="600">Geometric diagnosis:</text>
+    <text x="105" y="243" text-anchor="middle" class="small" fill="#7b1fa2">Gauge violation</text>
+    <text x="105" y="260" text-anchor="middle" class="small">Outcome depends on the</text>
+    <text x="105" y="273" text-anchor="middle" class="small">coordinate frame (judge, jurisdiction)</text>
+    <text x="105" y="286" text-anchor="middle" class="small">not the intrinsic case geometry.</text>
+  </g>
+
+  <!-- Column 2: Circuit Splits as Wilson Loops -->
+  <g transform="translate(245, 58)">
+    <rect x="0" y="0" width="210" height="310" fill="#e3f2fd" stroke="#90caf9" stroke-width="1.5" rx="8"/>
+    <text x="105" y="25" text-anchor="middle" class="failure-name" fill="#1565c0">Circuit Splits</text>
+    <text x="105" y="42" text-anchor="middle" class="failure-what">Same statute → opposite holdings</text>
+
+    <rect x="10" y="55" width="190" height="25" fill="#bbdefb" rx="3"/>
+    <text x="105" y="72" text-anchor="middle" class="small" fill="#0d47a1" font-weight="600">Binary: constitutional or not</text>
+
+    <rect x="10" y="90" width="190" height="110" fill="#fce4ec" stroke="#e57373" stroke-width="0.5" rx="3"/>
+    <text x="105" y="106" text-anchor="middle" class="small" fill="#c62828" font-weight="600">Destroys:</text>
+    <text x="20" y="120" class="small" fill="#c62828">• Path-dependent precedent chains</text>
+    <text x="20" y="133" class="small" fill="#c62828">• Doctrinal evolution over time</text>
+    <text x="20" y="146" class="small" fill="#c62828">• Factual distinctions in circuits</text>
+    <text x="20" y="159" class="small" fill="#c62828">• Holonomy from citation loops</text>
+    <text x="20" y="172" class="small" fill="#c62828">• The curvature of legal space</text>
+    <text x="20" y="185" class="small" fill="#c62828">• (doctrine drifts around loops)</text>
+
+    <rect x="10" y="210" width="190" height="88" fill="#e3f2fd" stroke="#90caf9" stroke-width="0.5" rx="3"/>
+    <text x="105" y="228" text-anchor="middle" class="small" fill="#1565c0" font-weight="600">Geometric diagnosis:</text>
+    <text x="105" y="243" text-anchor="middle" class="small" fill="#1565c0">Non-trivial Wilson loop</text>
+    <text x="105" y="260" text-anchor="middle" class="small">Parallel-transporting a legal rule</text>
+    <text x="105" y="273" text-anchor="middle" class="small">around a citation loop returns it</text>
+    <text x="105" y="286" text-anchor="middle" class="small">rotated — the connection has curvature.</text>
+  </g>
+
+  <!-- Column 3: Constitutional Ambiguity as Topology -->
+  <g transform="translate(470, 58)">
+    <rect x="0" y="0" width="210" height="310" fill="#fff8e1" stroke="#ffe082" stroke-width="1.5" rx="8"/>
+    <text x="105" y="25" text-anchor="middle" class="failure-name" fill="#f57f17">Constitutional Ambiguity</text>
+    <text x="105" y="42" text-anchor="middle" class="failure-what">Text admits multiple readings</text>
+
+    <rect x="10" y="55" width="190" height="25" fill="#fff9c4" rx="3"/>
+    <text x="105" y="72" text-anchor="middle" class="small" fill="#e65100" font-weight="600">Binary: one "correct" reading</text>
+
+    <rect x="10" y="90" width="190" height="110" fill="#fce4ec" stroke="#e57373" stroke-width="0.5" rx="3"/>
+    <text x="105" y="106" text-anchor="middle" class="small" fill="#c62828" font-weight="600">Destroys:</text>
+    <text x="20" y="120" class="small" fill="#c62828">• The space of valid interpretations</text>
+    <text x="20" y="133" class="small" fill="#c62828">• Structural relationships among them</text>
+    <text x="20" y="146" class="small" fill="#c62828">• Whether ambiguity is resolvable</text>
+    <text x="20" y="159" class="small" fill="#c62828">• Topological obstructions to consensus</text>
+    <text x="20" y="172" class="small" fill="#c62828">• Essential vs. accidental vagueness</text>
+    <text x="20" y="185" class="small" fill="#c62828">• (some disputes cannot be collapsed)</text>
+
+    <rect x="10" y="210" width="190" height="88" fill="#fff8e1" stroke="#ffe082" stroke-width="0.5" rx="3"/>
+    <text x="105" y="228" text-anchor="middle" class="small" fill="#f57f17" font-weight="600">Geometric diagnosis:</text>
+    <text x="105" y="243" text-anchor="middle" class="small" fill="#f57f17">Non-trivial topology</text>
+    <text x="105" y="260" text-anchor="middle" class="small">The interpretation space has</text>
+    <text x="105" y="273" text-anchor="middle" class="small">holes (H₁ ≠ 0). No continuous</text>
+    <text x="105" y="286" text-anchor="middle" class="small">deformation can resolve the split.</text>
+  </g>
+
+  <!-- Bottom unifying statement -->
+  <rect x="60" y="380" width="580" height="32" fill="#f5f5f5" stroke="#e0e0e0" stroke-width="1" rx="5"/>
+  <text x="350" y="394" text-anchor="middle" class="small" font-weight="600">All three failures have the same geometric cause: projecting the 8-dimensional legal manifold onto binary verdicts.</text>
+  <text x="350" y="407" text-anchor="middle" class="small">Gauge violations, curvature, and topology are invisible to the binary framework — but they determine real outcomes.</text>
+</svg>

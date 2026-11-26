@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 500" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif">
+  <defs>
+    <style>
+      .title { font-size: 14px; font-weight: 600; fill: #333; }
+      .subtitle { font-size: 10px; fill: #666; }
+      .label { font-size: 11px; fill: #444; font-weight: 500; }
+      .small { font-size: 9px; fill: #555; }
+      .node-label { font-size: 9px; font-weight: 600; }
+      .math { font-size: 10px; fill: #333; font-style: italic; }
+      .section-title { font-size: 11px; font-weight: 700; }
+    </style>
+    <marker id="dir-green" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#2e7d32"/>
+    </marker>
+    <marker id="dir-red" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#c62828"/>
+    </marker>
+    <marker id="dir-gray" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#666"/>
+    </marker>
+  </defs>
+
+  <text x="350" y="24" text-anchor="middle" class="title">Figure 7.1 — Constitutional Review as Path Homology</text>
+  <text x="350" y="40" text-anchor="middle" class="subtitle">An unconstitutional statute creates a non-trivial directed cycle in the judicial complex. Path homology detects it: H₁ ≠ 0.</text>
+
+  <!-- Left panel: Constitutional (H1 = 0) -->
+  <g transform="translate(30, 65)">
+    <rect x="0" y="0" width="310" height="370" fill="#e8f5e9" stroke="#81c784" stroke-width="1.5" rx="8"/>
+    <text x="155" y="22" text-anchor="middle" class="section-title" fill="#2e7d32">Constitutional System (H₁ = 0)</text>
+    <text x="155" y="38" text-anchor="middle" class="small" fill="#388e3c">All directed paths are homologous — no non-trivial cycles</text>
+
+    <!-- Directed graph: constitutional subcomplex -->
+    <!-- Nodes -->
+    <circle cx="155" cy="75" r="18" fill="#2e7d32" opacity="0.9"/>
+    <text x="155" y="79" text-anchor="middle" class="node-label" fill="#fff">Const.</text>
+
+    <circle cx="70" cy="150" r="16" fill="#43a047"/>
+    <text x="70" y="154" text-anchor="middle" class="node-label" fill="#fff">Art. I</text>
+
+    <circle cx="240" cy="150" r="16" fill="#43a047"/>
+    <text x="240" y="154" text-anchor="middle" class="node-label" fill="#fff">Art. III</text>
+
+    <circle cx="70" cy="240" r="16" fill="#66bb6a"/>
+    <text x="70" y="244" text-anchor="middle" class="node-label" fill="#fff">Stat. A</text>
+
+    <circle cx="155" cy="240" r="16" fill="#66bb6a"/>
+    <text x="155" y="244" text-anchor="middle" class="node-label" fill="#fff">Stat. B</text>
+
+    <circle cx="240" cy="240" r="16" fill="#66bb6a"/>
+    <text x="240" y="244" text-anchor="middle" class="node-label" fill="#fff">Stat. C</text>
+
+    <circle cx="155" cy="310" r="14" fill="#a5d6a7" stroke="#2e7d32" stroke-width="1"/>
+    <text x="155" y="314" text-anchor="middle" class="node-label" fill="#2e7d32">Case X</text>
+
+    <!-- Directed edges -->
+    <line x1="142" y1="90" x2="80" y2="136" stroke="#2e7d32" stroke-width="1.5" marker-end="url(#dir-green)"/>
+    <line x1="168" y1="90" x2="230" y2="136" stroke="#2e7d32" stroke-width="1.5" marker-end="url(#dir-green)"/>
+    <line x1="70" y1="166" x2="70" y2="222" stroke="#2e7d32" stroke-width="1.5" marker-end="url(#dir-green)"/>
+    <line x1="82" y1="162" x2="145" y2="226" stroke="#2e7d32" stroke-width="1.2" marker-end="url(#dir-green)"/>
+    <line x1="240" y1="166" x2="240" y2="222" stroke="#2e7d32" stroke-width="1.5" marker-end="url(#dir-green)"/>
+    <line x1="228" y1="162" x2="165" y2="226" stroke="#2e7d32" stroke-width="1.2" marker-end="url(#dir-green)"/>
+    <line x1="78" y1="254" x2="145" y2="298" stroke="#2e7d32" stroke-width="1.2" marker-end="url(#dir-green)"/>
+    <line x1="155" y1="256" x2="155" y2="294" stroke="#2e7d32" stroke-width="1.2" marker-end="url(#dir-green)"/>
+    <line x1="232" y1="254" x2="165" y2="298" stroke="#2e7d32" stroke-width="1.2" marker-end="url(#dir-green)"/>
+
+    <!-- Result -->
+    <rect x="30" y="335" width="250" height="28" fill="#c8e6c9" rx="4"/>
+    <text x="155" y="354" text-anchor="middle" class="small" fill="#1b5e20" font-weight="600">H₁ = 0: all paths to Case X are consistent</text>
+  </g>
+
+  <!-- Right panel: Unconstitutional statute added (H1 ≠ 0) -->
+  <g transform="translate(360, 65)">
+    <rect x="0" y="0" width="310" height="370" fill="#ffebee" stroke="#ef9a9a" stroke-width="1.5" rx="8"/>
+    <text x="155" y="22" text-anchor="middle" class="section-title" fill="#c62828">+ Unconstitutional Statute (H₁ ≠ 0)</text>
+    <text x="155" y="38" text-anchor="middle" class="small" fill="#e53935">Adding Stat. X creates a directed cycle — homology detects the contradiction</text>
+
+    <!-- Same nodes -->
+    <circle cx="155" cy="75" r="18" fill="#2e7d32" opacity="0.9"/>
+    <text x="155" y="79" text-anchor="middle" class="node-label" fill="#fff">Const.</text>
+
+    <circle cx="70" cy="150" r="16" fill="#43a047"/>
+    <text x="70" y="154" text-anchor="middle" class="node-label" fill="#fff">Art. I</text>
+
+    <circle cx="240" cy="150" r="16" fill="#43a047"/>
+    <text x="240" y="154" text-anchor="middle" class="node-label" fill="#fff">Art. III</text>
+
+    <circle cx="70" cy="240" r="16" fill="#66bb6a"/>
+    <text x="70" y="244" text-anchor="middle" class="node-label" fill="#fff">Stat. A</text>
+
+    <circle cx="155" cy="240" r="16" fill="#66bb6a"/>
+    <text x="155" y="244" text-anchor="middle" class="node-label" fill="#fff">Stat. B</text>
+
+    <circle cx="240" cy="240" r="16" fill="#66bb6a"/>
+    <text x="240" y="244" text-anchor="middle" class="node-label" fill="#fff">Stat. C</text>
+
+    <circle cx="155" cy="310" r="14" fill="#a5d6a7" stroke="#2e7d32" stroke-width="1"/>
+    <text x="155" y="314" text-anchor="middle" class="node-label" fill="#2e7d32">Case X</text>
+
+    <!-- Same edges -->
+    <line x1="142" y1="90" x2="80" y2="136" stroke="#2e7d32" stroke-width="1.2" marker-end="url(#dir-green)"/>
+    <line x1="168" y1="90" x2="230" y2="136" stroke="#2e7d32" stroke-width="1.2" marker-end="url(#dir-green)"/>
+    <line x1="70" y1="166" x2="70" y2="222" stroke="#2e7d32" stroke-width="1.2" marker-end="url(#dir-green)"/>
+    <line x1="240" y1="166" x2="240" y2="222" stroke="#2e7d32" stroke-width="1.2" marker-end="url(#dir-green)"/>
+    <line x1="78" y1="254" x2="145" y2="298" stroke="#2e7d32" stroke-width="1" marker-end="url(#dir-green)"/>
+    <line x1="155" y1="256" x2="155" y2="294" stroke="#2e7d32" stroke-width="1" marker-end="url(#dir-green)"/>
+    <line x1="232" y1="254" x2="165" y2="298" stroke="#2e7d32" stroke-width="1" marker-end="url(#dir-green)"/>
+
+    <!-- Unconstitutional statute node -->
+    <circle cx="155" cy="175" r="18" fill="#c62828" stroke="#b71c1c" stroke-width="2"/>
+    <text x="155" y="172" text-anchor="middle" class="node-label" fill="#fff">Stat.</text>
+    <text x="155" y="182" text-anchor="middle" class="node-label" fill="#fff">X</text>
+
+    <!-- Red edges creating the cycle -->
+    <line x1="82" y1="145" x2="137" y2="168" stroke="#c62828" stroke-width="2.5" marker-end="url(#dir-red)"/>
+    <line x1="173" y1="175" x2="228" y2="155" stroke="#c62828" stroke-width="2.5" marker-end="url(#dir-red)"/>
+    <line x1="155" y1="193" x2="155" y2="222" stroke="#c62828" stroke-width="2.5" marker-end="url(#dir-red)"/>
+
+    <!-- Cycle highlight -->
+    <path d="M 82,145 Q 120,140 137,168 Q 165,195 155,222" fill="none" stroke="#c62828" stroke-width="0" opacity="0"/>
+    <rect x="195" y="165" width="95" height="30" fill="#ffcdd2" stroke="#ef9a9a" stroke-width="0.5" rx="3"/>
+    <text x="242" y="178" text-anchor="middle" class="small" fill="#c62828" font-weight="600">non-trivial</text>
+    <text x="242" y="189" text-anchor="middle" class="small" fill="#c62828" font-weight="600">directed cycle</text>
+
+    <!-- Result -->
+    <rect x="30" y="335" width="250" height="28" fill="#ffcdd2" rx="4"/>
+    <text x="155" y="354" text-anchor="middle" class="small" fill="#b71c1c" font-weight="600">H₁ ≠ 0: contradiction detected topologically</text>
+  </g>
+
+  <!-- Bottom caption -->
+  <rect x="50" y="450" width="600" height="40" fill="#f5f5f5" stroke="#e0e0e0" stroke-width="1" rx="5"/>
+  <text x="350" y="466" text-anchor="middle" class="small" font-weight="600">Path homology on the judicial complex detects constitutional violations as topological obstructions.</text>
+  <text x="350" y="480" text-anchor="middle" class="small">H₁ = 0 means the legal system is consistent. H₁ ≠ 0 means an unconstitutional element creates a non-contractible cycle.</text>
+</svg>

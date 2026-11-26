@@ -1,0 +1,150 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 500" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif">
+  <defs>
+    <style>
+      .title { font-size: 14px; font-weight: 600; fill: #333; }
+      .subtitle { font-size: 10px; fill: #666; }
+      .label { font-size: 11px; fill: #444; font-weight: 500; }
+      .small { font-size: 9px; fill: #555; }
+      .axis-label { font-size: 10px; font-weight: 600; fill: #333; }
+      .cell-text { font-size: 9px; font-weight: 600; fill: #fff; }
+      .cell-text-dark { font-size: 9px; font-weight: 600; fill: #333; }
+      .row-label { font-size: 10px; fill: #444; font-weight: 500; text-anchor: end; }
+      .col-label { font-size: 10px; fill: #444; font-weight: 500; text-anchor: middle; }
+      .value-text { font-size: 8px; fill: #fff; text-anchor: middle; }
+      .value-text-dark { font-size: 8px; fill: #666; text-anchor: middle; }
+    </style>
+  </defs>
+
+  <text x="350" y="24" text-anchor="middle" class="title">Figure 11.1 — The Gauge Violation Tensor V_ij</text>
+  <text x="350" y="40" text-anchor="middle" class="subtitle">Each entry V_ij measures how much outcome j changes under gauge transformation i. Color intensity = violation magnitude. ColorBrewer sequential Reds.</text>
+
+  <!-- Heatmap -->
+  <g transform="translate(160, 80)">
+    <!-- Column headers -->
+    <text x="55" y="-10" class="col-label">Sentence</text>
+    <text x="165" y="-10" class="col-label">Bail</text>
+    <text x="275" y="-10" class="col-label">Conviction</text>
+    <text x="385" y="-10" class="col-label">Charge</text>
+    <text x="220" y="-30" class="axis-label" text-anchor="middle">Outcome Dimensions (j)</text>
+
+    <!-- Row headers -->
+    <text x="-12" y="35" class="row-label">Race</text>
+    <text x="-12" y="95" class="row-label">Gender</text>
+    <text x="-12" y="155" class="row-label">SES</text>
+    <text x="-12" y="215" class="row-label">Age</text>
+    <text x="-12" y="275" class="row-label">Citizenship</text>
+
+    <!-- Axis label for rows -->
+    <text x="-75" y="155" class="axis-label" text-anchor="middle" transform="rotate(-90, -75, 155)">Transformation Types (i)</text>
+
+    <!-- Row 1: Race — high violations across the board -->
+    <!-- Sentence (very high) -->
+    <rect x="5" y="10" width="100" height="50" fill="#a50f15" rx="3"/>
+    <text x="55" y="33" class="cell-text" text-anchor="middle">0.87</text>
+    <text x="55" y="47" class="value-text">19.1% disparity</text>
+
+    <!-- Bail (high) -->
+    <rect x="115" y="10" width="100" height="50" fill="#cb181d" rx="3"/>
+    <text x="165" y="33" class="cell-text" text-anchor="middle">0.74</text>
+    <text x="165" y="47" class="value-text">35% higher bail</text>
+
+    <!-- Conviction (moderate-high) -->
+    <rect x="225" y="10" width="100" height="50" fill="#ef3b2c" rx="3"/>
+    <text x="275" y="33" class="cell-text" text-anchor="middle">0.61</text>
+    <text x="275" y="47" class="value-text">higher conv. rate</text>
+
+    <!-- Charge severity (moderate) -->
+    <rect x="335" y="10" width="100" height="50" fill="#fb6a4a" rx="3"/>
+    <text x="385" y="33" class="cell-text" text-anchor="middle">0.52</text>
+    <text x="385" y="47" class="value-text">charge stacking</text>
+
+    <!-- Row 2: Gender -->
+    <rect x="5" y="70" width="100" height="50" fill="#cb181d" rx="3"/>
+    <text x="55" y="93" class="cell-text" text-anchor="middle">0.78</text>
+    <text x="55" y="107" class="value-text">63% longer (M)</text>
+
+    <rect x="115" y="70" width="100" height="50" fill="#fc9272" rx="3"/>
+    <text x="165" y="93" class="cell-text" text-anchor="middle">0.44</text>
+    <text x="165" y="107" class="value-text">bail gender gap</text>
+
+    <rect x="225" y="70" width="100" height="50" fill="#fcbba1" rx="3"/>
+    <text x="275" y="93" class="cell-text-dark" text-anchor="middle">0.31</text>
+    <text x="275" y="107" class="value-text-dark">modest effect</text>
+
+    <rect x="335" y="70" width="100" height="50" fill="#fee0d2" rx="3"/>
+    <text x="385" y="93" class="cell-text-dark" text-anchor="middle">0.22</text>
+    <text x="385" y="107" class="value-text-dark">small effect</text>
+
+    <!-- Row 3: SES -->
+    <rect x="5" y="130" width="100" height="50" fill="#ef3b2c" rx="3"/>
+    <text x="55" y="153" class="cell-text" text-anchor="middle">0.65</text>
+    <text x="55" y="167" class="value-text">public defender gap</text>
+
+    <rect x="115" y="130" width="100" height="50" fill="#a50f15" rx="3"/>
+    <text x="165" y="153" class="cell-text" text-anchor="middle">0.91</text>
+    <text x="165" y="167" class="value-text">bail = wealth test</text>
+
+    <rect x="225" y="130" width="100" height="50" fill="#fb6a4a" rx="3"/>
+    <text x="275" y="153" class="cell-text" text-anchor="middle">0.55</text>
+    <text x="275" y="167" class="value-text">plea pressure</text>
+
+    <rect x="335" y="130" width="100" height="50" fill="#fc9272" rx="3"/>
+    <text x="385" y="153" class="cell-text" text-anchor="middle">0.42</text>
+    <text x="385" y="167" class="value-text">plea bargaining</text>
+
+    <!-- Row 4: Age -->
+    <rect x="5" y="190" width="100" height="50" fill="#fc9272" rx="3"/>
+    <text x="55" y="213" class="cell-text" text-anchor="middle">0.41</text>
+    <text x="55" y="227" class="value-text">youth discount</text>
+
+    <rect x="115" y="190" width="100" height="50" fill="#fee0d2" rx="3"/>
+    <text x="165" y="213" class="cell-text-dark" text-anchor="middle">0.19</text>
+    <text x="165" y="227" class="value-text-dark">small effect</text>
+
+    <rect x="225" y="190" width="100" height="50" fill="#fee5d9" rx="3"/>
+    <text x="275" y="213" class="cell-text-dark" text-anchor="middle">0.14</text>
+    <text x="275" y="227" class="value-text-dark">minimal</text>
+
+    <rect x="335" y="190" width="100" height="50" fill="#fcbba1" rx="3"/>
+    <text x="385" y="213" class="cell-text-dark" text-anchor="middle">0.33</text>
+    <text x="385" y="227" class="value-text-dark">juvenile diversion</text>
+
+    <!-- Row 5: Citizenship -->
+    <rect x="5" y="250" width="100" height="50" fill="#fb6a4a" rx="3"/>
+    <text x="55" y="273" class="cell-text" text-anchor="middle">0.53</text>
+    <text x="55" y="287" class="value-text">deportation threat</text>
+
+    <rect x="115" y="250" width="100" height="50" fill="#ef3b2c" rx="3"/>
+    <text x="165" y="273" class="cell-text" text-anchor="middle">0.62</text>
+    <text x="165" y="287" class="value-text">ICE detainer</text>
+
+    <rect x="225" y="250" width="100" height="50" fill="#fc9272" rx="3"/>
+    <text x="275" y="273" class="cell-text" text-anchor="middle">0.45</text>
+    <text x="275" y="287" class="value-text">plea under duress</text>
+
+    <rect x="335" y="250" width="100" height="50" fill="#fcbba1" rx="3"/>
+    <text x="385" y="273" class="cell-text-dark" text-anchor="middle">0.28</text>
+    <text x="385" y="287" class="value-text-dark">charging policy</text>
+  </g>
+
+  <!-- Color legend -->
+  <g transform="translate(80, 410)">
+    <text x="0" y="0" class="small" font-weight="600">Violation magnitude:</text>
+    <rect x="120" y="-12" width="40" height="15" fill="#fee5d9" stroke="#eee" stroke-width="0.5" rx="2"/>
+    <text x="140" y="17" text-anchor="middle" class="small">0.0</text>
+    <rect x="165" y="-12" width="40" height="15" fill="#fcbba1" rx="2"/>
+    <rect x="210" y="-12" width="40" height="15" fill="#fc9272" rx="2"/>
+    <rect x="255" y="-12" width="40" height="15" fill="#fb6a4a" rx="2"/>
+    <rect x="300" y="-12" width="40" height="15" fill="#ef3b2c" rx="2"/>
+    <rect x="345" y="-12" width="40" height="15" fill="#cb181d" rx="2"/>
+    <rect x="390" y="-12" width="40" height="15" fill="#a50f15" rx="2"/>
+    <text x="410" y="17" text-anchor="middle" class="small">1.0</text>
+    <text x="460" y="0" class="small" fill="#888">ColorBrewer Reds</text>
+  </g>
+
+  <!-- Bottom caption -->
+  <rect x="50" y="445" width="600" height="45" fill="#f5f5f5" stroke="#e0e0e0" stroke-width="1" rx="5"/>
+  <text x="350" y="460" text-anchor="middle" class="small" font-weight="600">V_ij = E[||f_j(case) - f_j(g_i · case)||] — the expected outcome shift on dimension j under transformation i.</text>
+  <text x="350" y="474" text-anchor="middle" class="small">The LBI is the Frobenius norm: LBI = ||V||_F = sqrt(Σ V_ij²). Hotspots: SES×Bail (0.91), Race×Sentence (0.87), Gender×Sentence (0.78).</text>
+  <text x="350" y="486" text-anchor="middle" class="small">A perfectly fair system has V_ij = 0 for all i, j. Any nonzero entry is a measurable equal-protection violation.</text>
+</svg>

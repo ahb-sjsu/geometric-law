@@ -1,0 +1,154 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 480" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif">
+  <defs>
+    <style>
+      .title { font-size: 14px; font-weight: 600; fill: #333; }
+      .subtitle { font-size: 10px; fill: #666; }
+      .label { font-size: 11px; fill: #444; font-weight: 500; }
+      .small { font-size: 9px; fill: #555; }
+      .player-name { font-size: 12px; font-weight: 700; }
+      .node-text { font-size: 8px; font-weight: 600; }
+      .operation { font-size: 9px; font-weight: 600; }
+    </style>
+    <marker id="p-arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#1565c0"/>
+    </marker>
+    <marker id="d-arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#c62828"/>
+    </marker>
+    <marker id="s-arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#2e7d32"/>
+    </marker>
+  </defs>
+
+  <text x="360" y="24" text-anchor="middle" class="title">Figure 12.1 — The Adversarial System as Two-Player Search</text>
+  <text x="360" y="40" text-anchor="middle" class="subtitle">Plaintiff searches for the shortest path to a favorable verdict. Defendant searches for the longest path or blocks. The judge mediates the search space.</text>
+
+  <!-- Main diagram area -->
+  <rect x="20" y="55" width="680" height="340" fill="#fafafa" stroke="#e0e0e0" stroke-width="1" rx="8"/>
+
+  <!-- Search graph — nodes and edges -->
+  <!-- Start node -->
+  <circle cx="80" cy="210" r="22" fill="#333"/>
+  <text x="80" y="207" text-anchor="middle" class="node-text" fill="#fff">Filing /</text>
+  <text x="80" y="217" text-anchor="middle" class="node-text" fill="#fff">Complaint</text>
+
+  <!-- Layer 1 nodes -->
+  <circle cx="200" cy="120" r="16" fill="#90caf9" stroke="#1565c0" stroke-width="1.5"/>
+  <text x="200" y="124" text-anchor="middle" class="node-text" fill="#0d47a1">Motion</text>
+
+  <circle cx="200" cy="210" r="16" fill="#90caf9" stroke="#1565c0" stroke-width="1.5"/>
+  <text x="200" y="214" text-anchor="middle" class="node-text" fill="#0d47a1">Discovery</text>
+
+  <circle cx="200" cy="300" r="16" fill="#ef9a9a" stroke="#c62828" stroke-width="1.5"/>
+  <text x="200" y="297" text-anchor="middle" class="node-text" fill="#b71c1c">Motion to</text>
+  <text x="200" y="307" text-anchor="middle" class="node-text" fill="#b71c1c">Dismiss</text>
+
+  <!-- Layer 2 nodes -->
+  <circle cx="340" cy="100" r="16" fill="#90caf9" stroke="#1565c0" stroke-width="1.5"/>
+  <text x="340" y="97" text-anchor="middle" class="node-text" fill="#0d47a1">Summary</text>
+  <text x="340" y="107" text-anchor="middle" class="node-text" fill="#0d47a1">Judgment</text>
+
+  <circle cx="340" cy="190" r="16" fill="#90caf9" stroke="#1565c0" stroke-width="1.5"/>
+  <text x="340" y="194" text-anchor="middle" class="node-text" fill="#0d47a1">Depositions</text>
+
+  <circle cx="340" cy="280" r="16" fill="#ef9a9a" stroke="#c62828" stroke-width="1.5"/>
+  <text x="340" y="277" text-anchor="middle" class="node-text" fill="#b71c1c">Exclude</text>
+  <text x="340" y="287" text-anchor="middle" class="node-text" fill="#b71c1c">Evidence</text>
+
+  <!-- Layer 3 -->
+  <circle cx="470" cy="150" r="16" fill="#c5cae9" stroke="#3f51b5" stroke-width="1.5"/>
+  <text x="470" y="154" text-anchor="middle" class="node-text" fill="#283593">Trial</text>
+
+  <circle cx="470" cy="260" r="16" fill="#ef9a9a" stroke="#c62828" stroke-width="1.5"/>
+  <text x="470" y="257" text-anchor="middle" class="node-text" fill="#b71c1c">Directed</text>
+  <text x="470" y="267" text-anchor="middle" class="node-text" fill="#b71c1c">Verdict</text>
+
+  <!-- Verdict nodes -->
+  <circle cx="610" cy="110" r="20" fill="#1565c0"/>
+  <text x="610" y="107" text-anchor="middle" class="node-text" fill="#fff">Plaintiff</text>
+  <text x="610" y="117" text-anchor="middle" class="node-text" fill="#fff">Verdict</text>
+
+  <circle cx="610" cy="300" r="20" fill="#c62828"/>
+  <text x="610" y="297" text-anchor="middle" class="node-text" fill="#fff">Defendant</text>
+  <text x="610" y="307" text-anchor="middle" class="node-text" fill="#fff">Verdict</text>
+
+  <!-- Settlement node -->
+  <circle cx="420" cy="370" r="18" fill="#2e7d32"/>
+  <text x="420" y="367" text-anchor="middle" class="node-text" fill="#fff">Settle-</text>
+  <text x="420" y="377" text-anchor="middle" class="node-text" fill="#fff">ment</text>
+
+  <!-- Plaintiff path (blue, shortest) -->
+  <line x1="102" y1="205" x2="182" y2="125" stroke="#1565c0" stroke-width="2.5" marker-end="url(#p-arrow)"/>
+  <line x1="216" y1="115" x2="322" y2="102" stroke="#1565c0" stroke-width="2.5" marker-end="url(#p-arrow)"/>
+  <line x1="356" y1="105" x2="452" y2="145" stroke="#1565c0" stroke-width="2.5" marker-end="url(#p-arrow)"/>
+  <line x1="486" y1="142" x2="590" y2="115" stroke="#1565c0" stroke-width="2.5" marker-end="url(#p-arrow)"/>
+
+  <!-- Defendant blocking paths (red) -->
+  <line x1="102" y1="218" x2="182" y2="295" stroke="#c62828" stroke-width="2" stroke-dasharray="5,3" marker-end="url(#d-arrow)"/>
+  <line x1="216" y1="295" x2="322" y2="282" stroke="#c62828" stroke-width="2" stroke-dasharray="5,3" marker-end="url(#d-arrow)"/>
+  <line x1="356" y1="282" x2="452" y2="260" stroke="#c62828" stroke-width="2" stroke-dasharray="5,3" marker-end="url(#d-arrow)"/>
+  <line x1="486" y1="265" x2="590" y2="300" stroke="#c62828" stroke-width="2" stroke-dasharray="5,3" marker-end="url(#d-arrow)"/>
+
+  <!-- Other edges (gray) -->
+  <line x1="102" y1="210" x2="182" y2="210" stroke="#bbb" stroke-width="1"/>
+  <line x1="216" y1="210" x2="322" y2="192" stroke="#bbb" stroke-width="1"/>
+  <line x1="356" y1="190" x2="452" y2="155" stroke="#bbb" stroke-width="1"/>
+
+  <!-- Settlement shortcut (green dashed) -->
+  <path d="M 216,215 C 300,340 350,370 402,370" fill="none" stroke="#2e7d32" stroke-width="2" stroke-dasharray="6,4" marker-end="url(#s-arrow)"/>
+
+  <!-- Burden of proof threshold line -->
+  <line x1="540" y1="70" x2="540" y2="340" stroke="#f57f17" stroke-width="1.5" stroke-dasharray="8,4"/>
+  <text x="544" y="82" class="small" fill="#f57f17" font-weight="600">burden of proof</text>
+  <text x="544" y="94" class="small" fill="#f57f17">threshold d*</text>
+
+  <!-- Pruning annotations -->
+  <!-- Motion to dismiss prunes -->
+  <rect x="180" y="322" width="55" height="20" fill="#ffebee" stroke="#ef9a9a" stroke-width="0.5" rx="3"/>
+  <text x="207" y="336" text-anchor="middle" class="small" fill="#c62828" font-weight="600">prune</text>
+
+  <!-- Exclude evidence prunes -->
+  <rect x="320" y="308" width="55" height="20" fill="#ffebee" stroke="#ef9a9a" stroke-width="0.5" rx="3"/>
+  <text x="347" y="322" text-anchor="middle" class="small" fill="#c62828" font-weight="600">prune</text>
+
+  <!-- Legend -->
+  <g transform="translate(30, 70)">
+    <rect x="0" y="0" width="130" height="100" fill="#fff" stroke="#e0e0e0" stroke-width="1" rx="4"/>
+    <line x1="10" y1="18" x2="40" y2="18" stroke="#1565c0" stroke-width="2.5"/>
+    <text x="48" y="22" class="small" fill="#1565c0" font-weight="600">Plaintiff's path</text>
+
+    <line x1="10" y1="38" x2="40" y2="38" stroke="#c62828" stroke-width="2" stroke-dasharray="5,3"/>
+    <text x="48" y="42" class="small" fill="#c62828" font-weight="600">Defendant's path</text>
+
+    <line x1="10" y1="58" x2="40" y2="58" stroke="#2e7d32" stroke-width="2" stroke-dasharray="6,4"/>
+    <text x="48" y="62" class="small" fill="#2e7d32" font-weight="600">Settlement</text>
+
+    <line x1="10" y1="78" x2="40" y2="78" stroke="#f57f17" stroke-width="1.5" stroke-dasharray="8,4"/>
+    <text x="48" y="82" class="small" fill="#f57f17" font-weight="600">Burden threshold</text>
+  </g>
+
+  <!-- Bottom annotations -->
+  <g transform="translate(20, 405)">
+    <rect x="0" y="0" width="220" height="60" fill="#e3f2fd" stroke="#90caf9" stroke-width="1" rx="5"/>
+    <text x="110" y="16" text-anchor="middle" class="operation" fill="#1565c0">Plaintiff's Strategy</text>
+    <text x="110" y="30" text-anchor="middle" class="small">Shortest path to verdict node.</text>
+    <text x="110" y="42" text-anchor="middle" class="small">Minimize d(filing, verdict).</text>
+    <text x="110" y="54" text-anchor="middle" class="small">Every motion = edge contraction.</text>
+  </g>
+
+  <g transform="translate(250, 405)">
+    <rect x="0" y="0" width="220" height="60" fill="#ffebee" stroke="#ef9a9a" stroke-width="1" rx="5"/>
+    <text x="110" y="16" text-anchor="middle" class="operation" fill="#c62828">Defendant's Strategy</text>
+    <text x="110" y="30" text-anchor="middle" class="small">Longest path or prune edges.</text>
+    <text x="110" y="42" text-anchor="middle" class="small">Motions to dismiss = pruning.</text>
+    <text x="110" y="54" text-anchor="middle" class="small">Every exclusion = vertex removal.</text>
+  </g>
+
+  <g transform="translate(480, 405)">
+    <rect x="0" y="0" width="220" height="60" fill="#e8f5e9" stroke="#81c784" stroke-width="1" rx="5"/>
+    <text x="110" y="16" text-anchor="middle" class="operation" fill="#2e7d32">Settlement</text>
+    <text x="110" y="30" text-anchor="middle" class="small">Shortcut bypassing trial.</text>
+    <text x="110" y="42" text-anchor="middle" class="small">Rational when d(trial) &gt; d(settle)</text>
+    <text x="110" y="54" text-anchor="middle" class="small">for both players simultaneously.</text>
+  </g>
+</svg>

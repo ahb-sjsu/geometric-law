@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 500" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif">
+  <defs>
+    <style>
+      .title { font-size: 14px; font-weight: 600; fill: #333; }
+      .subtitle { font-size: 10px; fill: #666; }
+      .dim-name { font-size: 11px; font-weight: 600; }
+      .dim-desc { font-size: 9px; fill: #555; }
+      .dim-num { font-size: 13px; font-weight: 700; fill: #fff; }
+      .group-label { font-size: 11px; font-weight: 700; }
+      .group-desc { font-size: 9px; fill: #777; font-style: italic; }
+    </style>
+  </defs>
+
+  <text x="350" y="24" text-anchor="middle" class="title">Figure 3.1 — The Eight Dimensions of the Legal Decision Manifold</text>
+  <text x="350" y="40" text-anchor="middle" class="subtitle">Every legal decision activates a subset of these dimensions. Binary law sees only "liable or not." The full manifold sees all eight.</text>
+
+  <!-- Substantive group (left) -->
+  <g transform="translate(30, 60)">
+    <rect x="0" y="0" width="310" height="390" fill="#eff3ff" stroke="#9ecae1" stroke-width="1.5" rx="8"/>
+    <text x="155" y="25" text-anchor="middle" class="group-label" fill="#2171b5">SUBSTANTIVE</text>
+    <text x="155" y="40" text-anchor="middle" class="group-desc" fill="#6baed6">What the law protects and requires</text>
+
+    <!-- d1: Entitlement -->
+    <g transform="translate(15, 55)">
+      <rect x="0" y="0" width="280" height="65" fill="#fff" stroke="#c6dbef" stroke-width="1" rx="5"/>
+      <circle cx="25" cy="32" r="16" fill="#2171b5"/>
+      <text x="25" y="37" text-anchor="middle" class="dim-num">d₁</text>
+      <text x="52" y="20" class="dim-name" fill="#2171b5">Entitlement</text>
+      <text x="52" y="34" class="dim-desc">Legal rights, claims, Hohfeldian positions</text>
+      <text x="52" y="48" class="dim-desc" fill="#d73027" font-weight="600">← What binary law reduces everything to</text>
+    </g>
+
+    <!-- d2: Factual Nexus -->
+    <g transform="translate(15, 130)">
+      <rect x="0" y="0" width="280" height="55" fill="#fff" stroke="#c6dbef" stroke-width="1" rx="5"/>
+      <circle cx="25" cy="27" r="16" fill="#4292c6"/>
+      <text x="25" y="32" text-anchor="middle" class="dim-num">d₂</text>
+      <text x="52" y="18" class="dim-name" fill="#4292c6">Factual Nexus</text>
+      <text x="52" y="32" class="dim-desc">Evidentiary basis, causal chain, standard of proof</text>
+      <text x="52" y="45" class="dim-desc">"What actually happened and can we prove it?"</text>
+    </g>
+
+    <!-- d3: Procedure -->
+    <g transform="translate(15, 195)">
+      <rect x="0" y="0" width="280" height="55" fill="#fff" stroke="#c6dbef" stroke-width="1" rx="5"/>
+      <circle cx="25" cy="27" r="16" fill="#6baed6"/>
+      <text x="25" y="32" text-anchor="middle" class="dim-num">d₃</text>
+      <text x="52" y="18" class="dim-name" fill="#6baed6">Procedure</text>
+      <text x="52" y="32" class="dim-desc">Due process, standing, jurisdiction, timeliness</text>
+      <text x="52" y="45" class="dim-desc">"Was the process fair and properly followed?"</text>
+    </g>
+
+    <!-- d4: Statutory Authority -->
+    <g transform="translate(15, 260)">
+      <rect x="0" y="0" width="280" height="55" fill="#fff" stroke="#c6dbef" stroke-width="1" rx="5"/>
+      <circle cx="25" cy="27" r="16" fill="#9ecae1"/>
+      <text x="25" y="32" text-anchor="middle" class="dim-num">d₄</text>
+      <text x="52" y="18" class="dim-name" fill="#2171b5">Statutory Authority</text>
+      <text x="52" y="32" class="dim-desc">Legislative basis, regulatory scope, delegation limits</text>
+      <text x="52" y="45" class="dim-desc">"Does the law actually authorize this action?"</text>
+    </g>
+
+    <!-- Substantive note -->
+    <rect x="15" y="325" width="280" height="52" fill="#deebf7" stroke="#9ecae1" stroke-width="0.5" rx="4"/>
+    <text x="155" y="343" text-anchor="middle" class="dim-desc" fill="#2171b5" font-weight="600">These four define the "what" of a case.</text>
+    <text x="155" y="358" text-anchor="middle" class="dim-desc">Binary law collapses all four to a single</text>
+    <text x="155" y="370" text-anchor="middle" class="dim-desc">verdict, losing the structure of the dispute.</text>
+  </g>
+
+  <!-- Structural group (right) -->
+  <g transform="translate(360, 60)">
+    <rect x="0" y="0" width="310" height="390" fill="#fef0d9" stroke="#fdae6b" stroke-width="1.5" rx="8"/>
+    <text x="155" y="25" text-anchor="middle" class="group-label" fill="#e6550d">STRUCTURAL</text>
+    <text x="155" y="40" text-anchor="middle" class="group-desc" fill="#fd8d3c">How law evolves, constrains, and remediates</text>
+
+    <!-- d5: Constitutionality -->
+    <g transform="translate(15, 55)">
+      <rect x="0" y="0" width="280" height="55" fill="#fff" stroke="#fdd0a2" stroke-width="1" rx="5"/>
+      <circle cx="25" cy="27" r="14" fill="#e6550d"/>
+      <text x="25" y="32" text-anchor="middle" class="dim-num" font-size="11">d₅</text>
+      <text x="52" y="18" class="dim-name" fill="#e6550d">Constitutionality</text>
+      <text x="52" y="32" class="dim-desc">Fundamental rights, constitutional review, supremacy</text>
+      <text x="52" y="45" class="dim-desc">"Does this violate higher-order law?"</text>
+    </g>
+
+    <!-- d6: Precedent -->
+    <g transform="translate(15, 120)">
+      <rect x="0" y="0" width="280" height="55" fill="#fff" stroke="#fdd0a2" stroke-width="1" rx="5"/>
+      <circle cx="25" cy="27" r="14" fill="#fd8d3c"/>
+      <text x="25" y="32" text-anchor="middle" class="dim-num" font-size="11">d₆</text>
+      <text x="52" y="18" class="dim-name" fill="#fd8d3c">Precedent</text>
+      <text x="52" y="32" class="dim-desc">Stare decisis, analogical reasoning, citation weight</text>
+      <text x="52" y="45" class="dim-desc">"What did prior courts decide in similar cases?"</text>
+    </g>
+
+    <!-- d7: Remedies -->
+    <g transform="translate(15, 185)">
+      <rect x="0" y="0" width="280" height="55" fill="#fff" stroke="#fdd0a2" stroke-width="1" rx="5"/>
+      <circle cx="25" cy="27" r="14" fill="#fdae6b"/>
+      <text x="25" y="32" text-anchor="middle" class="dim-num" font-size="11">d₇</text>
+      <text x="52" y="18" class="dim-name" fill="#e6550d">Remedies</text>
+      <text x="52" y="32" class="dim-desc">Damages, injunctions, restitution, declaratory relief</text>
+      <text x="52" y="45" class="dim-desc">"What can the court actually do about it?"</text>
+    </g>
+
+    <!-- d8: Public Interest -->
+    <g transform="translate(15, 250)">
+      <rect x="0" y="0" width="280" height="55" fill="#fff" stroke="#fdd0a2" stroke-width="1" rx="5"/>
+      <circle cx="25" cy="27" r="14" fill="#fdd0a2" stroke="#e6550d" stroke-width="1"/>
+      <text x="25" y="32" text-anchor="middle" class="dim-num" font-size="11" fill="#e6550d">d₈</text>
+      <text x="52" y="18" class="dim-name" fill="#e6550d">Public Interest</text>
+      <text x="52" y="32" class="dim-desc">Policy considerations, social welfare, systemic effects</text>
+      <text x="52" y="45" class="dim-desc">"What outcome best serves society at large?"</text>
+    </g>
+
+    <!-- Structural note -->
+    <rect x="15" y="325" width="280" height="52" fill="#feedde" stroke="#fdae6b" stroke-width="0.5" rx="4"/>
+    <text x="155" y="343" text-anchor="middle" class="dim-desc" fill="#e6550d" font-weight="600">These four define the "how" and "why."</text>
+    <text x="155" y="358" text-anchor="middle" class="dim-desc">Precedent is a connection (parallel transport).</text>
+    <text x="155" y="370" text-anchor="middle" class="dim-desc">Constitutionality is a topological constraint.</text>
+  </g>
+
+  <!-- Bottom caption -->
+  <text x="350" y="470" text-anchor="middle" class="subtitle">The substantive/structural distinction mirrors the transferable/evaluative split in economics. Both require multi-dimensional treatment.</text>
+  <text x="350" y="485" text-anchor="middle" class="subtitle">Binary verdicts see only d₁. Geometric law makes all eight explicit — and reveals the curvature, gauge, and topology they carry.</text>
+</svg>

@@ -38,7 +38,7 @@
         <span class="breadcrumb-current">Chapter 6: Precedent as Heuristic Field</span>
       </nav>
       <div class="chapter-nav-top">
-        <a href="ch05_hohfeldian_group.html" class="nav-prev">&larr; Chapter 5: The $D_4$ Hohfeldian Group</a>
+        <a href="ch05_hohfeldian_group.html" class="nav-prev">&larr; Chapter 5: The Hohfeldian Gauge Group</a>
         <a href="index.html" class="nav-toc">Contents</a>
         <a href="ch07_constitutional_topology.html" class="nav-next">Chapter 7: Constitutional Review as Path Homology &rarr;</a>
       </div>
@@ -170,10 +170,9 @@
 <p>$$h(n) \leq h^*(n) \quad \forall n$$</p>
 <p>where $h^*(n)$ is the actual minimum cost from $n$ to $G$. If $h$ is admissible, $A^*$ is guaranteed to find the optimal path — the proof is a standard result in artificial intelligence.</p>
 <p><strong>Theorem (Admissibility of Doctrinal Heuristics).</strong> A doctrinal heuristic $h_D$ is admissible if the doctrine $D$ correctly identifies the elements of a legal claim and assigns non-negative estimated costs that do not exceed actual proving costs. If $h_D$ is admissible, $A^*$ search using $h_D$ is guaranteed to find the optimal legal argument.</p>
-<p><strong>Proof sketch.</strong> Legal doctrines that decompose claims into elements (duty + breach + causation + damages, for example) produce heuristics that sum estimated costs of remaining elements. Each element&rsquo;s estimated cost is a lower bound on the actual proving cost (the element might be easier to prove than estimated, due to shortcuts like res ipsa loquitur or stipulations). Therefore the sum of estimated costs is a lower bound on the total remaining cost, which is the definition of admissibility. By the admissibility theorem for $A^*$, the search is guaranteed to find the optimal path. $\square$</p>
+<p><strong>Proof sketch.</strong> Legal doctrines that decompose claims into elements (duty + breach + causation + damages, for example) produce heuristics that sum estimated costs of remaining elements. Under the theorem&rsquo;s hypothesis, each element&rsquo;s estimated cost is a lower bound on the actual proving cost. Therefore the sum of estimated costs is a lower bound on the total remaining cost, which is the definition of admissibility. By the admissibility theorem for $A^*$, the search is guaranteed to find the optimal path. $\square$</p>
 <h3 id="inadmissible-heuristics-in-legal-practice">Inadmissible Heuristics in Legal Practice</h3>
-<p>Not all legal strategies correspond to admissible heuristics. An <em>overaggressive</em> legal theory underestimates cost — it assumes elements will be easier to establish than they actually are, leading the search toward arguments that fail at trial. This is inadmissibility through underestimation: $h(n) &gt; h^*(n)$ because the heuristic is too optimistic about the remaining cost.</p>
-<p>Wait — this is backwards. An inadmissible heuristic <em>overestimates</em> the true cost, causing $A^*$ to miss optimal paths by avoiding regions that appear (but are not actually) costly. Let us be precise.</p>
+<p>Not all legal strategies correspond to admissible heuristics. An inadmissible heuristic <em>overestimates</em> the true cost, causing $A^*$ to miss optimal paths by avoiding regions that appear (but are not actually) costly. Let us be precise.</p>
 <p>An <em>overconservative</em> strategy overestimates the remaining cost. It says &ldquo;this argument will be very expensive to complete,&rdquo; when in fact the argument could be completed cheaply. This causes the search to avoid the argument in favor of apparently cheaper alternatives, potentially missing the optimal path. The result: settlement when litigation would have succeeded, or failure to pursue a winning theory because it &ldquo;looked&rdquo; too hard.</p>
 <p>An <em>overaggressive</em> strategy underestimates the remaining cost. Strictly speaking, this preserves admissibility (underestimation is exactly what admissibility requires). But it degrades the heuristic&rsquo;s <em>efficiency</em>: a heuristic that estimates zero remaining cost for every node is admissible but useless — it provides no guidance, and $A^*$ degenerates to Dijkstra. An overaggressive heuristic that estimates very low costs everywhere will explore many irrelevant paths before finding the optimal one.</p>
 <p>The sweet spot — the ideal doctrinal heuristic — is both admissible (never overestimates) and <em>tight</em> (closely approximates the true remaining cost). Tight heuristics guide the search efficiently to the optimal path with minimal wasted exploration.</p>
@@ -302,6 +301,8 @@
 <p><strong>Analysis.</strong> The McDonnell Douglas heuristic estimates a lower total cost ($6.5 &lt; 8.0$), so $A^*$ will explore the McDonnell Douglas path first. If the plaintiff indeed lacks direct evidence, the McDonnell Douglas path is genuinely cheaper — the heuristic&rsquo;s guidance is correct.</p>
 <p>But suppose the plaintiff <em>does</em> have a smoking-gun email. Then the actual cost of the direct evidence path is much lower than 8.0 — perhaps 1.0 (produce the email, authenticate it, done). The direct evidence heuristic overestimated the cost, making it inadmissible at this particular node. A better heuristic would condition on whether direct evidence exists: if yes, $h_{\text{direct}} = 1.0$; if no, $h_{\text{direct}} = \infty$ (the path is impassable).</p>
 <p>This illustrates a general principle: <strong>good doctrinal heuristics are context-sensitive</strong>. The best heuristic is not a fixed function but a function that conditions on the available evidence. McDonnell Douglas is a good heuristic precisely because it adapts to the evidence: if the plaintiff has direct evidence, she can bypass the burden-shifting framework entirely. The doctrine accommodates both paths, functioning as a <em>portfolio of heuristics</em> rather than a single fixed estimate.</p>
+<p><img alt="Figure 6.1" src="figures/ch06_fig1.svg" /></p>
+<p><em>Figure 6.1. The two doctrinal heuristics of the worked example as estimates of the remaining cost of an employment discrimination claim, in the chapter&rsquo;s illustrative friction units. McDonnell Douglas adds three steps to 6.5, below the direct-evidence estimate of 8.0, so the search explores the McDonnell Douglas path first. If the plaintiff holds a smoking-gun email, the direct-evidence path actually costs about 1.0. The estimate of 8.0 then exceeds the true cost, and a heuristic that overestimates is not admissible.</em></p>
 <h2 id="chapter-summary">Chapter Summary</h2>
 <ol>
 <li>
@@ -340,15 +341,15 @@
 <p>$$\mathbb{E}[\text{BF}_{\text{law}}(\gamma^*_\pi)] + \mathbb{E}[\text{BF}_{\text{law}}(\gamma^*_\delta)] &gt; d_{\mathcal{K}}(G_\pi, G_\delta)$$</p>
 <p><em>Proof.</em> If the combined litigation costs exceed the distance between goal regions, there exist vertices between $G_\pi$ and $G_\delta$ that are cheaper for both parties to reach than their respective litigation endpoints. Any such vertex is a settlement point. $\square$</p>
 <p><strong>Definition (Heuristic Field Strength).</strong> The <em>heuristic field strength</em> at a vertex $c \in \mathcal{K}$ is:</p>
-<p>$$\mathcal{H}(c) = \frac{h^*(c) - h_{\text{zero}}(c)}{h^*(c)} = 1 - \frac{0}{h^*(c)} = 1$$</p>
-<p>when a tight heuristic is available, and $\mathcal{H}(c) = 0$ when only the zero heuristic (no doctrinal guidance) is available. In practice, $\mathcal{H}(c) = 1 - (h^*(c) - h_D(c))/h^*(c) = h_D(c)/h^*(c)$ measures the fraction of the true remaining cost that the heuristic captures.</p>
+<p>$$\mathcal{H}(c) = 1 - \frac{h^*(c) - h_D(c)}{h^*(c)} = \frac{h_D(c)}{h^*(c)}$$</p>
+<p>the fraction of the true remaining cost that the heuristic captures. $\mathcal{H}(c) = 1$ when the heuristic is tight ($h_D = h^*$), and $\mathcal{H}(c) = 0$ when only the zero heuristic (no doctrinal guidance) is available.</p>
 <hr />
 <h2 id="notes-on-sources">Notes on Sources</h2>
 <p>The $A^*$ algorithm was introduced by Hart, Nilsson, and Raphael (1968) and its optimality properties are proved in Pearl (1984). The mapping between legal reasoning and pathfinding was introduced in the Algorithmic Jurisprudence manuscript. The McDonnell Douglas burden-shifting framework was established in <em>McDonnell Douglas Corp. v. Green</em>, 411 U.S. 792 (1973), refined in <em>Texas Department of Community Affairs v. Burdine</em>, 450 U.S. 248 (1981), and further developed in <em>St. Mary&rsquo;s Honor Center v. Hicks</em>, 509 U.S. 502 (1993). Pattern databases in AI pathfinding are developed by Culberson and Schaeffer (1998) and Felner, Korf, and Hanan (2004). The adversarial search framework builds on minimax theory from von Neumann and Morgenstern (1944) and its application to game-playing AI in Russell and Norvig (2021). Settlement theory builds on Priest and Klein (1984). The distinction between binding and persuasive precedent is standard — see Cross and Harris (1991, <em>Precedent in English Law</em>).</p>
       </div>
 
       <div class="chapter-nav-bottom">
-        <a href="ch05_hohfeldian_group.html" class="nav-prev">&larr; Chapter 5: The $D_4$ Hohfeldian Group</a>
+        <a href="ch05_hohfeldian_group.html" class="nav-prev">&larr; Chapter 5: The Hohfeldian Gauge Group</a>
         <a href="index.html" class="nav-toc">Contents</a>
         <a href="ch07_constitutional_topology.html" class="nav-next">Chapter 7: Constitutional Review as Path Homology &rarr;</a>
       </div>
