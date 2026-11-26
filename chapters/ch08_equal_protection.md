@@ -336,6 +336,10 @@ The index is largest when the score is cut at the threshold that ProPublica used
 
 The disparity is not symmetric. Computed with African-American defendants as the focal group the index at $k = 20$ is 1.027, and with Caucasian defendants as the focal group it is 1.087.
 
+![Figure 8.2](figures/ch08_fig2.svg)
+
+*Figure 8.2. The matched-neighborhood Legal Bond Index for COMPAS scores at the six neighborhood scales, for race and for sex. The horizontal axis is the scale k, the number of neighbors of each group, on a logarithmic scale. The vertical axis is the index, and the dashed line at 1 marks no excess. Each bar is the pointwise 95% interval. The curve for race lies above 1 at every scale, and the intervals for sex include 1 at scales up to 20. The values are those the paper reports for COMPAS scores, conditional on the measured predictors.*
+
 ### What Reduces the Figure
 
 A ratio of this kind can be inflated mechanically. Nothing in the definition forces the two sets of neighbors to be equally close. If neighbors of the other group are farther away in the space of predictors, their scores may differ more even under a score that ignores the protected attribute altogether.
@@ -359,6 +363,10 @@ A caliper leaves out every defendant whose nearest comparator of the other race 
 Under matching parity the estimate falls to between 1.00 and 1.02. Leaving out the 5% of defendants with the largest gaps lowers the index from 1.049 to 1.009, so the unadjusted figure is driven in large part by its upper tail. The paper puts the mechanical component, the part that comes from poorer matches across race, at about 0.01 to 0.015 of the excess of 0.049.
 
 The choice of predictors and the choice of metric move the figure much less. Every set of predictors that was tried gives an index of at least 1.034, including the set that drops the juvenile counts, and five other distance constructions agree with the Mahalanobis value to within 0.005. The paper warns against reading that as more than it is. Robustness to the family of metric is not robustness to the quality of the match.
+
+![Figure 8.3](figures/ch08_fig3.svg)
+
+*Figure 8.3. The index for race at scale 20, unadjusted and estimated again under each specification that tightens the matching or forces parity between neighbors of the two races. The horizontal axis is the index. The dashed line at 1 marks no excess, and the dotted line at 1.015 is the center of the null distribution of the conditional randomization test. The unadjusted value is 1.049. Under matching parity the estimates fall to between 1.00 and 1.02. Intervals are drawn for the two rows whose interval the chapter prints. The values are those the paper reports for COMPAS scores, conditional on the measured predictors.*
 
 ### The Test
 

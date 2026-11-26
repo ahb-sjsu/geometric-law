@@ -286,6 +286,10 @@ The table supports five statements, and they are the paper's.
 4. Withholding a legitimate predictor from the matching raises the index to 1.015, yet the conditional test still rejects only 5% of the time. The test conditions on the full set of recorded features, so it survives a poor matching space as long as the feature is recorded. When a legitimate determinant is not recorded at all, the index and every other observational diagnostic inherit the bias.
 5. A regression coefficient is more powerful than the index against a purely linear direct effect (100% against 21.7% at $\beta = 0.25$). Parametric tests do better on their home ground. The index makes no assumption about functional form, works on the outputs of a black box, including categorical ones, and comes with a calibrated test.
 
+![Figure 15.3](figures/ch15_fig3.svg)
+
+*Figure 15.3. How often each significance test rejects at a nominal level of 5%, on synthetic scores with known structure built on the real COMPAS predictors and race labels. The vertical axis is the share of replicates rejected. In the two conditions where the score ignores race, a rejection is a false alarm. There the permutation test rejects 56.5% and 88.3% of the time, and the conditional randomization test 4.5% and 5.0%. In the other conditions a rejection is a correct detection. The values are those the paper reports for COMPAS scores, conditional on the measured predictors.*
+
 ### What This Chapter Takes from the Paper
 
 Three things carry over to the pipeline of this chapter, and each is a caution.
