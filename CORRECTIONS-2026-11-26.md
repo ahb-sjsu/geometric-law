@@ -220,3 +220,9 @@ These repairs come from the survey of the series for consistency between volumes
 ### Figures and captions
 
 None is made stale. No caption states a claim that was changed.
+
+## Appendices published (2026-11-26)
+
+The appendices went online with the survey (chapters cite them). Repairs made when they were added:
+
+- Appendix B cited 'Chapter 3, Section 3.4'; the book's sections are unnumbered, and the probes are described in Chapter 3's section 'From Case Text to Legal Coordinates', which the reference now names.
