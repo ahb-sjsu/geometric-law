@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Appendix B: Code Walkthrough for Legal Analysis Tools &mdash; Geometric Law</title>
+  <meta name="description" content="Appendix B: Code Walkthrough for Legal Analysis Tools from Geometric Law: Symmetry, Invariance, and the Structure of Legal Reasoning, by Andrew H. Bond.">
+  <meta name="generator" content="geometric-series build kit">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../book/book.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+</head>
+
+<body data-book-slug="geometric-law" data-chapter-id="appendix_b_code">
+  <nav id="main-nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-brand">
+        <span class="brand-symbol">M</span>
+        <span class="brand-text">Geometric Law</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="series-nav-list"></ul>
+    </div>
+  </nav>
+
+  <article class="book-chapter">
+    <div class="chapter-container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../index.html">Geometric Series</a>
+        <span class="breadcrumb-sep">&rsaquo;</span>
+        <a href="index.html">Geometric Law</a>
+        <span class="breadcrumb-sep">&rsaquo;</span>
+        <span class="breadcrumb-current">Appendix B: Code Walkthrough for Legal Analysis Tools</span>
+      </nav>
+      <div class="chapter-nav-top">
+        <a href="appendix_a_math.html" class="nav-prev">&larr; Appendix A: Mathematical Prerequisites</a>
+        <a href="index.html" class="nav-toc">Contents</a>
+        <a href="appendix_c_notation.html" class="nav-next">Appendix C: Notation and Conventions &rarr;</a>
+      </div>
+
+      <div class="chapter-content">
+<h1 id="appendix-b-code-walkthrough-for-legal-analysis-tools">Appendix B: Code Walkthrough for Legal Analysis Tools</h1>
+<p>This appendix provides a walkthrough of the computational tools that implement the geometric legal framework. The codebase is organized as a Python library (<code>eris-law</code>) that constructs the judicial complex from case data, computes the legal metric, evaluates gauge invariance, and performs topological analysis. Full source code and documentation are available in the companion repository.</p>
+<p>The walkthrough assumes familiarity with Python and basic numerical computing (NumPy, SciPy). Mathematical background is covered in Appendix A.</p>
+<hr />
+<h2 id="b1-constructing-the-judicial-complex">B.1 Constructing the Judicial Complex</h2>
+<p>The judicial complex $\mathcal{K}$ is a weighted directed simplicial complex. Construction requires three inputs: a corpus of decided cases, an NLP pipeline for extracting legal dimensions, and a citation graph.</p>
+<pre><code class="language-python">import numpy as np
+from eris_law import JudicialComplex, LegalDimensionExtractor
+
+# Step 1: Load the case corpus
+# Each case has: id, text, citations, metadata
+cases = load_case_corpus(&quot;path/to/courtlistener_data/&quot;)
+
+# Step 2: Extract 8-dimensional attribute vectors
+# Uses linear probes on language-agnostic embeddings (LaBSE)
+extractor = LegalDimensionExtractor(model=&quot;labse-v2&quot;)
+for case in cases:
+    case.attribute_vector = extractor.extract(case.text)
+    # Returns np.array of shape (8,):
+    # [d1_entitlement, d2_factual, d3_procedural, d4_statutory,
+    #  d5_constitutional, d6_precedential, d7_remedial, d8_public]
+
+# Step 3: Build the simplicial complex
+complex = JudicialComplex()
+for case in cases:
+    complex.add_vertex(case.id, attributes=case.attribute_vector)
+for case in cases:
+    for cited_id in case.citations:
+        complex.add_directed_edge(case.id, cited_id)
+</code></pre>
+<p>The <code>LegalDimensionExtractor</code> uses linear probes trained on annotated legal data (Chapter 3, section &ldquo;From Case Text to Legal Coordinates&rdquo;). Each probe is a logistic regression classifier that maps the 768-dimensional LaBSE embedding to a scalar score on one of the eight legal dimensions. The probes are trained on a hand-annotated dataset of 2,000 case passages, validated at 82% mean accuracy across dimensions.</p>
+<hr />
+<h2 id="b2-computing-the-legal-metric">B.2 Computing the Legal Metric</h2>
+<p>The legal metric combines the Mahalanobis distance with boundary penalties.</p>
+<pre><code class="language-python">from eris_law import LegalMetric
+
+# Step 1: Estimate the covariance matrix from the corpus
+Sigma = np.cov(
+    np.array([c.attribute_vector for c in cases]).T
+)  # shape: (8, 8)
+
+# Step 2: Define boundary penalties
+# Boundaries encode regime transitions (criminal/civil, federal/state)
+boundaries = {
+    &quot;criminal_civil&quot;: {&quot;dimensions&quot;: [0, 2, 6], &quot;penalty&quot;: 2.0},
+    &quot;federal_state&quot;:  {&quot;dimensions&quot;: [3, 4],    &quot;penalty&quot;: 1.5},
+    &quot;constitutional&quot;: {&quot;dimensions&quot;: [4],       &quot;penalty&quot;: np.inf},
+}
+
+# Step 3: Create the metric
+metric = LegalMetric(Sigma, boundaries)
+
+# Step 4: Compute distances
+d = metric.distance(case_a.attribute_vector, case_b.attribute_vector)
+# Returns: sqrt((a-b)^T Sigma^{-1} (a-b)) + sum of boundary penalties
+</code></pre>
+<p>The covariance matrix $\Sigma$ is estimated from the corpus of decided cases. Different legal traditions produce different covariance structures: common law systems exhibit strong covariance between $d_6$ (precedential constraint) and $d_1$ (entitlement structure), while civil law systems exhibit weaker covariance on these dimensions but stronger covariance between $d_4$ (statutory authority) and $d_5$ (constitutional conformity).</p>
+<hr />
+<h2 id="b3-gauge-invariance-and-the-legal-bond-index">B.3 Gauge Invariance and the Legal Bond Index</h2>
+<p>The Legal Bond Index measures how far the legal system deviates from gauge invariance.</p>
+<pre><code class="language-python">from eris_law import GaugeTransformer, LegalBondIndex
+
+# Step 1: Define gauge transformations
+# Each transformation changes a protected characteristic
+# while preserving legally relevant attributes
+transformer = GaugeTransformer(
+    transformations={
+        &quot;race&quot;:   lambda x: swap_demographic(x, &quot;race&quot;),
+        &quot;gender&quot;: lambda x: swap_demographic(x, &quot;gender&quot;),
+        &quot;ses&quot;:    lambda x: swap_demographic(x, &quot;socioeconomic_status&quot;),
+    }
+)
+
+# Step 2: Compute the gauge violation tensor
+# V[i, j] = J_j(tau_i(x)) - J_j(x)
+# where i indexes the transformation, j indexes the outcome
+V = np.zeros((len(transformer.transformations), n_outcome_dims))
+for i, (name, tau) in enumerate(transformer.transformations.items()):
+    for case in test_cases:
+        original_outcome = model.predict(case)
+        transformed_case = tau(case)
+        transformed_outcome = model.predict(transformed_case)
+        V[i] += (transformed_outcome - original_outcome)
+    V[i] /= len(test_cases)
+
+# Step 3: Compute the Legal Bond Index
+lbi = LegalBondIndex(V)
+print(f&quot;Legal Bond Index: {lbi.total:.3f}&quot;)
+print(f&quot;  Race-sentence component: {V[0, 0]:.3f}&quot;)
+print(f&quot;  Gender-sentence component: {V[1, 0]:.3f}&quot;)
+</code></pre>
+<p>The <code>swap_demographic</code> function performs a counterfactual transformation: it modifies the demographic attributes of a case while preserving all legally relevant features. This is the computational implementation of Judge Rivera&rsquo;s mental experiment from Chapter 8. The gauge violation tensor $V_{ij}$ measures whether the transformation changes the predicted outcome.</p>
+<p>A perfectly gauge-invariant system has $\|V\| = 0$. The baseline Bond Index of 0.155 quoted from the Geometric Ethics experiments is a moral-domain figure. The legal baseline remains to be measured.</p>
+<p>The code above is the transformation form of the index, which needs a model that can be run again on a changed case. The one measurement on legal data in this volume uses a different form, the matched-neighborhood ratio of Chapter 8, which needs only a record of inputs, outputs and the protected attribute. It was computed for COMPAS risk scores and is a ratio centered on 1 (1.049 at the illustrative scale $k = 20$, and 1.00 to 1.02 under matching parity), so it is not a value of <code>lbi.total</code> and is not comparable with 0.155. Its reference implementation is a separate script, archived with the paper &ldquo;The Legal Bond Index&rdquo; (Bond, in press, <em>Journal of Science and Law</em>) at doi:10.5281/zenodo.21310251.</p>
+<hr />
+<h2 id="b4-path-homology-for-constitutional-review">B.4 Path Homology for Constitutional Review</h2>
+<p>The constitutional review algorithm checks whether adding a statute to the judicial complex preserves the path homology of the constitutional subcomplex.</p>
+<pre><code class="language-python">from eris_law import PathHomology, ConstitutionalReview
+
+# Step 1: Extract the constitutional subcomplex
+C = complex.subcomplex(
+    vertex_filter=lambda v: v.attributes[4] &gt; 0.5  # d5 &gt; 0.5
+)
+
+# Step 2: Compute baseline path homology
+H_before = PathHomology(C)
+print(f&quot;H_0: {H_before.betti(0)}&quot;)  # Connected components
+print(f&quot;H_1: {H_before.betti(1)}&quot;)  # Cycles (potential circuit splits)
+
+# Step 3: Add the proposed statute as a new vertex + edges
+C_new = C.copy()
+C_new.add_vertex(&quot;proposed_statute&quot;, attributes=statute_vector)
+for related_case in find_related_cases(statute_vector, C):
+    C_new.add_directed_edge(&quot;proposed_statute&quot;, related_case)
+
+# Step 4: Compute new path homology
+H_after = PathHomology(C_new)
+
+# Step 5: Constitutional review
+review = ConstitutionalReview(H_before, H_after)
+if review.homology_preserved():
+    print(&quot;Statute is topologically consistent with Constitution&quot;)
+else:
+    print(f&quot;Statute creates topological defect:&quot;)
+    print(f&quot;  New holes: {review.new_cycles()}&quot;)
+    print(f&quot;  Broken paths: {review.broken_paths()}&quot;)
+</code></pre>
+<p>The <code>PathHomology</code> class implements the path homology computation for directed graphs as described in Chapter 7. The key insight is that constitutional review reduces to a comparison: does the proposed statute change the topological structure of the constitutional subcomplex? If $\widetilde{H}_n^{\text{path}}(C_{\text{new}}) \neq \widetilde{H}_n^{\text{path}}(C)$ for any $n$, the statute has created or destroyed a topological feature.</p>
+<hr />
+<h2 id="b5-precedent-search-via-a">B.5 Precedent Search via A*</h2>
+<p>Legal reasoning is modeled as A* search on the judicial complex, with precedent as the heuristic field.</p>
+<pre><code class="language-python">from eris_law import LegalAstar, DoctrinalHeuristic
+
+# Step 1: Define the heuristic field
+# h(n) estimates cost-to-goal based on doctrinal similarity
+heuristic = DoctrinalHeuristic(
+    complex=complex,
+    metric=metric,
+    goal_attributes=target_case.attribute_vector
+)
+
+# Step 2: Run A* search
+searcher = LegalAstar(complex, metric, heuristic)
+path = searcher.search(
+    start=current_case.id,
+    goal=lambda v: metric.distance(v.attributes, target) &lt; threshold
+)
+
+# Step 3: Analyze the path
+print(f&quot;Path length: {len(path.vertices)}&quot;)
+print(f&quot;Total legal friction: {path.total_cost:.3f}&quot;)
+print(f&quot;Is geodesic: {path.is_near_optimal(tolerance=0.05)}&quot;)
+for edge in path.edges:
+    print(f&quot;  {edge.source} -&gt; {edge.target}: cost={edge.weight:.3f}&quot;)
+</code></pre>
+<p>The doctrinal heuristic $h_D(n)$ estimates the cost-to-goal from the current case $n$ to the target legal state. An admissible heuristic &mdash; one that never overestimates the true cost &mdash; guarantees optimal pathfinding (A* optimality theorem, Appendix A). Well-developed areas of law have strong heuristics (the precedent clearly guides the analysis). Novel legal questions have weak heuristics (sparse precedent, flat guidance field).</p>
+<hr />
+<h2 id="b6-stare-decisis-as-parallel-transport">B.6 Stare Decisis as Parallel Transport</h2>
+<p>The parallel transport of legal rules along precedent paths.</p>
+<pre><code class="language-python">from eris_law import ParallelTransport
+
+# Define a legal rule from the precedent case
+rule = precedent_case.holding  # The rule established by the case
+
+# Transport the rule along the citation path
+transporter = ParallelTransport(complex, metric)
+transported_rule = transporter.transport(
+    rule=rule,
+    path=[precedent_id, intermediate_1, intermediate_2, current_id]
+)
+
+# Measure holonomy (rotation accumulated along the path)
+holonomy = transporter.holonomy(
+    rule=rule,
+    loop=[case_a, case_b, case_c, case_a]  # Closed loop
+)
+print(f&quot;Holonomy magnitude: {holonomy.magnitude:.3f}&quot;)
+# Non-zero holonomy indicates doctrinal evolution along the loop
+</code></pre>
+<hr />
+<h2 id="b7-dependencies-and-environment">B.7 Dependencies and Environment</h2>
+<p>The <code>eris-law</code> library requires:</p>
+<pre><code>python &gt;= 3.10
+numpy &gt;= 1.24
+scipy &gt;= 1.10
+scikit-learn &gt;= 1.3
+torch &gt;= 2.0          # For LaBSE embeddings
+sentence-transformers  # For LaBSE model
+networkx &gt;= 3.0       # For graph operations
+gudhi &gt;= 3.8          # For persistent homology (optional)
+</code></pre>
+<p>Installation: <code>pip install eris-law</code></p>
+<p>The library runs on CPU for all operations except embedding extraction, which benefits from GPU acceleration. A T4 GPU processes approximately 1,000 case passages per minute through the LaBSE embedding pipeline.</p>
+<hr />
+<h2 id="b8-limitations">B.8 Limitations</h2>
+<p>The current implementation has several limitations, discussed in Chapter 16:</p>
+<ol>
+<li>
+<p><strong>Dimension extraction accuracy.</strong> The linear probes achieve 82% mean accuracy. Errors in dimension extraction propagate to all downstream computations.</p>
+</li>
+<li>
+<p><strong>Covariance estimation.</strong> The $8 \times 8$ covariance matrix requires a large corpus for stable estimation. Small or domain-specific corpora may produce degenerate estimates.</p>
+</li>
+<li>
+<p><strong>Boundary penalties.</strong> The boundary penalty values ($\beta_k$) are set by expert judgment rather than learned from data. Sensitivity analysis is recommended.</p>
+</li>
+<li>
+<p><strong>Scalability.</strong> The path homology computation has worst-case complexity exponential in the number of vertices. The practical implementation uses filtration-based approximations that scale to corpora of approximately 100,000 cases.</p>
+</li>
+</ol>
+      </div>
+
+      <div class="chapter-nav-bottom">
+        <a href="appendix_a_math.html" class="nav-prev">&larr; Appendix A: Mathematical Prerequisites</a>
+        <a href="index.html" class="nav-toc">Contents</a>
+        <a href="appendix_c_notation.html" class="nav-next">Appendix C: Notation and Conventions &rarr;</a>
+      </div>
+    </div>
+  </article>
+
+  <footer class="book-footer">
+    <p>&copy; 2026 Andrew H. Bond. <em>Geometric Law: Symmetry, Invariance, and the Structure of Legal Reasoning.</em></p>
+    <p class="footer-note">The geometry was always real. The scalars were always insufficient.</p>
+  </footer>
+
+  <script src="../assets/js/series.js"></script>
+  <script>
+    window.addEventListener('scroll', function () {
+      document.getElementById('main-nav').classList.toggle('scrolled', window.scrollY > 20);
+    });
+    document.querySelector('.nav-toggle')?.addEventListener('click', function () {
+      document.querySelector('.nav-links').classList.toggle('open');
+    });
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body, {
+      delimiters: [
+        {left: '$$', right: '$$', display: true},
+        {left: '$', right: '$', display: false},
+        {left: '\\\\(', right: '\\\\)', display: false},
+        {left: '\\\\[', right: '\\\\]', display: true}
+      ],
+      ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+      throwOnError: false
+    });"></script>
+</body>
+</html>

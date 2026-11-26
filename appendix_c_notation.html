@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Appendix C: Notation and Conventions &mdash; Geometric Law</title>
+  <meta name="description" content="Appendix C: Notation and Conventions from Geometric Law: Symmetry, Invariance, and the Structure of Legal Reasoning, by Andrew H. Bond.">
+  <meta name="generator" content="geometric-series build kit">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../book/book.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+</head>
+
+<body data-book-slug="geometric-law" data-chapter-id="appendix_c_notation">
+  <nav id="main-nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-brand">
+        <span class="brand-symbol">M</span>
+        <span class="brand-text">Geometric Law</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="series-nav-list"></ul>
+    </div>
+  </nav>
+
+  <article class="book-chapter">
+    <div class="chapter-container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../index.html">Geometric Series</a>
+        <span class="breadcrumb-sep">&rsaquo;</span>
+        <a href="index.html">Geometric Law</a>
+        <span class="breadcrumb-sep">&rsaquo;</span>
+        <span class="breadcrumb-current">Appendix C: Notation and Conventions</span>
+      </nav>
+      <div class="chapter-nav-top">
+        <a href="appendix_b_code.html" class="nav-prev">&larr; Appendix B: Code Walkthrough for Legal Analysis Tools</a>
+        <a href="index.html" class="nav-toc">Contents</a>
+        <span class="nav-next"></span>
+      </div>
+
+      <div class="chapter-content">
+<h1 id="appendix-c-notation-and-conventions">Appendix C: Notation and Conventions</h1>
+<p>This appendix collects the notation used throughout the book. Conventions are consistent with the Geometric Series (<em>Geometric Methods</em>, <em>Geometric Reasoning</em>, <em>Geometric Ethics</em>, <em>Geometric Economics</em>). Where legal-specific notation diverges from or extends the series conventions, the divergence is noted.</p>
+<hr />
+<h2 id="c1-the-judicial-complex">C.1 The Judicial Complex</h2>
+<table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Meaning</th>
+<th>Introduced</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$\mathcal{K}$</td>
+<td>Judicial complex (weighted directed simplicial complex)</td>
+<td>Ch. 3</td>
+</tr>
+<tr>
+<td>$V(\mathcal{K})$</td>
+<td>Vertex set of $\mathcal{K}$ (decided cases)</td>
+<td>Ch. 3</td>
+</tr>
+<tr>
+<td>$E(\mathcal{K})$</td>
+<td>Edge set of $\mathcal{K}$ (doctrinal relationships)</td>
+<td>Ch. 3</td>
+</tr>
+<tr>
+<td>$\mathbf{v} \in \mathbb{R}^8$</td>
+<td>Attribute vector of a case</td>
+<td>Ch. 3</td>
+</tr>
+<tr>
+<td>$d_1, \ldots, d_8$</td>
+<td>Eight legal dimensions</td>
+<td>Ch. 3</td>
+</tr>
+<tr>
+<td>$d_1$</td>
+<td>Entitlement structure</td>
+<td>Ch. 3</td>
+</tr>
+<tr>
+<td>$d_2$</td>
+<td>Factual nexus</td>
+<td>Ch. 3</td>
+</tr>
+<tr>
+<td>$d_3$</td>
+<td>Procedural posture</td>
+<td>Ch. 3</td>
+</tr>
+<tr>
+<td>$d_4$</td>
+<td>Statutory authority</td>
+<td>Ch. 3</td>
+</tr>
+<tr>
+<td>$d_5$</td>
+<td>Constitutional conformity</td>
+<td>Ch. 3</td>
+</tr>
+<tr>
+<td>$d_6$</td>
+<td>Precedential constraint</td>
+<td>Ch. 3</td>
+</tr>
+<tr>
+<td>$d_7$</td>
+<td>Remedial scope</td>
+<td>Ch. 3</td>
+</tr>
+<tr>
+<td>$d_8$</td>
+<td>Public interest</td>
+<td>Ch. 3</td>
+</tr>
+<tr>
+<td>$\mathcal{C} \subseteq \mathcal{K}$</td>
+<td>Constitutional subcomplex</td>
+<td>Ch. 7</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="c2-the-legal-metric">C.2 The Legal Metric</h2>
+<table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Meaning</th>
+<th>Introduced</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$\Sigma \in \mathbb{R}^{8 \times 8}$</td>
+<td>Covariance matrix of legal dimensions</td>
+<td>Ch. 4</td>
+</tr>
+<tr>
+<td>$\sigma_{ij}$</td>
+<td>Entry $(i,j)$ of $\Sigma$</td>
+<td>Ch. 4</td>
+</tr>
+<tr>
+<td>$d_M(x, y)$</td>
+<td>Mahalanobis distance: $\sqrt{(x-y)^T \Sigma^{-1} (x-y)}$</td>
+<td>Ch. 4</td>
+</tr>
+<tr>
+<td>$\beta_k$</td>
+<td>Boundary penalty for regime transition $k$</td>
+<td>Ch. 4</td>
+</tr>
+<tr>
+<td>$d(x, y)$</td>
+<td>Full legal distance: $d_M(x, y) + \sum_k \beta_k \cdot \mathbb{1}[\text{boundary}_k]$</td>
+<td>Ch. 4</td>
+</tr>
+<tr>
+<td>$\text{BF}_{\text{law}}$</td>
+<td>Legal friction (total path cost on $\mathcal{K}$)</td>
+<td>Ch. 4</td>
+</tr>
+<tr>
+<td>$w(v_i, v_j)$</td>
+<td>Edge weight: $d(v_i, v_j)$</td>
+<td>Ch. 4</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="c3-the-hohfeldian-gauge-group">C.3 The Hohfeldian Gauge Group</h2>
+<table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Meaning</th>
+<th>Introduced</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$V_4$</td>
+<td>Klein four-group $\{e, c, s, cs\}$ generated by the correlative $c$ and the opposite $s$</td>
+<td>Ch. 2</td>
+</tr>
+<tr>
+<td>$D_4$</td>
+<td>Dihedral group of order 8 (symmetry group of the square); withdrawn for the Hohfeldian positions, 2026-11-26</td>
+<td>Ch. 2</td>
+</tr>
+<tr>
+<td>$r$</td>
+<td>Quarter-turn of the earlier $D_4$ statement ($r^4 = e$); withdrawn, 2026-11-26</td>
+<td>Ch. 2</td>
+</tr>
+<tr>
+<td>$s$</td>
+<td>Jural negation generator ($s^2 = e$, commuting with the correlative)</td>
+<td>Ch. 2</td>
+</tr>
+<tr>
+<td>$G_{\mathcal{Ho}}$</td>
+<td>Hohfeldian gauge group; its form $D_4 \rtimes D_4$ (64 elements) is withdrawn pending restatement under $V_4$, 2026-11-26</td>
+<td>Ch. 5</td>
+</tr>
+<tr>
+<td>First square</td>
+<td>Right, Duty, Liberty, No-right</td>
+<td>Ch. 2</td>
+</tr>
+<tr>
+<td>Second square</td>
+<td>Power, Liability, Immunity, Disability</td>
+<td>Ch. 2</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="c4-invariance-and-gauge-theory">C.4 Invariance and Gauge Theory</h2>
+<table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Meaning</th>
+<th>Introduced</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LIP</td>
+<td>Legal Invariance Principle</td>
+<td>Ch. 8</td>
+</tr>
+<tr>
+<td>JBIP</td>
+<td>Judicial Bond Invariance Principle</td>
+<td>Ch. 8</td>
+</tr>
+<tr>
+<td>$\mathcal{T}_{\text{irrelevant}}$</td>
+<td>Set of legally irrelevant transformations</td>
+<td>Ch. 8</td>
+</tr>
+<tr>
+<td>$\tau \in \mathcal{T}$</td>
+<td>A specific gauge transformation</td>
+<td>Ch. 8</td>
+</tr>
+<tr>
+<td>$J_{\text{law}}(x)$</td>
+<td>Legal judgment function</td>
+<td>Ch. 8</td>
+</tr>
+<tr>
+<td>$V_{ij}$</td>
+<td>Gauge violation tensor: $J_j(\tau_i(x)) - J_j(x)$</td>
+<td>Ch. 8</td>
+</tr>
+<tr>
+<td>LBI</td>
+<td>Legal Bond Index: aggregate gauge violation measure</td>
+<td>Ch. 8</td>
+</tr>
+<tr>
+<td>$\text{LBI}_k(f, g)$</td>
+<td>Legal Bond Index, matched-neighborhood form: ratio of cross-group to within-group score gaps for algorithm $f$ and protected attribute $g$ at neighborhood scale $k$; equals 1 when there is no excess</td>
+<td>Ch. 8</td>
+</tr>
+<tr>
+<td>$N_k(i, c)$</td>
+<td>The $k$ nearest neighbors of individual $i$ with protected attribute $c$, in the Mahalanobis metric on legitimate predictors</td>
+<td>Ch. 8</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="c5-topology-and-constitutional-review">C.5 Topology and Constitutional Review</h2>
+<table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Meaning</th>
+<th>Introduced</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$\Omega_n(G)$</td>
+<td>Path chain group of degree $n$</td>
+<td>Ch. 7</td>
+</tr>
+<tr>
+<td>$\partial_n$</td>
+<td>Boundary operator: $\Omega_n \to \Omega_{n-1}$</td>
+<td>Ch. 7</td>
+</tr>
+<tr>
+<td>$\widetilde{H}_n^{\text{path}}(G)$</td>
+<td>Path homology group of degree $n$</td>
+<td>Ch. 7</td>
+</tr>
+<tr>
+<td>$\beta_n = \text{rank}(\widetilde{H}_n^{\text{path}})$</td>
+<td>Betti number of degree $n$</td>
+<td>Ch. 7</td>
+</tr>
+<tr>
+<td>$W(\ell)$</td>
+<td>Wilson loop around closed cycle $\ell$</td>
+<td>Ch. 5</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="c6-precedent-and-parallel-transport">C.6 Precedent and Parallel Transport</h2>
+<table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Meaning</th>
+<th>Introduced</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$h_D(n)$</td>
+<td>Doctrinal heuristic at vertex $n$</td>
+<td>Ch. 6</td>
+</tr>
+<tr>
+<td>$f(n) = g(n) + h_D(n)$</td>
+<td>A* evaluation function</td>
+<td>Ch. 6</td>
+</tr>
+<tr>
+<td>$g(n)$</td>
+<td>Accumulated path cost to vertex $n$</td>
+<td>Ch. 6</td>
+</tr>
+<tr>
+<td>$\nabla$</td>
+<td>Legal connection (parallel transport rule)</td>
+<td>Ch. 9</td>
+</tr>
+<tr>
+<td>$P_\gamma$</td>
+<td>Parallel transport along path $\gamma$</td>
+<td>Ch. 9</td>
+</tr>
+<tr>
+<td>$\text{Hol}(\ell)$</td>
+<td>Holonomy around loop $\ell$</td>
+<td>Ch. 9</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="c7-failure-modes">C.7 Failure Modes</h2>
+<table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Meaning</th>
+<th>Introduced</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HC</td>
+<td>Heuristic corruption</td>
+<td>Ch. 10</td>
+</tr>
+<tr>
+<td>OH</td>
+<td>Objective hijacking</td>
+<td>Ch. 10</td>
+</tr>
+<tr>
+<td>LM</td>
+<td>Local minimum</td>
+<td>Ch. 10</td>
+</tr>
+<tr>
+<td>GB</td>
+<td>Gauge breaking</td>
+<td>Ch. 10</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="c8-conventions">C.8 Conventions</h2>
+<p><strong>Indices.</strong> Latin indices $i, j, k$ range over the eight legal dimensions $\{1, \ldots, 8\}$. Greek indices $\mu, \nu$ are used for general tensor components when the context is inherited from the physics literature (gauge theory, parallel transport).</p>
+<p><strong>Summation.</strong> The Einstein summation convention (repeated indices are summed) is used sparingly and only when explicitly noted. Most sums are written explicitly.</p>
+<p><strong>Epistemic tags.</strong> Each substantive claim in the book is tagged with one of five epistemic status labels:
+- <strong>[Established Mathematics.]</strong> — standard results
+- <strong>[Legal Doctrine.]</strong> — established legal principles
+- <strong>[Modeling Axiom.]</strong> — structural choices
+- <strong>[Conditional Theorem.]</strong> — results following from axioms
+- <strong>[Speculation/Extension.]</strong> — forward-looking claims</p>
+<p><strong>Series references.</strong> Books in the Geometric Series are cited as Bond (2026a) through Bond (2026h), corresponding to <em>Geometric Methods</em> (a), <em>Geometric Reasoning</em> (b), <em>Geometric Ethics</em> (c), <em>Geometric Economics</em> (d), <em>Geometric Law</em> (e, this volume), <em>Geometric Cognition</em> (f), <em>Geometric Communication</em> (g), and <em>Geometric Medicine</em> (h).</p>
+<p><strong>Running example.</strong> All chapter-opening scenarios feature Judge Elena Rivera, a fictional federal district court judge in San Francisco. Rivera&rsquo;s cases are constructed to illustrate every geometric structure in the book; they are not based on actual cases or persons.</p>
+      </div>
+
+      <div class="chapter-nav-bottom">
+        <a href="appendix_b_code.html" class="nav-prev">&larr; Appendix B: Code Walkthrough for Legal Analysis Tools</a>
+        <a href="index.html" class="nav-toc">Contents</a>
+        <span class="nav-next"></span>
+      </div>
+    </div>
+  </article>
+
+  <footer class="book-footer">
+    <p>&copy; 2026 Andrew H. Bond. <em>Geometric Law: Symmetry, Invariance, and the Structure of Legal Reasoning.</em></p>
+    <p class="footer-note">The geometry was always real. The scalars were always insufficient.</p>
+  </footer>
+
+  <script src="../assets/js/series.js"></script>
+  <script>
+    window.addEventListener('scroll', function () {
+      document.getElementById('main-nav').classList.toggle('scrolled', window.scrollY > 20);
+    });
+    document.querySelector('.nav-toggle')?.addEventListener('click', function () {
+      document.querySelector('.nav-links').classList.toggle('open');
+    });
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body, {
+      delimiters: [
+        {left: '$$', right: '$$', display: true},
+        {left: '$', right: '$', display: false},
+        {left: '\\\\(', right: '\\\\)', display: false},
+        {left: '\\\\[', right: '\\\\]', display: true}
+      ],
+      ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+      throwOnError: false
+    });"></script>
+</body>
+</html>
