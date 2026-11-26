@@ -346,6 +346,10 @@ Rivera orders:
 
 The order does not require Jianlong to do anything — Rivera has no jurisdiction over Jianlong. The order focuses on what Vertex, a US company subject to Rivera's jurisdiction, can do: restructure its own data processing to avoid the impossibility region.
 
+![Figure 14.1](figures/ch14_fig1.svg)
+
+*Figure 14.1. The data-protection layer of the treaty network in the worked example. Each node is a national legal system and each edge is a treaty or equivalent instrument. The EU-US Data Privacy Framework joins the American and European systems. No treaty joins the American and Chinese systems on data protection, and there is no adequacy decision between the European Union and China. The company's data flow runs from the European Union through the United States to a facility in Shenzhen, and its second leg crosses a gap: no path in this layer, direct or indirect, reaches the Chinese system.*
+
 ## Sovereignty as Manifold Integrity
 
 ### The Geometric Meaning of Sovereignty

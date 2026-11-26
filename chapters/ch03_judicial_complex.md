@@ -111,6 +111,10 @@ The key requirement is not a specific number of dimensions but the existence of 
 
 ---
 
+![Figure 3.1](figures/ch03_fig1.svg)
+
+*Figure 3.1. The attribute vector of the voting rights case in the running example, one score from 0 to 1 on each of the eight legal dimensions: v = (0.9, 0.7, 0.8, 0.6, 0.8, 0.5, 0.7, 0.9). The scores are the ones Judge Rivera assigns in the example. They are illustrative, not the output of a scoring run.*
+
 ## The Judicial Complex: Construction
 
 ### Why a Simplicial Complex?
@@ -412,6 +416,10 @@ For the edge $c_4 \to c_5$ (*Brnovich* to Rivera's case):
 This mini-complex illustrates the basic structure: cases as vertices, citations as directed edges, attribute vectors as coordinates, and edge weights as costs of doctrinal traversal. The full judicial complex for voting rights law would contain thousands of cases and tens of thousands of edges, but the structure is the same.
 
 ---
+
+![Figure 3.2](figures/ch03_fig2.svg)
+
+*Figure 3.2. The mini-complex of the worked example: five voter identification cases as vertices and six citations as directed edges, each running from the earlier case to the later case that cites it. The four Supreme Court cases bind the district court case at the lower right. On the two edges into Rivera's case the largest change in the attribute vector is on d6, precedential constraint, which falls by 0.3 from Crawford and by 0.4 from Brnovich. The cases are placed in order of date, not to scale, and the attribute vectors are the example's illustrative scores.*
 
 ## Technical Appendix
 

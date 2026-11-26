@@ -328,6 +328,10 @@ But suppose the plaintiff *does* have a smoking-gun email. Then the actual cost 
 
 This illustrates a general principle: **good doctrinal heuristics are context-sensitive**. The best heuristic is not a fixed function but a function that conditions on the available evidence. McDonnell Douglas is a good heuristic precisely because it adapts to the evidence: if the plaintiff has direct evidence, she can bypass the burden-shifting framework entirely. The doctrine accommodates both paths, functioning as a *portfolio of heuristics* rather than a single fixed estimate.
 
+![Figure 6.1](figures/ch06_fig1.svg)
+
+*Figure 6.1. The two doctrinal heuristics of the worked example as estimates of the remaining cost of an employment discrimination claim, in the chapter's illustrative friction units. McDonnell Douglas adds three steps to 6.5, below the direct-evidence estimate of 8.0, so the search explores the McDonnell Douglas path first. If the plaintiff holds a smoking-gun email, the direct-evidence path actually costs about 1.0. The estimate of 8.0 then exceeds the true cost, and a heuristic that overestimates is not admissible.*
+
 ## Chapter Summary
 
 1. Legal disputes are pathfinding problems on the judicial complex $\mathcal{K}$. The optimal legal argument is the minimum-cost path from the plaintiff's position to the desired remedy.

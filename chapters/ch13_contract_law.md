@@ -409,6 +409,10 @@ Chandrasekaran's counterclaim for constructive termination: **granted**. Meridia
 
 ---
 
+![Figure 13.1](figures/ch13_fig1.svg)
+
+*Figure 13.1. The worked example on a time line, in months from the start of the five-year contract. Each party's line is solid while it is inside the region the contract defines. At month 18 the company restructures and the contracted role no longer exists: it leaves the region first, and because the role is central to the contract the breach is material. That breach extinguishes the non-compete obligation, so the employee's move to a competitor at month 19 crosses no boundary. The 42 months that remain, 3.5 years, are the term over which expectation damages are computed. The case is the chapter's hypothetical one.*
+
 ## The Relational Contract as Manifold Evolution
 
 ### Beyond Discrete Transactions

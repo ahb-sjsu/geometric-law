@@ -328,6 +328,10 @@ Williams is sentenced to 42 months. A similarly situated white defendant in the 
 
 All four pathologies interact in Williams's case. The corrupted heuristic (neighborhood description) increased the judge's estimate of danger. The hijacked objective (docket pressure) forced a plea rather than a trial. The local minimum (*Whren*) prevented a challenge to the pretextual stop. The gauge breaking produced a racially disparate sentence. Each pathology made the others worse, and the final outcome — 42 months for a defendant who might have been acquitted at trial if the stop had been suppressed — is the compound product of all four geometric distortions.
 
+![Figure 10.1](figures/ch10_fig1.svg)
+
+*Figure 10.1. The four pathologies as the chapter defines them. Heuristic corruption: the estimate of remaining cost is the true estimate plus a bias tied to legally irrelevant features. Objective hijacking: the action that maximises a measurable proxy is not the one that maximises the intended objective. Local minimum: an established precedent sits in a basin, and the cost of overruling is a barrier between it and a better outcome. Gauge breaking: the outcome changes when a protected attribute is changed, here the 42 months of the worked example's defendant against 34 months for a similarly situated white defendant, 24 percent more. The first three panels are schematics with curves chosen for illustration, and the fourth uses the numbers of the chapter's hypothetical case.*
+
 ## Chapter Summary
 
 1. Legal failures map onto four geometric pathologies: heuristic corruption, objective hijacking, local minima, and gauge breaking. These are not merely "problems" — they are mathematically characterizable distortions of the judicial complex.

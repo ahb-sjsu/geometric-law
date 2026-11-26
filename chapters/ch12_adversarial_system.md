@@ -126,6 +126,10 @@ This pruning cascade is why trials are manageable despite the enormous size of t
 
 ---
 
+![Figure 12.1](figures/ch12_fig1.svg)
+
+*Figure 12.1. Litigation as a two-player search, as the chapter defines it. The plaintiff seeks a least-cost path from the complaint to the remedy sought. The defendant can show that a branch has no path to that goal (a motion to dismiss removes the branch), remove an edge that rests on inadmissible evidence (a motion in limine), or establish a path to a goal of its own. A settlement is a vertex that both parties prefer to the expected result of continuing, reached without the rest of the search. This is a schematic, and the small graph is not a real case.*
+
 ## Burden of Proof as Graph Distance
 
 ### The Distance Interpretation

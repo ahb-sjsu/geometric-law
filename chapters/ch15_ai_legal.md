@@ -43,6 +43,10 @@ The first four steps are *construction*: building the geometric representation f
 
 ## The Five-Step NLP Pipeline
 
+![Figure 15.1](figures/ch15_fig1.svg)
+
+*Figure 15.1. The five steps of the pipeline that builds the judicial complex from case text, as the chapter sets them out. Each step feeds the next, and the fifth checks the whole against five criteria. When a criterion fails, the chapter's remedy is to go back: for the first criterion, to retrain the probes or redefine the dimensions. This is a schematic of the procedure. The chapter describes it for a hypothetical system and reports no run of it.*
+
 ### Step 1: Embedding
 
 **The task.** Transform each legal document (judicial opinion, statute, regulation) from natural language text into a numerical vector representation suitable for downstream analysis.
@@ -100,6 +104,10 @@ The size and quality of the training dataset are critical. Too few labeled examp
 > *This is a Legal Invariance Principle violation. The dimension scores change under a transformation (swapping defendant race) that should leave them invariant. Rivera flags this for the validation step.*
 
 ---
+
+![Figure 15.2](figures/ch15_fig2.svg)
+
+*Figure 15.2. The check of the running example: the judge's own scores for one of her decided cases against the scores the system assigns, on each of the eight dimensions (horizontal axis, 0 to 1). The two agree to within 0.05 on every dimension, inside the 0.1 the example treats as the expected margin. The system and its scores are the chapter's hypothetical example, not a measurement.*
 
 ### Step 3: Covariance Estimation
 

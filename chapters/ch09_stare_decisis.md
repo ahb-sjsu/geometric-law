@@ -45,6 +45,10 @@ This definition captures several properties of precedent that legal theory takes
 
 **Accumulation.** Multiple precedents in the same area of law produce cumulative deformation. The edge weights in a well-developed area (say, Fourth Amendment search-and-seizure law) are the baseline weights plus the sum of all precedential deformations. This accumulated deformation is what makes well-settled law feel *settled*: the edge weights are so heavily deformed by decades of precedent that the optimal paths are sharply defined.
 
+![Figure 9.1](figures/ch09_fig1.svg)
+
+*Figure 9.1. The size of a precedent's weight deformation against graph distance from the precedent, from the chapter's rule that it falls off as the precedential weight divided by the distance to the power n. The horizontal axis is the shortest-path distance in the judicial complex and the vertical axis is the size of the change in edge weight, in arbitrary units. The curves are drawn for n = 2 and weights 3, 2 and 1, values chosen for illustration. The chapter fixes only the form of the decay and the order Supreme Court, circuit court, district court.*
+
 ### Precedent as a Connection
 
 The weight deformation has a deeper structure: it defines a *connection* on the judicial complex. In differential geometry, a connection specifies how to carry a vector from one point to another — how the vector "rotates" as you move along a path. In the legal context, the connection specifies how a legal rule changes as you carry it from one case to another through intermediate cases.
@@ -102,6 +106,10 @@ This is exactly the Wilson loop test from Chapter 8. Non-trivial holonomy in the
 > *Rivera computes the holonomy. Start with the Bivens rule. Transport it through the chain Bivens → Davis → Carlson → Bush → Abbasi → Egbert. Now transport back to a 1971-type case: a plaintiff suing a federal officer for a Fourth Amendment violation. Has the rule returned unchanged? It has not. The rule that started as "you may sue" has become "you almost certainly may not sue." The holonomy is non-trivial — the precedent system contains a doctrinal inconsistency between the early and late cases.*
 
 ---
+
+![Figure 9.2](figures/ch09_fig2.svg)
+
+*Figure 9.2. Parallel transport of the Bivens rule through the Supreme Court cases of the running example. Each arrow stands for the rule as it arrives at a case. Through Davis and Carlson the rule is extended and arrives unchanged. From Bush v. Lucas on, each refusal to extend it turns the rule further, and at Egbert v. Boule the chapter describes the rotation as nearly 180 degrees: a rule that damages suits lie has become a rule that they almost never do. The cases are in order of date, not to scale. The angles between the first three cases and the last are a schematic, since the chapter gives no values for them.*
 
 ## Overruling as Graph Surgery
 

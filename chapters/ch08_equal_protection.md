@@ -95,6 +95,10 @@ The LIP also does not require blindness to protected characteristics in all cont
 
 ---
 
+![Figure 8.1](figures/ch08_fig1.svg)
+
+*Figure 8.1. The test that the Legal Invariance Principle states. A case and a copy of it changed by a legally irrelevant transformation are put through the same judgment procedure, and the two outcomes are compared. If they agree for every such transformation the procedure is invariant. A difference is what the chapter calls a gauge violation. The five kinds of transformation are the ones the axiom lists, and equal protection is the second of them. This is a schematic of the definition.*
+
 ## The Judicial Bond Invariance Principle
 
 ### From General Invariance to Structural Invariance

@@ -283,6 +283,10 @@ The five open problems are not independent. They form an interconnected web:
 
 Solving any one problem fully would likely require progress on at least two others. The research programme is inherently interdisciplinary — requiring contributions from mathematics (algebraic topology, differential geometry, computational complexity), computer science (NLP, machine learning, algorithm design), law (comparative law, international law, jurisprudence), and the social sciences (legal anthropology, political science, economics).
 
+![Figure 16.1](figures/ch16_fig1.svg)
+
+*Figure 16.1. The five open problems and the four links between them that the chapter states. Metric calibration affects cross-jurisdictional invariance, which feeds into international coherence. The computability of the fundamental group intersects the problem of dynamic complexes, and dynamic complexes are required for metric calibration, because the metric must be recalibrated as the complex changes. The chapter concludes that solving any one fully would probably need progress on at least two others.*
+
 ### The Modesty Principle
 
 Throughout this book, we have maintained a principle of modesty: the geometric framework does not *replace* legal judgment; it makes legal judgment *auditable*. The framework does not determine verdicts; it provides a structural vocabulary for analyzing the reasoning that produces verdicts.

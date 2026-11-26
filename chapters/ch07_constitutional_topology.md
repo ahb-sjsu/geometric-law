@@ -345,6 +345,10 @@ This contradiction is a non-trivial element of $\widetilde{H}_1^{\text{path}}(\m
 
 **Step 5: Resolution via the Supremacy Clause.** The Supremacy Clause is a topological constraint: $\widetilde{H}_1^{\text{path}}(\mathcal{C}; \mathbb{Z})$ requires that federal-law directed paths be traversable. The state statute creates a directed cycle that is not a boundary in $\mathcal{C}$, flagging preemption. The state statute is preempted — removed from $\mathcal{K}$ — and the conflict is resolved by collapsing the non-trivial cycle to a boundary.
 
+![Figure 7.1](figures/ch07_fig1.svg)
+
+*Figure 7.1. The statutory conflict of the worked example as a reachability problem. Federal statute A requires the company to disclose certain data and state statute B prohibits it. Above: the step to disclosure is blocked by B and the position of withholding is forbidden by A, so no directed path leads from the company's position to compliance with all applicable law. The chapter calls this a graph trap. Below: the Supremacy Clause preempts the state statute, the block is removed, and a directed path to compliance exists. This is a schematic of the example's five steps.*
+
 ## Chapter Summary
 
 1. The Constitution defines a topological constraint — the *constitutional subcomplex* $\mathcal{C}$ — that specifies the global shape of the space of permissible legal states.

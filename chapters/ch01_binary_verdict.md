@@ -87,6 +87,10 @@ The problem is not that the justices disagreed. The problem is that the legal sy
 
 The geometric diagnosis: constitutional review is a *topological* computation, not a textual one. A statute is constitutional if and only if its addition to the judicial complex preserves the path homology of the constitutional subcomplex — that is, if it does not create contradictions or destroy rights-paths that the Constitution guarantees. This is a machine-checkable criterion, not a matter of judicial temperament. Chapter 7 develops the formalism.
 
+![Figure 1.1](figures/ch01_fig1.svg)
+
+*Figure 1.1. The three failures of the binary verdict that the chapter names, each with the facts the chapter cites, what the one-bit or one-number output leaves out, and the geometric diagnosis the book proposes. The disparity figures are the ones the chapter quotes from the U.S. Sentencing Commission. The diagnoses are the framework's posited reading, developed in the chapters named.*
+
 ## The Deep Structure: Why Law Has Geometry
 
 The claim that law has geometric structure requires justification beyond the three failures. Why should legal reasoning inhabit a structured space at all?
@@ -116,6 +120,10 @@ Structure of this kind — a space of states, with distances, symmetries, and co
 8. **Public interest** ($d_8$): How does the outcome affect persons and interests beyond the immediate parties? This dimension is especially important in constitutional litigation, administrative law, and cases with precedential impact.
 
 A legal judgment is a point $\mathbf{v} = (d_1, d_2, \ldots, d_8)$ in this eight-dimensional space. The binary verdict is a projection $\pi: \mathbb{R}^8 \to \{0, 1\}$ — a map that discards seven and a half dimensions of information. The scalar sentence is a projection $\psi: \mathbb{R}^8 \to \mathbb{R}$ — a map that discards seven dimensions. Neither projection is invertible. The information destroyed by the projection is, by the Scalar Irrecoverability Theorem, mathematically irrecoverable.
+
+![Figure 1.2](figures/ch01_fig2.svg)
+
+*Figure 1.2. The two outputs of a legal decision as maps on the eight-dimensional legal space of the chapter. The binary verdict sends a point with eight coordinates to one bit, and the scalar sentence sends it to one number. Neither map is injective, so cases that differ on any of the eight dimensions can receive the same output. This is a schematic of the maps, not data.*
 
 ### The Metric
 

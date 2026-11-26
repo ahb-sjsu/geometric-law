@@ -406,6 +406,10 @@ The Wilson loop is *trivial*: $W(\gamma) = e$. The body of case law is consisten
 
 This example illustrates the power of the Wilson loop: it distinguishes *genuine* inconsistencies (non-trivial holonomy) from *apparent* inconsistencies that dissolve when the conditioning is made explicit (trivial holonomy).
 
+![Figure 5.1](figures/ch05_fig1.svg)
+
+*Figure 5.1. The Wilson loop of the worked example, three appellate cases on arbitration clauses in consumer contracts. From Case A to Case B the consumer's position changes from a no-right to a right, the jural opposite. From B to C the position is kept and a condition is added. From C back to A the opposite is applied again. Two opposites cancel, so the loop returns the position it started with: the holonomy is the identity and the three cases are consistent. The computation uses only that the opposite applied twice restores the original position.*
+
 ## Chapter Summary
 
 1. The full Hohfeldian octad (eight positions in two coupled squares) has the symmetry group $G_{\mathfrak{H}} = D_4 \rtimes_\varphi D_4$ — a semi-direct product of two dihedral groups.

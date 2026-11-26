@@ -238,6 +238,10 @@ This coupling is the crucial structural feature that distinguishes the legal dom
 
 ---
 
+![Figure 2.1](figures/ch02_fig1.svg)
+
+*Figure 2.1. Hohfeld's eight positions as the chapter's two tables give them. In each square the left column is the position of one party and the right column is the position of the other. A horizontal line joins correlatives, two views of one legal bond. A diagonal line joins opposites, positions that negate each other. The second square holds the positions about changing legal positions, and exercising them creates, modifies or destroys positions of the first square. The figure shows the pairs only and makes no claim about the group the two operations generate.*
+
 ## The Symmetry That Hohfeld Discovered
 
 ### Why "Discovered" Rather Than "Invented"

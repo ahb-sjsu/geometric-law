@@ -379,6 +379,10 @@ Race and SES produce the largest total violations, followed by gender and citize
 
 Bail is the most gauge-variant outcome, followed by sentence and departure rate. Conviction rate is the least gauge-variant — suggesting that the adjudication process itself is more gauge-invariant than the sentencing and pretrial processes.
 
+![Figure 11.1](figures/ch11_fig1.svg)
+
+*Figure 11.1. The gauge violation tensor of the worked example, a hypothetical federal district with 2,000 drug sentencing cases. Each cell is the average relative change in one outcome (column) when one protected attribute of the defendant is swapped (row), and a deeper cell is a larger violation. The bars at the right are the row sums and the row at the foot holds the column sums, as the chapter prints them. Bail is the outcome that changes most, and the largest cell is socioeconomic status against bail, 0.298. The 25 cells sum to 2.340, as do the row sums and the column sums; the text of Step 4 prints 2.520 for this total. The numbers are hypothetical, not measured.*
+
 ### Step 5: Intervention Design
 
 The tensor suggests three priority interventions:

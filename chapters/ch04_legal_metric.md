@@ -328,6 +328,10 @@ The dominant contribution is from $d_6$ (precedential constraint), which dropped
 
 **Reverse edge weight.** $w(c_B \to c_A)$ would have $h = \infty$ (a district court cannot bind the Supreme Court), so this edge is impassable in the reverse direction. The asymmetry is extreme: the edge from the Supreme Court to the district court is costless (in hierarchical terms), while the reverse edge has infinite cost.
 
+![Figure 4.1](figures/ch04_fig1.svg)
+
+*Figure 4.1. The squared Mahalanobis distance of the worked example, split by dimension. Each bar is the squared difference between the two attribute vectors on one dimension, divided by the variance 0.04 that the example assumes for every dimension. The bars sum to 5.3125. Precedential constraint (d6) and factual nexus (d2) supply most of it. The boundary penalty and the hierarchical cost are both 0 on this edge, so 5.3125 is also the edge weight. The vectors and the diagonal covariance are the chapter's illustrative values, not calibrated ones.*
+
 ## Cross-Dimensional Correlations: What the Data Should Show
 
 ### Predicted Correlations
