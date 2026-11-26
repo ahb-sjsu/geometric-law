@@ -414,7 +414,7 @@ $$\mathcal{I} = \left\{ \mathbf{v} \in \mathcal{O}_{N_1, \ldots, N_m} \mid \bigc
 
 where $\mathcal{O}_{N_1, \ldots, N_m}$ is the jurisdictional overlap region and $\mathcal{C}_{N_k}|_{\mathbf{v}}$ is the set of $N_k$-compliant positions accessible from $\mathbf{v}$.
 
-**Proposition (Impossibility Region Non-Emptiness).** The impossibility region $\mathcal{I}$ is non-empty if and only if there exist dimensions $d_k, d_l$ and nations $N_i, N_j$ such that $\mathcal{C}_{N_i}$ requires $d_k$ to lie in an interval $[a, b]$ and $\mathcal{C}_{N_j}$ requires $d_k$ to lie in an interval $[c, d]$ with $[a, b] \cap [c, d] = \emptyset$.
+**Proposition (Impossibility Region Non-Emptiness).** The impossibility region $\mathcal{I}$ is non-empty if and only if there exist a dimension $d_k$ and nations $N_i, N_j$ such that $\mathcal{C}_{N_i}$ requires $d_k$ to lie in an interval $[a, b]$ and $\mathcal{C}_{N_j}$ requires $d_k$ to lie in an interval $[c, d]$ with $[a, b] \cap [c, d] = \emptyset$.
 
 **Definition (International Legal Fiber Bundle).** The international legal bundle $\pi: E \to B$ is a fiber bundle with:
 

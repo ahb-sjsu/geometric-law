@@ -220,17 +220,17 @@ Settlement fails only when the parties' combined optimism ($p_\pi + p_\delta - 1
 >
 > *Six months before trial, Rivera holds a settlement conference. The parties' positions:*
 >
-> *EJAC seeks: a consent decree requiring (1) revision of stop-and-search policies, (2) independent monitoring of racial disparity data, (3) mandatory bias training, (4) a civilian oversight board with subpoena power, and (5) $4.5 million in damages for the named plaintiffs. EJAC estimates its probability of prevailing at trial: 70%.*
+> *EJAC seeks: a consent decree requiring (1) revision of stop-and-search policies, (2) independent monitoring of racial disparity data, (3) mandatory bias training, (4) a civilian oversight board with subpoena power, and (5) \$4.5 million in damages for the named plaintiffs. EJAC estimates its probability of prevailing at trial: 70%.*
 >
-> *The City offers: (1) a voluntary review of stop-and-search policies (no consent decree), (2) internal monitoring (no independent monitor), (3) training (already planned), and (4) $800,000 in damages. The City estimates EJAC's probability of prevailing: 35%.*
+> *The City offers: (1) a voluntary review of stop-and-search policies (no consent decree), (2) internal monitoring (no independent monitor), (3) training (already planned), and (4) \$800,000 in damages. The City estimates EJAC's probability of prevailing: 35%.*
 >
 > *The settlement gap is large. In geometric terms, the parties are navigating different complexes: EJAC's complex has short paths to the pattern-or-practice liability vertex (the statistical evidence is strong, the internal emails are damning), while the City's complex has longer paths (the statistical methodology is disputed, the emails are ambiguous).*
 >
-> *Rivera, as the settlement judge, has a unique vantage point: she has seen the evidence in discovery, ruled on the motions, and formed her own assessment of the edge weights. She believes EJAC's probability of prevailing is approximately 55% — between the parties' estimates. She communicates this assessment (as she is permitted to do in a settlement conference) and suggests a framework: a consent decree with the key structural reforms plus $2.0 million in damages.*
+> *Rivera, as the settlement judge, has a unique vantage point: she has seen the evidence in discovery, ruled on the motions, and formed her own assessment of the edge weights. She believes EJAC's probability of prevailing is approximately 55% — between the parties' estimates. She communicates this assessment (as she is permitted to do in a settlement conference) and suggests a framework: a consent decree with the key structural reforms plus \$2.0 million in damages.*
 >
-> *The parties negotiate. After two days, they reach agreement: a consent decree with policy reforms and independent monitoring, but without the civilian oversight board, plus $2.2 million in damages. The settlement vertex is located between the parties' goal regions — closer to EJAC's position on structural reforms, closer to the City's position on damages.*
+> *The parties negotiate. After two days, they reach agreement: a consent decree with policy reforms and independent monitoring, but without the civilian oversight board, plus \$2.2 million in damages. The settlement vertex is located between the parties' goal regions — closer to EJAC's position on structural reforms, closer to the City's position on damages.*
 >
-> *In the geometry of the complex, the settlement is a shortcut: a path from the current vertex to a mutually acceptable outcome that bypasses the costly adversarial search of a three-week trial. The shortcut works because the combined litigation costs (estimated at $3 million for both sides) exceed the distance between the parties' positions (approximately $2 million in damages plus the value of the disputed reforms). The settlement region is non-empty, and the parties have found a point in it.*
+> *In the geometry of the complex, the settlement is a shortcut: a path from the current vertex to a mutually acceptable outcome that bypasses the costly adversarial search of a three-week trial. The shortcut works because the combined litigation costs (estimated at \$3 million for both sides) exceed the distance between the parties' positions (approximately \$2 million in damages plus the value of the disputed reforms). The settlement region is non-empty, and the parties have found a point in it.*
 
 ---
 
@@ -284,7 +284,7 @@ In the geometry of the complex, the hierarchical system performs *iterative path
 >
 > *The settlement in EJAC v. City moots the appeal question — settlements are not appealable. But Rivera considers what an appeal would have looked like if the case had gone to trial.*
 >
-> *Suppose the jury returned a verdict for the plaintiffs on the Section 1983 pattern-or-practice claim and the Monell claim, awarding $3.5 million in damages and supporting injunctive relief. The City would appeal on several grounds:*
+> *Suppose the jury returned a verdict for the plaintiffs on the Section 1983 pattern-or-practice claim and the Monell claim, awarding \$3.5 million in damages and supporting injunctive relief. The City would appeal on several grounds:*
 >
 > *1. **Legal error (de novo review):** The City would argue that Rivera applied the wrong legal standard for Monell liability — that she should have required "deliberate indifference" rather than mere "knowledge and acquiescence." The Ninth Circuit would review this de novo, applying its own analysis of the Monell framework.*
 >
@@ -330,7 +330,7 @@ If this value exceeds the additional cost of adversarial proceedings, the advers
 
 ### Scenario
 
-EJAC v. City of San Francisco goes to trial. Rivera must manage the adversarial process across a three-week bench trial (no jury — the parties have consented to a bench trial on the equitable claims).
+Suppose the settlement conference had failed and EJAC v. City of San Francisco goes to trial. Rivera must manage the adversarial process across a three-week bench trial (no jury — the parties have consented to a bench trial on the equitable claims).
 
 ### The Adversarial Search Tree
 
@@ -364,7 +364,7 @@ Rivera's task is to evaluate both paths and determine which is more geometricall
 
 She finds for the plaintiffs on the Section 1983 pattern-or-practice claim (the statistical evidence, corroborated by the internal emails and the rebuttal testimony, establishes a pattern of racially discriminatory policing) and on the Monell claim (the City's deliberate indifference is established by the supervisory emails and the failure to investigate).
 
-She enters a consent decree requiring policy reforms, independent monitoring, and $2.8 million in damages.
+She enters judgment requiring policy reforms, independent monitoring, and \$2.8 million in damages.
 
 In the geometry of the complex, Rivera's decision selects the plaintiff's path as the optimal path through the complex. The defendant's path — which would have led to a different vertex (no liability, no reform) — was longer, less well-supported by the edge weights, and inconsistent with the constitutional constraints of the equal-protection subcomplex.
 
@@ -410,7 +410,7 @@ $$|\{\gamma^* : \gamma^* = \arg\min \text{BF}_{\text{law}}(\gamma), \; \Phi(\gam
 
 and no disputed fact affects any edge in $\gamma^*$.
 
-**Proposition (Settlement Existence — Full).** Let $p_\pi, p_\delta$ be the parties' estimated probabilities of plaintiff success, $D$ be damages, $C_\pi, C_\delta$ be litigation costs. A settlement region $\mathcal{S}$ exists iff:
+**Proposition (Settlement Existence — Full).** Let $p_\pi$ be the plaintiff's estimate of winning at trial and $p_\delta$ the defendant's estimate of winning, as in the body of the chapter, $D$ be damages, $C_\pi, C_\delta$ be litigation costs. A settlement region $\mathcal{S}$ exists iff:
 
 $$p_\pi \cdot D - C_\pi < (1 - p_\delta) \cdot D + C_\delta$$
 

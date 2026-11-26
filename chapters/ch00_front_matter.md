@@ -18,9 +18,9 @@ The argument begins with a simple observation: the entire legal system — every
 
 Behind all that language, legal reasoning has *geometric structure* — a shape — that the words obscure. This book constructs that shape formally, using the same mathematics that describes gauge symmetry in physics, topological invariance in mathematics, and optimal pathfinding in computer science. The result is a framework in which constitutional review becomes a topological computation, equal protection becomes a gauge symmetry, sentencing consistency becomes a measurable index, and legal reasoning itself becomes A* search on a judicial manifold.
 
-The central construction is the **judicial complex** $\mathcal{K}$ — a weighted directed simplicial complex whose vertices are decided cases, whose edges are doctrinal relationships, and whose attribute vectors encode eight dimensions of legal significance. On this complex, we define invariance principles (legal judgments must not depend on legally irrelevant features), gauge structure (the Hohfeldian octad forms a $D_4 \rtimes D_4$ gauge group), conservation laws (liability is conserved in closed disputes), and constitutional constraints (a statute is constitutional if and only if it preserves the path homology of the constitutional subcomplex).
+The central construction is the **judicial complex** $\mathcal{K}$ — a weighted directed simplicial complex whose vertices are decided cases, whose edges are doctrinal relationships, and whose attribute vectors encode eight dimensions of legal significance. On this complex, we define invariance principles (legal judgments must not depend on legally irrelevant features), gauge structure (the Hohfeldian positions carry the Klein four-group $V_4$ on each square), conservation laws (liability is conserved in closed disputes), and constitutional constraints (a statute is constitutional if and only if it preserves the path homology of the constitutional subcomplex).
 
-This is the fifth book in the Geometric Series. *Geometric Methods* (2026a) provides the mathematical toolkit. *Geometric Ethics* (2026b) develops the moral manifold. *Geometric Reasoning* (2026c) establishes the general framework of search on geometric spaces. *Geometric Economics* (2026d) instantiates it on the economic decision manifold. The present book instantiates it on the judicial manifold, inheriting the D₄ Hohfeldian structure first discovered in the ethics framework.
+This is the fifth book in the Geometric Series. *Geometric Methods* (2026a) provides the mathematical toolkit. *Geometric Ethics* (2026b) develops the moral manifold. *Geometric Reasoning* (2026c) establishes the general framework of search on geometric spaces. *Geometric Economics* (2026d) instantiates it on the economic decision manifold. The present book instantiates it on the judicial manifold, inheriting the Hohfeldian structure of the ethics framework, which since its version 1.25 is the Klein four-group V₄.
 
 Andrew H. Bond
 San Jose, California
@@ -35,7 +35,7 @@ March 2026
 | **Judicial complex** $\mathcal{K}$ | Weighted directed simplicial complex of decided cases and doctrinal relationships | Ch. 3 |
 | **8 legal dimensions** | Entitlement, factual nexus, procedure, statutory authority, constitutionality, precedent, remedies, public interest | Ch. 3 |
 | **Legal Invariance Principle** (LIP) | Legal judgments must be invariant under legally irrelevant transformations | Ch. 8 |
-| **Hohfeldian octad gauge group** | $D_4 \rtimes_\varphi D_4$ — the symmetry group of jural relations | Ch. 5 |
+| **Hohfeldian gauge group** | $V_4$ on each square of jural relations; the group of the full octad, formerly $D_4 \rtimes_\varphi D_4$, is withdrawn pending restatement (2026-11-26) | Ch. 2, 5 |
 | **Legal Bond Index** | Quantitative measure of judicial inconsistency under gauge transformations | Ch. 8 |
 | **Path homology** | Topological invariant of directed graphs; constitutionality = homology preservation | Ch. 7 |
 | **Doctrinal heuristic** $h_D(n)$ | Legal doctrine as A* heuristic function guiding search through $\mathcal{K}$ | Ch. 6 |
@@ -46,24 +46,24 @@ March 2026
 
 | Finding | Source |
 |---------|--------|
-| Equal protection is a gauge symmetry (Theorem 7.2) | AJ manuscript |
-| Constitutionality iff path homology preserved (Theorem 6.1) | AJ manuscript |
-| Liability conserved in closed bilateral disputes (Theorem 7.1) | AJ manuscript |
-| Hohfeldian relations form $D_4 \rtimes D_4$ (Theorem 5.1) | AJ manuscript |
-| Due process = well-definedness on quotient space (Theorem 7.3) | AJ manuscript |
-| Cross-lingual legal invariance (109K passages, 11 languages) | Geometric Ethics |
-| Legal Bond Index baseline: 0.155 | Geometric Ethics |
+| Equal protection is a gauge symmetry (conditional theorem; AJ Theorem 7.2) | Ch. 8 |
+| Constitutionality iff path homology preserved, within the model; completeness is a conjecture (AJ Theorem 6.1) | Ch. 7 |
+| Liability conserved in closed bilateral disputes (conditional theorem; AJ Theorem 7.1) | Ch. 5, 9 |
+| Hohfeldian relations on each square form $V_4$; $D_4 \rtimes D_4$ (AJ Theorem 5.1) is withdrawn pending restatement, 2026-11-26 | Ch. 2, 5 |
+| Due process = well-definedness on quotient space (conditional theorem; AJ Theorem 7.3) | Ch. 8 |
+| Cross-lingual invariance of normative structure (109K passages, 11 languages; exploratory and model-mediated in that volume's claim ledger) | Geometric Ethics |
+| Bond Index baseline from the moral domain: 0.155 (the legal baseline remains to be measured) | Geometric Ethics |
 
-Note: Theorem numbers refer to the companion paper *Algorithmic Jurisprudence* (Bond, 2026), not to chapter numbers in this book.
+Note: The AJ theorem numbers refer to the companion paper *Algorithmic Jurisprudence* (Bond, 2026), not to chapter numbers in this book. The theorems are conditional on the model's axioms. None is a measured result of this volume.
 
 ## How to Read This Book
 
 - **The theoretical path**: Chapters 1–9. From the scalar failure of binary verdicts through the full geometric framework.
 - **The applied path**: Chapters 10–15. Failure modes, sentencing, adversarial system, contracts, international law, AI.
 - **The constitutional path**: Chapters 7, 8, and the worked examples. How to test constitutionality topologically.
-- **The fast path**: Chapters 1, 5, 7, 8. Binary verdicts fail; Hohfeld is D₄; constitutionality is topology; equal protection is gauge invariance.
+- **The fast path**: Chapters 1, 5, 7, 8. Binary verdicts fail; Hohfeld is V₄; constitutionality is topology; equal protection is gauge invariance.
 
-Each chapter opens with a running example — Judge Elena Rivera, a federal district court judge — that grounds the abstract framework in judicial decision-making.
+Each chapter opens with a running example — Judge Elena Rivera, a federal district court judge — that grounds the abstract framework in judicial decision-making. Judge Rivera, her docket, the studies and systems she meets, and every figure computed in the running examples and worked examples are illustrative or hypothetical. None is a measurement.
 
 ---
 
@@ -88,7 +88,7 @@ Each chapter opens with a running example — Judge Elena Rivera, a federal dist
 ### Part II: The Framework
 3. The Judicial Reasoning Space
 4. The Legal Metric
-5. The D₄ Hohfeldian Group
+5. The Hohfeldian Gauge Group
 6. Precedent as Heuristic Field
 
 ### Part III: Dynamics and Symmetry
@@ -126,7 +126,7 @@ C. The Algorithmic Jurisprudence Paper (Full Reference)
 | $\beta_k$ | Regime boundary penalty |
 | $h_D(n)$ | Doctrinal heuristic function |
 | $\text{BF}_{\text{law}}$ | Legal friction (total litigation path cost) |
-| $G_{\mathcal{Ho}}$ | Hohfeldian gauge group ($D_4 \rtimes D_4$) |
+| $G_{\mathcal{Ho}}$ | Hohfeldian gauge group ($V_4$ on each square; formerly $D_4 \rtimes D_4$, withdrawn pending restatement) |
 | LIP | Legal Invariance Principle |
 | JBIP | Judicial Bond Invariance Principle |
 | $\widetilde{H}_n^{\text{path}}$ | Path homology groups |

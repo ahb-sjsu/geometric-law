@@ -1,4 +1,4 @@
-# Chapter 5: The $D_4$ Hohfeldian Group
+# Chapter 5: The Hohfeldian Gauge Group
 
 > *"The universe is an enormous direct product of representations of symmetry groups."*
 > — Hermann Weyl, *Symmetry* (1952)
@@ -18,6 +18,12 @@
 ---
 
 ## From Tetrad to Octad
+
+> **Note (2026-11-26): $D_4$ and $D_4 \rtimes D_4$ are withdrawn.** *Geometric Ethics* withdrew the dihedral group $D_4$ as the symmetry group of the four Hohfeldian positions in its version 1.25 (2026-11-08): the correlative and the opposite are commuting involutions and generate the Klein four-group $V_4$, of order 4, with no quarter-turn (see the dated note in Chapter 2). The same version restated the group of the full octad as a conjecture, $V_4 \rtimes V_4$, not proved, and observed that $D_4 \rtimes D_4$ has order 64 while the octahedral group has order 48, so the name "octahedral" did not fit.
+>
+> **What stands** in this chapter is what uses only the two commuting involutions on a square: the description of second-order positions acting on first-order ones, gauge invariance under the correlative swap and under the opposite, the legal connection and the Wilson loop with values in $V_4$, the gauge invariance of the Wilson loop, the conservation laws, which rest on the correlative pairs, and the Legal Bond Index. The worked example at the end of the chapter (opposite, identity, opposite, giving the identity) uses only $s^2 = e$ and stands as written. In the running example the symbol $r$ is used only for the correlative swap (the city's liberty to the individual's no-right), which is the involution $c$ of $V_4$. Read that way, the transformation written $rs$ is $cs$, and the Wilson loop is $cs \cdot e \cdot e \cdot s = c$, a non-trivial element of $V_4$: the running example stands with holonomy the correlative swap, and its signature "$r \in D_4$" is to be read "$c \in V_4$".
+>
+> **What is withdrawn pending restatement under $V_4$** is the Octahedral Gauge Group theorem ($D_4 \rtimes_\varphi D_4$, its order 64 and the coupling homomorphism of the Technical Appendix), every statement that invokes 64 transformations, and the derivation of the order-dependence of legal tests from a non-abelian gauge group, including the non-abelian commutator in the curvature. $V_4$ is abelian, and no non-abelian group of the octad has been established. Where the text writes $D_4$ for the group of one square, read $V_4$. Where it writes $G_{\mathfrak{H}}$, read the group of Hohfeldian relabelings, whose structure for the full octad is open.
 
 Chapter 2 showed that Hohfeld's first square of legal relations — right, duty, liberty, no-right — has the symmetry structure of the dihedral group $D_4$. The correlative operation and the jural opposite operation generate an 8-element group acting on the four positions.
 
@@ -60,7 +66,7 @@ This coupling means that a second-order gauge transformation (relabeling power $
 
 ### Semi-Direct Product
 
-**Theorem (Octahedral Gauge Group).** The symmetry group of the full Hohfeldian octad is the *semi-direct product*:
+**Theorem (Octahedral Gauge Group).** [Withdrawn pending restatement under $V_4$, 2026-11-26.] The symmetry group of the full Hohfeldian octad is the *semi-direct product*:
 
 $$G_{\mathfrak{H}} = D_4 \rtimes_\varphi D_4$$
 
@@ -78,6 +84,8 @@ The first-order transformation $h_1$ is "twisted" by the second-order transforma
 
 ### Why Semi-Direct, Not Direct
 
+*[Withdrawn pending restatement under $V_4$, 2026-11-26.]*
+
 The distinction between the semi-direct product $D_4 \rtimes D_4$ and the direct product $D_4 \times D_4$ is not merely technical. It captures a fundamental asymmetry of legal reasoning.
 
 In the direct product $D_4 \times D_4$, the multiplication rule is $(g_1, g_2) \cdot (h_1, h_2) = (g_1 h_1, g_2 h_2)$. The two factors are independent — transformations of first-order positions and transformations of second-order positions commute. This would mean that the act of creating a right (a first-order operation) is independent of whether the creating party has the power to create it (a second-order question). But this is legally false: a legislature without the constitutional power to regulate in a given area *cannot* create rights in that area, no matter what statute it enacts.
@@ -87,6 +95,8 @@ In the semi-direct product $D_4 \rtimes_\varphi D_4$, the second factor *twists*
 When the coupling homomorphism $\varphi$ is trivial — when every $\varphi(g_2)$ is the identity — the semi-direct product reduces to the direct product, recovering the Geometric Ethics result as a special case. This explains why the direct product is adequate for ethics (where second-order operations are rare) but inadequate for law (where they are pervasive).
 
 ### The Order of the Group
+
+*[Withdrawn pending restatement under $V_4$, 2026-11-26.]*
 
 The group $G_{\mathfrak{H}} = D_4 \rtimes_\varphi D_4$ has order at most $|D_4| \times |D_4| = 8 \times 8 = 64$. The actual order depends on the specific homomorphism $\varphi$. In the trivial case ($\varphi = \text{id}$), all 64 elements are distinct. In a non-trivial case, some elements may coincide, giving a quotient. For the legal application, we work with the full 64-element group.
 
@@ -160,7 +170,7 @@ In the discrete setting, this simplifies to the ordered product of gauge transfo
 
 $$W(\gamma) = g_{01} \cdot g_{12} \cdot g_{23} \cdots g_{(m-1)0}$$
 
-where $g_{ij}$ is the Hohfeldian transformation induced by traversing the edge from $c_i$ to $c_j$.
+where $g_{ij}$ is the Hohfeldian transformation induced by traversing the edge from $c_i$ to $c_j$. Because the temporal citation subgraph is acyclic (Chapter 3), a closed path must include at least one edge that is not a forward citation, such as the comparison that returns from the last case to the first in the examples of this chapter.
 
 ### What a Non-Trivial Wilson Loop Means
 
@@ -226,7 +236,7 @@ $$F_{\mu\nu} = \partial_\mu A_\nu - \partial_\nu A_\mu + [A_\mu, A_\nu]$$
 
 In the discrete setting, this becomes the Wilson loop around the smallest cycle containing the vertex. High curvature at a vertex means that the precedent in its neighborhood is inconsistent — small cycles around that vertex have non-trivial holonomy.
 
-The non-abelian commutator $[A_\mu, A_\nu]$ is essential. It is present because the gauge group $G_{\mathfrak{H}}$ is non-abelian (the semi-direct product of two non-abelian groups). If the gauge group were abelian (like $U(1)$ in electromagnetism), the curvature would be linear in the connection. The non-abelian structure means that curvature can arise not just from the connection values but from their *non-commutation* — the fact that applying two gauge transformations in different orders produces different results.
+*[This paragraph and the next are withdrawn pending restatement under $V_4$, 2026-11-26.]* The non-abelian commutator $[A_\mu, A_\nu]$ is essential. It is present because the gauge group $G_{\mathfrak{H}}$ is non-abelian (the semi-direct product of two non-abelian groups). If the gauge group were abelian (like $U(1)$ in electromagnetism), the curvature would be linear in the connection. The non-abelian structure means that curvature can arise not just from the connection values but from their *non-commutation* — the fact that applying two gauge transformations in different orders produces different results.
 
 Legally, this non-commutativity captures a real phenomenon: the order in which you apply legal tests matters. Standing before merits, jurisdiction before substance, prima facie case before burden-shifting — the legal system is full of ordered sequences where reversing the order changes the analysis. This ordering dependence is a direct manifestation of the non-abelian gauge structure.
 
@@ -332,6 +342,8 @@ Steps 1-2 can be automated. Step 3 is the bottleneck: submitting transformed cas
 
 ## The Non-Commutativity of Legal Operations
 
+> **Note (2026-11-26).** [Withdrawn pending restatement under $V_4$.] This section derives the order-dependence of legal tests from a non-abelian gauge group. The correlative and the opposite commute, $V_4$ is abelian, and the inequality $rs \neq sr$ depended on the quarter-turn. That courts apply tests in a fixed order (standing before merits, jurisdiction before substance, prima facie case before burden-shifting) is legal doctrine and stands. Its derivation from the gauge group, the commutator as its measure, and the analogy to confinement do not. *Geometric Ethics* v1.25 no longer attributes the order effects it measured to a non-abelian group.
+
 ### Why Order Matters
 
 The gauge group $G_{\mathfrak{H}} = D_4 \rtimes D_4$ is *non-abelian*: the order in which gauge transformations are applied matters. Concretely: applying the correlative swap and then the jural negation produces a different result than applying them in the reverse order. $rs \neq sr$ in $D_4$.
@@ -344,7 +356,7 @@ This non-commutativity has a direct legal interpretation: the order in which leg
 
 **Prima facie case before burden-shifting.** Under McDonnell Douglas, the plaintiff must establish a prima facie case before the burden shifts to the employer. If the burden shifted first (requiring the employer to justify the action before the plaintiff established a prima facie case), the analysis would be radically different — the employer's justification would be evaluated in a vacuum, without the contextual framework that the prima facie case provides.
 
-Each of these ordering requirements corresponds to a non-commutative composition in the gauge group. The empirical evidence from the Geometric Ethics programme confirms this: 16,798 commutator measurements on normative frameworks demonstrate that the order of applying normative frameworks changes the outcome. The commutator $[U, D] = UDU^{-1}D^{-1} \neq e$ — the frameworks do not commute.
+Each of these ordering requirements corresponds to a non-commutative composition in the gauge group. The Geometric Ethics programme reports order effects in a commutator experiment of 16,798 responses on normative frameworks, which that volume records as observed in one language model and not yet tested in people. The commutator $[U, D] = UDU^{-1}D^{-1} \neq e$ — the frameworks do not commute.
 
 ### The Physical Analogy
 
@@ -412,9 +424,9 @@ This example illustrates the power of the Wilson loop: it distinguishes *genuine
 
 ## Chapter Summary
 
-1. The full Hohfeldian octad (eight positions in two coupled squares) has the symmetry group $G_{\mathfrak{H}} = D_4 \rtimes_\varphi D_4$ — a semi-direct product of two dihedral groups.
+1. The full Hohfeldian octad (eight positions in two coupled squares) carries the Klein four-group $V_4$ on each square. The symmetry group of the coupled octad, formerly stated as $G_{\mathfrak{H}} = D_4 \rtimes_\varphi D_4$, is withdrawn pending restatement under $V_4$ (note of 2026-11-26).
 
-2. The semi-direct product (not direct product) captures the essential legal coupling: second-order positions (power, immunity, liability, disability) *transform* first-order positions (right, duty, liberty, no-right).
+2. The essential legal coupling stands: second-order positions (power, immunity, liability, disability) *transform* first-order positions (right, duty, liberty, no-right). Its algebraic form as a semi-direct product is part of the withdrawn statement.
 
 3. Legal gauge transformations are re-descriptions that preserve Hohfeldian bond structure. The JBIP requires that legal evaluation be invariant under all such transformations.
 
@@ -434,7 +446,7 @@ $$(n_1, h_1) \cdot (n_2, h_2) = (n_1 \cdot \varphi(h_1)(n_2), \; h_1 \cdot h_2)$
 
 When $\varphi$ is trivial, this reduces to the direct product $N \times H$.
 
-**Theorem (Octahedral Gauge Group — Full Statement).** Let $D_4^{(1)} = \langle r_1, s_1 \mid r_1^4 = s_1^2 = e, \; s_1 r_1 s_1 = r_1^{-1} \rangle$ act on first-order positions and $D_4^{(2)} = \langle r_2, s_2 \mid r_2^4 = s_2^2 = e, \; s_2 r_2 s_2 = r_2^{-1} \rangle$ act on second-order positions. The coupling homomorphism $\varphi: D_4^{(2)} \to \text{Aut}(D_4^{(1)})$ maps $r_2 \mapsto \alpha$ where $\alpha(r_1) = r_1$, $\alpha(s_1) = s_1 r_1$ (the second-order correlative rotation twists the first-order reflection). Then $G_{\mathfrak{H}} = D_4^{(1)} \rtimes_\varphi D_4^{(2)}$ is a group of order 64.
+**Theorem (Octahedral Gauge Group — Full Statement).** [Withdrawn pending restatement under $V_4$, 2026-11-26.] Let $D_4^{(1)} = \langle r_1, s_1 \mid r_1^4 = s_1^2 = e, \; s_1 r_1 s_1 = r_1^{-1} \rangle$ act on first-order positions and $D_4^{(2)} = \langle r_2, s_2 \mid r_2^4 = s_2^2 = e, \; s_2 r_2 s_2 = r_2^{-1} \rangle$ act on second-order positions. The coupling homomorphism $\varphi: D_4^{(2)} \to \text{Aut}(D_4^{(1)})$ maps $r_2 \mapsto \alpha$ where $\alpha(r_1) = r_1$, $\alpha(s_1) = s_1 r_1$ (the second-order correlative rotation twists the first-order reflection). Then $G_{\mathfrak{H}} = D_4^{(1)} \rtimes_\varphi D_4^{(2)}$ is a group of order 64.
 
 **Definition (Legal Wilson Loop — Discrete).** For a directed cycle $\gamma = (c_0, c_1, \ldots, c_m, c_0)$ in $\mathcal{K}$, the Wilson loop is:
 
@@ -450,4 +462,4 @@ where $g_{ij} \in G_{\mathfrak{H}}$ is the gauge transformation induced by the e
 
 ## Notes on Sources
 
-The semi-direct product construction follows Lang (2002, *Algebra*, Ch. I) and Dummit and Foote (2004, *Abstract Algebra*, Ch. 5). Wilson loops in gauge theory are developed in Wilson (1974) and are standard material in Peskin and Schroeder (1995). The application of gauge theory to legal reasoning is original to the Algorithmic Jurisprudence framework. The Legal Bond Index extends the Bond Index of Bond (2026a, *Geometric Ethics*, Ch. 14). The connection between equal protection and gauge invariance extends Sunstein (1994) and Siegel (2004). The due process characterization as quotient regularity extends Fallon (2007). The non-commutativity of legal operations is empirically confirmed by Bond (2026a), with 16,798 commutator measurements demonstrating that the order of applying normative frameworks changes the outcome.
+The semi-direct product construction follows Lang (2002, *Algebra*, Ch. I) and Dummit and Foote (2004, *Abstract Algebra*, Ch. 5). Wilson loops in gauge theory are developed in Wilson (1974) and are standard material in Peskin and Schroeder (1995). The application of gauge theory to legal reasoning is original to the Algorithmic Jurisprudence framework. The Legal Bond Index extends the Bond Index of Bond (2026a, *Geometric Ethics*, Ch. 14). The connection between equal protection and gauge invariance extends Sunstein (1994) and Siegel (2004). The due process characterization as quotient regularity extends Fallon (2007). Order effects in applying normative frameworks are reported by Bond (2026a) from a commutator experiment of 16,798 responses, recorded there as observed in one language model and not yet tested in people.

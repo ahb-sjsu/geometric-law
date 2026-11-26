@@ -685,8 +685,8 @@ def fig_11_1():
             "attribute of the defendant is swapped (row), and a deeper cell is a larger violation. The bars at the "
             "right are the row sums and the row at the foot holds the column sums, as the chapter prints them. Bail "
             "is the outcome that changes most, and the largest cell is socioeconomic status against bail, 0.298. "
-            "The 25 cells sum to 2.340, as do the row sums and the column sums; the text of Step 4 prints 2.520 for "
-            "this total. The numbers are hypothetical, not measured.",
+            "The 25 cells sum to 2.340, as do the row sums and the column sums, the total Step 4 prints. "
+            "The numbers are hypothetical, not measured.",
             "### Step 5: Intervention Design")
     c = Canvas(720, 440, "A hypothetical district's gauge violation tensor: bail changes most")
     x0, y0, cw, ch = 118, 104, 84, 44
@@ -714,7 +714,7 @@ def fig_11_1():
         c.text(x0 + (j + 0.5) * cw, yb + 16, f"{csum[j]:.3f}", 11.5, "middle", INK,
                "600" if csum[j] == max(csum) else "normal")
     c.text(x0 + 5 * cw + 22, yb + 16, f"all cells: {total:.3f}", 11.5, "start", INK, "600")
-    c.text(16, 430, "hypothetical values of the worked example; the cells sum to 2.340, where the chapter's text prints 2.520",
+    c.text(16, 430, "hypothetical values of the worked example; the cells sum to 2.340",
            10.5, "start", INK3, italic=True)
     c.save(p)
 

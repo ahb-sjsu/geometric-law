@@ -97,7 +97,7 @@ The size and quality of the training dataset are critical. Too few labeled examp
 > *Rivera's scores: $d_1 = 0.7, d_2 = 0.6, d_3 = 0.9, d_4 = 0.8, d_5 = 0.7, d_6 = 0.5, d_7 = 0.6, d_8 = 0.8$*
 > *JurisGraph scores: $d_1 = 0.65, d_2 = 0.55, d_3 = 0.85, d_4 = 0.75, d_5 = 0.72, d_6 = 0.48, d_7 = 0.58, d_8 = 0.77$*
 >
-> *The scores are close — within 0.1 on every dimension. The maximum discrepancy is on $d_2$ (factual nexus), where JurisGraph scores 0.55 versus Rivera's 0.6. This is within the expected margin for a calibrated probe.*
+> *The scores are close — within 0.1 on every dimension. The maximum discrepancy is 0.05, on $d_1$ through $d_4$: on $d_2$ (factual nexus), for example, JurisGraph scores 0.55 versus Rivera's 0.6. This is within the expected margin for a calibrated probe.*
 >
 > *But Rivera notices something. For a sentencing case on her docket, JurisGraph scores $d_8$ (public interest) at 0.3 for a Black defendant and 0.45 for a white defendant with identical charges, identical criminal history, and identical facts. The difference in public interest scores is driven by the model's learned association between defendant demographics and public interest — an association that reflects the training data's sentencing disparities, not a legitimate legal distinction.*
 >
@@ -121,7 +121,7 @@ where $\bar{\mathbf{v}} = \frac{1}{N} \sum_i \mathbf{v}_i$ is the sample mean.
 
 **Domain-specific estimation.** The covariance matrix is not constant across legal domains. The correlation between statutory authority ($d_4$) and remedial scope ($d_7$) is high in statutory interpretation cases (the governing statute determines the available remedies) but low in common-law tort cases (where remedies are judge-made and not tied to specific statutes). The covariance matrix should therefore be estimated within legal domains, producing a family of covariance matrices $\{\Sigma_D\}$ indexed by domain $D$.
 
-**Regularization.** When the number of scored cases is small relative to the number of dimensions (which is always the case for eight dimensions, given that the minimum recommended sample is 500 cases), the sample covariance matrix may be poorly conditioned — its inverse (required for the Mahalanobis distance) may be unstable. Regularization techniques (shrinkage estimators, Ledoit-Wolf estimation) stabilize the inverse:
+**Regularization.** When the number of scored cases is small relative to the number of dimensions (the minimum recommended sample of 500 cases comfortably exceeds eight dimensions, but a domain-specific subset may be far smaller), the sample covariance matrix may be poorly conditioned — its inverse (required for the Mahalanobis distance) may be unstable. Regularization techniques (shrinkage estimators, Ledoit-Wolf estimation) stabilize the inverse:
 
 $$\hat{\Sigma}_{\text{reg}} = (1 - \alpha) \hat{\Sigma} + \alpha \cdot \text{diag}(\hat{\Sigma})$$
 
@@ -185,13 +185,13 @@ An LBI of 0 indicates perfect gauge invariance. An LBI above a threshold (the Al
 >
 > *Transformation 3: Writing style swap. Rewrite each opinion in a different stylistic register (formal $\to$ plain language, plain language $\to$ formal) while preserving the legal content.*
 >
-> *Results:*
+> *Results (hypothetical, for the running example):*
 >
 > *Race swap: LBI = 0.08. The dimension scores change by an average of 8% when the defendant's race is swapped. The largest change is on $d_8$ (public interest): 12% average change. This exceeds the 0.05 threshold — JurisGraph fails the race invariance test.*
 >
 > *Gender swap: LBI = 0.04. The dimension scores change by an average of 4% when the defendant's gender is swapped. This is within the threshold — JurisGraph passes the gender invariance test, though barely.*
 >
-> *Writing style swap: LBI = 0.03. The dimension scores are largely invariant to writing style changes, confirming that the embedding is capturing legal content rather than stylistic features.*
+> *Writing style swap: LBI = 0.03. The dimension scores are largely invariant to writing style changes, which in the example indicates that the embedding is capturing legal content rather than stylistic features.*
 >
 > *Rivera's assessment: JurisGraph partially fails the LIP test. It exhibits racial bias in its dimension scoring — specifically, it associates Black defendants with lower public interest scores, reflecting disparities in the training data. The tool cannot be deployed until this violation is corrected.*
 
@@ -201,7 +201,7 @@ An LBI of 0 indicates perfect gauge invariance. An LBI above a threshold (the Al
 
 ### Measuring Gauge Violation
 
-The Legal Bond Index (LBI) was introduced in Chapter 5 as a measure of gauge violation — how much a legal system's outputs depend on legally irrelevant features. In the AI context, the LBI becomes a *machine-auditable metric* that can be computed automatically on any AI legal reasoning system.
+The Legal Bond Index (LBI) was introduced in Chapters 5 and 8 as a measure of gauge violation — how much a legal system's outputs depend on legally irrelevant features. In the AI context, the LBI becomes a *machine-auditable metric* that can be computed automatically on any AI legal reasoning system.
 
 **Definition (Legal Bond Index for AI Systems).** For an AI legal reasoning system $\mathcal{S}$, the Legal Bond Index is:
 
@@ -421,13 +421,13 @@ $$P@k = \frac{|\{\text{top-}k \text{ retrieved}\} \cap R_q|}{k}$$
 
 $$\text{LBI}(\mathcal{S}) = \mathbb{E}_{c \sim \mathcal{D}} \left[ \frac{\sum_{g \in G_{\text{irrelevant}}} d_M(\mathcal{S}(c), \mathcal{S}(g \cdot c))}{|G_{\text{irrelevant}}| \cdot \mathbb{E}_{c' \sim \mathcal{D}}[d_M(\mathcal{S}(c), \mathcal{S}(c'))]} \right]$$
 
-The denominator normalizes by the expected distance between random system outputs, ensuring that the LBI is scale-invariant and comparable across systems and domains.
+The denominator normalizes by the expected distance between random system outputs, ensuring that the LBI is scale-invariant and comparable across systems and domains. It differs from the distance to the mean output used in the body definition. The two are alternative normalizations and give different values.
 
 **Proposition (Minimum Sample Size for Dimension Probes).** For eight linear probes with $d$-dimensional input, achieving estimation error below $\epsilon$ with probability at least $1 - \delta$ requires at least:
 
 $$N_{\text{min}} = O\left(\frac{d + \log(8/\delta)}{\epsilon^2}\right)$$
 
-labeled examples per dimension. For $d = 768$, $\epsilon = 0.05$, $\delta = 0.05$: $N_{\text{min}} \approx 500$.
+labeled examples per dimension. For $d = 768$, $\epsilon = 0.05$, $\delta = 0.05$ the expression inside the $O(\cdot)$ is about $3.1 \times 10^5$. The figure of 500 labeled cases per dimension used in this chapter is the recommendation of the Algorithmic Jurisprudence manuscript and does not follow from this bound.
 
 ---
 

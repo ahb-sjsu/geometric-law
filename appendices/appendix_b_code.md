@@ -111,7 +111,7 @@ print(f"  Gender-sentence component: {V[1, 0]:.3f}")
 
 The `swap_demographic` function performs a counterfactual transformation: it modifies the demographic attributes of a case while preserving all legally relevant features. This is the computational implementation of Judge Rivera's mental experiment from Chapter 8. The gauge violation tensor $V_{ij}$ measures whether the transformation changes the predicted outcome.
 
-A perfectly gauge-invariant system has $\|V\| = 0$. The baseline Legal Bond Index of 0.155 (from the Geometric Ethics experiments) indicates moderate gauge violation in the legal systems studied.
+A perfectly gauge-invariant system has $\|V\| = 0$. The baseline Bond Index of 0.155 quoted from the Geometric Ethics experiments is a moral-domain figure. The legal baseline remains to be measured.
 
 ---
 

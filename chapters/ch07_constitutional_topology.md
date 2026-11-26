@@ -74,7 +74,7 @@ $$\widetilde{H}_n^{\text{path}}(\mathcal{K}; \mathbb{Z}) = \ker \partial_n / \te
 
 Let us unpack this definition.
 
-**$p$-paths.** A 0-path is a single vertex. A 1-path is a directed edge $c_i \to c_j$. A 2-path is a pair of consecutive directed edges $c_i \to c_j \to c_k$. A directed cycle is a 1-path that returns to its starting vertex: $c_0 \to c_1 \to \cdots \to c_m \to c_0$.
+**$p$-paths.** A 0-path is a single vertex. A 1-path is a directed edge $c_i \to c_j$. A 2-path is a pair of consecutive directed edges $c_i \to c_j \to c_k$. A directed cycle is a 1-path that returns to its starting vertex: $c_0 \to c_1 \to \cdots \to c_m \to c_0$. Since the temporal citation subgraph is acyclic (the DAG property of Chapter 3), such a cycle must use at least one edge that is not a forward citation, for example an edge that a statute adds between legal states.
 
 **The boundary operator.** The boundary of a 2-path $c_i \to c_j \to c_k$ is the alternating sum of its faces:
 
@@ -100,7 +100,7 @@ $\widetilde{H}_2^{\text{path}}(\mathcal{K}; \mathbb{Z})$ detects "directed bubbl
 
 $$\widetilde{H}_n^{\text{path}}(\mathcal{C}; \mathbb{Z}) \cong \widetilde{H}_n^{\text{path}}(\mathcal{C}_\ell; \mathbb{Z}) \quad \forall \; n \geq 0$$
 
-where $\mathcal{C}_\ell = \mathcal{C} \cap \mathcal{K}_\ell$ is the constitutional subcomplex in the modified judicial complex. Equivalently: $\ell$ is constitutional if and only if it does not create new non-trivial *directed* cycles in the constitutional subcomplex.
+where $\mathcal{C}_\ell = \mathcal{C} \cap \mathcal{K}_\ell$ is the constitutional subcomplex in the modified judicial complex. Equivalently: $\ell$ is constitutional if and only if it does not create new non-trivial *directed* cycles in the constitutional subcomplex. The equivalence holds within the model, in which a constitutional violation is a change in the path homology of $\mathcal{C}$. That no violation escapes this description is the Completeness Conjecture stated below, and the Technical Appendix states the theorem in three one-directional parts.
 
 ### The Proof
 
@@ -275,7 +275,7 @@ For a finite directed graph $G$ with $n$ vertices and $m$ edges, the path homolo
 3. Compute the Smith normal form of each boundary matrix.
 4. Read off the homology groups: $\widetilde{H}_p^{\text{path}} = \ker \partial_p / \text{im} \, \partial_{p+1}$.
 
-The computational complexity is polynomial in the number of paths, which in turn is bounded by $n^{p+1}$ (the number of $(p+1)$-tuples of vertices). For $p = 1$ (the most important case for constitutional review), the complexity is at most $O(n^3)$ — the cost of computing the Smith normal form of a matrix with at most $n^2$ rows and $n^3$ columns.
+The computational complexity is polynomial in the number of paths, which in turn is bounded by $n^{p+1}$ (the number of $(p+1)$-tuples of vertices). For $p = 1$ (the most important case for constitutional review), the bound $O(n^{3(p+1)})$ of the Technical Appendix gives $O(n^6)$, which is polynomial: the boundary matrices have at most $n^2$ rows and $n^3$ columns.
 
 For a realistic constitutional subcomplex — even one with millions of vertices — the computation is feasible using standard sparse-matrix algorithms. Path homology implementations for directed graphs exist and have been validated on graphs of comparable size.
 

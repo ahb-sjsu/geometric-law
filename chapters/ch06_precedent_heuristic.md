@@ -134,13 +134,11 @@ where $h^*(n)$ is the actual minimum cost from $n$ to $G$. If $h$ is admissible,
 
 **Theorem (Admissibility of Doctrinal Heuristics).** A doctrinal heuristic $h_D$ is admissible if the doctrine $D$ correctly identifies the elements of a legal claim and assigns non-negative estimated costs that do not exceed actual proving costs. If $h_D$ is admissible, $A^*$ search using $h_D$ is guaranteed to find the optimal legal argument.
 
-**Proof sketch.** Legal doctrines that decompose claims into elements (duty + breach + causation + damages, for example) produce heuristics that sum estimated costs of remaining elements. Each element's estimated cost is a lower bound on the actual proving cost (the element might be easier to prove than estimated, due to shortcuts like res ipsa loquitur or stipulations). Therefore the sum of estimated costs is a lower bound on the total remaining cost, which is the definition of admissibility. By the admissibility theorem for $A^*$, the search is guaranteed to find the optimal path. $\square$
+**Proof sketch.** Legal doctrines that decompose claims into elements (duty + breach + causation + damages, for example) produce heuristics that sum estimated costs of remaining elements. Under the theorem's hypothesis, each element's estimated cost is a lower bound on the actual proving cost. Therefore the sum of estimated costs is a lower bound on the total remaining cost, which is the definition of admissibility. By the admissibility theorem for $A^*$, the search is guaranteed to find the optimal path. $\square$
 
 ### Inadmissible Heuristics in Legal Practice
 
-Not all legal strategies correspond to admissible heuristics. An *overaggressive* legal theory underestimates cost — it assumes elements will be easier to establish than they actually are, leading the search toward arguments that fail at trial. This is inadmissibility through underestimation: $h(n) > h^*(n)$ because the heuristic is too optimistic about the remaining cost.
-
-Wait — this is backwards. An inadmissible heuristic *overestimates* the true cost, causing $A^*$ to miss optimal paths by avoiding regions that appear (but are not actually) costly. Let us be precise.
+Not all legal strategies correspond to admissible heuristics. An inadmissible heuristic *overestimates* the true cost, causing $A^*$ to miss optimal paths by avoiding regions that appear (but are not actually) costly. Let us be precise.
 
 An *overconservative* strategy overestimates the remaining cost. It says "this argument will be very expensive to complete," when in fact the argument could be completed cheaply. This causes the search to avoid the argument in favor of apparently cheaper alternatives, potentially missing the optimal path. The result: settlement when litigation would have succeeded, or failure to pursue a winning theory because it "looked" too hard.
 
@@ -376,9 +374,9 @@ $$\mathbb{E}[\text{BF}_{\text{law}}(\gamma^*_\pi)] + \mathbb{E}[\text{BF}_{\text
 
 **Definition (Heuristic Field Strength).** The *heuristic field strength* at a vertex $c \in \mathcal{K}$ is:
 
-$$\mathcal{H}(c) = \frac{h^*(c) - h_{\text{zero}}(c)}{h^*(c)} = 1 - \frac{0}{h^*(c)} = 1$$
+$$\mathcal{H}(c) = 1 - \frac{h^*(c) - h_D(c)}{h^*(c)} = \frac{h_D(c)}{h^*(c)}$$
 
-when a tight heuristic is available, and $\mathcal{H}(c) = 0$ when only the zero heuristic (no doctrinal guidance) is available. In practice, $\mathcal{H}(c) = 1 - (h^*(c) - h_D(c))/h^*(c) = h_D(c)/h^*(c)$ measures the fraction of the true remaining cost that the heuristic captures.
+the fraction of the true remaining cost that the heuristic captures. $\mathcal{H}(c) = 1$ when the heuristic is tight ($h_D = h^*$), and $\mathcal{H}(c) = 0$ when only the zero heuristic (no doctrinal guidance) is available.
 
 ---
 

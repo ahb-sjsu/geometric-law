@@ -37,7 +37,7 @@ The open problem is: **How should the metric be calibrated, and how sensitive ar
 
 ### What We Know
 
-The Algorithmic Jurisprudence manuscript demonstrated that a Mahalanobis metric calibrated on a corpus of 10,000 federal court opinions produces retrieval results that correlate well with expert judgments (Spearman's $\rho = 0.72$ between Mahalanobis distances and expert similarity ratings). This is encouraging but not conclusive. The correlation is computed on a specific corpus, in a specific legal domain (federal civil rights cases), using a specific embedding model. Whether the calibration transfers to other domains (commercial law, criminal law, family law), other jurisdictions (state courts, international tribunals), or other legal traditions (civil law, Islamic law, customary law) is unknown.
+The Algorithmic Jurisprudence manuscript reports that a Mahalanobis metric calibrated on a corpus of 10,000 federal court opinions produces retrieval results that correlate well with expert judgments (Spearman's $\rho = 0.72$ between Mahalanobis distances and expert similarity ratings). That report is not reproduced in this book, whose own calibration programme has not yet been executed on legal data (Chapter 4), and it would be encouraging but not conclusive in any case. The correlation is computed on a specific corpus, in a specific legal domain (federal civil rights cases), using a specific embedding model. Whether the calibration transfers to other domains (commercial law, criminal law, family law), other jurisdictions (state courts, international tribunals), or other legal traditions (civil law, Islamic law, customary law) is unknown.
 
 Several specific calibration questions remain open:
 
@@ -133,7 +133,7 @@ The open problem is: **Is the fundamental group of the judicial complex computab
 
 ### Why It Matters
 
-Legal reasoning is *non-commutative*. The order in which legal arguments are applied can change the outcome. Applying the burden-shifting framework of *McDonnell Douglas* before addressing standing produces a different analysis than addressing standing first. This non-commutativity is captured by the semi-direct product structure of the Hohfeldian gauge group (Chapter 5) and by the non-commutativity of legal operations (demonstrated empirically in the Geometric Ethics data, with 16,798 commutator measurements).
+Legal reasoning is *non-commutative*. The order in which legal arguments are applied can change the outcome. Applying the burden-shifting framework of *McDonnell Douglas* before addressing standing produces a different analysis than addressing standing first. Chapter 5 attributed this non-commutativity to the semi-direct product structure of the Hohfeldian gauge group, a statement withdrawn pending restatement under $V_4$ (2026-11-26), since $V_4$ is abelian. Order effects of this kind are reported in the Geometric Ethics data (a commutator experiment of 16,798 responses), where they are recorded as observed in one language model and not yet tested in people.
 
 If legal reasoning is non-commutative, then the fundamental group — which captures non-commutative topological structure — may detect legal inconsistencies that the abelian path homology misses. There could exist legal contradictions that are invisible to $\widetilde{H}_1^{\text{path}}$ but visible to $\pi_1$: two directed loops that, when composed in one order, are contractible (consistent), but when composed in the other order, are non-contractible (inconsistent).
 

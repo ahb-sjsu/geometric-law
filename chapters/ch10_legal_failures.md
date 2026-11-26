@@ -9,7 +9,7 @@
 >
 > *Judge Rivera has been on the bench for twenty years. In that time, she has sentenced over a thousand defendants, presided over hundreds of civil trials, and ruled on thousands of motions. She has developed what she believes is a sound judicial temperament — careful, principled, attentive to the law and the facts.*
 >
-> *But a new study crosses her desk that gives her pause. A team of researchers at a Bay Area university has analyzed the sentencing patterns of all federal judges in the Northern District of California over the past decade. The findings are disturbing. They identify four distinct failure modes in judicial decision-making — four ways in which the legal system systematically departs from the geometric ideal of gauge-invariant, optimal pathfinding on the judicial complex.*
+> *But a new study (hypothetical, like the docket itself) crosses her desk that gives her pause. A team of researchers at a Bay Area university has analyzed the sentencing patterns of all federal judges in the Northern District of California over the past decade. The findings are disturbing. They identify four distinct failure modes in judicial decision-making — four ways in which the legal system systematically departs from the geometric ideal of gauge-invariant, optimal pathfinding on the judicial complex.*
 >
 > *Rivera reads the study and recognizes, with uncomfortable clarity, that her own docket exhibits all four pathologies. Not dramatically. Not in ways that would draw an appellate reversal. But measurably, consistently, and — until now — invisibly.*
 >
@@ -207,7 +207,7 @@ Chapter 8 established that equal protection is gauge invariance: legal outcomes 
 
 $$\exists \; g \in G_{\text{EP}} : J_{\text{law}}(g \cdot x) \neq J_{\text{law}}(x)$$
 
-The degree of gauge breaking is measured by the Legal Bond Index (LBI) defined in Chapter 5.
+The degree of gauge breaking is measured by the Legal Bond Index (LBI) defined in Chapters 5 and 8.
 
 Gauge breaking has two forms, as discussed in Chapter 8: explicit (the system consciously uses protected characteristics) and spontaneous (the system is facially neutral but produces asymmetric outcomes due to an asymmetric ground state). This chapter focuses on the *mechanisms* of gauge breaking — the specific ways in which the legal system's geometry is deformed to produce asymmetric outcomes.
 

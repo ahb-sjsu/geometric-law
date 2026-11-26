@@ -19,7 +19,7 @@
 
 ## The Need for a Legal Space
 
-Chapter 1 argued that legal evaluation has geometric structure — that the binary verdict destroys information about the multi-dimensional reality of legal reasoning. Chapter 2 showed that the fundamental unit of legal analysis, the Hohfeldian relation, has the algebraic structure of the dihedral group $D_4$. Now we need a space in which these structures live.
+Chapter 1 argued that legal evaluation has geometric structure — that the binary verdict destroys information about the multi-dimensional reality of legal reasoning. Chapter 2 showed that the fundamental unit of legal analysis, the Hohfeldian relation, has the algebraic structure of the Klein four-group $V_4$. Now we need a space in which these structures live.
 
 What would such a space look like? We need three things:
 

@@ -22,7 +22,7 @@
 *Why legal judgment has geometric structure that binary verdicts and scalar sentences destroy. The Scalar Irrecoverability Theorem applied to the eight-dimensional legal space. Three failures: sentencing disparities as gauge violations, circuit splits as Wilson loops, constitutional ambiguity as topological obstruction. Running example: Judge Rivera's three cases.*
 
 **Chapter 2. Hohfeld's Original Insight --- Geometry Before Geometry**
-*Wesley Newcomb Hohfeld (1913) identified eight jural relations --- right, duty, liberty, no-right, power, liability, immunity, disability --- connected by correlative and opposite operations. The first square forms the dihedral group $D_4$. The second square forms a second $D_4$. Hohfeld was doing group theory without the vocabulary. Running example: Thompson v. Chen (landlord-tenant dispute).*
+*Wesley Newcomb Hohfeld (1913) identified eight jural relations --- right, duty, liberty, no-right, power, liability, immunity, disability --- connected by correlative and opposite operations. The two operations on the first square generate the Klein four-group $V_4$, and likewise on the second square. Hohfeld was doing group theory without the vocabulary. Running example: Thompson v. Chen (landlord-tenant dispute).*
 
 ---
 
@@ -34,8 +34,8 @@
 **Chapter 4. The Legal Metric**
 *The Mahalanobis distance on the judicial complex, plus boundary penalties for regime transitions. The $8 \times 8$ covariance matrix $\Sigma$ and what it encodes. Different legal traditions = different metrics. Legal friction as total path cost. Running example: measuring the distance between Rivera's cases.*
 
-**Chapter 5. The $D_4$ Hohfeldian Group**
-*The full Hohfeldian octad gauge group $G_{\mathcal{Ho}} = D_4 \rtimes D_4$. The semidirect product structure: second-order positions (powers, immunities) modify first-order positions (rights, duties). Wilson loops for detecting circuit splits. The gauge-theoretic interpretation: $D_4$ acts on the fiber (Hohfeldian labels) at each point of the base space (bilateral bonds). Running example: Rivera traces a Wilson loop in the citation network.*
+**Chapter 5. The Hohfeldian Gauge Group**
+*The Hohfeldian gauge group: $V_4$ on each square, with the group of the full octad (formerly $D_4 \rtimes D_4$) withdrawn pending restatement. Second-order positions (powers, immunities) modify first-order positions (rights, duties). Wilson loops for detecting circuit splits. The gauge-theoretic interpretation: the group acts on the fiber (Hohfeldian labels) at each point of the base space (bilateral bonds). Running example: Rivera traces a Wilson loop in the citation network.*
 
 **Chapter 6. Precedent as Heuristic Field**
 *Legal doctrine as A* heuristic guiding search through the judicial complex. The evaluation function $f(n) = g(n) + h_D(n)$: accumulated cost + doctrinal heuristic. Admissible heuristic = well-developed precedent. Flat heuristic = novel legal questions. Corrupted heuristic = contradictory precedent. Running example: Rivera searches for applicable precedent.*
@@ -91,7 +91,7 @@
 ## Appendices
 
 **Appendix A. Mathematical Prerequisites**
-*The dihedral group $D_4$ and semidirect products. Simplicial complexes and path homology. The Mahalanobis distance. Parallel transport and holonomy. Gauge theory fundamentals. Noether's theorem. The Scalar Irrecoverability Theorem. Wilson loops.*
+*The Klein four-group $V_4$, the dihedral group $D_4$ and semidirect products. Simplicial complexes and path homology. The Mahalanobis distance. Parallel transport and holonomy. Gauge theory fundamentals. Noether's theorem. The Scalar Irrecoverability Theorem. Wilson loops.*
 
 **Appendix B. Code Walkthrough for Legal Analysis Tools**
 *Python code for judicial complex construction, legal metric computation, gauge invariance measurement, path homology computation, A* precedent search, and parallel transport of legal rules.*

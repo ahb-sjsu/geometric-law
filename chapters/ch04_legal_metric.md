@@ -113,7 +113,7 @@ The Mahalanobis distance between attribute vectors is only the first component o
 
 **Definition (Asymmetric Edge Weights).** The weight of a directed edge $c_i \to c_j$ in $\mathcal{K}$ is:
 
-$$w(c_i \to c_j) = \underbrace{\Delta \mathbf{v}(c_i, c_j)^T \, \Sigma^{-1} \, \Delta \mathbf{v}(c_i, c_j)}_{\text{Mahalanobis distance}} + \underbrace{\beta \cdot \mathbf{1}[\text{regime boundary}]}_{\text{boundary penalty}} + \underbrace{h(\ell(c_i), \ell(c_j))}_{\text{hierarchical cost}}$$
+$$w(c_i \to c_j) = \underbrace{\Delta \mathbf{v}(c_i, c_j)^T \, \Sigma^{-1} \, \Delta \mathbf{v}(c_i, c_j)}_{\text{squared Mahalanobis distance}} + \underbrace{\beta \cdot \mathbf{1}[\text{regime boundary}]}_{\text{boundary penalty}} + \underbrace{h(\ell(c_i), \ell(c_j))}_{\text{hierarchical cost}}$$
 
 The three terms correspond to three distinct sources of legal "friction" — costs that make legal arguments harder to traverse:
 
@@ -166,7 +166,7 @@ $$\text{BF}_{\text{law}}(\gamma) = \underbrace{\sum_{i=0}^{m-1} w(c_i, c_{i+1})}
 
 The three terms correspond to:
 
-1. **Argument complexity** — the total edge weight along the path. More doctrinal steps and larger dimensional differences cost more. A brief that cites twenty cases to establish a point has higher argument complexity than a brief that cites three closely related cases.
+1. **Argument complexity** — the edge weight along the path apart from its boundary penalties, which are written out as the second term and counted once. The Technical Appendix gives the equivalent compact form, with the penalties inside the edge weight. More doctrinal steps and larger dimensional differences cost more. A brief that cites twenty cases to establish a point has higher argument complexity than a brief that cites three closely related cases.
 
 2. **Boundary penalties** — the cost of crossing regime boundaries. Changing legal regimes, establishing jurisdiction, overcoming presumptions — each crossing adds a discrete cost.
 

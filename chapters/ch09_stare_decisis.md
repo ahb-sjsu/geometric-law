@@ -369,7 +369,7 @@ $$\Delta w(c_i \to c_j; P) = w_P \cdot \langle H_P, \Delta \mathbf{v}(c_i, c_j) 
 
 where $\langle H_P, \Delta \mathbf{v} \rangle$ is the inner product of the holding with the attribute-vector difference (how much the precedent's holding bears on the doctrinal step from $c_i$ to $c_j$).
 
-**Definition (Legal Connection — Formal).** The legal connection on $\mathcal{K}$ is a $G_{\mathfrak{H}}$-valued 1-form $A$ on the edges, where $G_{\mathfrak{H}} = D_4 \rtimes D_4$ is the Hohfeldian gauge group. For edge $c_i \to c_j$:
+**Definition (Legal Connection — Formal).** The legal connection on $\mathcal{K}$ is a $G_{\mathfrak{H}}$-valued 1-form $A$ on the edges, where $G_{\mathfrak{H}}$ is the Hohfeldian gauge group of Chapter 5 (its form $D_4 \rtimes D_4$ is withdrawn pending restatement under $V_4$, 2026-11-26; see the dated note there). For edge $c_i \to c_j$:
 
 $$A(c_i \to c_j) = \sum_P \Delta w(c_i \to c_j; P) \cdot g_P$$
 

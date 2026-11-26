@@ -101,6 +101,8 @@ The LIP also does not require blindness to protected characteristics in all cont
 
 ## The Judicial Bond Invariance Principle
 
+> **Note (2026-11-26).** Earlier versions of this section identified the group of bond-preserving transformations with the Hohfeldian gauge group $D_4 \rtimes D_4$ of Chapter 5 and called the equal protection group a subgroup of it. $D_4$ is withdrawn (*Geometric Ethics* v1.25, 2026-11-08; see the dated notes in Chapters 2 and 5), and a group that only relabels Hohfeldian positions contains no change of a protected characteristic. The JBIP is stated, as in the Technical Appendix, for the group $\mathcal{T}_{\text{bond-preserving}}$ of all transformations that preserve the bond structure. The Hohfeldian relabelings ($V_4$ on each square) and the equal protection group $G_{\text{EP}}$ are both subgroups of it. Nothing in the axiom, the theorem or the Legal Bond Index depends on the quarter-turn or on a group of order 64.
+
 ### From General Invariance to Structural Invariance
 
 The LIP requires invariance under *all* legally irrelevant transformations. This is a broad requirement — it encompasses everything from party renaming to argument rephrasing. The Judicial Bond Invariance Principle sharpens the requirement by identifying the specific mathematical structure whose preservation defines legal equivalence.
@@ -144,13 +146,13 @@ The JBIP does three things that the LIP alone does not:
 
 2. **It provides a test.** To check whether two cases should receive the same evaluation, compute their Hohfeldian bond structures. If the structures are isomorphic, the evaluations must match. This is a finite computation on a finite structure.
 
-3. **It connects to the gauge group.** The set of bond-preserving transformations is a group — the Hohfeldian gauge group $G_{\mathfrak{H}} = D_4 \rtimes D_4$ from Chapter 5. The JBIP is invariance under this specific group, not under an undefined collection of "legally irrelevant" transformations.
+3. **It connects to the gauge group.** The set of bond-preserving transformations is a group, $\mathcal{T}_{\text{bond-preserving}}$, which contains the Hohfeldian relabelings of Chapter 5. The JBIP is invariance under this specific group, not under an undefined collection of "legally irrelevant" transformations.
 
 ## Equal Protection as Gauge Symmetry
 
 ### The Equal Protection Gauge Group
 
-Equal protection is a *subgroup* of the full JBIP gauge group. The full group $G_{\mathfrak{H}}$ includes all bond-preserving transformations — renaming parties, swapping perspectives, composing first-order and second-order operations. The equal protection subgroup is the subset that changes protected characteristics while preserving everything else.
+Equal protection is a *subgroup* of the full JBIP gauge group. The full group $\mathcal{T}_{\text{bond-preserving}}$ includes all bond-preserving transformations — renaming parties, swapping perspectives, composing first-order and second-order operations. The equal protection subgroup is the subset that changes protected characteristics while preserving everything else.
 
 **Definition (Equal Protection Gauge Group).** The *equal protection gauge group* $G_{\text{EP}}$ is the subgroup of legal gauge transformations that alter the protected-class attributes of the parties while preserving:
 
@@ -228,6 +230,8 @@ The Legal Bond Index quantifies the degree to which a legal judgment system viol
 $$\text{LBI} = \frac{1}{|S|} \sum_{s \in S} \| J_{\text{law}}(\tau(s)) - J_{\text{law}}(s) \|$$
 
 where $S$ is a set of test cases, $\tau$ ranges over bond-preserving transformations (renaming parties, rephrasing without changing Hohfeldian structure, translating, etc.), and the norm measures the distance between legal outcomes.
+
+The form above is the mean absolute change, which lies in $[0, 1]$ when outcomes are scaled to that range. The Technical Appendix gives the normalized form used in computation, in which each change is divided by the size of the original outcome. Chapter 11 averages the normalized form over outcome dimensions, and Chapter 15 defines a variant for AI systems, with Mahalanobis distances between system outputs and its own normalization. Values of the different forms are not directly comparable.
 
 An LBI of 0 means perfect invariance: the system produces identical outcomes for equivalent cases. An LBI of 1 means maximum variance: the system's outcomes are as different as possible for equivalent cases. Any value between 0 and 1 indicates partial gauge violation.
 
@@ -307,7 +311,7 @@ The Supreme Court's recent decision in *Students for Fair Admissions v. Harvard*
 
 > **RUNNING EXAMPLE — RIVERA QUANTIFIES THE VIOLATION**
 >
-> *Rivera has now moved from thought experiment to data analysis. She has obtained the Sentencing Commission's data for her district and computed the decomposed LBI for each protected characteristic. The results:*
+> *Rivera has now moved from thought experiment to data analysis. She has obtained the Sentencing Commission's data for her district and computed the decomposed LBI for each protected characteristic. The results (illustrative figures for the running example, not Sentencing Commission statistics):*
 >
 > | Transformation | $\text{LBI}$ | Interpretation |
 > |---------------|-----------|----------------|
@@ -316,7 +320,7 @@ The Supreme Court's recent decision in *Students for Fair Admissions v. Harvard*
 > | Ethnicity (Hispanic vs. non-Hispanic) | 0.067 | 6.7% sentence variation |
 > | Age (under 30 vs. over 30) | 0.034 | 3.4% sentence variation |
 >
-> *The racial LBI is the highest — nearly one-fifth of the sentence depends on a variable that should have zero effect. The sex-based LBI is also substantial. These numbers match the tiers of scrutiny in a troubling way: the characteristics subject to the strictest scrutiny (race) show the largest violations, suggesting that the strict scrutiny framework, while correct in its identification of high-risk transformations, has not succeeded in making the system invariant under those transformations.*
+> *The racial LBI is the highest — nearly one-fifth of the sentence depends on a variable that should have zero effect. The sex-based LBI is also substantial. These numbers invert the ordering that the tiers of scrutiny predict: the characteristics subject to the strictest scrutiny (race) show the largest violations, suggesting that the strict scrutiny framework, while correct in its identification of high-risk transformations, has not succeeded in making the system invariant under those transformations.*
 >
 > *Rivera looks at her own sentencing record. She has sentenced 247 defendants in drug cases over her twenty years on the bench. She asks her clerk to run the same analysis on her own data. The result: $\text{LBI}_{\text{race}} = 0.038$. Her own sentences show much less racial gauge variation than the district average. But $\text{LBI}_{\text{sex}} = 0.127$ — she gives substantially shorter sentences to women than to comparable men. She had not been aware of this pattern.*
 >

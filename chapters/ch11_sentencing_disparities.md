@@ -19,7 +19,7 @@
 
 ### From Scalar to Tensor
 
-Chapter 8 introduced the Legal Bond Index (LBI) as a scalar measure of gauge violation — a single number that quantifies how much the legal evaluation changes under protected-class transformations. The LBI is a useful summary statistic, but it is a *scalar*: it collapses the multi-dimensional structure of legal injustice into a single number.
+Chapters 5 and 8 introduced the Legal Bond Index (LBI) as a scalar measure of gauge violation — a single number that quantifies how much the legal evaluation changes under protected-class transformations. The LBI is a useful summary statistic, but it is a *scalar*: it collapses the multi-dimensional structure of legal injustice into a single number.
 
 Injustice is not one-dimensional. A legal system might be gauge-invariant in its conviction rates but gauge-variant in its sentencing. It might treat men and women equally in bail decisions but unequally in plea negotiations. It might be fair to defendants of all races but systematically biased against defendants of low socioeconomic status.
 
@@ -61,11 +61,11 @@ $V_{31}$ (socioeconomic status $\times$ sentence length): How much does the sent
 
 The tensor has several useful properties:
 
-**Decomposability.** The total LBI from Chapter 8 is the trace (or norm) of the tensor:
+**Decomposability.** The total LBI from Chapter 8 is the mean of the entries of the tensor:
 
 $$\text{LBI} = \frac{1}{n_i \cdot n_j} \sum_i \sum_j V_{ij}$$
 
-The scalar LBI is recovered from the tensor by summing over all transformation and outcome dimensions. The tensor decomposes the scalar into its components.
+The scalar LBI is recovered from the tensor by averaging over all transformation and outcome dimensions. The tensor decomposes the scalar into its components.
 
 **Asymmetry detection.** If $V_{ij} \gg V_{kl}$ for $(i,j) \neq (k,l)$, the system's gauge violation is concentrated along specific axes. This guides remediation: focus reform on the high-violation cells of the tensor.
 
@@ -77,7 +77,7 @@ The scalar LBI is recovered from the tensor by summing over all transformation a
 >
 > *Rivera's clerk, a former data scientist, helps her compute the gauge violation tensor for the Northern District of California using the Sentencing Commission's data. They use matched-pair analysis: for each case, they identify the closest match in the dataset that differs only on the transformation variable (race, gender, etc.) and compare outcomes.*
 >
-> *The results, for federal drug cases in the Northern District over the past five years:*
+> *The results, for federal drug cases in the Northern District over the past five years (illustrative figures for the running example, not Sentencing Commission statistics):*
 >
 > | | Sentence | Bail | Conviction Rate | Charge Severity | Departure Rate |
 > |---|---|---|---|---|---|
@@ -171,21 +171,21 @@ This decomposition reveals whether the gauge violations are *structured* (a few 
 
 > **RUNNING EXAMPLE — RIVERA DECOMPOSES THE TENSOR**
 >
-> *Rivera's clerk performs the SVD on the district's gauge violation tensor. The results:*
+> *Rivera's clerk performs the SVD on the district's gauge violation tensor, the illustrative table above. The results:*
 >
-> *First singular value: $\sigma_1 = 0.42$, accounting for 58% of total violation.*
-> *Associated transformation mode: $u_1 \approx (0.71, 0.45, 0.52, 0.12, 0.15)$ — a weighted combination dominated by race (0.71) and SES (0.52).*
-> *Associated outcome mode: $w_1 \approx (0.53, 0.68, 0.18, 0.31, 0.35)$ — dominated by bail (0.68) and sentence (0.53).*
+> *First singular value: $\sigma_1 = 0.59$, accounting for 93% of total violation (as a share of the sum of squared singular values).*
+> *Associated transformation mode: $u_1 \approx (0.55, 0.38, 0.62, 0.13, 0.39)$ — a weighted combination dominated by SES (0.62) and race (0.55).*
+> *Associated outcome mode: $w_1 \approx (0.50, 0.73, 0.15, 0.23, 0.37)$ — dominated by bail (0.73) and sentence (0.50).*
 >
-> *Second singular value: $\sigma_2 = 0.19$, accounting for 22% of total violation.*
-> *Associated transformation mode: $u_2 \approx (0.22, 0.78, 0.15, 0.38, 0.42)$ — dominated by gender (0.78).*
-> *Associated outcome mode: $w_2 \approx (0.41, 0.12, 0.15, 0.22, 0.86)$ — dominated by departure rate (0.86).*
+> *Second singular value: $\sigma_2 = 0.14$, accounting for 6% of total violation.*
+> *Associated transformation mode: $u_2 \approx (0.09, 0.83, -0.48, 0.15, -0.23)$ — dominated by gender (0.83).*
+> *Associated outcome mode: $w_2 \approx (0.30, -0.59, -0.05, 0.10, 0.74)$ — dominated by departure rate (0.74), set against bail ($-0.59$).*
 >
-> *The decomposition tells a clear story. The dominant mode of injustice in the Northern District is **race/SES-driven bail and sentencing disparity**: the combination of racial and socioeconomic bias in pretrial and post-conviction decisions accounts for 58% of the total gauge violation. The second mode is **gender-driven departure disparity**: female defendants receive downward departures at much higher rates, accounting for 22% of total violation.*
+> *The decomposition tells a clear story. The dominant mode of injustice in the Northern District is **race/SES-driven bail and sentencing disparity**: the combination of racial and socioeconomic bias in pretrial and post-conviction decisions accounts for 93% of the total gauge violation. The second mode is **gender-driven departure disparity**: female defendants receive downward departures at much higher rates, accounting for 6% of total violation.*
 >
 > *The two modes are nearly independent (the singular vectors are approximately orthogonal), suggesting two distinct mechanisms. The first mode likely reflects systemic biases in risk assessment and "dangerousness" evaluation — processes that correlate with race and SES. The second mode likely reflects a specific judicial norm — a widespread but uncodified belief that female defendants are less dangerous or more deserving of leniency — that operates through the discretionary departure mechanism.*
 >
-> *Rivera now has actionable intelligence. To reduce gauge violation in the district, the most effective interventions are: (1) reform bail practices to reduce race/SES dependence (addressing the dominant mode), and (2) audit downward departures for gender consistency (addressing the second mode). These two interventions, if successful, would eliminate 80% of the measurable gauge violation.*
+> *Rivera now has actionable intelligence. To reduce gauge violation in the district, the most effective interventions are: (1) reform bail practices to reduce race/SES dependence (addressing the dominant mode), and (2) audit downward departures for gender consistency (addressing the second mode). These two interventions, if successful, would eliminate about 98% of the measurable gauge violation.*
 
 ---
 
@@ -237,7 +237,7 @@ Each prediction is testable using existing sentencing data. The tensor framework
 
 > **RUNNING EXAMPLE — RIVERA'S INTERSECTIONAL ANALYSIS**
 >
-> *Rivera asks her clerk to compute the key intersectional terms for the district. The results:*
+> *Rivera asks her clerk to compute the key intersectional terms for the district. The results (illustrative):*
 >
 > *$V_{(12)1} = +0.047$: the race-gender interaction on sentencing is superadditive. Black men face 4.7 percentage points more racial disparity in sentencing than Black women. This is a modest but measurable intersectional effect.*
 >
@@ -357,7 +357,7 @@ Repeat Step 2 for each combination of transformation and outcome. The full tenso
 
 ### Step 4: Analysis
 
-**Total gauge violation:** $\sum_{ij} V_{ij} = 2.520$
+**Total gauge violation:** $\sum_{ij} V_{ij} = 2.340$
 
 **Dominant violations:** $V_{32}$ (SES $\times$ Bail) = 0.298, $V_{12}$ (Race $\times$ Bail) = 0.213, $V_{11}$ (Race $\times$ Sentence) = 0.187
 
@@ -381,7 +381,7 @@ Bail is the most gauge-variant outcome, followed by sentence and departure rate.
 
 ![Figure 11.1](figures/ch11_fig1.svg)
 
-*Figure 11.1. The gauge violation tensor of the worked example, a hypothetical federal district with 2,000 drug sentencing cases. Each cell is the average relative change in one outcome (column) when one protected attribute of the defendant is swapped (row), and a deeper cell is a larger violation. The bars at the right are the row sums and the row at the foot holds the column sums, as the chapter prints them. Bail is the outcome that changes most, and the largest cell is socioeconomic status against bail, 0.298. The 25 cells sum to 2.340, as do the row sums and the column sums; the text of Step 4 prints 2.520 for this total. The numbers are hypothetical, not measured.*
+*Figure 11.1. The gauge violation tensor of the worked example, a hypothetical federal district with 2,000 drug sentencing cases. Each cell is the average relative change in one outcome (column) when one protected attribute of the defendant is swapped (row), and a deeper cell is a larger violation. The bars at the right are the row sums and the row at the foot holds the column sums, as the chapter prints them. Bail is the outcome that changes most, and the largest cell is socioeconomic status against bail, 0.298. The 25 cells sum to 2.340, as do the row sums and the column sums, the total Step 4 prints. The numbers are hypothetical, not measured.*
 
 ### Step 5: Intervention Design
 

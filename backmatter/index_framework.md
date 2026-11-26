@@ -25,7 +25,7 @@
 **correlative**, 2, 5 --- Hohfeldian operation swapping perspective between parties; right $\leftrightarrow$ duty, liberty $\leftrightarrow$ no-right
 **covariance matrix** ($\Sigma$), 4, 11 --- $8 \times 8$ matrix encoding interactions among legal dimensions
 
-**$D_4$** (dihedral group), 2, 5 --- symmetry group of Hohfeld's first square; 8 elements; generators $r$ (correlative rotation), $s$ (jural negation)
+**$D_4$** (dihedral group), 2, 5 --- formerly stated as the symmetry group of Hohfeld's first square; withdrawn 2026-11-26 in favour of $V_4$
 **dihedral group**, *see* $D_4$
 **disability**, 2, 5 --- Hohfeldian second-square position; lack of power to change another's legal position; correlative of immunity
 **doctrinal heuristic** ($h_D$), 6 --- precedent as A* heuristic guiding judicial search; quality varies with precedent density
@@ -46,8 +46,8 @@
 **gauge violation tensor** ($V_{ij}$), 8, 11 --- $V_{ij} = J_j(\tau_i(x)) - J_j(x)$; measures invariance failure by transformation and outcome dimension
 
 **heuristic corruption**, 6, 10 --- price signal (precedent) overestimates or underestimates cost; media influence, racial bias in the heuristic field
-**Hohfeld, Wesley Newcomb**, 2, 5 --- identified eight jural relations (1913, 1917); taxonomy is $D_4$ group theory
-**Hohfeldian gauge group** ($G_{\mathcal{Ho}} = D_4 \rtimes D_4$), 5 --- full symmetry group of jural relations; 64 elements; semidirect product of first and second squares
+**Hohfeld, Wesley Newcomb**, 2, 5 --- identified eight jural relations (1913, 1917); taxonomy is $V_4$ group theory
+**Hohfeldian gauge group** ($G_{\mathcal{Ho}}$), 5 --- group of relabelings of jural relations; $V_4$ on each square; the 64-element form $D_4 \rtimes D_4$ is withdrawn pending restatement
 **Hohfeldian octad**, 2, 5 --- the eight jural relations: right, duty, liberty, no-right, power, liability, immunity, disability
 **holonomy**, 9 --- rotation accumulated during parallel transport around a closed loop; explains doctrinal evolution without explicit overruling
 
@@ -57,9 +57,9 @@
 
 **judicial complex** ($\mathcal{K}$), 3, 4, 5, 6, 7 --- weighted directed simplicial complex; vertices = cases, edges = doctrinal relationships
 **Judicial Bond Invariance Principle** (JBIP), 8 --- structural invariance: legal outcomes invariant under Hohfeldian gauge transformations applied to party labels and positions
-**jural negation**, 2, 5 --- Hohfeldian operation swapping opposites; right $\leftrightarrow$ no-right, duty $\leftrightarrow$ liberty; reflection $s$ of $D_4$
+**jural negation**, 2, 5 --- Hohfeldian operation swapping opposites; right $\leftrightarrow$ no-right, duty $\leftrightarrow$ liberty; generator $s$ of $V_4$
 
-**Legal Bond Index** (LBI), 8, 11 --- aggregate quantitative measure of gauge violation; baseline 0.155
+**Legal Bond Index** (LBI), 8, 11 --- aggregate quantitative measure of gauge violation; moral-domain baseline 0.155 quoted from *Geometric Ethics*, legal baseline unmeasured
 **legal friction** ($\text{BF}_{\text{law}}$), 4, 6 --- total path cost on the judicial complex; sum of edge weights along litigation path
 **Legal Invariance Principle** (LIP), 8 --- $J_{\text{law}}(\tau(x)) = J_{\text{law}}(x)$ for all $\tau \in \mathcal{T}_{\text{irrelevant}}$; foundational axiom
 **legal metric**, 4 --- Mahalanobis distance + boundary penalties; $d(x,y) = d_M(x,y) + \sum_k \beta_k$
@@ -113,7 +113,7 @@
 **Fallon, Richard**, 1, 7 --- uneasy case for judicial review; constitutional theory
 **Fuller, Lon**, 6 --- *The Morality of Law*; inner morality of law
 **Hart, H. L. A.**, 2, 6 --- *The Concept of Law*; rule of recognition; legal positivism
-**Hohfeld, Wesley Newcomb**, 2, 5 --- fundamental legal conceptions (1913, 1917); the $D_4$ taxonomy
+**Hohfeld, Wesley Newcomb**, 2, 5 --- fundamental legal conceptions (1913, 1917); the $V_4$ taxonomy
 **Holmes, Oliver Wendell, Jr.**, 1, 2 --- legal realism; *The Common Law*; "the life of the law has not been logic"
 **Kelsen, Hans**, 7 --- pure theory of law; basic norm
 **Langdell, Christopher Columbus**, 1 --- case method; law as science
@@ -141,11 +141,11 @@
 **$\text{BF}_{\text{law}}$** (legal friction), 4, 6 --- total path cost; $\sum w(v_i, v_{i+1})$
 **$\mathcal{C}$** (constitutional subcomplex), 7 --- subcomplex of constitutionally relevant cases
 **$d_1, \ldots, d_8$** (legal dimensions), 3 --- coordinates on the judicial manifold
-**$D_4$** (dihedral group), 2, 5 --- $\langle r, s \mid r^4 = s^2 = e, \; srs = r^{-1} \rangle$
+**$D_4$** (dihedral group), 2, 5 --- $\langle r, s \mid r^4 = s^2 = e, \; srs = r^{-1} \rangle$; withdrawn for the Hohfeldian positions
 **$d(x,y)$** (legal distance), 4 --- $d_M(x,y) + \sum_k \beta_k \cdot \mathbb{1}[\text{boundary}_k]$
 **$d_M(x,y)$** (Mahalanobis distance), 4 --- $\sqrt{(x-y)^T \Sigma^{-1} (x-y)}$
 **$f(n) = g(n) + h_D(n)$** (A* evaluation), 6 --- accumulated cost + doctrinal heuristic
-**$G_{\mathcal{Ho}} = D_4 \rtimes D_4$** (Hohfeldian gauge group), 5 --- 64-element gauge group
+**$G_{\mathcal{Ho}}$** (Hohfeldian gauge group), 5 --- $V_4$ on each square; the 64-element form $D_4 \rtimes D_4$ is withdrawn pending restatement
 **$h_D(n)$** (doctrinal heuristic), 6 --- precedent-based estimate of cost-to-goal
 **$\widetilde{H}_n^{\text{path}}$** (path homology), 7 --- topological invariant of the citation network
 **$J_{\text{law}}$** (legal judgment function), 8 --- maps legal situations to legal outcomes
